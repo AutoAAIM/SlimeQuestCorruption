@@ -67,11 +67,11 @@ function createSegmentos(parent)
 	{
 		if(i < parent.maxLong/2)
 		{
-			var parte = parent.segmentos.create(parent.x,parent.y-i*4, 'scyther', 2)
+			var parte = parent.segmentos.create(parent.x,parent.y-i*4, 'scyther', 2).setDepth(4);
 		}
 		else
 		{
-			var parte = parent.segmentos.create(parent.x,parent.y-i*4, 'scyther', 1)
+			var parte = parent.segmentos.create(parent.x,parent.y-i*4, 'scyther', 1).setDepth(4);
 		}
 
 		parte.xini = parte.x
@@ -79,7 +79,7 @@ function createSegmentos(parent)
     	parte.ataque = 1;
 	}
 
-	var cabeza = parent.segmentos.create(parent.x,parent.y-parent.maxLong*4, 'scyther', 0)
+	var cabeza = parent.segmentos.create(parent.x,parent.y-parent.maxLong*4, 'scyther', 0).setDepth(4);
   	cabeza.ataque = 1;
 	cabeza.xini = cabeza.x
 	cabeza.yini = cabeza.y
