@@ -369,6 +369,132 @@
                  "width":0,
                  "x":1248,
                  "y":336
+                }, 
+                {
+                 "height":0,
+                 "id":80,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":792,
+                 "y":-360
+                }, 
+                {
+                 "height":0,
+                 "id":81,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":864,
+                 "y":-328
+                }, 
+                {
+                 "height":0,
+                 "id":82,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":816,
+                 "y":-312
+                }, 
+                {
+                 "height":0,
+                 "id":83,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":896,
+                 "y":-424
+                }, 
+                {
+                 "height":0,
+                 "id":84,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":816,
+                 "y":-456
+                }, 
+                {
+                 "height":0,
+                 "id":85,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":864,
+                 "y":-448
+                }, 
+                {
+                 "height":0,
+                 "id":86,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":760,
+                 "y":-408
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -377,7 +503,7 @@
          "y":0
         }],
  "nextlayerid":16,
- "nextobjectid":80,
+ "nextobjectid":87,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.4.3",
