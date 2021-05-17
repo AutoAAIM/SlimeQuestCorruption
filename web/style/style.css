@@ -1,0 +1,49 @@
+html{
+	background-color: yellow;
+	image-rendering: pixelated;
+}
+#game{
+	//float: none;
+	//position: absolute;
+	background-color: blue;
+	//margin-left: auto;
+	//margin-right: auto;
+	//border: 10px solid black;
+}
+#gameBorder{
+	float: none;
+	//background-color: green;
+	width: 50%;
+	//height: 1px;
+	//display: block;
+	//padding-top: 75%;
+	margin-left: auto;
+	margin-right: auto;
+
+	border: silver 100px solid;
+	border-width: 80px 16px 16px 16px;
+	border-image-source: url("../assets/pageStyle/AutoAAIM_rework+text.png");
+	border-image-slice: 10 2 2 2;
+}
+#asciiShit{
+	font-size: 8px;
+	background-color: rgb(255, 255, 255);
+	position: absolute;
+}
+#zoomDiv{
+	float: right;
+	//position: absolute;
+	position: fixed;
+	//margin-top: 100px;
+	margin-left: 86%;
+	width: 12%;
+	background-color: silver;
+}
+#zoomControl
+{
+	font-size: 100%;
+}
+#zoomLog
+{
+	font-size: 100%;
+}

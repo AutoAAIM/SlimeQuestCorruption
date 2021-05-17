@@ -1,0 +1,64 @@
+
+function loadEvents()
+{
+	console.log("Izan's repl https://ProyectoIFP-1.oscurio01.repl.co")
+	console.log("Maria's repl https://IcePrototype.marialopezifp.repl.co")
+	console.log("My repl https://lab-prototype.skullag.repl.co")
+	resize();
+
+	window.addEventListener('resize', resize)
+	suffer()// descomentar
+
+	document.addEventListener('keydown', (e) => {
+		if (!e.repeat && e.key == "+"){
+			//console.log(`Key "${e.key}" pressed  [event: keydown]`);
+			//console.log("+"+document.getElementById("gameBorder").style.width)
+			zoom += 5;
+			document.getElementById("gameBorder").style.width = zoom+"%";
+			resize();
+		}
+		if (!e.repeat && e.key == "-"){
+			//console.log(`Key "${e.key}" pressed  [event: keydown]`);
+			//console.log("-")
+			zoom -= 5;
+			document.getElementById("gameBorder").style.width = zoom+"%";
+			resize();
+		}
+	});
+}
+
+var zoom = 50;
+
+function resize()
+{
+	var mystring = getComputedStyle(document.getElementById("game")).width;
+	mystring = mystring.replace('px','');
+
+	document.getElementById("zoomLog").innerText = zoom+'%';
+
+	document.getElementById("gameBorder").style.height = (3/4*mystring) + "px";
+
+	mystring = mystring/16
+
+	//console.log(document.getElementById("gameBorder").style)
+	document.getElementById("gameBorder").style.borderWidth = (5.5*mystring)+"px "+mystring+"px "+mystring+"px "+mystring+"px "
+	
+	//console.log(getComputedStyle(document.getElementById("page")).width + screen.width)
+}
+
+//resize
+
+var asciiart
+
+function suffer()
+{
+	var num = Math.floor(Math.random()*6)+1;
+	console.log('sufferAscii: '+num)
+	fetch('style/suffer'+num+'.txt')
+	.then(response => response.text())
+	.then(data => {
+		// Do something with your data
+		document.getElementById("asciiShit").innerHTML = data
+		//console.log(data);
+	});
+}	
