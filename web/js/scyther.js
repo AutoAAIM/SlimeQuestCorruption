@@ -1,7 +1,8 @@
-import * as mapa from './game.js';
 import * as utilidades from './utilidades.js';
 import * as boxTank from './personajes/boxTank.js';
 import * as heroes from './grupoHeroes.js';
+
+export var scytherSegmentsGroup = new Array
 
 var scene
 
@@ -17,7 +18,6 @@ export function create(allLayers)
 {
 	scytherGroup = scene.physics.add.group();
 	//scene.physics.add.collider(scytherGroup, scytherGroup);
-	scene.physics.add.collider(scytherGroup, allLayers);
 }
 
 export function createScyther(obj)
@@ -50,6 +50,7 @@ export function createScyther(obj)
 	s.detectionbox.detectado = false;
 	s.time = 0
 	s.cooldown = 120;
+	//s.enable = false
 
 	createSegmentos(s)
 
@@ -77,6 +78,11 @@ function createSegmentos(parent)
 		parte.xini = parte.x
 		parte.yini = parte.y
     	parte.ataque = 1;
+		parte.dano=1;
+
+		scytherSegmentsGroup.unshift(parte)
+
+		//console.log(scytherSegmentsGroup)
 	}
 
 	var cabeza = parent.segmentos.create(parent.x,parent.y-parent.maxLong*4, 'scyther', 0).setDepth(4);
@@ -195,7 +201,7 @@ function salir(parent)
 					for(var i=0; i<parent.segmentos.getLength(); i++)
 					{
 						parent.segmentos.getChildren()[i].setAlpha(1);
-						parent.segmentos.getChildren()[i].enable = true;
+						parent.segmentos.getChildren()[i].body.enable = true;
 
 						scene.physics.moveTo(parent.segmentos.getChildren()[i],
 							parent.segmentos.getChildren()[i].xini,
@@ -207,6 +213,7 @@ function salir(parent)
 				},
 				onComplete: function()
 				{
+					//parent.body.enable = true;
 					parent.animado=false
 				}
 			});
@@ -243,7 +250,7 @@ function esconder(parent)
 					for(var i=0; i<parent.segmentos.getLength(); i++)
 					{
 						parent.segmentos.getChildren()[i].setAlpha(0);
-						parent.segmentos.getChildren()[i].enable = false;
+						parent.segmentos.getChildren()[i].body.enable = false;
 					}
 					parent.animado=false
 				}
@@ -256,7 +263,7 @@ export function update()
 	
 	Phaser.Actions.Call(scytherGroup.getChildren(),function(s)
 	{
-		if(Phaser.Math.Distance.BetweenPoints(s, heroes.cabeza) <= s.maxLong * 8)
+		if(Phaser.Math.Distance.BetweenPoints(s, heroes.cabeza) <= s.maxLong * 8 && s.vida>0)
 		{
 			salir(s);
 			s.escondido = false;
@@ -342,7 +349,8 @@ export function update()
 }
 
 export function herir(obj, e) {
-	if (!e.inmune) {
+	console.log(e)
+	if (!e.inmune && !e.escondido) {
 		//console.log(obj)
 		e.detectionbox.detectado = true;
 		if (obj.dano != null) {

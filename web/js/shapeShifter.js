@@ -1,4 +1,3 @@
-import * as mapa from './game.js';
 import * as boxTank from './personajes/boxTank.js';
 import * as heroes from './grupoHeroes.js';
 

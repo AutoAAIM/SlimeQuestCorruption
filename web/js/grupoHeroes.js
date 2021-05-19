@@ -128,33 +128,16 @@ export function ponerEmitter()
 }
 
 export function herir(obj, e) {
-	/*if (!e.inmune && obj != cabeza) {
-		//console.log(obj)
-		e.detectionbox.detectado = true;
-		e.vida--;
-		e.inmune = true;
 
-		scene.tweens.addCounter({
-			from: 100,
-			to: 0,
-			duration: 1000,
-			onUpdate: function (tween) {
-				var value = Math.floor(tween.getValue());
-
-				e.inmune = true;
-
-				e.setAlpha(value % 2)
-
-				if (value == 0) {
-					e.setAlpha(1)
-					e.inmune = false;
-				}
-			}
-		});
-		//console.log('hola');
-	}*/
 	if (!obj.inmune && obj == cabeza) {
-		obj.vida -= e.dano;
+		if(e.dano != undefined)
+		{
+			e.vida -= e.dano;
+		}
+		else
+		{
+			e.vida -= 1
+		}
 		obj.inmune = true;
 
 		scene.tweens.addCounter({
@@ -175,6 +158,38 @@ export function herir(obj, e) {
 			}
 		});
 		obj.inmuneT = 90;
+		//console.log('hola');
+	}
+	if (!e.inmune && e == cabeza) {
+		if(e.dano != undefined)
+		{
+			e.vida -= e.dano;
+		}
+		else
+		{
+			e.vida -= 1
+		}
+		
+		e.inmune = true;
+
+		scene.tweens.addCounter({
+			from: 100,
+			to: 0,
+			duration: 1000,
+			onUpdate: function (tween) {
+				var value = Math.floor(tween.getValue());
+
+				//e.inmune = true;
+
+				e.setAlpha(value % 2)
+
+				if (value == 0) {
+					e.setAlpha(1)
+					//e.inmune = false;
+				}
+			}
+		});
+		e.inmuneT = 90;
 		//console.log('hola');
 	}
 }
