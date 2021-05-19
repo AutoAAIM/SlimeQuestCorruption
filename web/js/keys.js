@@ -5,6 +5,8 @@ export var Left
 export var Right
 export var Hability
 export var P
+// export var Inventario (E)
+// export var Hablar (?)
 
 export function create(scene)
 {
