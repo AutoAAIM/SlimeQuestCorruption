@@ -1,4 +1,3 @@
-//import BoxTank from './boxTank.js';
 import * as boxTank from '../personajes/boxTank.js';
 import * as shapeShifter from '../shapeShifter.js';
 import * as scyther from '../scyther.js';

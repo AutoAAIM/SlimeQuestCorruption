@@ -1,4 +1,5 @@
 import lab from './mapas/lab.js'
+import registrar from './menus/registrar.js'
 
 export var config={
 		type:Phaser.AUTO,
@@ -24,7 +25,7 @@ export var config={
         	//autoCenter: Phaser.Scale.CENTER_BOTH,
 			//zoom: 2,
 		},
-		scene: [lab]
+		scene: [registrar, lab]
 
 		//ificultad: 1
 };
