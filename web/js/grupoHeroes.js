@@ -132,11 +132,11 @@ export function herir(obj, e) {
 	if (!obj.inmune && obj == cabeza) {
 		if(e.dano != undefined)
 		{
-			e.vida -= e.dano;
+			obj.vida -= e.dano;
 		}
 		else
 		{
-			e.vida -= 1
+			obj.vida -= 1
 		}
 		obj.inmune = true;
 
@@ -158,12 +158,18 @@ export function herir(obj, e) {
 			}
 		});
 		obj.inmuneT = 90;
-		//console.log('hola');
+		console.log(obj);
+    if(e.name == "mosquito"){
+        aleatorio2 = Math.floor(Math.random() * (10-1+1)) + 1;
+        if(aleatorio2 <= 3){
+          e.vida +=1;
+        }
+    }
 	}
 	if (!e.inmune && e == cabeza) {
-		if(e.dano != undefined)
+		if(obj.dano != undefined)
 		{
-			e.vida -= e.dano;
+			e.vida -= obj.dano;
 		}
 		else
 		{
@@ -171,7 +177,7 @@ export function herir(obj, e) {
 		}
 		
 		e.inmune = true;
-
+    console.log('tontoSegundaParte');
 		scene.tweens.addCounter({
 			from: 100,
 			to: 0,
@@ -191,6 +197,12 @@ export function herir(obj, e) {
 		});
 		e.inmuneT = 90;
 		//console.log('hola');
+    if(obj.name == "mosquito"){
+        aleatorio2 = Math.floor(Math.random() * (10-1+1)) + 1;
+        if(aleatorio2 <= 3){
+          obj.vida +=1;
+        }
+    }
 	}
 }
 

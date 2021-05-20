@@ -1,6 +1,6 @@
 import * as boxTank from '../personajes/boxTank.js';
-import * as shapeShifter from '../shapeShifter.js';
-import * as scyther from '../scyther.js';
+import * as shapeShifter from '../enemies/shapeShifter.js';
+import * as scyther from '../enemies/scyther.js';
 import * as keys from '../keys.js';
 import * as portal from '../portal.js';
 import * as heroes from '../grupoHeroes.js';

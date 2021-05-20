@@ -1,5 +1,5 @@
-import * as boxTank from './personajes/boxTank.js';
-import * as heroes from './grupoHeroes.js';
+import * as boxTank from '../personajes/boxTank.js';
+import * as heroes from '../grupoHeroes.js';
 
 var scene
 
@@ -26,6 +26,7 @@ export function createShapeshifter(obj)
 	var s = shapeShifterGroup.create(obj.x, obj.y, 'shapeshifter')
 	s.inmovil = false;
 	s.dano = 1;
+  s.stunt = 0;
 	//s.setTexture('shapeshifter');
 	//s.y -= 16;
 	s.piesY = -3;
@@ -63,6 +64,12 @@ export function update()
 			s.transformado = true;
 			s.play('shapeshifterTransform')
 		}
+    if(s.stunt > 0){
+      s.inmovil = true;
+      s.stunt--;
+    }else{
+      s.inmovil = false;
+    }
 
 		//console.log(s.anims.currentFrame.isLast)
 
@@ -109,7 +116,13 @@ export function herir(obj, e) {
 			e.vida -= obj.dano;
 		}else{e.vida --;}
 		e.inmune = true;
-
+    if(obj.stunt != undefined){ 
+      var aleatoriedad = Math.floor(Math.random() * 100);
+      if(aleatoriedad <= obj.stuntProb){
+        console.log(aleatoriedad)
+        e.stunt = obj.stunt;
+      }
+    }
 		scene.tweens.addCounter({
 			from: 100,
 			to: 0,
@@ -125,6 +138,8 @@ export function herir(obj, e) {
 					e.setAlpha(1)
 					e.inmune = false;
 				}
+
+        
 			}
 		});
 

@@ -149,8 +149,10 @@ function moverPersonaje() {
 }
 
 function ondasRockeras() {
-
+  
   ondaDeDanyo = beamList.create(player.x, player.y, 'ondas');
+  ondaDeDanyo.stunt= 60;
+  ondaDeDanyo.stuntProb = 50;
   ondaDeDanyo.ataque = 2;
   tiempo = 60;
   ondaDeDanyo.scale = 0.4;
@@ -315,12 +317,7 @@ export function recibirDanyo(obj1, obj2){
       });
       
       obj1.vida--;
-      if(obj2.name == "mosquito"){
-        aleatorio2 = Math.floor(Math.random() * (10-1+1)) + 1;
-        if(aleatorio2 == 6){
-          obj2.vida +=1;
-        }
-      }
+      
       obj1.inmuneT = 130;
     }
 }

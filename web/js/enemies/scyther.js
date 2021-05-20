@@ -1,6 +1,6 @@
-import * as utilidades from './utilidades.js';
-import * as boxTank from './personajes/boxTank.js';
-import * as heroes from './grupoHeroes.js';
+import * as utilidades from '../utilidades.js';
+import * as boxTank from '../personajes/boxTank.js';
+import * as heroes from '../grupoHeroes.js';
 
 export var scytherSegmentsGroup = new Array
 
@@ -162,22 +162,6 @@ function calcularSegmento(parent)
 
 }
 
-/*function updateSegmentos(parent){
-	if(l.time <= 0)
-	{
-		l.time = l.cooldown;
-
-		createLenguaSegments(l, parent)
-		
-		calcularLengua(l, parent)
-
-    //TODO:Hacer que reciba daño el personaje
-    scene.physics.add.overlap(glish.glish,l.segmentos, enemigos.recibirDanyo);
-    //console.log(l.segmentos);
-	}
-	l.time--;
-}*/
-
 export function detectarJugador(db, pj)
 {
 	db.detectado = true;
@@ -308,21 +292,12 @@ export function update()
 		{
 			s.transformado = true;
 			console.log('hola')
-			//s.play('shapeshifterTransform')
 		}
-
-		//console.log(s.anims.currentFrame.isLast)
 
 		if(s.transformado == true && !s.inmovil && s.vida > 0)
 		{
-			//if(s.anims.currentFrame.isLast)
 			{
-				//s.play('shapeshifterWalk', true)
 				s.move = true;
-				//scene.physics.accelerateToObject(s, player)
-				//scene.physics.moveToObject(s, player, 150);
-				//scene.physics.moveTo(s, heroes.cabeza.x, heroes.cabeza.y+11, 150);
-				//s.setVelocityY(100)
 			}
 		}
 		else
@@ -333,9 +308,7 @@ export function update()
 
 		if(s.vida <= 0)
 		{
-			//s.play('shapeshifterWalk', false);
 			s.detectionbox.destroy();
-			//s.setTexture('shapeshifterMuerto');
 			s.setTint(0xaaaaaa)
 			s.body.enable = false;
 		}
@@ -376,7 +349,6 @@ export function herir(obj, e) {
 			}
 		});
 
-		//console.log('hola');
 	}
 	if(obj.fragil)
 	{
