@@ -132,7 +132,7 @@ export function update(cabeza)
 	{
 		input()
 		////console.log(boxTank.player.y)
-		//maldito izan
+		//maldito izan <-- Jaja xd
 	}
 	updatebala();
 	puntero();

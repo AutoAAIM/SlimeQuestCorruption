@@ -236,8 +236,8 @@ export default class lab extends Phaser.Scene {
 		elementosMapa2.setTileIndexCallback(deadlyTiles, this.fallDeath, this.physics.add.overlap(shapeShifter.shapeShifterGroup, elementosMapa2));
 
 		//this.physics.add.overlap(boxTank.player.taladro, shapeShifterGroup, herir, null, this);
-		text = this.add.text(10, 10, 'vida: ' + heroes.cabeza.vida, { font: '16px Courier', fill: '#000000' }).setDepth(100)//;text.setText('vida: ' + boxTank.player.vida, boxTank.player.x, boxTank.player.y);
-		text.setScrollFactor(0)
+		//;text.setText('vida: ' + boxTank.player.vida, boxTank.player.x, boxTank.player.y);
+
 		//console.log(this)
 		portal.collisionPortal(shapeShifter.shapeShifterGroup)
 		portal.collisionPortal(heroes.heroes)
@@ -363,6 +363,6 @@ export default class lab extends Phaser.Scene {
 		portal.update()
 
 		//console.log(pointer.event.button)
-		text.setText('vida: ' + heroes.cabeza.vida, boxTank.player.x, boxTank.player.y);
+		
 	}
 }

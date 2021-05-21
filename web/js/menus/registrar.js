@@ -1,10 +1,19 @@
 import * as sc from '../sceneConstructor.js';
+import * as utilidades from '../utilidades.js';
 
 var scene
 var sky
-
+let keys = new Set();
 var cuadroTexto
 var playButton
+
+var nameTextInput = new String
+var contTextInput = new String
+
+var activeText
+
+var nameTextHitbox
+var contTextHitbox
 
 export default class registrar extends Phaser.Scene {
 	constructor(){
@@ -39,13 +48,82 @@ export default class registrar extends Phaser.Scene {
 		playButton.setInteractive();
 
 		playButton.on('pointerdown', function () {
-			scene.scene.stop(scene);
-			scene.scene.launch('lab')
+			scene.scene.start('lab');
 		});
+
+		//this.nameInput = utilidades.createTextInput(scene).setDepth(1);
+		//console.log(this.nameInput)
+    	this.nameText = scene.add.text(16, 210, 'Nombre: >' + nameTextInput +'<', {fontSize: '16px', fill: '#68FF00', fontFamily: 'sans-serif'})
+		console.log(scene.input.keyboard)
+
+		scene.physics.world.enable(this.nameText);
+		this.nameText.setInteractive();
+		this.nameText.on('pointerdown', function () {
+			activeText = "name"
+		});
+
+		this.contText = scene.add.text(16, 240, 'Contraseña: >' + nameTextInput +'<', {fontSize: '16px', fill: '#68FF00', fontFamily: 'sans-serif'})
+		console.log(scene.input.keyboard)
+
+		scene.physics.world.enable(this.contText);
+		this.contText.setInteractive();
+		this.contText.on('pointerdown', function () {
+			activeText = "cont"
+		});
+
+    	this.input.keyboard.on('keydown', (event) => {
+			var c = event.code
+			console.log(c)
+			if(activeText == "name")
+			{
+				if(c.slice(0,3) == "Key" || c.slice(0,5) == "Digit")
+				{
+					nameTextInput += c.toLowerCase().charAt(c.length-1)
+				}
+				else if(c == "Space")
+				{
+					nameTextInput += ' '
+				}
+				else if(c == "Backspace" )
+				{
+					nameTextInput = nameTextInput.slice(0,nameTextInput.length-1)
+				}
+			}
+
+    	})
+
+		this.input.keyboard.on('keydown', (event) => {
+			var c = event.code
+			if(activeText == "cont")
+			{
+				if(c.slice(0,3) == "Key" || c.slice(0,5) == "Digit")
+				{
+					contTextInput += c.toLowerCase().charAt(c.length-1)
+				}
+				else if(c == "Space")
+				{
+					contTextInput += ' '
+				}
+				else if(c == "Backspace" )
+				{
+					contTextInput = contTextInput.slice(0,contTextInput.length-1)
+				}
+			}
+
+    	})
+  
+    //this.input.keyboard.on('keydown', callback, context);
+
 	}
 
 	update(time, delta)
 	{
+		//console.log(scene.input.keyboard)
+    
+		//nameTextInput = scene.input.keyboard._events;
 		sky.tilePositionX+=2;
+
+		this.nameText.setText('Nombre: >' + nameTextInput +'<');
+		this.contText.setText('Contraseña: >' + contTextInput +'<');
 	}
 }
