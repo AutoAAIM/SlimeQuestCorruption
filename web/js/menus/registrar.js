@@ -48,6 +48,7 @@ export default class registrar extends Phaser.Scene {
 		playButton.setInteractive();
 
 		playButton.on('pointerdown', function () {
+			scene.nuevousuario();
 			scene.scene.start('lab');
 		});
 
@@ -125,5 +126,32 @@ export default class registrar extends Phaser.Scene {
 
 		this.nameText.setText('Nombre: >' + nameTextInput +'<');
 		this.contText.setText('Contraseña: >' + contTextInput +'<');
+	}
+
+	nuevousuario(){
+		var user = 'usuario';
+		var pass = 'password';
+		var urlllamada = 'https://SlimeQuestCorruption.autoaaim.repl.co/web/php/newuser.php';
+
+		var xhr = new XMLHttpRequest();
+
+		xhr.open('POST', urlllamada);
+		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+		// Acciones a procesar tras recibir la respuesta
+		xhr.onload = function() {
+			if (xhr.status === 200) {
+				console.log('Respuesta recibida: ' + xhr.responseText);
+			}
+			else if (xhr.status !== 200) {
+				console.log('Algo ha fallado: ' + xhr.status);
+			}
+		};
+		// Envia datos al servidor php
+		var datos = 'user=' + user + '&pass=' + pass;
+		// Debug
+		var datoscodificados = encodeURI(datos);
+		console.log(datoscodificados);
+		xhr.send(datoscodificados);
 	}
 }
