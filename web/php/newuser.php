@@ -32,7 +32,7 @@ if ( $nombre_usuario != "" && $contrasenya != "" ) {
 
 ?>
 
-<!--<html>
+<html>
   <head>
     <title>newuser.php</title>
   </head>
@@ -48,4 +48,4 @@ if ( $nombre_usuario != "" && $contrasenya != "" ) {
     </div>
     <h3>No se ha recibido ningún parámetro.</h3>
   </body>
-</html>-->
+</html>

@@ -49,6 +49,7 @@ export default class registrar extends Phaser.Scene {
 
 		playButton.on('pointerdown', function () {
 			scene.nuevousuario();
+			scene.savedatabase();
 			scene.scene.start('lab');
 		});
 
@@ -150,6 +151,37 @@ export default class registrar extends Phaser.Scene {
 		// Envia datos al servidor php
 		var datos = 'user=' + user + '&pass=' + pass;
 		// Debug
+		var datoscodificados = encodeURI(datos);
+		console.log(datoscodificados);
+		xhr.send(datoscodificados);
+	}
+
+	savedatabase() {
+		var secret = 'mi contra senya';
+		var usuario = 'usuario@';
+		var funcion = 'guardar';
+		//var contador = counter.toString();
+		//var contadormax = maxcounter.toString();
+		var urlllamada = 'https://SlimeQuestCorruption.autoaaim.repl.co/web/php/index.php';
+
+		var xhr = new XMLHttpRequest();
+
+		xhr.open('POST', urlllamada);
+		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+		// Acciones a procesar tras recibir la respuesta
+		xhr.onload = function() {
+			if (xhr.status === 200) {
+				console.log('Respuesta recibida: ' + xhr.responseText);
+			}
+			else if (xhr.status !== 200) {
+				console.log('Algo ha fallado: ' + xhr.status);
+			}
+		};
+		// Envia datos al servidor php
+		var datos = 'secret=' + secret + '&usuario=' + usuario/* + '&funcion=' + funcion + '&contador=' + contador + '&contadormax=' + contadormax*/;
+		// Debug
+		console.log(datos);
 		var datoscodificados = encodeURI(datos);
 		console.log(datoscodificados);
 		xhr.send(datoscodificados);
