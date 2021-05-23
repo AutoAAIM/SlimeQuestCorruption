@@ -23,7 +23,7 @@
 
 	//$rstr = implode("?", $respuesta);
 	//$rstr = print_r($respuesta, true);
-	$rstr = implode("&",array_map(function($a) {return implode("~",$a);},$respuesta));
+	$rstr = implode("&",$respuesta));
 	//print_r($out);
 	//$rstr = json_encode($respuesta);
 	//$rstr = convert_multi_array($respuesta);
