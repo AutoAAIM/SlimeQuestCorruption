@@ -23,12 +23,10 @@
 
 	//$rstr = implode("?", $respuesta);
 	//$rstr = print_r($respuesta, true);
-	function convert_multi_array($array) {
-		$out = implode("&",array_map(function($a) {return implode("~",$a);},$array));
-		print_r($out);
-	}
+	$rstr = implode("&",array_map(function($a) {return implode("~",$a);},$respuesta));
+	//print_r($out);
 	//$rstr = json_encode($respuesta);
-	$rstr = convert_multi_array($respuesta);
+	//$rstr = convert_multi_array($respuesta);
 	echo $rstr;
 
 ?>
