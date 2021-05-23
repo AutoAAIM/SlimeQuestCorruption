@@ -21,6 +21,6 @@
 		}
 	}
 
-	echo "2";
+	echo implode ( array $respuesta ) : string;
 
 ?>
