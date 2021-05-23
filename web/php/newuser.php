@@ -1,8 +1,8 @@
 <?php
 
-	//$numero = $_POST("numero");
+	$numero = $_POST("numero");
 
-	$db = 3;
+	$db = $numero * 3;
 
 	echo $db;
 ?>
