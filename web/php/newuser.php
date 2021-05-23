@@ -21,8 +21,9 @@
 		}
 	}
 
-	//echo implode("?", $respuesta);
-	$rstr = print_r($respuesta, true);
+	//$rstr = implode("?", $respuesta);
+	//$rstr = print_r($respuesta, true);
+	$rstr = json_encode($respuesta);
 	echo $rstr;
 
 ?>
