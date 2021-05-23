@@ -49,7 +49,6 @@ export default class registrar extends Phaser.Scene {
 
 		playButton.on('pointerdown', function () {
 			scene.nuevousuario();
-			scene.savedatabase();
 			scene.scene.start('lab');
 		});
 
@@ -130,60 +129,20 @@ export default class registrar extends Phaser.Scene {
 	}
 
 	nuevousuario(){
-		var user = 'usuario';
-		var pass = 'password';
-		var urlllamada = 'https://SlimeQuestCorruption.autoaaim.repl.co/web/php/newuser.php';
-
 		var xhr = new XMLHttpRequest();
+		var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/newuser.php';
+		
 
-		xhr.open('POST', urlllamada);
-		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-		// Acciones a procesar tras recibir la respuesta
-		xhr.onload = function() {
-			if (xhr.status === 200) {
-				console.log('Respuesta recibida: ' + xhr.responseText);
+		xhr.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200)
+			{
+				console.log(this)
+				console.log(this.responseText)
 			}
-			else if (xhr.status !== 200) {
-				console.log('Algo ha fallado: ' + xhr.status);
-			}
-		};
-		// Envia datos al servidor php
-		var datos = 'user=' + user + '&pass=' + pass;
-		// Debug
-		var datoscodificados = encodeURI(datos);
-		console.log(datoscodificados);
-		xhr.send(datoscodificados);
-	}
-
-	savedatabase() {
-		var secret = 'mi contra senya';
-		var usuario = 'usuario@';
-		var funcion = 'guardar';
-		//var contador = counter.toString();
-		//var contadormax = maxcounter.toString();
-		var urlllamada = 'https://SlimeQuestCorruption.autoaaim.repl.co/web/php/index.php';
-
-		var xhr = new XMLHttpRequest();
-
-		xhr.open('POST', urlllamada);
-		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-		// Acciones a procesar tras recibir la respuesta
-		xhr.onload = function() {
-			if (xhr.status === 200) {
-				console.log('Respuesta recibida: ' + xhr.responseText);
-			}
-			else if (xhr.status !== 200) {
-				console.log('Algo ha fallado: ' + xhr.status);
-			}
-		};
-		// Envia datos al servidor php
-		var datos = 'secret=' + secret + '&usuario=' + usuario/* + '&funcion=' + funcion + '&contador=' + contador + '&contadormax=' + contadormax*/;
-		// Debug
-		console.log(datos);
-		var datoscodificados = encodeURI(datos);
-		console.log(datoscodificados);
-		xhr.send(datoscodificados);
+		}
+		//console.log(xhr)
+		xhr.open("POST", "php/newuser.php", true)
+		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+		xhr.send("numero=32")
 	}
 }
