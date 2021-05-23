@@ -21,6 +21,7 @@
 		}
 	}
 
-	echo implode("?", $respuesta);
+	//echo implode("?", $respuesta);
+	echo print_r($respuesta, true);
 
 ?>
