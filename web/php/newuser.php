@@ -11,13 +11,13 @@
 				'error'=>''
 			));*/
 		}catch(PDOException $e){
-			echo json_encode(
+			/*echo json_encode(
 				array(
 					'respuesta'=>'-1',
 					'estado' => 'Ocurrio un error, intentelo mas tarde',
 					'data'=>'',
 					'error'=>$e->getMessage())
-			);
+			);*/
 		}
 	}
 
