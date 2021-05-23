@@ -21,12 +21,12 @@
 		}
 	}
 
-	$rstr = implode("?", $respuesta);
+	//$rstr = implode("?", $respuesta);
 	//$rstr = print_r($respuesta, true);
 	//$rstr = implode("?",$respuesta));
 	//print_r($out);
 	//$rstr = json_encode($respuesta);
 	//$rstr = convert_multi_array($respuesta);
-	echo $rstr;
+	echo implode("?", $respuesta);
 
 ?>
