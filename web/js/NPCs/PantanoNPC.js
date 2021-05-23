@@ -19,7 +19,7 @@ export function create(obj) {
 
   npc1 = scene.physics.add.sprite(obj.x, obj.y, 'npc1');
   interacturar = scene.physics.add.sprite(obj.x, obj.y-32, 'buttonE');
-  dialogo = scene.physics.add.sprite(npc1.x+32, npc1.y-32, 'dialogo');
+  dialogo = scene.physics.add.sprite(npc1.x+46, npc1.y-42, 'dialogo').setScale(1.7);;
   dialogoText = scene.add.text(dialogo.x-32, dialogo.y-16, 'ranas: ' + enemigos.contadorRana + '\n mosquitos:'+ enemigos.contadorMosquitos, { fontsize: '2px', fill: '#62f5cb' }).setDepth(1)
   npc1.trigger = scene.add.rectangle(npc1.x,npc1.y, 90, 90);
   scene.physics.add.existing(npc1.trigger, false);
@@ -42,7 +42,6 @@ function activarTrigger(player, npc){
   interacturar.setPosition(player.x, player.y - 32);
   interacturar.setDepth(1);
   interacturar.anims.play('inter', true);
-  console.log(enemigos.contadorRana+'h' + enemigos.contadorMosquitos)
 
   if(keyE.isDown){
     dialogo.setAlpha(1);

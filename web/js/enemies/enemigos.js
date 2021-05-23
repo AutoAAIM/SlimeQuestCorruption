@@ -97,15 +97,20 @@ export function recibirDanyo(obj1, obj2){
         }else if(obj1.name == "rana" && contadorRana > 0){
           contadorRana-=1;
         }
-          obj1.destroy();
-          if(obj1.trigger !=null){
-              obj1.trigger.activado = false;
-              obj1.trigger.destroy();
-              if(obj1.triggerAtaque !=null){
-                obj1.triggerAtaque.activado = false;
-                obj1.triggerAtaque.destroy();
-              }
-          }
+        if(obj1.trigger !=null){
+            obj1.trigger.activado = false;
+            obj1.trigger.destroy();
+            if(obj1.triggerAtaque !=null){
+              obj1.triggerAtaque.activado = false;
+              obj1.triggerAtaque.destroy();
+            }
+            if(obj1.block != null){
+                obj1.muerto = true;
+                obj1.block.body.enable = false;
+                //enemigoBoss.trigger.activado = false;
+            }
+        }
+        obj1.destroy();
       }
       obj1.inmune = 130;
     }
