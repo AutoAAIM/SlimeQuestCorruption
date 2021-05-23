@@ -279,28 +279,6 @@ export function climbing_plant(obj, casilla) {
 
   }
 }
-export function poisonPlayer(obj, casilla) {
-  if (obj == player && casilla.properties.veneno) {
-    player.status = "envenenado";
-    if (player.tiempoStatus == 0) {
-      player.tiempoStatus = 300;
-    }
-    relentizar = 100;
-
-  }
-  else if ((casilla.properties.aspectoVeneno || casilla.properties.veneno) && (obj == ondaList || obj != player)) {
-    casilla.setAlpha(0);
-    casilla.properties.veneno = false;
-
-    setTimeout(() => {
-      if (!casilla.properties.aspectoVeneno) {
-        casilla.properties.veneno = true;
-      }
-      casilla.setAlpha(1);
-    }, 7000);
-  }
-  //console.log(casilla.properties.veneno);
-}
 
 export function recibirDanyo(obj1, obj2){
     var aleatorio2;

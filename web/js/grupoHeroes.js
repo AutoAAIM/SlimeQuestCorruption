@@ -1,6 +1,7 @@
 import * as boxTank from './personajes/boxTank.js';
 import * as yasha from './personajes/yasha.js';
 import * as glish from './personajes/glish.js';
+import * as swampBoss from './enemies/SwampBoss.js';
 import * as keys from './keys.js';
 
 export function preload()
@@ -21,7 +22,7 @@ var caminoTemp = new Array();
 var fila = new Array();
 export var armasHeroicas = new Array();
 var move;
-
+var pausado = false;
 var tEntreCambio = 0;
 
 var text;
@@ -92,7 +93,7 @@ export function update()
 	}
 
 	tEntreCambio--
-	if(keys.P.isDown && tEntreCambio <= 0)
+	if(keys.F.isDown && tEntreCambio <= 0)
 	{
 		numCabeza++;
 		numCabeza = numCabeza % numHeroes;
@@ -102,6 +103,18 @@ export function update()
 		cambiarCabeza();
 		tEntreCambio = 30;
 	}
+  if (keys.P.isDown && pausado == false){
+    scene.physics.pause();
+    setTimeout(() => {
+        pausado = true;
+    }, 1000);
+  }
+  if(keys.P.isDown && pausado == true){
+    scene.physics.resume();
+    setTimeout(() => {
+        pausado = false;
+    }, 1000);
+  }
 	text.setText('vida: ' + cabeza.vida, boxTank.player.x, boxTank.player.y);
 }
 
@@ -130,6 +143,29 @@ function cambiarCabeza()
 export function ponerEmitter()
 {
 	arenaEmitter.setPosition(boxTank.player.x, boxTank.player.y).stop();
+}
+
+export function poisonPlayer(obj, casilla) {
+  if (obj == cabeza && casilla.properties.veneno) {
+    cabeza.status = "envenenado";
+    if (cabeza.tiempoStatus == 0) {
+      cabeza.tiempoStatus = 300;
+    }
+    relentizar = 100;
+
+  }
+  else if ((casilla.properties.aspectoVeneno || casilla.properties.veneno) && (obj == glish.ondaList || obj != cabeza) && !swampBoss.enemigoBoss.trigger.activado) {
+    casilla.setAlpha(0);
+    casilla.properties.veneno = false;
+
+    setTimeout(() => {
+      if (!casilla.properties.aspectoVeneno) {
+        casilla.properties.veneno = true;
+      }
+      casilla.setAlpha(1);
+    }, 7000);
+  }
+  //console.log(casilla.properties.veneno);
 }
 
 export function herir(obj, e) {

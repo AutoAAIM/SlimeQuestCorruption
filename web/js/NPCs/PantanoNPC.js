@@ -1,8 +1,9 @@
-import * as utilidades from './utilidades.js';
-import * as glish from './glish.js';
-import * as ranas from './ranas.js';
-import * as mosquitos from './mosquitos.js';
-import * as enemigos from './enemigos.js';
+import * as utilidades from '../utilidades.js';
+import * as glish from '../personajes/glish.js';
+import * as heroes from '../grupoHeroes.js';
+import * as ranas from '../enemies/ranas.js';
+import * as mosquitos from '../enemies/mosquitos.js';
+import * as enemigos from '../enemies/enemigos.js';
 
 var npc1, scene, interacturar, keyE, dialogo, dialogoText;
 
@@ -32,8 +33,8 @@ export function create(obj) {
 		repeat: -1
 	});
 
-  scene.physics.add.overlap(glish.glish, npc1.trigger, activarTrigger, null, scene);
-  scene.physics.add.overlap(glish.glish, npc1, recogerPersonaje, null, scene);
+  scene.physics.add.overlap(heroes.cabeza, npc1.trigger, activarTrigger, null, scene);
+  scene.physics.add.overlap(heroes.cabeza, npc1, recogerPersonaje, null, scene);
 
 }
 
@@ -60,7 +61,7 @@ function recogerPersonaje(){
 
 export function update(){
 
-  if(Phaser.Geom.Intersects.RectangleToRectangle(glish.glish.getBounds(), npc1.trigger.getBounds())){
+  if(Phaser.Geom.Intersects.RectangleToRectangle(heroes.cabeza.getBounds(), npc1.trigger.getBounds())){
     interacturar.setAlpha(1);
 
   }else{

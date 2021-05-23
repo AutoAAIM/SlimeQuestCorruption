@@ -1,4 +1,4 @@
-import * as glish from './glish.js';
+import * as glish from '../personajes/glish.js';
 var go;
 var scene;
 export var contadorRana = 2;

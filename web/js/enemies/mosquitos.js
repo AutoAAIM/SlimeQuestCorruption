@@ -2,7 +2,7 @@
 export var enemigoMosquito;
 var scene;
 var config;
-import * as glish from './glish.js';
+import * as glish from '../personajes/glish.js';
 import * as enemigos from './enemigos.js';
 
 export function preload(){

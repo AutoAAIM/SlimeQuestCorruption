@@ -1,5 +1,5 @@
-import * as glish from './glish.js';
-import * as utilidades from './utilidades.js';
+import * as glish from '../personajes/glish.js';
+import * as utilidades from '../utilidades.js';
 
 var config;
 var s

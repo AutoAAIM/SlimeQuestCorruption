@@ -1505,14 +1505,14 @@
                 {
                  "height":0,
                  "id":83,
-                 "name":"entrada_1",
+                 "name":"entrada_3",
                  "point":true,
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":2192,
-                 "y":432
+                 "x":2128,
+                 "y":424
                 }, 
                 {
                  "height":0,
@@ -1523,7 +1523,7 @@
                         {
                          "name":"destino",
                          "type":"int",
-                         "value":4
+                         "value":2
                         }, 
                         {
                          "name":"puerta",
@@ -1859,6 +1859,18 @@
                  "width":0,
                  "x":-1072,
                  "y":752
+                }, 
+                {
+                 "height":0,
+                 "id":106,
+                 "name":"entrada_1",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":2192,
+                 "y":424
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1867,7 +1879,7 @@
          "y":0
         }],
  "nextlayerid":15,
- "nextobjectid":106,
+ "nextobjectid":107,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.5.0",
@@ -10282,7 +10294,7 @@
                         {
                          "name":"cut_attack",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }, 
                         {
                          "name":"destructible",
@@ -10454,7 +10466,7 @@
                         {
                          "name":"cut_attack",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }, 
                         {
                          "name":"destructible",
@@ -10777,7 +10789,7 @@
                         {
                          "name":"cut_attack",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }, 
                         {
                          "name":"destructible",

@@ -6,7 +6,7 @@ var config;
 var tiempoRana = 30;
 var ranas = new Array;
 
-import * as glish from './glish.js';
+import * as glish from '../personajes/glish.js';
 import * as enemigos from './enemigos.js';
 
 export function preload(){

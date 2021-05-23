@@ -1,4 +1,5 @@
 import lab from './mapas/lab.js'
+import swamp from './mapas/poisonSwamp.js'
 import registrar from './menus/registrar.js'
 
 export var config={
@@ -25,7 +26,7 @@ export var config={
         	//autoCenter: Phaser.Scale.CENTER_BOTH,
 			//zoom: 2,
 		},
-		scene: [registrar, lab]
+		scene: [registrar, lab, swamp]
 
 		//ificultad: 1
 };

@@ -317,11 +317,7 @@ export function input()
 
 	
 
-	player.inmuneT--;
-	if(player.inmuneT <= 0)
-	{
-		player.inmune = false;
-	}
+	updateEstadosDelJugador();
 
 	
 	/*TGBalas--;
@@ -439,6 +435,29 @@ export function puntero()
 	cursor.y = player.y - scene.game.scale.height / 2 + keys.pointer.y;
 	//cursor.x = keys.pointer.x;
 	//cursor.y = keys.pointer.y;
+}
+
+function updateEstadosDelJugador() {
+  if (player.status != "none") {
+    if (player.status == "envenenado") {
+      if (player.tiempoStatus % 60 == 0) {
+        player.vida -= 1;
+      }
+      if (player.tiempoStatus <= 0) {
+        player.status = "none";
+        relentizar = 0;
+      } else {
+        player.tiempoStatus--;
+      }
+    }
+  }
+
+	player.inmuneT--;
+	if(player.inmuneT <= 0)
+	{
+		player.inmune = false;
+	}
+
 }
 
 function destruirRocas(taladro,layer)
