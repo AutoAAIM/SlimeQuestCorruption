@@ -26,7 +26,7 @@ export function createShapeshifter(obj)
 	var s = shapeShifterGroup.create(obj.x, obj.y, 'shapeshifter')
 	s.inmovil = false;
 	s.dano = 1;
-  s.stunt = 0;
+	s.stunt = 0;
 	//s.setTexture('shapeshifter');
 	//s.y -= 16;
 	s.piesY = -3;

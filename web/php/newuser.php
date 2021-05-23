@@ -3,12 +3,7 @@
 
 	if($_SERVER['REQUEST_METHOD']=='GET'){
 		try{
-			//$id = $_GET['id']; // obtener parametros GET
-			//$respuesta = SQLGlobal::query("QUERY");//sin filtro ("No incluir filtros ni '?'")
-			$respuesta = SQLGlobal::queryFiltro(
-				"QUERY WHERE A = ? AND B = ? AND C = ?",
-				array("element1","element2","...")
-			);//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
+			$respuesta = SQLGlobal::selectArray("select * from usuarios");
 			echo json_encode(array(
 				'respuesta'=>'200',
 				'estado' => 'Se obtuvieron los datos correctamente',
