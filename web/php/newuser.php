@@ -22,7 +22,7 @@
 	}
 
 	$rstr = json_encode($respuesta, true);
-	//$rstr = print_r($respuesta, true);
+	$rstr = implode($rstr);
 	echo $rstr;
 
 ?>
