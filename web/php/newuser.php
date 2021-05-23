@@ -28,7 +28,7 @@
 		print_r($out);
 	}
 	//$rstr = json_encode($respuesta);
-	$rstr convert_multi_array($respuesta);
+	$rstr = convert_multi_array($respuesta);
 	echo $rstr;
 
 ?>
