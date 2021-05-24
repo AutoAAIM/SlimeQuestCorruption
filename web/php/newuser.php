@@ -21,7 +21,7 @@
 		}
 	}
 
-	$rstr = json_encode($flattened, true);
+	$rstr = json_encode($respuesta, true);
 	//$rstr = implode($rstr);
 	echo $rstr;
 
