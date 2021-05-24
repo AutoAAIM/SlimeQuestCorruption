@@ -94,6 +94,7 @@ export function create(spawn, allLayers, grupo, arHe)
 	player.vida = player.maxVida;
   player.tiempoStatus = 0;
 	player.inmuneT = 0;
+  player.status = "none";
 	emitterHumo = scene.add.particles('humo').setDepth(5);
 	player.ralentizar = 0;
 	scene.physics.add.collider(player, allLayers);

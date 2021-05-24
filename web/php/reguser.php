@@ -11,9 +11,9 @@
 
 			//$respuesta = SQLGlobal::selectArray("INSERT INTO usuarios(nombre, contrasena) VALUES ('".$nombre."','".$contrasena."');");
 
-			$db = pg_connect(Database::getDb());
-			$query = "INSERT INTO usuarios(nombre, contrasena) VALUES ('".$nombre."','".$contrasena."')";
-			$result = pg_query($query);
+			//$db = pg_connect(Database::getDb());
+			//$query = "INSERT INTO usuarios(nombre, contrasena) VALUES ('".$nombre."','".$contrasena."')";
+			//$result = pg_query($query);
 
 			echo $result;
 		}catch(PDOException $e){
