@@ -143,7 +143,7 @@ export default class registrar extends Phaser.Scene {
 			if(this.readyState == 4 && this.status == 200)
 			{
 				myObj = JSON.parse(this.responseText.split('?')[1]);
-				console.log(myObj)
+				//console.log(myObj)
 				//console.log(myObj)
 				for(var i = 0; i < myObj.length; i++)
 				{
