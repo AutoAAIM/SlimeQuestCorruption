@@ -23,6 +23,6 @@
 
 	$rstr = json_encode($respuesta, true);
 	//$rstr = implode($rstr);
-	echo $respuesta;
+	echo var_dump($respuesta);
 
 ?>
