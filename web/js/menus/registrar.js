@@ -206,6 +206,13 @@ export default class registrar extends Phaser.Scene {
 		xhr.onreadystatechange = function(){
 			if(this.readyState == 4 && this.status == 200)
 			{
+				if(this.responseText != "")
+				{
+					scene.loginusuario()
+				}
+				else{
+					responseTextOutput = 'este usuario y contraseña ya existen'
+				}
 				console.log(this)
 			}
 		}
