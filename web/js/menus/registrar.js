@@ -147,7 +147,7 @@ export default class registrar extends Phaser.Scene {
 		//xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
 		xhr.send(/*"numero="+32*/)
 
-		//var myObj = JSON.parse(xhr.responseText.split('?')[1]);
+		var myObj = JSON.parse(xhr.responseText.split('?')[1]);
 		console.log(myObj)
 
 		for(var i; i < myObj.length; i++)
