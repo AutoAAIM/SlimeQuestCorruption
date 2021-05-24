@@ -42,6 +42,8 @@ var skullAG
 var move
 var gates
 
+var music
+
 //var game = new Phaser.Game(config);
 
 export default class lab extends Phaser.Scene {
@@ -60,6 +62,8 @@ export default class lab extends Phaser.Scene {
 
 		this.load.spritesheet('SkullAG','assets/images/SkullAG.png', { frameWidth: 32, frameHeight: 48});
 
+		this.load.audio('labchords', ['assets/music/lab-teaser.wav']);
+
 		heroes.preload.call(this)
 		portal.preload.call(this)
 		shapeShifter.preload.call(this)
@@ -69,6 +73,10 @@ export default class lab extends Phaser.Scene {
 	create()
 	{
 		scene = this;
+
+		music = game.add.audio('labchords');
+
+    	music.play();
 
 		/*fpsText = this.add.text(16,32,'FPS: '+ game.loop.actualFps,{fontsize:'8px',fill:'#FFF'}).setScrollFactor(0).setScrollFactor(0);*/
 
