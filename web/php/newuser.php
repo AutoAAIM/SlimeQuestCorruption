@@ -36,7 +36,7 @@
 
 	$rstr = flatten_array($array);
 
-	$rstr = json_encode($flattened, true);
+	//$rstr = json_encode($flattened, true);
 	//$rstr = implode($rstr);
 	echo $rstr;
 
