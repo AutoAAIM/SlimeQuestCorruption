@@ -9071,7 +9071,7 @@
                         {
                          "name":"vida",
                          "type":"int",
-                         "value":10
+                         "value":60
                         }]
                 }, 
                 {
@@ -10290,7 +10290,7 @@
                         {
                          "name":"vida",
                          "type":"int",
-                         "value":5
+                         "value":30
                         }]
                 }, 
                 {
@@ -10319,7 +10319,7 @@
                         {
                          "name":"vida",
                          "type":"int",
-                         "value":5
+                         "value":30
                         }]
                 }, 
                 {
@@ -10496,7 +10496,7 @@
                         {
                          "name":"vida",
                          "type":"int",
-                         "value":5
+                         "value":30
                         }]
                 }, 
                 {
@@ -10824,7 +10824,7 @@
                         {
                          "name":"vida",
                          "type":"int",
-                         "value":5
+                         "value":30
                         }]
                 }, 
                 {
