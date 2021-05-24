@@ -77,31 +77,24 @@ export default class swamp extends Phaser.Scene {
         scene.casa2 = map.createLayer('casa2', tileset3);
         scene.casa1 = map.createLayer('casa1', tileset3);
         tileSpawner = map.createFromObjects('RespawnEnemigos');
-console.log("bobo o que");
         allLayers = [scene.obstaculos, scene.obstaculos2, scene.obstaculos3, scene.casa1, scene.casa2]
 
         //fondo.setCollisionByExclusion(-1, true);
         scene.obstaculos.setCollisionByProperty({collides:true});
-console.log("bobo o que2");
         scene.obstaculos2.setCollisionByProperty({collides:true});
         scene.obstaculos2.setCollisionByProperty({cut_attack:true});
-console.log("bobo o que3");
         scene.casa1.setCollisionByProperty({collides:true});
         scene.casa2.setCollisionByProperty({collides:true});
-console.log("bobo o que4");
         scene.obstaculos3.setCollisionByProperty({collides:true});
         scene.obstaculos3.setCollisionByProperty({cut_attack:true});
         //Movimiento del veneno
-console.log("bobo o que5");
         this.tweens.timeline({
             targets: fondo, duration: 1500,
             loop: -1,
             tweens: [{ alpha: 0.7, }, { alpha: 1, },],
         });
-console.log("bobo o que6");
         enemyList = this.physics.add.group();
         enemyList.lengua = this.physics.add.group();
-        console.log("bobo o que7");
         tileSpawner.forEach(obj => {
             this.physics.world.enable(obj);
             obj.setAlpha(0);
@@ -120,23 +113,22 @@ console.log("bobo o que6");
             }
 
         })
-console.log("bobo o que8");
         portal.createAnims();
         portal.create(tileSpawner);
         
-console.log("bobo o que9");
+console.log("bobo o que");
         //Overlap
         poisonTiles = fondo.filterTiles(tile => tile.properties.veneno).map(x => x.index);
 
         poisonAspectTiles = fondo.filterTiles(tile => tile.properties.aspectoVeneno).map(x => x.index);
-
+console.log("bobo o que2");
         poisonTilesId = [...(new Set(poisonTiles))];
         fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(heroes.heroes, fondo));
-
+console.log("bobo o que3");
         fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
 
         fondo.setTileIndexCallback(poisonAspectTiles, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
-
+console.log("bobo o que4");
         cutTiles = scene.obstaculos2.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
         cutTilesId = [...(new Set(cutTiles))];
 
@@ -144,16 +136,16 @@ console.log("bobo o que9");
         cutTilesId2 = [...(new Set(cutTiles2))];
 
         scene.obstaculos2.setTileIndexCallback(cutTilesId, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos2));
-
+console.log("bobo o que5");
         scene.obstaculos3.setTileIndexCallback(cutTilesId2, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos3));
-
+console.log("bobo o que6");
         this.physics.add.overlap(enemyList, glish.armasHeroicas, enemigos.recibirDanyo);
-
+console.log("bobo o que7");
         this.physics.add.overlap(heroes.cabeza,enemyList, heroes.herir);
         this.physics.add.overlap(heroes.cabeza,swampBoss.tentacleSegmentsGroup, heroes.herir);
         this.physics.add.overlap(swampBoss.enemigoBoss, glish.armasHeroicas,enemigos.recibirDanyo);
         this.physics.add.overlap(heroes.cabeza,swampBoss.enemigoBoss, heroes.herir);
-
+console.log("bobo o que8");
 
 
         //Colisiones
