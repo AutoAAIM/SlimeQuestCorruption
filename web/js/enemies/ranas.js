@@ -33,11 +33,11 @@ export function createEnemyRana(obj, conf, enemyList){
     scene.physics.add.existing(enemigoRana.triggerAtaque, false);
     enemigoRana.triggerAtaque.activado = false;
     console.log("RanaCreated1");
-    scene.physics.add.overlap(heroes.cabeza, enemigoRana.trigger, enemigos.activarTrigger, null, scene);
+    //scene.physics.add.overlap(heroes.cabeza, enemigoRana.trigger, enemigos.activarTrigger, null, scene);
         console.log("RanaCreated2");
-    scene.physics.add.overlap(heroes.cabeza, enemigoRana.triggerAtaque, updateLenguaRana, null, scene);
+    //scene.physics.add.overlap(heroes.cabeza, enemigoRana.triggerAtaque, updateLenguaRana, null, scene);
         console.log("RanaCreated3");
-    scene.physics.add.overlap(heroes.armasHeroicas, enemigoRana, enemigos.activarTrigger, null, scene);
+    //scene.physics.add.overlap(heroes.armasHeroicas, enemigoRana, enemigos.activarTrigger, null, scene);
         console.log("RanaCreated4");
 
 	ranas.push(enemigoRana)
@@ -89,9 +89,9 @@ function updateLenguaRana(o, atributo){
 		
 		calcularLengua(l, parent)
 
-    //TODO:Hacer que reciba daño el personaje
-    scene.physics.add.overlap(heroes.cabeza,l.segmentos, enemigos.recibirDanyo);
-    //console.log(l.segmentos);
+
+    //scene.physics.add.overlap(heroes.cabeza,l.segmentos, enemigos.recibirDanyo);
+
 	}
 	l.time--;
 }// Lengua es una struct,contiene .segmentos, una array que contiene varias sprites en la que la 0 es la punta, .maxLong que contiene el numero de segmentos maximos, el tiempo para ser lanzada
