@@ -134,19 +134,20 @@ export default class registrar extends Phaser.Scene {
 		
 
 		xhr.onreadystatechange = function(){
-			if(this.readyState == 4 && this.status == 200)
+			/*if(this.readyState == 4 && this.status == 200)
 			{
 				var myObj = JSON.parse(this.responseText.split('?')[1]);
 				console.log(myObj)
 				//console.log(myObj)
-			}
+			}*/
 		}
 		//console.log(xhr)
-		xhr.open("GET", "php/newuser.php", true)
+		xhr.open("GET", "php/newuser.php?", true)
 		//xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
 		xhr.send(/*"numero="+32*/)
 
-		console.log(xhr);
+		var myObj = JSON.parse(this.responseText.split('?')[1]);
+		console.log(myObj)
 
 		
 	}
