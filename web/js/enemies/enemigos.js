@@ -29,7 +29,7 @@ export function updateEnemySwamp(s, enemyList){
                     },300);
                 }
             }else if(go.name == 'mosquito' && go.status != "paralizado"){
-                scene.physics.moveTo(go, heroes.cabeza.x, heroes.cabeza.y, Phaser.Math.Between(180, 210));
+                scene.physics.moveTo(go, heroes.cabeza.x, heroes.cabeza.y, Phaser.Math.Between(130, 140));
                 go.play('fly', true);  
                 if(go.x < heroes.cabeza.x){
                   go.flipX = true;
