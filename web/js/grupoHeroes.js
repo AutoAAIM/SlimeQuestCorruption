@@ -218,7 +218,6 @@ export function herir(obj, e) {
 		}
 		
 		e.inmune = true;
-    console.log('tontoSegundaParte');
 		scene.tweens.addCounter({
 			from: 100,
 			to: 0,
