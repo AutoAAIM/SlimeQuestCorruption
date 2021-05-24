@@ -12,7 +12,6 @@ import * as sc from '../sceneConstructor.js';
 
 var scene;
 var camera;
-var gameOver;
 var fondoAguaBuena;
 var fondo;
 var tileSpawner;
@@ -60,7 +59,6 @@ export default class swamp extends Phaser.Scene {
         scene = this;
         document.body.style.cursor = "none";
         camera = this.cameras.main;
-        gameOver = 0;
         const map = this.make.tilemap({key:"pantano"});
 
         const tileset = map.addTilesetImage("terreno", "tiles");
@@ -116,19 +114,18 @@ export default class swamp extends Phaser.Scene {
         portal.createAnims();
         portal.create(tileSpawner);
         
-console.log("bobo o que");
         //Overlap
         poisonTiles = fondo.filterTiles(tile => tile.properties.veneno).map(x => x.index);
 
         poisonAspectTiles = fondo.filterTiles(tile => tile.properties.aspectoVeneno).map(x => x.index);
-console.log("bobo o que2");
+
         poisonTilesId = [...(new Set(poisonTiles))];
         fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(heroes.heroes, fondo));
-console.log("bobo o que3");
+
         fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
 
         fondo.setTileIndexCallback(poisonAspectTiles, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
-console.log("bobo o que4");
+
         cutTiles = scene.obstaculos2.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
         cutTilesId = [...(new Set(cutTiles))];
 
@@ -136,24 +133,23 @@ console.log("bobo o que4");
         cutTilesId2 = [...(new Set(cutTiles2))];
 
         scene.obstaculos2.setTileIndexCallback(cutTilesId, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos2));
-console.log("bobo o que5");
+
         scene.obstaculos3.setTileIndexCallback(cutTilesId2, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos3));
-console.log("bobo o que6");
+
         this.physics.add.overlap(enemyList, glish.armasHeroicas, enemigos.recibirDanyo);
-console.log("bobo o que7");
+
         this.physics.add.overlap(heroes.cabeza,enemyList, heroes.herir);
         this.physics.add.overlap(heroes.cabeza,swampBoss.tentacleSegmentsGroup, heroes.herir);
         this.physics.add.overlap(swampBoss.enemigoBoss, glish.armasHeroicas,enemigos.recibirDanyo);
         this.physics.add.overlap(heroes.cabeza,swampBoss.enemigoBoss, heroes.herir);
-console.log("bobo o que8");
 
 
         //Colisiones
-
+console.log("bobo o que");
         this.physics.add.collider(enemyList, enemyList);
-
+console.log("bobo o que2");
         portal.collisionPortal(heroes.heroes)
-
+console.log("bobo o que3");
     }
 /*
  =        =   ==========     ========     =======    =============    ========
@@ -165,15 +161,18 @@ console.log("bobo o que8");
   ========     =             ========     =     =          =          ========
 */
     update(time, delta){
-        if(gameOver == 0){    
 
-          heroes.update();
-          enemigos.updateEnemySwamp(scene, enemyList);
-          swampBoss.updateBoss();
-          portal.update();
-          npc.update();
-
-        }
+      heroes.update();
+      console.log("bobo o que4");
+      enemigos.updateEnemySwamp(scene, enemyList);
+      console.log("bobo o que5");
+      swampBoss.updateBoss();
+      console.log("bobo o que6");
+      portal.update();
+      console.log("bobo o que7");
+      npc.update();
+console.log("bobo o que8");
+    
 
     }
 
