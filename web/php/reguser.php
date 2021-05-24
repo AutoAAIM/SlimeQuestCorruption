@@ -7,9 +7,9 @@
 	$nombre = $_REQUEST["nombre"];
 	$contrasena = $_REQUEST["contrasena"];
 
-	$respuesta = SQLGlobal::selectArray("INSERT INTO usuarios(nombre, contrasena) VALUES ('".$nombre."','".$contrasena."');");
+	//$respuesta = SQLGlobal::selectArray("INSERT INTO usuarios(nombre, contrasena) VALUES ('".$nombre."','".$contrasena."');");
 
-	echo $respuesta;
+	echo "INSERT INTO usuarios(nombre, contrasena) VALUES ('".$nombre."','".$contrasena."');";
 
 	/*if($_SERVER['REQUEST_METHOD']=='POST'){
 		try{

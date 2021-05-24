@@ -75,15 +75,15 @@ export default class swamp extends Phaser.Scene {
         scene.casa2 = map.createLayer('casa2', tileset3);
         scene.casa1 = map.createLayer('casa1', tileset3);
         tileSpawner = map.createFromObjects('RespawnEnemigos');
-        //allLayers = [scene.obstaculos, scene.obstaculos2, scene.obstaculos3, scene.casa1, scene.casa2]
+        allLayers = [scene.obstaculos, scene.obstaculos2, scene.obstaculos3, scene.casa1, scene.casa2]
 
-        //scene.obstaculos.setCollisionByProperty({collides:true});
-        //scene.obstaculos2.setCollisionByProperty({collides:true});
-        //scene.obstaculos2.setCollisionByProperty({cut_attack:true});
-        //scene.casa1.setCollisionByProperty({collides:true});
-        //scene.casa2.setCollisionByProperty({collides:true});
-        //scene.obstaculos3.setCollisionByProperty({collides:true});
-        //scene.obstaculos3.setCollisionByProperty({cut_attack:true});
+        scene.obstaculos.setCollisionByProperty({collides:true});
+        scene.obstaculos2.setCollisionByProperty({collides:true});
+        scene.obstaculos2.setCollisionByProperty({cut_attack:true});
+        scene.casa1.setCollisionByProperty({collides:true});
+        scene.casa2.setCollisionByProperty({collides:true});
+        scene.obstaculos3.setCollisionByProperty({collides:true});
+        scene.obstaculos3.setCollisionByProperty({cut_attack:true});
         //Movimiento del veneno
         this.tweens.timeline({
             targets: fondo, duration: 1500,
@@ -159,7 +159,6 @@ export default class swamp extends Phaser.Scene {
   ========     =             ========     =     =          =          ========
 */
     update(time, delta){
-      console.log("estoy jodido");
       
       //heroes.update();
 
