@@ -12,7 +12,7 @@ export function preload()
 	glish.preload.call(this);
 }
 
-export var relentizar = 0;
+export var relentizar;
 var scene;
 var numCabeza = 0;
 var espacioEntreHeroes;
