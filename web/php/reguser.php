@@ -7,7 +7,7 @@
 	$nombre = $_REQUEST["nombre"];
 	$contrasena = $_REQUEST["contrasena"];
 
-	echo $contrasena;
+	echo $nombre;
 
 	/*if($_SERVER['REQUEST_METHOD']=='POST'){
 		try{
