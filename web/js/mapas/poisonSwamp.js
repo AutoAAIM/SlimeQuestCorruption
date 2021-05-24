@@ -110,44 +110,44 @@ export default class swamp extends Phaser.Scene {
             }
 
         })
-        //portal.createAnims();
-        //portal.create(tileSpawner);
+        portal.createAnims();
+        portal.create(tileSpawner);
         
         //Overlap
-        //poisonTiles = fondo.filterTiles(tile => tile.properties.veneno).map(x => x.index);
+        poisonTiles = fondo.filterTiles(tile => tile.properties.veneno).map(x => x.index);
 
-        //poisonAspectTiles = fondo.filterTiles(tile => tile.properties.aspectoVeneno).map(x => x.index);
+        poisonAspectTiles = fondo.filterTiles(tile => tile.properties.aspectoVeneno).map(x => x.index);
 
-        //poisonTilesId = [...(new Set(poisonTiles))];
-        //fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(heroes.heroes, fondo));
+        poisonTilesId = [...(new Set(poisonTiles))];
+        fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(heroes.heroes, fondo));
 
-        //fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
+        fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
 
-        //fondo.setTileIndexCallback(poisonAspectTiles, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
+        fondo.setTileIndexCallback(poisonAspectTiles, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
 
-        //cutTiles = scene.obstaculos2.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
-        //cutTilesId = [...(new Set(cutTiles))];
+        cutTiles = scene.obstaculos2.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
+        cutTilesId = [...(new Set(cutTiles))];
 
-        //cutTiles2 = scene.obstaculos3.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
-        //cutTilesId2 = [...(new Set(cutTiles2))];
+        cutTiles2 = scene.obstaculos3.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
+        cutTilesId2 = [...(new Set(cutTiles2))];
 
-        //scene.obstaculos2.setTileIndexCallback(cutTilesId, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos2));
+        scene.obstaculos2.setTileIndexCallback(cutTilesId, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos2));
 
-        //scene.obstaculos3.setTileIndexCallback(cutTilesId2, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos3));
+        scene.obstaculos3.setTileIndexCallback(cutTilesId2, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos3));
 
-        //this.physics.add.overlap(enemyList, heroes.armasHeroicas, enemigos.recibirDanyo);
+        this.physics.add.overlap(enemyList, heroes.armasHeroicas, enemigos.recibirDanyo);
 
-        //this.physics.add.overlap(heroes.cabeza,enemyList, heroes.herir);
-        //this.physics.add.overlap(heroes.cabeza,swampBoss.tentacleSegmentsGroup, heroes.herir);
-        //.physics.add.overlap(swampBoss.enemigoBoss, heroes.armasHeroicas,enemigos.recibirDanyo);
-        //this.physics.add.overlap(heroes.cabeza,swampBoss.enemigoBoss, heroes.herir);
+        this.physics.add.overlap(heroes.cabeza,enemyList, heroes.herir);
+        this.physics.add.overlap(heroes.cabeza,swampBoss.tentacleSegmentsGroup, heroes.herir);
+        this.physics.add.overlap(swampBoss.enemigoBoss, heroes.armasHeroicas,enemigos.recibirDanyo);
+        this.physics.add.overlap(heroes.cabeza,swampBoss.enemigoBoss, heroes.herir);
 
 
         //Colisiones
 
-        //this.physics.add.collider(enemyList, enemyList);
+        this.physics.add.collider(enemyList, enemyList);
 
-        //portal.collisionPortal(heroes.heroes)
+        portal.collisionPortal(heroes.heroes)
     }
 /*
  =        =   ==========     ========     =======    =============    ========

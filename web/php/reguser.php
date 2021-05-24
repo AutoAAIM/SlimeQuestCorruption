@@ -9,7 +9,7 @@
 
 	//$respuesta = SQLGlobal::selectArray("INSERT INTO usuarios(nombre, contrasena) VALUES ('".$nombre."','".$contrasena."');");
 
-	echo "INSERT INTO usuarios(nombre, contrasena) VALUES ('".$nombre."','".$contrasena."');";
+	echo "INSERT INTO usuarios(nombre, contrasena) VALUES ('$nombre','$contrasena');";
 
 	/*if($_SERVER['REQUEST_METHOD']=='POST'){
 		try{
