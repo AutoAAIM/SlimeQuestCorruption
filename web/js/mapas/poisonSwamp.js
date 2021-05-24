@@ -160,7 +160,7 @@ export default class swamp extends Phaser.Scene {
 */
     update(time, delta){
       
-      //heroes.update();
+      heroes.update();
 
       enemigos.updateEnemySwamp(scene, enemyList);
 
