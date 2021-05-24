@@ -138,11 +138,13 @@ export default class registrar extends Phaser.Scene {
 		var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/loguser.php';
 		
 		var myObj;
+		var myZone;
 
 		xhr.onreadystatechange = function(){
 			if(this.readyState == 4 && this.status == 200)
 			{
 				myObj = JSON.parse(this.responseText.split('?')[1]);
+				myZone = JSON.parse(this.responseText.split('?')[2]);
 				//console.log(myObj)
 				//console.log(myObj)
 				for(var i = 0; i < myObj.length; i++)
@@ -150,8 +152,17 @@ export default class registrar extends Phaser.Scene {
 					//console.log('holo')
 					if(myObj[i].nombre == nameTextInput && myObj[i].contrasena == contTextInput)
 					{
+						for(var z= 0; z < myZone.length; z++)
+						{
+							if(myObj[i].id_zona == myZone[i].id_zona)
+							{
+								scene.scene.start(myZone[i].nombre);
+							}
+							else{
+								responseTextOutput = 'este usuario no tiene zona'
+							}
+						}
 						//console.log(myObj[i].nombre)
-						scene.scene.start('lab');
 					}
 					else{
 						//console.log('no coincide')
