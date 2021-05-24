@@ -126,7 +126,7 @@ export default class swamp extends Phaser.Scene {
 
 
         //Overlap
-        /*poisonTiles = fondo.filterTiles(tile => tile.properties.veneno).map(x => x.index);
+        poisonTiles = fondo.filterTiles(tile => tile.properties.veneno).map(x => x.index);
 
         poisonAspectTiles = fondo.filterTiles(tile => tile.properties.aspectoVeneno).map(x => x.index);
 
@@ -152,7 +152,7 @@ export default class swamp extends Phaser.Scene {
         this.physics.add.overlap(heroes.cabeza,enemyList, heroes.herir);
         this.physics.add.overlap(heroes.cabeza,swampBoss.tentacleSegmentsGroup, heroes.herir);
         this.physics.add.overlap(swampBoss.enemigoBoss, glish.armasHeroicas,enemigos.recibirDanyo);
-        this.physics.add.overlap(heroes.cabeza,swampBoss.enemigoBoss, heroes.herir);*/
+        this.physics.add.overlap(heroes.cabeza,swampBoss.enemigoBoss, heroes.herir);
 
 
 
