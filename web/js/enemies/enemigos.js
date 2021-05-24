@@ -85,7 +85,7 @@ export function recibirDanyo(obj1, obj2){
           ease: 'Linear',
           repeat: 5,
       });
-      obj1.vida -= obj2.ataque;
+      obj1.vida -= obj2.dano;
       aleatorio = Math.floor(Math.random() * (20-2+1)) + 2;
       if(obj1 !=heroes.cabeza && aleatorio == 3){
           obj1.status = "paralizado";

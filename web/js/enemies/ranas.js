@@ -22,7 +22,7 @@ export function createEnemyRana(obj, conf, enemyList){
     enemigoRana = enemyList.create(obj.x,obj.y, 'EnemigoRana').setOrigin(0.5); 
     enemigoRana.name = 'rana';
     enemigoRana.vida = 7;
-    enemigoRana.ataque = 1;
+    enemigoRana.dano = 1;
     enemigoRana.inmune = -1;
     enemigoRana.status = "none";
     enemigoRana.tiempoMoverse = 50;
@@ -94,7 +94,7 @@ function createLenguaSegments(l, parent)
 	for(var i = 1; i < l.maxLong; i++)
 	{
 		var parte = scene.physics.add.sprite(parent.x,parent.y, 'fragmento_Lengua')
-    	parte.ataque = 1;
+    	parte.dano = 1;
 		parte.angle = Math.atan2(heroes.cabeza.y - parte.y, heroes.cabeza.x - parte.x)* 180/Math.PI;
 		l.segmentos.unshift(parte);
 
@@ -103,7 +103,7 @@ function createLenguaSegments(l, parent)
 	var cabeza = scene.physics.add.sprite(parent.x,parent.y, 'punta_Lengua')
  
 	cabeza.angle = Math.atan2(heroes.cabeza.y - cabeza.y , heroes.cabeza.x - cabeza.x)* 180/Math.PI;
-  	cabeza.ataque = 1;
+  	cabeza.dano = 1;
 	l.segmentos.unshift(cabeza);
 }
 

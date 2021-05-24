@@ -17,7 +17,7 @@ export function createEnemyMosquito(obj, conf,enemyList){
     enemigoMosquito = enemyList.create(obj.x,obj.y, 'mosq').setOrigin(0.5); 
     enemigoMosquito.name = 'mosquito';
     enemigoMosquito.vida = 7;
-    enemigoMosquito.ataque = 1;
+    enemigoMosquito.dano = 1;
     enemigoMosquito.inmune = -1;
     enemigoMosquito.status = "none";
     enemigoMosquito.tiempoMoverse = 100;

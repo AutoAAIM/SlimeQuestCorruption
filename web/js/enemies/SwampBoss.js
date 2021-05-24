@@ -21,7 +21,7 @@ export function createBoss(obj, conf, el){
     config = conf;
     enemigoBoss = scene.physics.add.sprite(obj.x,obj.y, 'BossSwamp').setOrigin(0.5); 
     enemigoBoss.vida = 2;
-    enemigoBoss.ataque = 1;
+    enemigoBoss.dano = 1;
     enemigoBoss.inmune = -1;
     enemigoBoss.temporizador = 0;
     enemigoBoss.status = "none";
@@ -92,7 +92,7 @@ function createSegmentos(parent)
 
 		parte.xini = parte.x
 		parte.yini = parte.y
-    parte.ataque = 1;
+    parte.dano = 1;
 		parte.dano=1;
 
 		tentacleSegmentsGroup.unshift(parte)
@@ -100,7 +100,7 @@ function createSegmentos(parent)
 	}
 
 	var cabeza = parent.segmentos.create(parent.x,parent.y-parent.maxLong*4, 'tentacle'/*, 0*/).setDepth(4);
-  	cabeza.ataque = 1;
+  	cabeza.dano = 1;
 	cabeza.xini = cabeza.x
 	cabeza.yini = cabeza.y
 	//l.segmentos.unshift(cabeza);
