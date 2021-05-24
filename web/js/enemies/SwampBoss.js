@@ -186,8 +186,8 @@ export function detectarJugador(db, pj)
 function activarTrigger(){
   enemigoBoss.trigger.activado = true;
   if(enemigoBoss.teleportar){
-    heroes.cabeza.x = enemigoBoss.x;
-    heroes.cabeza.y = enemigoBoss.y+250;
+    heroes.heroes.x = enemigoBoss.x;
+    heroes.heroes.y = enemigoBoss.y+250;
     enemigoBoss.teleportar = false;
     enemigoBoss.block = scene.add.rectangle(enemigoBoss.x-5,enemigoBoss.y+420, 600, 100);
     scene.physics.add.existing(enemigoBoss.block, true);
