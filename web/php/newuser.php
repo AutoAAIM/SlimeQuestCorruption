@@ -21,7 +21,9 @@
 		}
 	}
 
-	$rstr = json_encode($respuesta, true);
+	$flattened = iterator_to_array(new RecursiveIteratorIterator(new RecursiveIteratorIterator($respuesta)), false);
+
+	$rstr = json_encode($flattened, true);
 	//$rstr = implode($rstr);
 	print $rstr;
 
