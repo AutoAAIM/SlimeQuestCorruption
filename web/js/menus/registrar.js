@@ -150,17 +150,18 @@ export default class registrar extends Phaser.Scene {
 					//console.log('holo')
 					if(myObj[i].nombre == nameTextInput && myObj[i].contrasena == contTextInput)
 					{
-						console.log(myObj[i].nombre)
+						//console.log(myObj[i].nombre)
+						scene.scene.start('lab');
 					}
 					else{
-						console.log('no coincide')
+						//console.log('no coincide')
 						responseTextOutput = 'no coincide'
 					}
 				}
 			}
 		}
 		//console.log(xhr)
-		xhr.open("GET", "php/newuser.php?", true)
+		xhr.open("GET", "php/loguser.php?", true)
 		//xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
 		xhr.send(/*"numero="+32*/)
 	}
