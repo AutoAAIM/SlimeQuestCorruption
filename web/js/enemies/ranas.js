@@ -33,11 +33,11 @@ export function createEnemyRana(obj, conf, enemyList){
     scene.physics.add.existing(enemigoRana.triggerAtaque, false);
     enemigoRana.triggerAtaque.activado = false;
     console.log("RanaCreated1");
-    scene.physics.add.overlap(heroes.cabeza, enemigoRana.trigger, enemigos.activarTrigger, null, scene);
+    //scene.physics.add.overlap(heroes.cabeza, enemigoRana.trigger, enemigos.activarTrigger, null, scene);
         console.log("RanaCreated2");
-    scene.physics.add.overlap(heroes.cabeza, enemigoRana.triggerAtaque, updateLenguaRana, null, scene);
+    //scene.physics.add.overlap(heroes.cabeza, enemigoRana.triggerAtaque, updateLenguaRana, null, scene);
         console.log("RanaCreated3");
-    scene.physics.add.overlap(heroes.armasHeroicas, enemigoRana, enemigos.activarTrigger, null, scene);
+    //scene.physics.add.overlap(heroes.armasHeroicas, enemigoRana, enemigos.activarTrigger, null, scene);
         console.log("RanaCreated4");
 
 	ranas.push(enemigoRana)
