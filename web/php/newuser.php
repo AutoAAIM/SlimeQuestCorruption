@@ -22,9 +22,10 @@
 	}
 
 	$flattened = iterator_to_array(new RecursiveIteratorIterator(new RecursiveIteratorIterator($respuesta)), false);
+	echo $flattened;
 
 	$rstr = json_encode($flattened, true);
 	//$rstr = implode($rstr);
-	print $rstr;
+	echo $rstr;
 
 ?>
