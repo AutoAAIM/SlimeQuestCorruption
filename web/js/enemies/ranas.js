@@ -98,7 +98,7 @@ function updateLenguaRana(o, atributo){
 
 function createLenguaSegments(l, parent)
 {
-	//console.log(l.maxLong)
+	    console.log("RanaCreated9");
 	for(var i = 1; i < l.maxLong; i++)
 	{
 		var parte = scene.physics.add.sprite(parent.x,parent.y, 'fragmento_Lengua')
