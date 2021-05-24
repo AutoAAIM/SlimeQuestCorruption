@@ -3,7 +3,7 @@
 
 	if($_SERVER['REQUEST_METHOD']=='POST'){
 		try{
-			$datos = json_decode(file_get_contents("php://input"),true);
+			$nombre = $_REQUEST["nombre"];
 
 			//$id = $datos["id"]; // obtener parametros GET
 			//$respuesta = SQLGlobal::query("QUERY");//sin filtro ("No incluir filtros ni '?'")

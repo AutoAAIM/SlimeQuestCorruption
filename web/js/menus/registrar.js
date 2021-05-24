@@ -58,7 +58,7 @@ export default class registrar extends Phaser.Scene {
 		playButton.setInteractive();
 
 		playButton.on('pointerdown', function () {
-			scene.nuevousuario();
+			scene.loginusuario();
 			//scene.scene.start('lab');
 		});
 
@@ -151,7 +151,7 @@ export default class registrar extends Phaser.Scene {
 		this.responseText.setText('//' + responseTextOutput);
 	}
 
-	nuevousuario(){
+	loginusuario(){
 		var xhr = new XMLHttpRequest();
 		var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/loguser.php';
 		
@@ -194,4 +194,50 @@ export default class registrar extends Phaser.Scene {
 		//xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
 		xhr.send(/*"numero="+32*/)
 	}
+
+
+	nuevousuario(){
+		var xhr = new XMLHttpRequest();
+		var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/loguser.php';
+		
+		var myObj;
+		var myZone;
+
+		xhr.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200)
+			{
+				myObj = JSON.parse(this.responseText.split('?')[1]);
+				myZone = JSON.parse(this.responseText.split('?')[2]);
+				//console.log(myObj)
+				//console.log(myObj)
+				for(var i = 0; i < myObj.length; i++)
+				{
+					//console.log('holo')
+					if(myObj[i].nombre == nameTextInput && myObj[i].contrasena == contTextInput)
+					{
+						for(var z= 0; z < myZone.length; z++)
+						{
+							if(myObj[i].id_zona == myZone[z].id_zona)
+							{
+								scene.scene.start(myZone[z].nombre);
+							}
+							else{
+								responseTextOutput = 'este usuario no tiene zona'
+							}
+						}
+						//console.log(myObj[i].nombre)
+					}
+					else{
+						//console.log('no coincide')
+						responseTextOutput = 'no coincide'
+					}
+				}
+			}
+		}
+		//console.log(xhr)
+		xhr.open("POST", "php/loguser.php?", true)
+		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+		xhr.send("nombre="+nameTextInput)
+	}
 }
+

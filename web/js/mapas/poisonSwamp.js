@@ -107,7 +107,7 @@ export default class swamp extends Phaser.Scene {
             }else if(obj.name == 'tentaculos' && !bossMuerto){
                 swampBoss.generateTentacles(obj);
             }else if(obj.name == 'entrada_3'){
-                heroes.create(obj, allLayers, null, sc.config)
+                //heroes.create(obj, allLayers, null, sc.config)
             }
 
         })
@@ -115,26 +115,26 @@ export default class swamp extends Phaser.Scene {
         portal.create(tileSpawner);
         
         //Overlap
-        poisonTiles = fondo.filterTiles(tile => tile.properties.veneno).map(x => x.index);
+        //poisonTiles = fondo.filterTiles(tile => tile.properties.veneno).map(x => x.index);
 
-        poisonAspectTiles = fondo.filterTiles(tile => tile.properties.aspectoVeneno).map(x => x.index);
+        //poisonAspectTiles = fondo.filterTiles(tile => tile.properties.aspectoVeneno).map(x => x.index);
 
-        poisonTilesId = [...(new Set(poisonTiles))];
-        fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(heroes.heroes, fondo));
+        //poisonTilesId = [...(new Set(poisonTiles))];
+        //fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(heroes.heroes, fondo));
 
-        fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
+        //fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
 
-        fondo.setTileIndexCallback(poisonAspectTiles, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
+        //fondo.setTileIndexCallback(poisonAspectTiles, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
 
-        cutTiles = scene.obstaculos2.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
-        cutTilesId = [...(new Set(cutTiles))];
+        //cutTiles = scene.obstaculos2.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
+        //cutTilesId = [...(new Set(cutTiles))];
 
-        cutTiles2 = scene.obstaculos3.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
-        cutTilesId2 = [...(new Set(cutTiles2))];
+        //cutTiles2 = scene.obstaculos3.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
+        //cutTilesId2 = [...(new Set(cutTiles2))];
 
-        scene.obstaculos2.setTileIndexCallback(cutTilesId, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos2));
+        //scene.obstaculos2.setTileIndexCallback(cutTilesId, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos2));
 
-        scene.obstaculos3.setTileIndexCallback(cutTilesId2, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos3));
+        //scene.obstaculos3.setTileIndexCallback(cutTilesId2, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos3));
 
         //this.physics.add.overlap(enemyList, heroes.armasHeroicas, enemigos.recibirDanyo);
 
@@ -161,7 +161,7 @@ export default class swamp extends Phaser.Scene {
 */
     update(time, delta){
       console.log("estoy jodido");
-      heroes.update();
+      //heroes.update();
       console.log("bobo o que4");
       enemigos.updateEnemySwamp(scene, enemyList);
       console.log("bobo o que5");
