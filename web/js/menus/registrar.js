@@ -140,9 +140,9 @@ export default class registrar extends Phaser.Scene {
 				myObj = JSON.parse(this.responseText.split('?')[1]);
 				console.log(myObj)
 				//console.log(myObj)
-				for(var i; i < myObj.length; i++)
+				for(var i = 0; i < myObj.length; i++)
 				{
-					console.log('holo')
+					//console.log('holo')
 					if(myObj[i].nombre == nameTextInput && myObj[i].contrasena == contTextInput)
 					{
 						console.log(myObj[i].nombre)
