@@ -38,7 +38,7 @@ export default class swamp extends Phaser.Scene {
         this.load.image('tiles2', 'assets/mapa/terrain2.png');
         this.load.image('tiles3', 'assets/mapa/terrain3.png');
         this.load.tilemapTiledJSON('pantano', 'assets/mapa/PantanoVenenosoVerdadero.json');
-        heroes.preload.call(this)
+        //heroes.preload.call(this)
         ranas.preload.call(this);
         mosquitos.preload.call(this);
         portal.preload.call(this);
@@ -77,7 +77,6 @@ export default class swamp extends Phaser.Scene {
         tileSpawner = map.createFromObjects('RespawnEnemigos');
         allLayers = [scene.obstaculos, scene.obstaculos2, scene.obstaculos3, scene.casa1, scene.casa2]
 
-        //fondo.setCollisionByExclusion(-1, true);
         scene.obstaculos.setCollisionByProperty({collides:true});
         scene.obstaculos2.setCollisionByProperty({collides:true});
         scene.obstaculos2.setCollisionByProperty({cut_attack:true});
@@ -111,8 +110,8 @@ export default class swamp extends Phaser.Scene {
             }
 
         })
-        portal.createAnims();
-        portal.create(tileSpawner);
+        //portal.createAnims();
+        //portal.create(tileSpawner);
         
         //Overlap
         //poisonTiles = fondo.filterTiles(tile => tile.properties.veneno).map(x => x.index);
@@ -148,7 +147,7 @@ export default class swamp extends Phaser.Scene {
 
         this.physics.add.collider(enemyList, enemyList);
 
-        portal.collisionPortal(heroes.heroes)
+        //portal.collisionPortal(heroes.heroes)
     }
 /*
  =        =   ==========     ========     =======    =============    ========
@@ -162,15 +161,14 @@ export default class swamp extends Phaser.Scene {
     update(time, delta){
       console.log("estoy jodido");
       //heroes.update();
-      console.log("bobo o que4");
+
       enemigos.updateEnemySwamp(scene, enemyList);
-      console.log("bobo o que5");
+
       swampBoss.updateBoss();
-      console.log("bobo o que6");
+
       portal.update();
-      console.log("bobo o que7");
+
       npc.update();
-console.log("bobo o que8");
     
 
     }
