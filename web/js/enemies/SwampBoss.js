@@ -14,7 +14,7 @@ export function preload(){
   this.load.spritesheet('BossSwamp','assets/images/bossPoison.png', { frameWidth: 86, frameHeight: 86});
   this.load.spritesheet('tentacle','assets/images/tentacles.png', { frameWidth: 32, frameHeight: 32 });
   scene = this;
-  console.log("RanaPreload1");
+  console.log("BossPreload1");
 }
 
 export function createBoss(obj, conf, el){
@@ -32,15 +32,17 @@ export function createBoss(obj, conf, el){
     enemigoBoss.trigger = scene.add.rectangle(enemigoBoss.x-5,enemigoBoss.y+150, 600, 500);
     scene.physics.add.existing(enemigoBoss.trigger, false);
     enemigoBoss.trigger.activado = false;
-
+  console.log("BossCreate1");
     scene.physics.add.overlap(heroes.cabeza, enemigoBoss.trigger, activarTrigger, null, scene);
+     console.log("BossCreate2");
     scene.physics.add.overlap(heroes.armaHeroicas, enemigoBoss, activarTrigger, null, scene);
+     console.log("BossCreate3");
 
 
 }
 
 export function generateTentacles(obj){
-
+ console.log("BossCreate4");
   utilidades.convertToProperties(obj)
   s =  tentacleList.create(obj.x,obj.y, 'tentacle'/*, 3*/);
 	s.inmovil = false;
@@ -62,7 +64,7 @@ export function generateTentacles(obj){
 
 	s.detectionbox = scene.add.rectangle(s.x, s.y, 200, 200);
 	scene.physics.add.existing(s.detectionbox, false);
-
+ console.log("BossCreate5");
 	s.detectionbox.detectado = false;
 	s.time = 0
 	s.cooldown = 120;
@@ -71,10 +73,12 @@ export function generateTentacles(obj){
 	createSegmentos(s)
 
 	scene.physics.add.overlap(heroes.cabeza, s.detectionbox, detectarJugador, null, scene);
+   console.log("BossCreate6");
 }
 
 function createSegmentos(parent)
 {
+   console.log("BossCreate7");
 	parent.segmentos = scene.physics.add.group();
 	for(var i = 1; i < parent.maxLong; i++)
 	{
@@ -95,7 +99,7 @@ function createSegmentos(parent)
 		tentacleSegmentsGroup.unshift(parte)
 
 	}
-
+ console.log("BossCreate8");
 	var cabeza = parent.segmentos.create(parent.x,parent.y-parent.maxLong*4, 'tentacle'/*, 0*/).setDepth(4);
   	cabeza.ataque = 1;
 	cabeza.xini = cabeza.x
@@ -105,6 +109,7 @@ function createSegmentos(parent)
 
 function calcularSegmento(parent)
 {
+   console.log("BossCreate9");
 	var punta = parent.segmentos.getChildren()[parent.segmentos.getLength()-1]
 	var dir = new Phaser.Math.Vector2( Math.cos(punta.angle*Math.PI/180), Math.sin(punta.angle*Math.PI/180));
 	scene.tweens.addCounter({
