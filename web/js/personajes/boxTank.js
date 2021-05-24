@@ -94,7 +94,7 @@ export function create(spawn, allLayers, grupo, arHe)
 	player.vida = player.maxVida;
 	player.inmuneT = 0;
 	emitterHumo = scene.add.particles('humo').setDepth(5);
-  heroes.relentizar = 0;
+	player.ralentizar = 0;
 	scene.physics.add.collider(player, allLayers);
 
 	player.emitter = emitterHumo.createEmitter({
@@ -306,8 +306,8 @@ export function input()
 		
 		player.dir = new Phaser.Math.Vector2( player.vectorX, player.vectorY);
 		player.dir.normalize();
-		player.setVelocityX((playerVelocidad-heroes.relentizar)*player.dir.x);
-		player.setVelocityY((playerVelocidad-heroes.relentizar)*player.dir.y);
+		player.setVelocityX((playerVelocidad-player.ralentizar)*player.dir.x);
+		player.setVelocityY((playerVelocidad-player.ralentizar)*player.dir.y);
 		if(player.dir.x != 0 || player.dir.y != 0) {player.move = true;}
 		else{player.move = false;}
 	}
@@ -445,7 +445,7 @@ function updateEstadosDelJugador() {
       }
       if (player.tiempoStatus <= 0) {
         player.status = "none";
-        heroes.relentizar = 0;
+        player.ralentizar = 0;
       } else {
         player.tiempoStatus--;
       }

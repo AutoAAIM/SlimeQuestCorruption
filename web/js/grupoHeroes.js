@@ -12,7 +12,7 @@ export function preload()
 	glish.preload.call(this);
 }
 
-export var relentizar;
+export var ralentizar;
 var scene;
 var numCabeza = 0;
 var espacioEntreHeroes;
@@ -147,12 +147,12 @@ export function ponerEmitter()
 }
 
 export function poisonPlayer(obj, casilla) {
-  if (obj == cabeza && casilla.properties.veneno) {
-    cabeza.status = "envenenado";
-    if (cabeza.tiempoStatus == 0) {
-      cabeza.tiempoStatus = 300;
+  if (casilla.properties.veneno) {
+    obj.status = "envenenado";
+    if (obj.tiempoStatus == 0) {
+      obj.tiempoStatus = 300;
     }
-    relentizar = 100;
+    obj.ralentizar = 100;
 
   }
   else if ((casilla.properties.aspectoVeneno || casilla.properties.veneno) && (obj == glish.ondaList || obj != cabeza) && !swampBoss.enemigoBoss.trigger.activado) {
