@@ -74,7 +74,7 @@ export default class lab extends Phaser.Scene {
 	{
 		scene = this;
 
-		music = scene.add.audio('labchords');
+		music = this.sound.add('labchords');
 
     	music.play();
 
