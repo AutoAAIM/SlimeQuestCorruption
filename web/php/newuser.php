@@ -29,7 +29,7 @@
     );
 
 	$rstr = json_encode($respuesta, true);
-	$rstr = json_encode($data, true);
+	$data = json_encode($data, true);
 	//$rstr = implode(",", (array)$respuesta);
 	//$rstr = implode($rstr);
 	echo $data;
