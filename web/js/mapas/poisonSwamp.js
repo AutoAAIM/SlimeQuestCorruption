@@ -29,6 +29,13 @@ var cutTilesId2;
 var allLayers;
 var destructibleTiles1;
 
+var obstaculos;
+var obstaculos2;
+var obstaculos3;
+var copaDeArbol;
+var casa1;
+var casa2;
+
 export default class swamp extends Phaser.Scene {
 	constructor(){
 		super("swamp");
@@ -73,22 +80,22 @@ export default class swamp extends Phaser.Scene {
         suelo = map.createLayer('ground', tileset2).setDepth(-3);
         fondoAguaBuena = map.createLayer('ground2', tileset2).setDepth(-1);
         fondo = map.createLayer('AguaMala', tileset2).setDepth(-1);
-        scene.obstaculos = map.createLayer('Obstaculos', tileset);
-        scene.obstaculos2 = map.createLayer('obstaculo2', tileset).setDepth(-1);
-        scene.obstaculos3 = map.createLayer('obstaculo3', tileset).setDepth(-1);
-        scene.copaDeArbol = map.createLayer('copaDelArbol', tileset).setDepth(3);
-        scene.casa2 = map.createLayer('casa2', tileset3);
-        scene.casa1 = map.createLayer('casa1', tileset3);
+        obstaculos = map.createLayer('Obstaculos', tileset);
+        obstaculos2 = map.createLayer('obstaculo2', tileset).setDepth(-1);
+        obstaculos3 = map.createLayer('obstaculo3', tileset).setDepth(-1);
+        copaDeArbol = map.createLayer('copaDelArbol', tileset).setDepth(3);
+        casa2 = map.createLayer('casa2', tileset3);
+        casa1 = map.createLayer('casa1', tileset3);
         tileSpawner = map.createFromObjects('RespawnEnemigos');
-        allLayers = [scene.obstaculos, scene.obstaculos2, scene.obstaculos3, scene.casa1, scene.casa2]
+        allLayers = [obstaculos, obstaculos2, obstaculos3, casa1, casa2]
 
-        scene.obstaculos.setCollisionByProperty({collides:true});
-        scene.obstaculos2.setCollisionByProperty({collides:true});
-        scene.obstaculos2.setCollisionByProperty({cut_attack:true});
-        scene.casa1.setCollisionByProperty({collides:true});
-        scene.casa2.setCollisionByProperty({collides:true});
-        scene.obstaculos3.setCollisionByProperty({collides:true});
-        scene.obstaculos3.setCollisionByProperty({cut_attack:true});
+        obstaculos.setCollisionByProperty({collides:true});
+        obstaculos2.setCollisionByProperty({collides:true});
+        obstaculos2.setCollisionByProperty({cut_attack:true});
+        casa1.setCollisionByProperty({collides:true});
+        casa2.setCollisionByProperty({collides:true});
+        obstaculos3.setCollisionByProperty({collides:true});
+        obstaculos3.setCollisionByProperty({cut_attack:true});
         //Movimiento del veneno
         this.tweens.timeline({
             targets: fondo, duration: 1500,
@@ -130,17 +137,17 @@ export default class swamp extends Phaser.Scene {
 
         fondo.setTileIndexCallback(poisonAspectTiles, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
 
-        cutTiles = scene.obstaculos2.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
+        cutTiles = obstaculos2.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
         cutTilesId = [...(new Set(cutTiles))];
 
-        cutTiles2 = scene.obstaculos3.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
+        cutTiles2 = obstaculos3.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
         cutTilesId2 = [...(new Set(cutTiles2))];
 
-        destructibleTiles1 = scene.obstaculos3.filterTiles(tile => tile.properties.destructible).map(x => x.index);
+        destructibleTiles1 = obstaculos3.filterTiles(tile => tile.properties.destructible).map(x => x.index);
 
-        scene.obstaculos2.setTileIndexCallback(cutTilesId, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos2));
+        obstaculos2.setTileIndexCallback(cutTilesId, glish.climbing_plant, this.physics.add.overlap(glish.beamList, obstaculos2));
 
-        scene.obstaculos3.setTileIndexCallback(cutTilesId2, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos3));
+        obstaculos3.setTileIndexCallback(cutTilesId2, glish.climbing_plant, this.physics.add.overlap(glish.beamList, obstaculos3));
 
         boxTank.setDestructibles(obstaculos3, destructibleTiles1);
 
