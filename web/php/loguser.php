@@ -28,7 +28,7 @@
 	//$rstr = implode($rstr);
 	echo $rstr;
 	echo '?';
-	echo json_encode($respuesta_z, true);
+	echo json_encode($respuesta2, true);
 	//echo var_dump($respuesta);
 	//echo var_dump($rstr);
 
