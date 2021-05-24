@@ -61,7 +61,6 @@ export default class swamp extends Phaser.Scene {
         document.body.style.cursor = "none";
         camera = this.cameras.main;
         gameOver = 0;
-console.log("bobo o que");
         const map = this.make.tilemap({key:"pantano"});
 
         const tileset = map.addTilesetImage("terreno", "tiles");
@@ -78,30 +77,31 @@ console.log("bobo o que");
         scene.casa2 = map.createLayer('casa2', tileset3);
         scene.casa1 = map.createLayer('casa1', tileset3);
         tileSpawner = map.createFromObjects('RespawnEnemigos');
-
+console.log("bobo o que");
         allLayers = [scene.obstaculos, scene.obstaculos2, scene.obstaculos3, scene.casa1, scene.casa2]
 
         //fondo.setCollisionByExclusion(-1, true);
         scene.obstaculos.setCollisionByProperty({collides:true});
-
+console.log("bobo o que2");
         scene.obstaculos2.setCollisionByProperty({collides:true});
         scene.obstaculos2.setCollisionByProperty({cut_attack:true});
-
+console.log("bobo o que3");
         scene.casa1.setCollisionByProperty({collides:true});
         scene.casa2.setCollisionByProperty({collides:true});
-
+console.log("bobo o que4");
         scene.obstaculos3.setCollisionByProperty({collides:true});
         scene.obstaculos3.setCollisionByProperty({cut_attack:true});
         //Movimiento del veneno
+console.log("bobo o que5");
         this.tweens.timeline({
             targets: fondo, duration: 1500,
             loop: -1,
             tweens: [{ alpha: 0.7, }, { alpha: 1, },],
         });
-
+console.log("bobo o que6");
         enemyList = this.physics.add.group();
         enemyList.lengua = this.physics.add.group();
-        
+        console.log("bobo o que7");
         tileSpawner.forEach(obj => {
             this.physics.world.enable(obj);
             obj.setAlpha(0);
@@ -120,11 +120,11 @@ console.log("bobo o que");
             }
 
         })
-
+console.log("bobo o que8");
         portal.createAnims();
         portal.create(tileSpawner);
         
-
+console.log("bobo o que9");
         //Overlap
         poisonTiles = fondo.filterTiles(tile => tile.properties.veneno).map(x => x.index);
 
