@@ -94,7 +94,7 @@ export function create(spawn, allLayers, grupo, arHe)
 	player.vida = player.maxVida;
 	player.inmuneT = 0;
 	emitterHumo = scene.add.particles('humo').setDepth(5);
-
+  heroes.relentizar = 0;
 	scene.physics.add.collider(player, allLayers);
 
 	player.emitter = emitterHumo.createEmitter({
@@ -445,7 +445,7 @@ function updateEstadosDelJugador() {
       }
       if (player.tiempoStatus <= 0) {
         player.status = "none";
-        relentizar = 0;
+        heroes.relentizar = 0;
       } else {
         player.tiempoStatus--;
       }

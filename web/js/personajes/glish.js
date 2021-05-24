@@ -65,7 +65,7 @@ export function create(spawn, allLayers, conf, grupo, arHe) {
   tiempo = 0;
   tiempo2 = 0;
   tiempoEstado = 0;
-  relentizar = 0;
+  grupoHeroes.relentizar = 0;
 
   config = conf;
   layers = allLayers;
@@ -175,7 +175,7 @@ function heavyMetal() {
     if (algo.vida < algo.maxVida) {
       algo.vida += 2;
       algo.status = "none";
-      relentizar = 0;
+      grupoHeroes.relentizar = 0;
     }
     if(algo.vida > algo.maxVida){
       algo.vida = algo.maxVida;
@@ -252,7 +252,7 @@ function updateEstadosDelJugador() {
       }
       if (player.tiempoStatus <= 0) {
         player.status = "none";
-        relentizar = 0;
+        grupoHeroes.relentizar = 0;
       } else {
         player.tiempoStatus--;
       }
