@@ -67,7 +67,7 @@ function createLenguaRana(parent){
 	l.cooldown = 60;
 	l.time = 0;
 }
-function updateLenguaRana(o, atributo){
+export function updateLenguaRana(o, atributo){
 	var parent = sacaLengua(atributo)
 	var l = parent.lengua;
  
