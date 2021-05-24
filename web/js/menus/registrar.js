@@ -142,8 +142,8 @@ export default class registrar extends Phaser.Scene {
 			}
 		}
 		//console.log(xhr)
-		xhr.open("POST", "php/newuser.php", true)
-		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+		xhr.open("GET", "php/newuser.php", true)
+		//xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
 		xhr.send(/*"numero="+32*/)
 
 		console.log(xhr);
