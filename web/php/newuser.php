@@ -33,7 +33,7 @@
 	//$rstr = implode(",", (array)$respuesta);
 	//$rstr = implode($rstr);
 	echo $data;
-	echo substr($rstr, -1);
+	echo substr($rstr, 1, -1);
 	//echo var_dump($respuesta);
 	//echo var_dump($rstr);
 
