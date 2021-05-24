@@ -15,7 +15,7 @@
 			//$query = "INSERT INTO usuarios(nombre, contrasena) VALUES ('".$nombre."','".$contrasena."')";
 			//$result = pg_query($query);
 
-			echo $result;
+			echo $contrasena;
 		}catch(PDOException $e){
 			echo "null";
 		}
