@@ -28,6 +28,7 @@ var cutTiles2;
 var cutTilesId2;
 var allLayers;
 var destructibleTiles1;
+var destructibleTiles2;
 
 var obstaculos;
 var obstaculos2;
@@ -143,13 +144,16 @@ export default class swamp extends Phaser.Scene {
         cutTiles2 = obstaculos3.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
         cutTilesId2 = [...(new Set(cutTiles2))];
 
-        destructibleTiles1 = obstaculos3.filterTiles(tile => tile.properties.destructible).map(x => x.index);
+        destructibleTiles1 = obstaculos2.filterTiles(tile => tile.properties.destructible).map(x => x.index);
+
+        destructibleTiles2 = obstaculos3.filterTiles(tile => tile.properties.destructible).map(x => x.index);
 
         obstaculos2.setTileIndexCallback(cutTilesId, glish.climbing_plant, this.physics.add.overlap(glish.beamList, obstaculos2));
 
         obstaculos3.setTileIndexCallback(cutTilesId2, glish.climbing_plant, this.physics.add.overlap(glish.beamList, obstaculos3));
 
-        boxTank.setDestructibles(obstaculos3, destructibleTiles1);
+        boxTank.setDestructibles(obstaculos2, destructibleTiles1);
+        boxTank.setDestructibles(obstaculos3, destructibleTiles2);
 
 
         this.physics.add.overlap(enemyList, heroes.armasHeroicas, enemigos.recibirDanyo);

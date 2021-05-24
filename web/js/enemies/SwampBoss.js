@@ -33,9 +33,9 @@ export function createBoss(obj, conf, el){
     scene.physics.add.existing(enemigoBoss.trigger, false);
     enemigoBoss.trigger.activado = false;
   console.log("BossCreate1");
-    //scene.physics.add.overlap(heroes.cabeza, enemigoBoss.trigger, activarTrigger, null, scene);
+    scene.physics.add.overlap(heroes.cabeza, enemigoBoss.trigger, activarTrigger, null, scene);
      console.log("BossCreate2");
-    //scene.physics.add.overlap(heroes.armaHeroicas, enemigoBoss, activarTrigger, null, scene);
+    scene.physics.add.overlap(heroes.armaHeroicas, enemigoBoss, activarTrigger, null, scene);
      console.log("BossCreate3");
 
 
@@ -72,7 +72,7 @@ export function generateTentacles(obj){
 
 	createSegmentos(s)
 
-	//scene.physics.add.overlap(heroes.cabeza, s.detectionbox, detectarJugador, null, scene);
+	scene.physics.add.overlap(heroes.cabeza, s.detectionbox, detectarJugador, null, scene);
    console.log("BossCreate6");
 }
 
@@ -196,7 +196,7 @@ function activarTrigger(){
 
 
 
-  //scene.physics.add.collider(heroes.cabeza, enemigoBoss.block);
+  scene.physics.add.collider(heroes.cabeza, enemigoBoss.block);
 
 
 }
