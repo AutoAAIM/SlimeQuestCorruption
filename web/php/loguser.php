@@ -4,6 +4,7 @@
 	if($_SERVER['REQUEST_METHOD']=='GET'){
 		try{
 			$respuesta = SQLGlobal::selectArray("select * from usuarios");
+			$respuestaz = SQLGlobal::selectArray("select * from zonas");
 			echo json_encode(array(
 				'respuesta'=>'200',
 				'estado' => 'Se obtuvieron los datos correctamente',
@@ -20,11 +21,6 @@
 					'error'=>$e->getMessage())
 			);
 			echo '?';
-		}
-	}
-	if($_SERVER['REQUEST_METHOD']=='GET'){
-		try{
-			$respuestaz = SQLGlobal::selectArray("select * from zonas");
 		}
 	}
 
