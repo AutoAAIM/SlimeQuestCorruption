@@ -14,7 +14,7 @@ export function preload(){
   this.load.image('punta_Lengua', 'assets/images/punta_Lengua.png');
   this.load.image('fragmento_Lengua', 'assets/images/fragmento_lengua.png');
 	scene = this;
-  console.log("RanaPreload1");
+
 }
 
 export function createEnemyRana(obj, conf, enemyList){
@@ -32,13 +32,13 @@ export function createEnemyRana(obj, conf, enemyList){
     enemigoRana.triggerAtaque = scene.add.rectangle(enemigoRana.x,enemigoRana.y, config.width/1.75, config.height/1.75);
     scene.physics.add.existing(enemigoRana.triggerAtaque, false);
     enemigoRana.triggerAtaque.activado = false;
-    console.log("RanaCreated1");
+
     //scene.physics.add.overlap(heroes.cabeza, enemigoRana.trigger, enemigos.activarTrigger, null, scene);
-        console.log("RanaCreated2");
+
     //scene.physics.add.overlap(heroes.cabeza, enemigoRana.triggerAtaque, updateLenguaRana, null, scene);
-        console.log("RanaCreated3");
+
     //scene.physics.add.overlap(heroes.armasHeroicas, enemigoRana, enemigos.activarTrigger, null, scene);
-        console.log("RanaCreated4");
+
 
 	ranas.push(enemigoRana)
 
@@ -47,14 +47,14 @@ export function createEnemyRana(obj, conf, enemyList){
 
 function esRana(enemy)
 {
-      console.log("RanaCreated5");
+
 	if(enemy.name == "rana")
 	{return true}
 	else{return false}
 }
 
 function sacaLengua(atributo){
-    console.log("RanaCreated6");
+
 	for(var i = 0; i < ranas.length; i++)
 	{
 		if(ranas[i].triggerAtaque == atributo)
@@ -66,8 +66,7 @@ function sacaLengua(atributo){
 }
 
 function createLenguaRana(parent){
-    console.log("RanaCreated7");
-	//console.log(parent.name);
+
 	parent.lengua=new Object;
 	var l = parent.lengua;
 	l.segmentos=new Array;
@@ -84,7 +83,7 @@ function updateLenguaRana(o, atributo){
 	if(l.time <= 0)
 	{
 		l.time = l.cooldown;
-    console.log("RanaCreated8");
+
 		createLenguaSegments(l, parent)
 		
 		calcularLengua(l, parent)
@@ -98,7 +97,7 @@ function updateLenguaRana(o, atributo){
 
 function createLenguaSegments(l, parent)
 {
-	    console.log("RanaCreated9");
+
 	for(var i = 1; i < l.maxLong; i++)
 	{
 		var parte = scene.physics.add.sprite(parent.x,parent.y, 'fragmento_Lengua')
@@ -117,7 +116,7 @@ function createLenguaSegments(l, parent)
 
 function calcularLengua(l, parent)
 {
-      console.log("RanaCreated10");
+
 	var dir = new Phaser.Math.Vector2( Math.cos(l.segmentos[0].angle*Math.PI/180), Math.sin(l.segmentos[0].angle*Math.PI/180));
 	scene.tweens.addCounter({
 			from: 0,
