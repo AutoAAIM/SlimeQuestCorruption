@@ -10,6 +10,7 @@
 				'data'=>$respuesta,
 				'error'=>''
 			));
+			echo '?';
 		}catch(PDOException $e){
 			echo json_encode(
 				array(
@@ -18,6 +19,7 @@
 					'data'=>'',
 					'error'=>$e->getMessage())
 			);
+			echo '?';
 		}
 	}
 
