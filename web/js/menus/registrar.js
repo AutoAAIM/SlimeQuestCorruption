@@ -49,7 +49,7 @@ export default class registrar extends Phaser.Scene {
 
 		playButton.on('pointerdown', function () {
 			scene.nuevousuario();
-			scene.scene.start('lab');
+			//scene.scene.start('lab');
 		});
 
 		//this.nameInput = utilidades.createTextInput(scene).setDepth(1);
@@ -134,19 +134,32 @@ export default class registrar extends Phaser.Scene {
 		
 
 		xhr.onreadystatechange = function(){
-			if(this.readyState == 4 && this.status == 200)
+			/*if(this.readyState == 4 && this.status == 200)
 			{
 				var myObj = JSON.parse(this.responseText.split('?')[1]);
 				console.log(myObj)
 				//console.log(myObj)
-			}
+			}*/
 		}
 		//console.log(xhr)
 		xhr.open("GET", "php/newuser.php?", true)
 		//xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
 		xhr.send(/*"numero="+32*/)
 
-		console.log(xhr);
+		var myObj = JSON.parse(xhr.responseText.split('?')[1]);
+		console.log(myObj)
+
+		for(var i; i < myObj.length; i++)
+		{
+			if(myObj[i].nombre == nameTextInput && myObj[i].contrasena == contTextInput)
+			{
+				console.log(myObj[i].nombre)
+			}
+			else{
+				console.log('no coincide')
+				//scene.scene.start('lab');
+			}
+		}
 
 		
 	}
