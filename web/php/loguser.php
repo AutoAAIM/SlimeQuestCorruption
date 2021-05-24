@@ -22,18 +22,13 @@
 			echo '?';
 		}
 	}
-	if($_SERVER['REQUEST_METHOD']=='GET'){
-		try{
-			$respuesta2 = SQLGlobal::selectArray("select * from zonas");
-		}
-	}
 
 	$rstr = json_encode($respuesta, true);
 	//$rstr = implode(",", (array)$respuesta);
 	//$rstr = implode($rstr);
 	echo $rstr;
 	echo '?';
-	echo json_encode($respuesta2, true);
+	echo json_encode($respuesta_z, true);
 	//echo var_dump($respuesta);
 	//echo var_dump($rstr);
 
