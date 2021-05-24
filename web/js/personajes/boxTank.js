@@ -92,6 +92,7 @@ export function create(spawn, allLayers, grupo, arHe)
 	player.emitter = new Phaser.Events.EventEmitter();
 	player.maxVida = 12;
 	player.vida = player.maxVida;
+  player.tiempoStatus = 0;
 	player.inmuneT = 0;
 	emitterHumo = scene.add.particles('humo').setDepth(5);
 	player.ralentizar = 0;

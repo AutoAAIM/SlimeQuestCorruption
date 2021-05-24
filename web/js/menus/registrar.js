@@ -198,7 +198,7 @@ export default class registrar extends Phaser.Scene {
 
 	nuevousuario(){
 		var xhr = new XMLHttpRequest();
-		var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/loguser.php';
+		var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/reguser.php';
 		
 		var myObj;
 		var myZone;
@@ -210,7 +210,7 @@ export default class registrar extends Phaser.Scene {
 			}
 		}
 		//console.log(xhr)
-		xhr.open("POST", "php/loguser.php?", true)
+		xhr.open("POST", "php/reguser.php?", true)
 		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
 		xhr.send("nombre="+nameTextInput+"contrasena="+contTextInput)
 	}
