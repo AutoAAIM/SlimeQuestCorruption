@@ -136,12 +136,12 @@ export default class swamp extends Phaser.Scene {
 
         scene.obstaculos3.setTileIndexCallback(cutTilesId2, glish.climbing_plant, this.physics.add.overlap(glish.beamList, scene.obstaculos3));
 
-        this.physics.add.overlap(enemyList, heroes.armasHeroicas, enemigos.recibirDanyo);
+        //this.physics.add.overlap(enemyList, heroes.armasHeroicas, enemigos.recibirDanyo);
 
-        this.physics.add.overlap(heroes.cabeza,enemyList, heroes.herir);
-        this.physics.add.overlap(heroes.cabeza,swampBoss.tentacleSegmentsGroup, heroes.herir);
-        this.physics.add.overlap(swampBoss.enemigoBoss, heroes.armasHeroicas,enemigos.recibirDanyo);
-        this.physics.add.overlap(heroes.cabeza,swampBoss.enemigoBoss, heroes.herir);
+        //this.physics.add.overlap(heroes.cabeza,enemyList, heroes.herir);
+        //this.physics.add.overlap(heroes.cabeza,swampBoss.tentacleSegmentsGroup, heroes.herir);
+        //.physics.add.overlap(swampBoss.enemigoBoss, heroes.armasHeroicas,enemigos.recibirDanyo);
+        //this.physics.add.overlap(heroes.cabeza,swampBoss.enemigoBoss, heroes.herir);
 
 
         //Colisiones
