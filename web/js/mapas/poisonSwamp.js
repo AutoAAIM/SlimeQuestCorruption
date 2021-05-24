@@ -38,7 +38,7 @@ export default class swamp extends Phaser.Scene {
         this.load.image('tiles2', 'assets/mapa/terrain2.png');
         this.load.image('tiles3', 'assets/mapa/terrain3.png');
         this.load.tilemapTiledJSON('pantano', 'assets/mapa/PantanoVenenosoVerdadero.json');
-        //heroes.preload.call(this)
+        heroes.preload.call(this)
         ranas.preload.call(this);
         mosquitos.preload.call(this);
         portal.preload.call(this);
@@ -106,7 +106,7 @@ export default class swamp extends Phaser.Scene {
             }else if(obj.name == 'tentaculos' && !bossMuerto){
                 swampBoss.generateTentacles(obj);
             }else if(obj.name == 'entrada_3'){
-                //heroes.create(obj, allLayers, null, sc.config)
+                heroes.create(obj, allLayers, null, sc.config)
             }
 
         })
@@ -160,7 +160,7 @@ export default class swamp extends Phaser.Scene {
 */
     update(time, delta){
       console.log("estoy jodido");
-      //heroes.update();
+      heroes.update();
 
       enemigos.updateEnemySwamp(scene, enemyList);
 

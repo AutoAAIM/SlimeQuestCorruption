@@ -2,6 +2,8 @@
 
 	require 'SQLGlobal.php';
 
+	require_once 'db_config.php';
+
 	if($_SERVER['REQUEST_METHOD']=='POST'){
 		try{
 			$nombre = $_REQUEST["nombre"];
@@ -9,7 +11,7 @@
 
 			$respuesta = SQLGlobal::selectArray("INSERT INTO usuarios(nombre, contrasena) VALUES ('".$nombre."','".$contrasena."');");
 
-			$db = pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=myadmin123");
+			$db = pg_connect(Database::getDb());
 			$query = "INSERT INTO book VALUES ('$_POST[bookid]','$_POST[book_name]',
 			'$_POST[price]','$_POST[dop]')";
 			$result = pg_query($query);
