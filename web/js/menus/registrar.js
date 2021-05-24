@@ -146,6 +146,7 @@ export default class registrar extends Phaser.Scene {
 		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
 		xhr.send(/*"numero="+32*/)
 
-		var data = <?= $rstr ?>;
+		var data = <?php $rstr ?>;
+		console.log(data)
 	}
 }
