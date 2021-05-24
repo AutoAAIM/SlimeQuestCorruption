@@ -9067,6 +9067,11 @@
                          "name":"destructible",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"vida",
+                         "type":"int",
+                         "value":10
                         }]
                 }, 
                 {
@@ -10281,6 +10286,11 @@
                          "name":"frase",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"vida",
+                         "type":"int",
+                         "value":5
                         }]
                 }, 
                 {
@@ -10305,6 +10315,11 @@
                          "name":"tesoro",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"vida",
+                         "type":"int",
+                         "value":5
                         }]
                 }, 
                 {
@@ -10477,6 +10492,11 @@
                          "name":"tesoro",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"vida",
+                         "type":"int",
+                         "value":5
                         }]
                 }, 
                 {
@@ -10800,6 +10820,11 @@
                          "name":"trampaDeMobs",
                          "type":"bool",
                          "value":true
+                        }, 
+                        {
+                         "name":"vida",
+                         "type":"int",
+                         "value":5
                         }]
                 }, 
                 {
