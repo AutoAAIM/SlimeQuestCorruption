@@ -11,7 +11,7 @@
 	$query = "INSERT INTO usuarios(nombre, contrasena) VALUES ('$nombre','$contrasena')";
 	$result = pg_query($query);
 
-	echo $respuesta;
+	echo $result;
 
 	/*if($_SERVER['REQUEST_METHOD']=='POST'){
 		try{
