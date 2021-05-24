@@ -61,7 +61,7 @@ export default class swamp extends Phaser.Scene {
         document.body.style.cursor = "none";
         camera = this.cameras.main;
         gameOver = 0;
-
+console.log("bobo o que");
         const map = this.make.tilemap({key:"pantano"});
 
         const tileset = map.addTilesetImage("terreno", "tiles");
@@ -123,7 +123,7 @@ export default class swamp extends Phaser.Scene {
 
         portal.createAnims();
         portal.create(tileSpawner);
-
+        
 
         //Overlap
         poisonTiles = fondo.filterTiles(tile => tile.properties.veneno).map(x => x.index);
