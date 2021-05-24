@@ -212,7 +212,7 @@ export default class registrar extends Phaser.Scene {
 		//console.log(xhr)
 		xhr.open("POST", "php/reguser.php?", true)
 		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
-		xhr.send("nombre="+nameTextInput+"contrasena="+contTextInput)
+		xhr.send("nombre="+nameTextInput+','+"contrasena="+contTextInput)
 	}
 }
 
