@@ -68,7 +68,7 @@ export function create(spawn, allTiles, antorchas, conf)
 
 export function update()
 {
-	//boxTank.update(cabeza);
+	boxTank.update(cabeza);
 	glish.update(cabeza);
 	yasha.update(cabeza);
 
