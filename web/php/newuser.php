@@ -21,9 +21,17 @@
 		}
 	}
 
+	$data=array(
+        'title'=>$title,
+        'firstname'=>$firstname,
+        'middlename'=>$middlename,
+        'surname'=>$surname
+    );
+
 	$rstr = json_encode($respuesta, true);
 	//$rstr = implode(",", (array)$respuesta);
 	//$rstr = implode($rstr);
+	echo $data;
 	echo $rstr;
 	//echo var_dump($respuesta);
 	//echo var_dump($rstr);
