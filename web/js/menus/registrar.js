@@ -9,6 +9,7 @@ var playButton
 
 var nameTextInput = new String
 var contTextInput = new String
+var responseTextOutput = new String
 
 var activeText
 
@@ -72,6 +73,9 @@ export default class registrar extends Phaser.Scene {
 			activeText = "cont"
 		});
 
+		this.responseText = scene.add.text(16, 270, '//', {fontSize: '16px', fill: '#68FF00', fontFamily: 'sans-serif'})
+		console.log(scene.input.keyboard)
+
     	this.input.keyboard.on('keydown', (event) => {
 			var c = event.code
 			console.log(c)
@@ -126,11 +130,12 @@ export default class registrar extends Phaser.Scene {
 
 		this.nameText.setText('Nombre: >' + nameTextInput +'<');
 		this.contText.setText('Contraseña: >' + contTextInput +'<');
+		this.responseText.setText('//' + responseTextOutput);
 	}
 
 	nuevousuario(){
 		var xhr = new XMLHttpRequest();
-		var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/newuser.php';
+		var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/loguser.php';
 		
 		var myObj;
 
@@ -149,7 +154,7 @@ export default class registrar extends Phaser.Scene {
 					}
 					else{
 						console.log('no coincide')
-						//scene.scene.start('lab');
+						responseTextOutput = 'no coincide'
 					}
 				}
 			}
