@@ -138,6 +138,8 @@ export default class registrar extends Phaser.Scene {
 			{
 				var myObj = JSON.parse(this.responseText);
 				console.log(myObj)
+				var data = <?php $rstr ?>;
+				console.log(data)
 				//console.log(this.responseText)
 			}
 		}
@@ -146,7 +148,6 @@ export default class registrar extends Phaser.Scene {
 		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
 		xhr.send(/*"numero="+32*/)
 
-		var data = <?php $rstr ?>;
-		console.log(data)
+		
 	}
 }
