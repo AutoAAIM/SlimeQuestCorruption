@@ -5,6 +5,7 @@ import * as mosquitos from '../enemies/mosquitos.js';
 import * as utilidades from '../utilidades.js';
 import * as enemigos from '../enemies/enemigos.js';
 import * as portal from '../portal.js';
+import * as keys from '../keys.js';
 import * as npc from '../NPCs/PantanoNPC.js';
 import * as swampBoss from '../enemies/SwampBoss.js'
 import * as sc from '../sceneConstructor.js';
