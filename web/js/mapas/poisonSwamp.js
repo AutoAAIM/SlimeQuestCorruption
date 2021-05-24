@@ -161,7 +161,7 @@ console.log("bobo o que3");
   ========     =             ========     =     =          =          ========
 */
     update(time, delta){
-
+      console.log("estoy jodido");
       heroes.update();
       console.log("bobo o que4");
       enemigos.updateEnemySwamp(scene, enemyList);
