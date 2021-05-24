@@ -1,5 +1,5 @@
-import * as glish from '../personajes/glish.js';
 import * as utilidades from '../utilidades.js';
+import * as heroes from '../grupoHeroes.js';
 
 var config;
 var s
@@ -14,7 +14,7 @@ export function preload(){
   this.load.spritesheet('BossSwamp','assets/images/bossPoison.png', { frameWidth: 86, frameHeight: 86});
   this.load.spritesheet('tentacle','assets/images/tentacles.png', { frameWidth: 32, frameHeight: 32 });
   scene = this;
-
+  console.log("RanaPreload1");
 }
 
 export function createBoss(obj, conf, el){
@@ -33,8 +33,8 @@ export function createBoss(obj, conf, el){
     scene.physics.add.existing(enemigoBoss.trigger, false);
     enemigoBoss.trigger.activado = false;
 
-    scene.physics.add.overlap(glish.glish, enemigoBoss.trigger, activarTrigger, null, scene);
-    scene.physics.add.overlap(glish.beamList, enemigoBoss, activarTrigger, null, scene);
+    scene.physics.add.overlap(heroes.cabeza, enemigoBoss.trigger, activarTrigger, null, scene);
+    scene.physics.add.overlap(heroes.armaHeroicas, enemigoBoss, activarTrigger, null, scene);
 
 
 }
@@ -70,7 +70,7 @@ export function generateTentacles(obj){
 
 	createSegmentos(s)
 
-	scene.physics.add.overlap(glish.glish, s.detectionbox, detectarJugador, null, scene);
+	scene.physics.add.overlap(heroes.cabeza, s.detectionbox, detectarJugador, null, scene);
 }
 
 function createSegmentos(parent)
@@ -181,8 +181,8 @@ export function detectarJugador(db, pj)
 function activarTrigger(){
   enemigoBoss.trigger.activado = true;
   if(enemigoBoss.teleportar){
-    glish.glish.x = enemigoBoss.x;
-    glish.glish.y = enemigoBoss.y+250;
+    heroes.cabeza.x = enemigoBoss.x;
+    heroes.cabeza.y = enemigoBoss.y+250;
     enemigoBoss.teleportar = false;
     enemigoBoss.block = scene.add.rectangle(enemigoBoss.x-5,enemigoBoss.y+420, 600, 100);
     scene.physics.add.existing(enemigoBoss.block, true);
@@ -191,7 +191,7 @@ function activarTrigger(){
 
 
 
-  scene.physics.add.collider(glish.glish, enemigoBoss.block);
+  scene.physics.add.collider(heroes.cabeza, enemigoBoss.block);
 
 
 }
@@ -207,7 +207,7 @@ export function updateBoss(){
     Phaser.Actions.Call(tentacleList.getChildren(), function(s){
 
     var punta = s.segmentos.getChildren()[s.segmentos.getLength()-1]
-		punta.angle = Math.atan2(glish.glish.y - s.y, glish.glish.x - s.x)* 180/Math.PI;
+		punta.angle = Math.atan2(heroes.cabeza.y - s.y, heroes.cabeza.x - s.x)* 180/Math.PI;
 		if(punta.angle > 90 || punta.angle < -90)
 		{
 			punta.flipY = true;

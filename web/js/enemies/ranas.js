@@ -117,6 +117,7 @@ function createLenguaSegments(l, parent)
 
 function calcularLengua(l, parent)
 {
+      console.log("RanaCreated10");
 	var dir = new Phaser.Math.Vector2( Math.cos(l.segmentos[0].angle*Math.PI/180), Math.sin(l.segmentos[0].angle*Math.PI/180));
 	scene.tweens.addCounter({
 			from: 0,
