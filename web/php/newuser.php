@@ -21,22 +21,7 @@
 		}
 	}
 
-	function flatten_array(array $items, array $flattened = []) {
-		foreach ($items as $item) {
-			if (is_array($item)) {
-				$flattened = flatten_array($item, $flattened);
-				continue;
-			}
-
-			$flattened[] = $item;
-		}
-		
-		return $flattened;
-	}
-
-	$rstr = flatten_array($array);
-
-	//$rstr = json_encode($flattened, true);
+	$rstr = json_encode($flattened, true);
 	//$rstr = implode($rstr);
 	echo $rstr;
 
