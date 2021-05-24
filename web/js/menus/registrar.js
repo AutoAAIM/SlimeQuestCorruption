@@ -132,21 +132,22 @@ export default class registrar extends Phaser.Scene {
 		var xhr = new XMLHttpRequest();
 		var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/newuser.php';
 		
+		var myObj;
 
 		xhr.onreadystatechange = function(){
-			/*if(this.readyState == 4 && this.status == 200)
+			if(this.readyState == 4 && this.status == 200)
 			{
-				var myObj = JSON.parse(this.responseText.split('?')[1]);
+				myObj = JSON.parse(this.responseText.split('?')[1]);
 				console.log(myObj)
 				//console.log(myObj)
-			}*/
+			}
 		}
 		//console.log(xhr)
 		xhr.open("GET", "php/newuser.php?", true)
 		//xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
 		xhr.send(/*"numero="+32*/)
 
-		var myObj = JSON.parse(xhr.responseText.split('?')[1]);
+		//var myObj = JSON.parse(xhr.responseText.split('?')[1]);
 		console.log(myObj)
 
 		for(var i; i < myObj.length; i++)
