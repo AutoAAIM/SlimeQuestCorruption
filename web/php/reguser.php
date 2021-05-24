@@ -9,14 +9,13 @@
 			$nombre = $_REQUEST["nombre"];
 			$contrasena = $_REQUEST["contrasena"];
 
-			$respuesta = SQLGlobal::selectArray("INSERT INTO usuarios(nombre, contrasena) VALUES ('".$nombre."','".$contrasena."');");
+			//$respuesta = SQLGlobal::selectArray("INSERT INTO usuarios(nombre, contrasena) VALUES ('".$nombre."','".$contrasena."');");
 
 			$db = pg_connect(Database::getDb());
-			$query = "INSERT INTO book VALUES ('$_POST[bookid]','$_POST[book_name]',
-			'$_POST[price]','$_POST[dop]')";
+			$query = "INSERT INTO usuarios(nombre, contrasena) VALUES ('".$nombre."','".$contrasena."')";
 			$result = pg_query($query);
 
-			echo 
+			echo $result;
 		}catch(PDOException $e){
 			echo "null";
 		}

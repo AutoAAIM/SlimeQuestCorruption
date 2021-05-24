@@ -1,4 +1,5 @@
 import * as glish from '../personajes/glish.js';
+import * as heroes from '../grupoHeroes.js';
 var go;
 var scene;
 export var contadorRana = 2;
@@ -18,7 +19,7 @@ export function updateEnemySwamp(s, enemyList){
                 go.triggerAtaque.y = go.y;
 
                 if(go.tiempoMoverse == 0 && go.status != "paralizado"){
-                    scene.physics.moveTo(go, glish.glish.x, glish.glish.y, 500);
+                    scene.physics.moveTo(go, heroes.cabeza.x, heroes.cabeza.y, 500);
                     go.tiempoMoverse = -1;
                     setTimeout(()=>{
                         go.tiempoMoverse = Phaser.Math.Between(50, 70);
@@ -28,9 +29,9 @@ export function updateEnemySwamp(s, enemyList){
                     },300);
                 }
             }else if(go.name == 'mosquito' && go.status != "paralizado"){
-                scene.physics.moveTo(go, glish.glish.x, glish.glish.y, Phaser.Math.Between(180, 210));
+                scene.physics.moveTo(go, heroes.cabeza.x, heroes.cabeza.y, Phaser.Math.Between(180, 210));
                 go.play('fly', true);  
-                if(go.x < glish.glish.x){
+                if(go.x < heroes.cabeza.x){
                   go.flipX = true;
                 }else{
                   go.flipX = false;
@@ -86,7 +87,7 @@ export function recibirDanyo(obj1, obj2){
       });
       obj1.vida -= obj2.ataque;
       aleatorio = Math.floor(Math.random() * (20-2+1)) + 2;
-      if(obj1 !=glish.glish && aleatorio == 3){
+      if(obj1 !=heroes.cabeza && aleatorio == 3){
           obj1.status = "paralizado";
           obj1.temporizador = 230;
           console.log("paralizado");
