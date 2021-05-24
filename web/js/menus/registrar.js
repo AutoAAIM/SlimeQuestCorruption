@@ -139,7 +139,7 @@ export default class registrar extends Phaser.Scene {
 				var myObj = JSON.parse(this.responseText);
 				console.log(this)
 				console.log(myObj)
-				var data = <?php $rstr ?>;
+				var data = '<?php $rstr; ?>';
 				console.log(data)
 				//console.log(this.responseText)
 			}
