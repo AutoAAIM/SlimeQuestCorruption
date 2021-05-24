@@ -24,7 +24,7 @@
 	$rstr = json_encode($respuesta, true);
 	//$rstr = implode(",", (array)$respuesta);
 	//$rstr = implode($rstr);
-	echo $rstr;
+	echo 3;
 	//echo var_dump($respuesta);
 	//echo var_dump($rstr);
 
