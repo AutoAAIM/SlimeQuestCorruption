@@ -9,7 +9,6 @@ var keyLeft;
 var keyDown;
 var fire;
 export var keyP;
-var relentizar;
 var puntero;
 var config;
 var velocity;
@@ -17,7 +16,6 @@ var ondaVelocity;
 var tiempo;
 var tiempo2;
 var tiempoEstado;
-var relentizar;
 export var beamList;
 export var ondaList;
 var ondaDeDanyo;
@@ -139,8 +137,8 @@ function moverPersonaje() {
 
 		player.dir = new Phaser.Math.Vector2( player.movingX, player.movingY);
 		player.dir.normalize();
-		player.setVelocityX(velocity*player.dir.x);
-		player.setVelocityY(velocity*player.dir.y);
+		player.setVelocityX((velocity-grupoHeroes.relentizar)*player.dir.x);
+		player.setVelocityY((velocity-grupoHeroes.relentizar)*player.dir.y);
 		if(player.dir.x != 0 || player.dir.y != 0) {player.move = true;}
 		else{player.move = false;}
 

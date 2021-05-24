@@ -306,8 +306,8 @@ export function input()
 		
 		player.dir = new Phaser.Math.Vector2( player.vectorX, player.vectorY);
 		player.dir.normalize();
-		player.setVelocityX(playerVelocidad*player.dir.x);
-		player.setVelocityY(playerVelocidad*player.dir.y);
+		player.setVelocityX((playerVelocidad-heroes.relentizar)*player.dir.x);
+		player.setVelocityY((playerVelocidad-heroes.relentizar)*player.dir.y);
 		if(player.dir.x != 0 || player.dir.y != 0) {player.move = true;}
 		else{player.move = false;}
 	}

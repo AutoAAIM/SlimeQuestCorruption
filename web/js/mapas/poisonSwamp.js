@@ -127,10 +127,14 @@ export default class swamp extends Phaser.Scene {
 
         //Overlap
         poisonTiles = fondo.filterTiles(tile => tile.properties.veneno).map(x => x.index);
+
         poisonAspectTiles = fondo.filterTiles(tile => tile.properties.aspectoVeneno).map(x => x.index);
+
         poisonTilesId = [...(new Set(poisonTiles))];
-        fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(heroes.cabeza, fondo));
+        fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(heroes.heroes, fondo));
+
         fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
+		
         fondo.setTileIndexCallback(poisonAspectTiles, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
 
         cutTiles = scene.obstaculos2.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
