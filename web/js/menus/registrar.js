@@ -154,9 +154,9 @@ export default class registrar extends Phaser.Scene {
 					{
 						for(var z= 0; z < myZone.length; z++)
 						{
-							if(myObj[i].id_zona == myZone[i].id_zona)
+							if(myObj[i].id_zona == myZone[z].id_zona)
 							{
-								scene.scene.start(myZone[i].nombre);
+								scene.scene.start(myZone[z].nombre);
 							}
 							else{
 								responseTextOutput = 'este usuario no tiene zona'
