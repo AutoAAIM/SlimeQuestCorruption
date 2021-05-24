@@ -3,7 +3,7 @@
 
 	if($_SERVER['REQUEST_METHOD']=='GET'){
 		try{
-			$respuesta = SQLGlobal::selectArray("select * from zonas");
+			$respuesta = SQLGlobal::selectArray("select * from usuarios");
 			$respuestaz = SQLGlobal::selectArray("select * from zonas");
 			echo json_encode(array(
 				'respuesta'=>'200',
