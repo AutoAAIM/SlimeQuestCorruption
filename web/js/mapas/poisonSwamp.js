@@ -57,8 +57,12 @@ export default class swamp extends Phaser.Scene {
     create(){
 
         scene = this;
+        
+		keys.create(scene);
+        
         document.body.style.cursor = "none";
         camera = this.cameras.main;
+        
         const map = this.make.tilemap({key:"pantano"});
 
         const tileset = map.addTilesetImage("terreno", "tiles");
