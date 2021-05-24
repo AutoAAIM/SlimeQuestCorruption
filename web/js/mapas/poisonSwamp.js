@@ -1,5 +1,6 @@
-import * as glish from '../personajes/glish.js';
 import * as heroes from '../grupoHeroes.js';
+import * as glish from '../personajes/glish.js';
+import * as boxTank from '../personajes/boxTank.js';
 import * as ranas from '../enemies/ranas.js';
 import * as mosquitos from '../enemies/mosquitos.js';
 import * as utilidades from '../utilidades.js';
