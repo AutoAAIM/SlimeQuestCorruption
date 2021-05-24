@@ -32,8 +32,4 @@ export function createEnemyMosquito(obj, conf,enemyList){
       repeat: -1
     });
 
-    //scene.physics.add.overlap(heroes.armasHeroicas, enemigoMosquito, enemigos.activarTrigger, null, scene);
-
-
-
 }

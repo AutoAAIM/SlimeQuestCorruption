@@ -202,7 +202,7 @@ export function herir(obj, e) {
 		obj.inmuneT = 90;
 		console.log(obj);
     if(e.name == "mosquito"){
-        aleatorio2 = Math.floor(Math.random() * (10-1+1)) + 1;
+        var aleatorio2 = Math.floor(Math.random() * (10-1+1)) + 1;
         if(aleatorio2 <= 3){
           e.vida +=1;
         }
