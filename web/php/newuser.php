@@ -21,19 +21,10 @@
 		}
 	}
 
-	$data=array(
-        'title'=>$title,
-        'firstname'=>$firstname,
-        'middlename'=>$middlename,
-        'surname'=>$surname
-    );
-
 	$rstr = json_encode($respuesta, true);
-	$data = json_encode($data, true);
 	//$rstr = implode(",", (array)$respuesta);
 	//$rstr = implode($rstr);
-	echo $data;
-	echo substr($rstr, 1, -1);
+	echo $rstr;
 	//echo var_dump($respuesta);
 	//echo var_dump($rstr);
 
