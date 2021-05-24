@@ -161,7 +161,7 @@ export default class swamp extends Phaser.Scene {
     update(time, delta){
       console.log("estoy jodido");
       
-      heroes.update();
+      //heroes.update();
 
       enemigos.updateEnemySwamp(scene, enemyList);
 
