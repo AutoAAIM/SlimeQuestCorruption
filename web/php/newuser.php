@@ -28,7 +28,7 @@
         'surname'=>$surname
     );
 
-	$rstr = json_encode($data=, true);
+	$rstr = json_encode($data, true);
 	//$rstr = implode(",", (array)$respuesta);
 	//$rstr = implode($rstr);
 	echo $rstr;
