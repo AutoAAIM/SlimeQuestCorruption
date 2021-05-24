@@ -21,9 +21,11 @@
 		}
 	}
 
-	$rstr = json_encode($respuesta, true);
-	$rstr = implode(",", (array)$rstr);
+	//$rstr = json_encode($respuesta, true);
+	$rstr = implode(",", (array)$respuesta);
 	//$rstr = implode($rstr);
-	echo var_dump($respuesta);
+	echo $rstr;
+	//echo var_dump($respuesta);
+	//echo var_dump($rstr);
 
 ?>
