@@ -6,6 +6,7 @@ var sky
 let keys = new Set();
 var cuadroTexto
 var playButton
+var regButton
 
 var nameTextInput = new String
 var contTextInput = new String
