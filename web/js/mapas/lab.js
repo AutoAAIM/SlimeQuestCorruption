@@ -5,6 +5,7 @@ import * as keys from '../keys.js';
 import * as portal from '../portal.js';
 import * as heroes from '../grupoHeroes.js';
 import * as sc from '../sceneConstructor.js';
+import * as dinero from '../dinero.js';
 
 var tiempoEntreSpawn = 60;
 var tiempoEntreHuellas = 0;
@@ -68,11 +69,14 @@ export default class lab extends Phaser.Scene {
 		portal.preload.call(this)
 		shapeShifter.preload.call(this)
 		scyther.preload.call(this)
+		dinero.preload()
 	}
 
 	create()
 	{
 		scene = this;
+
+		dinero.create()
 
 		music = this.sound.add('labchords');
 
