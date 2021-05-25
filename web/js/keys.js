@@ -6,7 +6,7 @@ export var Right
 export var Hability
 export var F
 export var P
-// export var Inventario (E)
+export var Hablar
 // export var Hablar (?)
 
 export function create(scene)
@@ -18,6 +18,6 @@ export function create(scene)
 	Right = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 	Hability = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 	F = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
-  P = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
-  E = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
+ 	P = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
+	Hablar = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
 }
