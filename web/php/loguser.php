@@ -6,7 +6,10 @@
 	if($_SERVER['REQUEST_METHOD']=='GET'){
 		try{
 
+			echo 'estoy dentro';
 			$respuesta = pg_query($db,"select * from usuarios");
+			echo pg_fetch_all($respuesta);
+			
 			$respuestaz = pg_query($db,"select * from zonas");
 
 			echo json_encode(array(
