@@ -462,7 +462,7 @@
                          "value":1
                         }],
                  "rotation":0,
-                 "type":"",
+                 "type":"lab",
                  "visible":true,
                  "width":0,
                  "x":720,
@@ -773,7 +773,7 @@
                          "value":2
                         }],
                  "rotation":0,
-                 "type":"",
+                 "type":"lab",
                  "visible":true,
                  "width":0,
                  "x":1456,
