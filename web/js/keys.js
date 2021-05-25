@@ -19,4 +19,5 @@ export function create(scene)
 	Hability = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 	F = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
   P = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.P);
+  E = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
 }
