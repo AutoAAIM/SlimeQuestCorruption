@@ -32,4 +32,4 @@ export var config={
 var game=new Phaser.Game(config);
 //export 
 
-game.usuario = undefined;
+//game.usuario = undefined;
