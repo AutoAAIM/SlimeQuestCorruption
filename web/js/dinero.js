@@ -22,7 +22,7 @@ export function generarPlort(vector, cantidad)
 	{
 		
 		var p = grupoDinero.create(vector.x + Paser.Math.Between(-10,10), vector.y + Paser.Math.Between(-10,10), 'plort');
-		
+		s.setTint(0xaaaaaa)
 	}
 }
 
