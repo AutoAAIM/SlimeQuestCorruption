@@ -27,11 +27,9 @@ export var config={
 			//zoom: 2,
 		},
 		scene: [registrar, lab, swamp],
-
-		usuario: undefined
 };
 
 var game=new Phaser.Game(config);
 //export 
 
-//game.config.dificultad = 1;
+game.usuario = undefined;

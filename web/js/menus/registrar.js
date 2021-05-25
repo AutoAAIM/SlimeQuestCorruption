@@ -175,7 +175,7 @@ export default class registrar extends Phaser.Scene {
 						{
 							if(myObj[i].id_zona == myZone[z].id_zona)
 							{
-								this.usuario = myObj[i]
+								this.game.usuario = myObj[i]
 								scene.scene.start(myZone[z].nombre);
 							}
 							else{

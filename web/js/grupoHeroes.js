@@ -167,7 +167,7 @@ export function poisonPlayer(obj, casilla) {
     if (obj.tiempoStatus == 0) {
       obj.tiempoStatus = 300;
     }
-    obj.ralentizar = 30;
+    obj.ralentizar = 50;
 
   }
   else if ((casilla.properties.aspectoVeneno || casilla.properties.veneno) && obj == glish.ondaList && (obj != cabeza || obj != heroes) && !swampBoss.enemigoBoss.trigger.activado) {
