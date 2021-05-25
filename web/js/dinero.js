@@ -21,7 +21,7 @@ export function generarPlort(vector, cantidad)
 	for(var i = 0; i < cantidad; i++)
 	{
 		
-		var p = grupoDinero.create(vector.x + Phaser.Math.Between(-10,10), vector.y + Phaser.Math.Between(-10,10), 'plort');
+		var p = grupoDinero.create(vector.x + Phaser.Math.Between(-10,10), vector.y + Phaser.Math.Between(-10,10), 'plort').setDepth(30);
 		p.setTint(Phaser.Display.Color.GetColor(Phaser.Math.Between(0,255), Phaser.Math.Between(0,255), Phaser.Math.Between(0,255)))
 	}
 }
