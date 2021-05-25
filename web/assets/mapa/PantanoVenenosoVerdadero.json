@@ -1749,7 +1749,7 @@
                          "value":3
                         }, 
                         {
-                         "name":"type",
+                         "name":"tipo",
                          "type":"string",
                          "value":"lab"
                         }],
@@ -1777,7 +1777,7 @@
                          "value":4
                         }, 
                         {
-                         "name":"type",
+                         "name":"tipo",
                          "type":"string",
                          "value":"lab"
                         }],
