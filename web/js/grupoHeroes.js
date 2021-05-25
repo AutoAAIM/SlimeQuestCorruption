@@ -162,21 +162,21 @@ export function ponerEmitter()
 }
 
 export function poisonPlayer(obj, casilla) {
-  if (casilla.properties.veneno && (obj != glish.ondaList && obj != armasHeroicas)) {
+  if (casilla.properties.veneno && obj != glish.ondaList && obj != armasHeroicas) {
     obj.status = "envenenado";
     if (obj.tiempoStatus == 0) {
       obj.tiempoStatus = 300;
     }
     obj.ralentizar = 50;
 
-    //console.log(casilla.properties.veneno);
+    console.log(casilla.properties.veneno);
     //console.log(obj)
   }
-  else if ((casilla.properties.aspectoVeneno || casilla.properties.veneno) && obj == glish.ondaList && obj != cabeza && obj != heroes && !swampBoss.enemigoBoss.trigger.activado) {
+  else if ((casilla.properties.aspectoVeneno || casilla.properties.veneno) && obj == glish.ondaList && obj != cabeza && obj != heroes /*&& !swampBoss.enemigoBoss.trigger.activado*/) {
 
     console.log(casilla.properties.veneno);
     console.log(obj)
-    
+
     casilla.setAlpha(0);
     casilla.properties.veneno = false;
     setTimeout(() => {
