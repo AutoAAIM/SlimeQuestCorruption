@@ -172,7 +172,7 @@ function heavyMetal() {
 
   ondaCura = ondaList.create(player.x, player.y, 'cura');
   Phaser.Actions.Call(grupoHeroes.heroes.getChildren(), function(algo) {
-    if (algo.vida < algo.maxVida) {
+    if (algo.vida < algo.maxVida && algo.vida > 0) {
       algo.vida += 2;
       algo.status = "none";
       player.ralentizar = 0;

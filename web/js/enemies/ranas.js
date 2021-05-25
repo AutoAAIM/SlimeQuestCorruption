@@ -82,7 +82,7 @@ export function updateLenguaRana(o, atributo){
 		calcularLengua(l, parent)
 
 
-    //scene.physics.add.overlap(heroes.cabeza,l.segmentos, enemigos.recibirDanyo);
+    scene.physics.add.overlap(heroes.cabeza,l.segmentos, enemigos.recibirDanyo);
 
 	}
 	l.time--;
