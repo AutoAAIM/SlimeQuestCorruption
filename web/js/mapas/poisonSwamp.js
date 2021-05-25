@@ -157,7 +157,7 @@ export default class swamp extends Phaser.Scene {
         boxTank.setDestructibles(obstaculos3, destructibleTiles2);
 
 
-        this.physics.add.overlap(enemyList, heroes.armasHeroicas, enemigos.recibirDanyo);
+        this.physics.add.overlap(mosquitos.mosquitosGrupo, heroes.armasHeroicas, mosquitos.recibirDanyo);
 
         this.physics.add.overlap(heroes.cabeza,enemyList, heroes.herir);
         this.physics.add.overlap(heroes.cabeza,swampBoss.tentacleSegmentsGroup, heroes.herir);
@@ -195,6 +195,7 @@ export default class swamp extends Phaser.Scene {
       heroes.update();
 
       enemigos.updateEnemySwamp(scene, enemyList);
+      mosquito.update();
 
       swampBoss.updateBoss();
 
