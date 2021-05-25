@@ -65,7 +65,7 @@ export function generateTentacles(obj){
 
 	createSegmentos(s)
 
-	scene.physics.add.overlap(s.detectionbox, heroes.cabeza, detectarJugador);
+	//scene.physics.add.overlap(s.detectionbox, heroes.cabeza, detectarJugador);
 
 }
 

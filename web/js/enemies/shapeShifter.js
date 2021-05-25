@@ -91,13 +91,14 @@ export function update()
 			s.setVelocityY(0)
 		}
 
-		if(s.vida <= 0)
+		if(s.vida <= 0 && s.body.enable == true)
 		{
 			s.play('shapeshifterWalk', false);
 			s.detectionbox.destroy();
 			s.setTexture('shapeshifterMuerto');
 			s.setTint(0xaaaaaa)
 			s.body.enable = false;
+			generarPlort(s, 2)
 		}
 
 
