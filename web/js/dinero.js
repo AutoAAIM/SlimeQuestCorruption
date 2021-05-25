@@ -34,5 +34,5 @@ function recogerPlort(pj, pl)
 
 function incrementarPlorts (cantidad)
 {
-	var plorts += cantidad;
+	//var plorts += cantidad;
 }
