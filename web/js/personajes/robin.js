@@ -12,7 +12,7 @@ export function preload() {
 export function animacionRobin() {
 	this.physics.anims.create({
         key: 'basico',
-        frames: this.anims.generateFrameNames('espadazo', { frames: start: 1, end: 3 }),
+        frames: this.anims.generateFrameNames('espadazo', { start: 1, end: 3 }),
         frameRate: 8,
     });
     this.anims.create({
