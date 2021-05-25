@@ -74,3 +74,40 @@ export function update(){
         }
     }); 
 }
+
+export function recibirDanyo(obj1, obj2){
+    var aleatorio;
+    console.log("Ataque "+obj2.ataque+" vida "+obj1.vida);
+    console.log("Ataque2 "+obj1.ataque+" vida2 "+obj2.vida);
+    if(obj1.inmune <= 0){
+      obj1.setAlpha(0);
+      scene.tweens.add({
+          targets: obj1,
+          alpha: 1,
+          duration: 200,
+          ease: 'Linear',
+          repeat: 5,
+      });
+      obj1.vida -= obj2.dano;
+      aleatorio = Math.floor(Math.random() * (20-2+1)) + 2;
+      if(obj1 !=heroes.cabeza && aleatorio == 3){
+          obj1.status = "paralizado";
+          obj1.temporizador = 230;
+      }
+      if(obj1.vida <= 0){
+        if(obj1.name == "mosquito" && contadorMosquitos > 0){ 
+          contadorMosquitos-=1;
+        }
+        if(obj1.trigger !=null){
+            obj1.trigger.activado = false;
+            obj1.trigger.destroy();
+            if(obj1.triggerAtaque !=null){
+              obj1.triggerAtaque.activado = false;
+              obj1.triggerAtaque.destroy();
+            }
+        }
+        obj1.destroy();
+      }
+      obj1.inmune = 130;
+    }
+}
