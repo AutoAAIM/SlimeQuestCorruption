@@ -83,7 +83,7 @@ export default class registrar extends Phaser.Scene {
 		});
 
 		this.contText = scene.add.text(16, 240, 'Contraseña: >' + nameTextInput +'<', {fontSize: '16px', fill: '#68FF00', fontFamily: 'sans-serif'})
-		console.log(scene.input.keyboard)
+		//console.log(scene.input.keyboard)
 
 		scene.physics.world.enable(this.contText);
 		this.contText.setInteractive();
@@ -92,7 +92,7 @@ export default class registrar extends Phaser.Scene {
 		});
 
 		this.responseText = scene.add.text(16, 270, '//', {fontSize: '16px', fill: '#68FF00', fontFamily: 'sans-serif'})
-		console.log(scene.input.keyboard)
+		//console.log(scene.input.keyboard)
 
     	this.input.keyboard.on('keydown', (event) => {
 			var c = event.code
@@ -161,7 +161,7 @@ export default class registrar extends Phaser.Scene {
 		xhr.onreadystatechange = function(){
 			if(this.readyState == 4 && this.status == 200)
 			{
-				console.log(this.responseText)
+				//console.log(this.responseText)
 				myObj = JSON.parse(this.responseText.split('?')[1]);
 				myZone = JSON.parse(this.responseText.split('?')[2]);
 				//console.log(myObj)
@@ -214,7 +214,7 @@ export default class registrar extends Phaser.Scene {
 				else{
 					responseTextOutput = 'este usuario ya existe'
 				}
-				console.log(this)
+				//console.log(this)
 			}
 		}
 		//console.log(xhr)

@@ -21,7 +21,7 @@ export function create(obj) {
   npc1 = scene.physics.add.sprite(obj.x, obj.y, 'npc1');
   interacturar = scene.physics.add.sprite(obj.x, obj.y-32, 'buttonE');
   dialogo = scene.physics.add.sprite(npc1.x+46, npc1.y-42, 'dialogo').setScale(1.7);;
-  dialogoText = scene.add.text(dialogo.x-32, dialogo.y-16, 'ranas: ' + enemigos.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos, { fontsize: '2px', fill: '#62f5cb' }).setDepth(1)
+  dialogoText = scene.add.text(dialogo.x-32, dialogo.y-16, 'ranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos, { fontsize: '2px', fill: '#62f5cb' }).setDepth(1)
   npc1.trigger = scene.add.rectangle(npc1.x,npc1.y, 90, 90);
   scene.physics.add.existing(npc1.trigger, false);
   npc1.trigger.activado = false;
@@ -52,9 +52,9 @@ function activarTrigger(player, npc){
 }
 
 function recogerPersonaje(){
-  if(enemigos.contadorRana > 0 && mosquitos.contadorMosquitos > 0){
+  if(ranas.contadorRana > 0 && mosquitos.contadorMosquitos > 0){
     console.log("todavia no puedes");
-  }else if(enemigos.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
+  }else if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
     console.log("soy tuyo");
   }
 }
@@ -69,6 +69,6 @@ export function update(){
         dialogo.setAlpha(0);
     dialogoText.setAlpha(0);
   }
-  dialogoText.text = "ranas: " + enemigos.contadorRana + "\n mosquitos:"+ mosquitos.contadorMosquitos;
+  dialogoText.text = "ranas: " + ranas.contadorRana + "\n mosquitos:"+ mosquitos.contadorMosquitos;
 
 }
