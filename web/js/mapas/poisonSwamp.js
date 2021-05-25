@@ -140,11 +140,11 @@ export default class swamp extends Phaser.Scene {
         poisonAspectTiles = fondo.filterTiles(tile => tile.properties.aspectoVeneno).map(x => x.index);
 
         poisonTilesId = [...(new Set(poisonTiles))];
-        fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(heroes.heroes, fondo));
+        //fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(heroes.heroes, fondo));
 
-        fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
+        //fondo.setTileIndexCallback(poisonTilesId, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
 
-        fondo.setTileIndexCallback(poisonAspectTiles, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
+        //fondo.setTileIndexCallback(poisonAspectTiles, heroes.poisonPlayer, this.physics.add.overlap(glish.ondaList, fondo));
 
         cutTiles = obstaculos2.filterTiles(tile => tile.properties.cut_attack).map(x => x.index);
         cutTilesId = [...(new Set(cutTiles))];
@@ -156,9 +156,9 @@ export default class swamp extends Phaser.Scene {
 
         destructibleTiles2 = obstaculos3.filterTiles(tile => tile.properties.destructible).map(x => x.index);
 
-        obstaculos2.setTileIndexCallback(cutTilesId, glish.climbing_plant, this.physics.add.overlap(glish.beamList, obstaculos2));
+        //obstaculos2.setTileIndexCallback(cutTilesId, glish.climbing_plant, this.physics.add.overlap(glish.beamList, obstaculos2));
 
-        obstaculos3.setTileIndexCallback(cutTilesId2, glish.climbing_plant, this.physics.add.overlap(glish.beamList, obstaculos3));
+        //obstaculos3.setTileIndexCallback(cutTilesId2, glish.climbing_plant, this.physics.add.overlap(glish.beamList, obstaculos3));
 
         boxTank.setDestructibles(obstaculos2, destructibleTiles1);
         boxTank.setDestructibles(obstaculos3, destructibleTiles2);
