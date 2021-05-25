@@ -162,7 +162,7 @@ export function ponerEmitter()
 }
 
 export function poisonPlayer(obj, casilla) {
-  if (casilla.properties.veneno && obj != glish.ondaList && obj != armasHeroicas) {
+  if (casilla.properties.veneno && obj != armasHeroicas) {
     obj.status = "envenenado";
     if (obj.tiempoStatus == 0) {
       obj.tiempoStatus = 300;

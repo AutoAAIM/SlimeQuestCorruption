@@ -39,5 +39,5 @@ function incrementarPlorts (cantidad)
 		scene.game.usuario.dinero = parseInt(scene.game.usuario.dinero)
 	}
 	scene.game.usuario.dinero += cantidad;
-	console.log('guarra');
-	}
+	//console.log('guarra');
+}
