@@ -18,6 +18,9 @@ export function preload()
 	this.load.image('tanqueFront','assets/images/BoxTank+canon-front.png');
 	this.load.image('taladroBack','assets/images/BoxTank+canon-back.png');
 
+	this.load.image('tanqueMuerto','assets/images/boxtankmuertolateral.png');
+	this.load.image('tanqueMuertoFront','assets/images/boxtankmuertolafrontal.png');
+
 	this.load.image('sombra_bala','assets/images/sombra_bala.png');
 	this.load.image('bala','assets/images/bala.png');
 
@@ -343,16 +346,22 @@ export function playerAnims()
 	if(player.look == 'up')
 	{
 
-		if(keys.Hability.isDown && player.enCabeza)
+		if(keys.Hability.isDown && player.enCabeza && !player.muerto)
 		{
 			player.stop();
 			player.setTexture('taladroBack');
 			player.emitter.on = true;
 		}
-		else
+		else if(!player.muerto)
 		{
 			player.stop();
 			player.setTexture('tanqueFront');
+			player.emitter.stop();
+		}
+		else
+		{
+			player.stop();
+			player.setTexture('tanqueMertoFront');
 			player.emitter.stop();
 		}
 		player.setCircle(16, 0);
@@ -364,15 +373,21 @@ export function playerAnims()
 	}
 	else if(player.look == 'down')
 	{
-		if (keys.Hability.isDown && player.enCabeza)
+		if (keys.Hability.isDown && player.enCabeza && !player.muerto)
 		{
 			player.play('taladroAlanteAnim', true);
 			player.emitter.on = true;
 		}
-		else
+		else if(!player.muerto)
 		{
 			player.stop();
 			player.setTexture('tanqueFront');
+			player.emitter.stop();
+		}
+		else
+		{
+			player.stop();
+			player.setTexture('tanqueMertoFront');
 			player.emitter.stop();
 		}
 
@@ -383,16 +398,23 @@ export function playerAnims()
 	}
 	else if(player.look == 'left')
 	{
-		if (keys.Hability.isDown && player.enCabeza)
+		if (keys.Hability.isDown && player.enCabeza && !player.muerto)
 		{
 			player.play('taladroDerechaAnim', true);
 			player.setCircle(16, 4);
 			player.emitter.on = true;
 		}
-		else
+		else if(!player.muerto)
 		{
 			player.stop();
 			player.setTexture('tanque');
+			player.setCircle(16, 0);
+			player.emitter.stop();
+		}
+		else
+		{
+			player.stop();
+			player.setTexture('tanqueMuerto');
 			player.setCircle(16, 0);
 			player.emitter.stop();
 		}
@@ -403,16 +425,23 @@ export function playerAnims()
 	}
 	else if(player.look == 'right')
 	{
-		if (keys.Hability.isDown && player.enCabeza)
+		if (keys.Hability.isDown && player.enCabeza && !player.muerto)
 		{
 			player.play('taladroDerechaAnim', true);
 			player.setCircle(16, 4);
 			player.emitter.on = true;
 		}
-		else
+		else if(!player.muerto)
 		{
 			player.stop();
 			player.setTexture('tanque');
+			player.setCircle(16, 0);
+			player.emitter.stop();
+		}
+		else
+		{
+			player.stop();
+			player.setTexture('tanqueMuerto');
 			player.setCircle(16, 0);
 			player.emitter.stop();
 		}
