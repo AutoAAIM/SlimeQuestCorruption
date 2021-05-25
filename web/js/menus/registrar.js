@@ -211,7 +211,7 @@ export default class registrar extends Phaser.Scene {
 					scene.loginusuario()
 				}
 				else{
-					responseTextOutput = 'este usuario y contraseña ya existen'
+					responseTextOutput = 'este usuario ya existe'
 				}
 				console.log(this)
 			}
