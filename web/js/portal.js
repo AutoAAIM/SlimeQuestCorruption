@@ -97,7 +97,7 @@ function teleport(entity, obj)
 		tiempoActivo = 0;
 	}
 
-	console.log('muevete')
+	console.log('muevete de '+obj+' a '+obj.destino)
 
 }
 
