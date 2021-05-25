@@ -245,19 +245,21 @@ function atacarPersonaje() {
 }
 
 function updateEstadosDelJugador() {
-  if (player.status != "none") {
-    if (player.status == "envenenado") {
-      if (player.tiempoStatus % 60 == 0) {
-        player.vida -= 1;
-      }
-      if (player.tiempoStatus <= 0) {
-        player.status = "none";
+    if (player.status != "none") {
+        if (player.status == "envenenado") {
+        if (player.tiempoStatus % 60 == 0) {
+            player.vida -= 1;
+        }
+        if (player.tiempoStatus <= 0) {
+            player.status = "none";
+            player.ralentizar = 0;
+        } else {
+            player.tiempoStatus--;
+        }
+        }
+    }else if(player.status == "none"){
         player.ralentizar = 0;
-      } else {
-        player.tiempoStatus--;
-      }
     }
-  }
 
 	player.inmuneT--;
 	if(player.inmuneT <= 0)
