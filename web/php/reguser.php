@@ -7,7 +7,7 @@
 	$db = pg_connect("host=$dbserver port=5432 dbname=$database user=$user password=$password");
 	$query = "INSERT INTO usuarios(nombre, contrasena, dinero, id_zona) VALUES ('$nombre','$contrasena','0','1')";
 
-	//UPDATE usuarios SET id_zona=2 WHERE nombre = $nombre AND contrasena = $contrasena"
+	//ejemplo de update//UPDATE usuarios SET id_zona=2 WHERE nombre = $nombre AND contrasena = $contrasena"
 
 	$result = pg_query($query);
 
