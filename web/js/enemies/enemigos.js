@@ -2,8 +2,6 @@ import * as glish from '../personajes/glish.js';
 import * as heroes from '../grupoHeroes.js';
 var go;
 var scene;
-export var contadorRana = 2;
-export var contadorMosquitos = 1;
 
 export function updateEnemySwamp(s, enemyList){
     Phaser.Actions.Call(enemyList.getChildren(), function(go) {

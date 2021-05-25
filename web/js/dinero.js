@@ -29,10 +29,10 @@ export function generarPlort(vector, cantidad)
 function recogerPlort(pj, pl)
 {
 	pl.destroy();
-	incrementarPlorts = 1;
+	incrementarPlorts(1);
 }
 
 function incrementarPlorts (cantidad)
 {
-	//var plorts += cantidad;
+	scene.usuario.dinero += cantidad;
 }

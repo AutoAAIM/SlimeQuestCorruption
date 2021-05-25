@@ -69,6 +69,7 @@ export default class swamp extends Phaser.Scene {
         
 		keys.create(scene);
         mosquitos.create();
+        ranas.create();
         
         document.body.style.cursor = "none";
         camera = this.cameras.main;
@@ -116,7 +117,7 @@ export default class swamp extends Phaser.Scene {
             }else if(obj.name == 'conseguir_glish'){
                 npc.create(obj);        
             }else if(obj.name == 'BossCalamar' && !bossMuerto){
-                swampBoss.createBoss(obj, sc.config, enemyList);
+                swampBoss.createBoss(obj, sc.config);
             }else if(obj.name == 'tentaculos' && !bossMuerto){
                 swampBoss.generateTentacles(obj);
             }else if(obj.name == 'entrada_3'){
@@ -158,6 +159,7 @@ export default class swamp extends Phaser.Scene {
 
 
         this.physics.add.overlap(heroes.armasHeroicas, mosquitos.mosquitosGrupo, mosquitos.recibirDanyo);
+        this.physics.add.overlap(heroes.armasHeroicas, ranas.ranaGrupo, ranas.recibirDanyo);
 
         this.physics.add.overlap(heroes.cabeza,enemyList, heroes.herir);
         this.physics.add.overlap(heroes.cabeza,swampBoss.tentacleSegmentsGroup, heroes.herir);
@@ -196,6 +198,7 @@ export default class swamp extends Phaser.Scene {
 
       enemigos.updateEnemySwamp(scene, enemyList);
       mosquitos.update();
+      ranas.update();
 
       swampBoss.updateBoss();
 

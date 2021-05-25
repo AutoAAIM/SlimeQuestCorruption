@@ -1,12 +1,13 @@
 
 export var enemigoRana;
+export var ranaGrupo;
 var lenguaRana;
 var scene;
 var config;
 var tiempoRana = 30;
 var ranas = new Array;
 
-import * as enemigos from './enemigos.js';
+import * as mosquitos from './mosquitos.js';
 import * as heroes from '../grupoHeroes.js';
 
 export function preload(){
@@ -17,9 +18,15 @@ export function preload(){
 
 }
 
-export function createEnemyRana(obj, conf, enemyList){
+export function create(){
+    ranaGrupo = scene.physics.add.group();
+    scene.physics.add.collider(ranaGrupo, ranaGrupo);
+    scene.physics.add.collider(ranaGrupo, mosquitos.mosquitosGrupo);
+}
+
+export function createEnemyRana(obj, conf){
     config = conf;
-    enemigoRana = enemyList.create(obj.x,obj.y, 'EnemigoRana').setOrigin(0.5); 
+    enemigoRana = ranaGrupo.create(obj.x,obj.y, 'EnemigoRana').setOrigin(0.5); 
     enemigoRana.name = 'rana';
     enemigoRana.vida = 7;
     enemigoRana.dano = 1;
@@ -45,6 +52,187 @@ function esRana(enemy)
 	{return true}
 	else{return false}
 }
+
+export function update(){
+    Phaser.Actions.Call(ranaGrupo.getChildren(), function(go) {
+
+        if (go.trigger.activado){
+            //console.log();
+            go.trigger.x = go.x;
+            go.trigger.y = go.y;
+            if(go.name == 'rana'){
+                
+                go.triggerAtaque.x = go.x;
+                go.triggerAtaque.y = go.y;
+
+                if(go.tiempoMoverse == 0 && go.status != "paralizado"){
+                    scene.physics.moveTo(go, heroes.cabeza.x, heroes.cabeza.y, 500);
+                    go.tiempoMoverse = -1;
+                    setTimeout(()=>{
+                        go.tiempoMoverse = Phaser.Math.Between(50, 70);
+                        if(go.body != undefined){
+                            go.setVelocity(0);
+                        }
+                    },300);
+                }
+            }
+
+            if(go.status == "paralizado" && go.temporizador !=0){
+                go.temporizador--;
+                go.setVelocity(0);
+            }
+            if(go.temporizador == 0){
+                go.status = "none";
+            }
+            if(go.tiempoMoverse != 0){
+                go.tiempoMoverse--;
+
+            }
+        }
+        //go.trigger.activado = false
+        if(go.inmune >= 0){
+            go.inmune--;
+        }
+    }); 
+}
+
+export function recibirDanyo(obj1, obj2){
+    var aleatorio;
+    console.log("Ataque "+obj2.dano+" vida "+obj1.vida);
+    if(obj2 !=heroes.cabeza && obj2.inmune <= 0){
+      obj2.setAlpha(0);
+      scene.tweens.add({
+          targets: obj2,
+          alpha: 1,
+          duration: 200,
+          ease: 'Linear',
+          repeat: 5,
+      });
+      obj2.vida -= obj1.dano;
+        if(obj1.stunt != undefined){ 
+            aleatorio = Math.floor(Math.random() * 100);
+            if(aleatorio <= obj1.stuntProb){
+                obj2.status = "paralizado";
+                obj2.temporizador = 230;
+            }
+        }
+        if(obj2.vida <= 0){
+            if(obj2.name == "rana" && contadorRana > 0){
+            contadorRana-=1;
+            }
+            if(obj2.trigger !=null){
+                obj2.trigger.activado = false;
+                obj2.trigger.destroy();
+                if(obj2.triggerAtaque !=null){
+                obj2.triggerAtaque.activado = false;
+                obj2.triggerAtaque.destroy();
+                }
+            }
+        obj2.destroy();
+      }
+      obj2.inmune = 130;
+    }
+    if(obj1 !=heroes.cabeza && obj1.inmune <= 0){
+        obj1.setAlpha(0);
+        scene.tweens.add({
+            targets: obj1,
+            alpha: 1,
+            duration: 200,
+            ease: 'Linear',
+            repeat: 5,
+        });
+        obj1.vida -= obj2.dano;
+        aleatorio = Math.floor(Math.random() * (20-2+1)) + 2;
+        if(aleatorio == 3){
+            obj1.status = "paralizado";
+            obj1.temporizador = 230;
+        }
+        if(obj1.vida <= 0){
+            if(obj1.name == "rana" && contadorRana > 0){
+            contadorRana-=1;
+            }
+            if(obj1.trigger !=null){
+                obj1.trigger.activado = false;
+                obj1.trigger.destroy();
+                if(obj1.triggerAtaque !=null){
+                obj1.triggerAtaque.activado = false;
+                obj1.triggerAtaque.destroy();
+                }
+            }
+            obj1.destroy();
+        }
+        obj1.inmune = 130;
+    }
+}
+
+export function recibirDanyo(obj1, obj2){
+    var aleatorio;
+    console.log("Ataque "+obj2.dano+" vida "+obj1.vida);
+    console.log("Ataque2 "+obj1.dano+" vida2 "+obj2.vida);
+    if(obj2 !=heroes.cabeza && obj2.inmune <= 0){
+      obj2.setAlpha(0);
+      scene.tweens.add({
+          targets: obj2,
+          alpha: 1,
+          duration: 200,
+          ease: 'Linear',
+          repeat: 5,
+      });
+      obj2.vida -= obj1.dano;
+      aleatorio = Math.floor(Math.random() * (20-2+1)) + 2;
+      if(aleatorio == 3){
+          obj2.status = "paralizado";
+          obj2.temporizador = 230;
+      }
+      if(obj2.vida <= 0){
+        if(obj2.name == "mosquito" && contadorMosquitos > 0){ 
+          contadorMosquitos-=1;
+        }
+        if(obj2.trigger !=null){
+            obj2.trigger.activado = false;
+            obj2.trigger.destroy();
+            if(obj2.triggerAtaque !=null){
+              obj2.triggerAtaque.activado = false;
+              obj2.triggerAtaque.destroy();
+            }
+        }
+        obj2.destroy();
+      }
+      obj2.inmune = 130;
+    }
+    if(obj1 !=heroes.cabeza && obj1.inmune <= 0){
+      obj1.setAlpha(0);
+      scene.tweens.add({
+          targets: obj1,
+          alpha: 1,
+          duration: 200,
+          ease: 'Linear',
+          repeat: 5,
+      });
+      obj1.vida -= obj2.dano;
+      aleatorio = Math.floor(Math.random() * (20-2+1)) + 2;
+      if(aleatorio == 3){
+          obj1.status = "paralizado";
+          obj1.temporizador = 230;
+      }
+      if(obj1.vida <= 0){
+        if(obj1.name == "mosquito" && contadorMosquitos > 0){ 
+          contadorMosquitos-=1;
+        }
+        if(obj1.trigger !=null){
+            obj1.trigger.activado = false;
+            obj1.trigger.destroy();
+            if(obj1.triggerAtaque !=null){
+              obj1.triggerAtaque.activado = false;
+              obj1.triggerAtaque.destroy();
+            }
+        }
+        obj1.destroy();
+      }
+      obj1.inmune = 130;
+    }
+}
+
 
 function sacaLengua(atributo){
 
