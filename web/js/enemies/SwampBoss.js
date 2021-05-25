@@ -32,12 +32,6 @@ export function createBoss(obj, conf, el){
     scene.physics.add.existing(enemigoBoss.trigger, false);
     enemigoBoss.trigger.activado = false;
 
-    scene.physics.add.overlap(heroes.cabeza, enemigoBoss.trigger, activarTrigger, null, scene);
-
-    scene.physics.add.overlap(heroes.armaHeroicas, enemigoBoss, activarTrigger, null, scene);
-
-
-
 }
 
 export function generateTentacles(obj){
@@ -71,7 +65,7 @@ export function generateTentacles(obj){
 
 	createSegmentos(s)
 
-	scene.physics.add.overlap(s.detectionbox, heroes.cabeza, detectarJugador, null, scene);
+	scene.physics.add.overlap(s.detectionbox, heroes.cabeza, detectarJugador);
 
 }
 
@@ -182,7 +176,7 @@ export function detectarJugador(db, pj)
 	db.detectado = true;
 }
 
-function activarTrigger(){
+export function activarTrigger(){
   enemigoBoss.trigger.activado = true;
   if(enemigoBoss.teleportar){
     heroes.heroes.x = enemigoBoss.x;
@@ -195,7 +189,7 @@ function activarTrigger(){
 
 
 
-  scene.physics.add.collider(heroes.cabeza, enemigoBoss.block);
+  //scene.physics.add.collider(heroes.cabeza, enemigoBoss.block);
 
 
 }

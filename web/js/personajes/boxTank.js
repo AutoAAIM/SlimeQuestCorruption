@@ -130,12 +130,25 @@ export function update(cabeza)
 {
 	if(player == cabeza){ player.enCabeza = true}
 	else{player.enCabeza = false}
+
+	if(player.vida <= 0)
+	{
+		player.muerto =  true;
+	}
+	else
+	{
+		player.muerto =  false;
+	}
+
 	if(!player.muerto && !player.inmovil)
 	{
-		input()
+		input();
 		////console.log(boxTank.player.y)
 		//maldito izan <-- Jaja xd
 	}
+
+	playerAnims();
+
 	updatebala();
 	puntero();
 }
@@ -313,11 +326,6 @@ export function input()
 		if(player.dir.x != 0 || player.dir.y != 0) {player.move = true;}
 		else{player.move = false;}
 	}
-		
-	playerAnims();
-		
-
-	
 
 	updateEstadosDelJugador();
 

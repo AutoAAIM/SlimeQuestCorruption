@@ -170,6 +170,10 @@ export default class swamp extends Phaser.Scene {
         this.physics.add.overlap(heroes.cabeza, ranas.enemigoRana.triggerAtaque, ranas.updateLenguaRana);
         this.physics.add.overlap(heroes.armasHeroicas, ranas.enemigoRana, enemigos.activarTrigger);
 
+        this.physics.add.overlap(heroes.cabeza, swampBoss.enemigoBoss.trigger, swampBoss.activarTrigger);
+        this.physics.add.overlap(heroes.armaHeroicas, swampBoss.enemigoBoss, swampBoss.activarTrigger);
+        
+
         //Colisiones
 
         this.physics.add.collider(enemyList, enemyList);
