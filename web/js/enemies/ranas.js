@@ -130,7 +130,7 @@ export function recibirDanyo(obj1, obj2){
             }
             obj2.destroy();
         }
-        obj2.inmune = 130;
+        obj2.inmune = 60;
     }
     if(obj1 !=heroes.cabeza && obj1.inmune <= 0){
         obj1.setAlpha(0);
@@ -163,7 +163,7 @@ export function recibirDanyo(obj1, obj2){
             }
             obj1.destroy();
         }
-        obj1.inmune = 130;
+        obj1.inmune = 60;
     }
 }
 
@@ -204,7 +204,7 @@ export function updateLenguaRana(o, atributo){
 		calcularLengua(l, parent)
 
 
-    //scene.physics.add.overlap(heroes.cabeza,l.segmentos, enemigos.recibirDanyo);
+    //scene.physics.add.overlap(heroes.cabeza,l.segmentos, recibirDanyo);
 
 	}
 	l.time--;
