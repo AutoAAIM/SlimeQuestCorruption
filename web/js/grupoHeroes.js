@@ -172,7 +172,7 @@ export function poisonPlayer(obj, casilla) {
     console.log(casilla.properties.veneno);
     //console.log(obj)
   }
-  else if ((casilla.properties.aspectoVeneno || casilla.properties.veneno) && obj == glish.ondaList && obj != cabeza && obj != heroes /*&& !swampBoss.enemigoBoss.trigger.activado*/) {
+  else if ((casilla.properties.aspectoVeneno || casilla.properties.veneno) && obj.tipo == "ondaCura" && obj != cabeza && obj != heroes /*&& !swampBoss.enemigoBoss.trigger.activado*/) {
 
     console.log(casilla.properties.veneno);
     console.log(obj)
