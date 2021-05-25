@@ -361,7 +361,7 @@ export function playerAnims()
 		else
 		{
 			player.stop();
-			player.setTexture('tanqueMertoFront');
+			player.setTexture('tanqueMuertoFront');
 			player.emitter.stop();
 		}
 		player.setCircle(16, 0);
@@ -387,7 +387,7 @@ export function playerAnims()
 		else
 		{
 			player.stop();
-			player.setTexture('tanqueMertoFront');
+			player.setTexture('tanqueMuertoFront');
 			player.emitter.stop();
 		}
 

@@ -107,6 +107,18 @@ export function update()
 		cambiarCabeza();
 		tEntreCambio = 30;
 	}
+
+	if(cabeza.muerto == true)
+	{
+		numCabeza++;
+		numCabeza = numCabeza % numHeroes;
+		//console.log(numCabeza)
+
+		//cabeza = heroes.getChildren()[numCabeza]
+		cambiarCabeza();
+		tEntreCambio = 30;
+	}
+
   if (keys.P.isDown && pausado == false){
     scene.physics.pause();
     setTimeout(() => {
