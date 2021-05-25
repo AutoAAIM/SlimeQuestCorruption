@@ -1,7 +1,7 @@
 import * as boxTank from './personajes/boxTank.js';
 import * as yasha from './personajes/yasha.js';
 import * as glish from './personajes/glish.js';
-import * as robin from './personajes/robin.js';
+//import * as robin from './personajes/robin.js';
 import * as swampBoss from './enemies/SwampBoss.js';
 import * as keys from './keys.js';
 
@@ -40,7 +40,7 @@ export function create(spawn, allTiles, antorchas, conf)
 	yasha.create(spawn, allTiles, antorchas, conf, heroes, armasHeroicas);
 	glish.create(spawn, allTiles, conf, heroes, armasHeroicas);
 	boxTank.create(spawn, allTiles, heroes, armasHeroicas);
-	robin.create(spawn, allTiles, conf, heroes, armasHeroicas);
+	//robin.create(spawn, allTiles, conf, heroes, armasHeroicas);
 
 
 	numHeroes = heroes.getLength();
@@ -73,7 +73,7 @@ export function update()
 	boxTank.update(cabeza);
 	glish.update(cabeza);
 	yasha.update(cabeza);
-	robin.update(cabeza);
+	//robin.update(cabeza);
 
 
 	//se elimina el ultimo punto y se añade uno al principio

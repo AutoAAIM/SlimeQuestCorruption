@@ -33,7 +33,7 @@ export function animacionRobin() {
 export function createRobin(spawn,muros,team,armas) {
 	var armas_heroe = armas;
 
-	animacionRobin();
+	//animacionRobin();
 
 	export var robin = team.create(spawn.x,spawn.y,'Robin');
 	robin.name= "Robin";
