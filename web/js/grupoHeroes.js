@@ -173,9 +173,12 @@ export function poisonPlayer(obj, casilla) {
     //console.log(obj)
   }
   else if ((casilla.properties.aspectoVeneno || casilla.properties.veneno) && obj == glish.ondaList && obj != cabeza && obj != heroes && !swampBoss.enemigoBoss.trigger.activado) {
+
+    console.log(casilla.properties.veneno);
+    console.log(obj)
+    
     casilla.setAlpha(0);
     casilla.properties.veneno = false;
-
     setTimeout(() => {
       if (!casilla.properties.aspectoVeneno) {
         casilla.properties.veneno = true;
@@ -183,8 +186,7 @@ export function poisonPlayer(obj, casilla) {
       casilla.setAlpha(1);
     }, 7000);
   }
-  console.log(casilla.properties.veneno);
-  console.log(obj)
+
 }
 
 export function herir(obj, e) {
