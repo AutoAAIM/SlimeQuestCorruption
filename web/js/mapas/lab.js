@@ -358,6 +358,7 @@ export default class lab extends Phaser.Scene {
 	{
 		//console.log(pointer)
 		//console.log(Keys)
+		console.log(scene.game.usuario.dinero)
 		heroes.update();
 		//alert(time + " -- "+ delta)
 

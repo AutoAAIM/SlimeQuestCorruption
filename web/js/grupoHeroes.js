@@ -169,6 +169,8 @@ export function poisonPlayer(obj, casilla) {
     }
     obj.ralentizar = 50;
 
+    //console.log(casilla.properties.veneno);
+    //console.log(obj)
   }
   else if ((casilla.properties.aspectoVeneno || casilla.properties.veneno) && obj == glish.ondaList && obj != cabeza && obj != heroes && !swampBoss.enemigoBoss.trigger.activado) {
     casilla.setAlpha(0);
@@ -182,6 +184,7 @@ export function poisonPlayer(obj, casilla) {
     }, 7000);
   }
   console.log(casilla.properties.veneno);
+  console.log(obj)
 }
 
 export function herir(obj, e) {
