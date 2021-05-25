@@ -53,6 +53,7 @@ function createPortal(obj)
 	{
     	obj.setAlpha(1)
 		obj.setTexture('portal')
+		console.log('un portal mas')
 	}
 	else
 	{
@@ -67,6 +68,7 @@ function createPortal(obj)
 export function collisionPortal(obj)
 {
 	scene.physics.add.overlap(obj, portals, teleport, teleportTimeout, scene);
+	console.log('una colision creada')
 }
 
 function teleportTimeout()
@@ -93,6 +95,8 @@ function teleport(entity, obj)
 		tiempoActivo = 0;
 	}
 
+	console.log('muevete')
+
 }
 
 function createLinks()
@@ -115,6 +119,7 @@ function createLinks()
 			p.destino=p
 		}
 	}
+	console.log('links hechos')
 }
 
 export function update()
