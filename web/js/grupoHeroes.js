@@ -162,14 +162,14 @@ export function ponerEmitter()
 }
 
 export function poisonPlayer(obj, casilla) {
-  if (casilla.properties.veneno && obj != armasHeroicas) {
+  if (casilla.properties.veneno && obj.tipo != "ondaCura") {
     obj.status = "envenenado";
     if (obj.tiempoStatus == 0) {
       obj.tiempoStatus = 300;
     }
     obj.ralentizar = 50;
 
-    console.log(casilla.properties.veneno);
+    //console.log(casilla.properties.veneno);
     //console.log(obj)
   }
   else if ((casilla.properties.aspectoVeneno || casilla.properties.veneno) && obj.tipo == "ondaCura" && obj != cabeza && obj != heroes /*&& !swampBoss.enemigoBoss.trigger.activado*/) {
