@@ -1,6 +1,7 @@
 import * as utilidades from '../utilidades.js';
 import * as boxTank from '../personajes/boxTank.js';
 import * as heroes from '../grupoHeroes.js';
+import * as dinero from '../dinero.js';
 
 export var scytherSegmentsGroup = new Array
 
@@ -306,11 +307,12 @@ export function update()
 			s.setVelocityY(0)
 		}
 
-		if(s.vida <= 0)
+		if(s.vida <= 0 && s.body.enable == true)
 		{
 			s.detectionbox.destroy();
 			s.setTint(0xaaaaaa)
 			s.body.enable = false;
+			dinero.generarPlort(s, 2);
 		}
 
 

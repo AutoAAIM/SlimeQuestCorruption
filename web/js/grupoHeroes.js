@@ -162,7 +162,7 @@ export function ponerEmitter()
 }
 
 export function poisonPlayer(obj, casilla) {
-  if (casilla.properties.veneno) {
+  if (casilla.properties.veneno && (obj != glish.ondaList && obj != armasHeroicas)) {
     obj.status = "envenenado";
     if (obj.tiempoStatus == 0) {
       obj.tiempoStatus = 300;
@@ -170,7 +170,7 @@ export function poisonPlayer(obj, casilla) {
     obj.ralentizar = 30;
 
   }
-  else if ((casilla.properties.aspectoVeneno || casilla.properties.veneno) && (obj == glish.ondaList || obj != heroes) && !swampBoss.enemigoBoss.trigger.activado) {
+  else if ((casilla.properties.aspectoVeneno || casilla.properties.veneno) && obj == glish.ondaList && (obj != cabeza || obj != heroes) && !swampBoss.enemigoBoss.trigger.activado) {
     casilla.setAlpha(0);
     casilla.properties.veneno = false;
 

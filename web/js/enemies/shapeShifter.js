@@ -1,5 +1,6 @@
 import * as boxTank from '../personajes/boxTank.js';
 import * as heroes from '../grupoHeroes.js';
+import * as dinero from '../dinero.js';
 
 var scene
 
@@ -98,7 +99,7 @@ export function update()
 			s.setTexture('shapeshifterMuerto');
 			s.setTint(0xaaaaaa)
 			s.body.enable = false;
-			generarPlort(s, 2)
+			dinero.generarPlort(s, 2);
 		}
 
 
