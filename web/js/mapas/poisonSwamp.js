@@ -164,19 +164,19 @@ export default class swamp extends Phaser.Scene {
         boxTank.setDestructibles(obstaculos3, destructibleTiles2);
 
 
-        this.physics.add.overlap(enemyList, heroes.armasHeroicas, enemigos.recibirDanyo);
+        //this.physics.add.overlap(enemyList, heroes.armasHeroicas, enemigos.recibirDanyo);
 
-        this.physics.add.overlap(heroes.cabeza,enemyList, heroes.herir);
-        this.physics.add.overlap(heroes.cabeza,swampBoss.tentacleSegmentsGroup, heroes.herir);
-        this.physics.add.overlap(swampBoss.enemigoBoss, heroes.armasHeroicas,enemigos.recibirDanyo);
-        this.physics.add.overlap(heroes.cabeza,swampBoss.enemigoBoss, heroes.herir);
+        //this.physics.add.overlap(heroes.cabeza,enemyList, heroes.herir);
+        //this.physics.add.overlap(heroes.cabeza,swampBoss.tentacleSegmentsGroup, heroes.herir);
+        //this.physics.add.overlap(swampBoss.enemigoBoss, heroes.armasHeroicas,enemigos.recibirDanyo);
+        //this.physics.add.overlap(heroes.cabeza,swampBoss.enemigoBoss, heroes.herir);
 
-        this.physics.add.overlap(heroes.cabeza, mosquitos.enemigoMosquito.trigger, enemigos.activarTrigger);
-        this.physics.add.overlap(heroes.armasHeroicas, mosquitos.enemigoMosquito, enemigos.activarTrigger);
+        //this.physics.add.overlap(heroes.cabeza, mosquitos.enemigoMosquito.trigger, enemigos.activarTrigger);
+        //this.physics.add.overlap(heroes.armasHeroicas, mosquitos.enemigoMosquito, enemigos.activarTrigger);
 
-        this.physics.add.overlap(heroes.cabeza, ranas.enemigoRana.trigger, enemigos.activarTrigger);
-        this.physics.add.overlap(heroes.cabeza, ranas.enemigoRana.triggerAtaque, ranas.updateLenguaRana);
-        this.physics.add.overlap(heroes.armasHeroicas, ranas.enemigoRana, enemigos.activarTrigger);
+        //this.physics.add.overlap(heroes.cabeza, ranas.enemigoRana.trigger, enemigos.activarTrigger);
+        //this.physics.add.overlap(heroes.cabeza, ranas.enemigoRana.triggerAtaque, ranas.updateLenguaRana);
+        //this.physics.add.overlap(heroes.armasHeroicas, ranas.enemigoRana, enemigos.activarTrigger);
 
         //this.physics.add.overlap(heroes.cabeza, swampBoss.enemigoBoss.trigger, swampBoss.activarTrigger);
         //this.physics.add.overlap(heroes.armaHeroicas, swampBoss.enemigoBoss, swampBoss.activarTrigger);

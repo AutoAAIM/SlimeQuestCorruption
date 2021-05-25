@@ -91,22 +91,23 @@ export function update()
 			s.setVelocityX(0)
 			s.setVelocityY(0)
 		}
-
+		
 		if(s.vida <= 0 && s.body.enable == true)
+		{
+			dinero.generarPlort(s, 2);
+		}
+
+		if(s.vida <= 0)
 		{
 			s.play('shapeshifterWalk', false);
 			s.detectionbox.destroy();
 			s.setTexture('shapeshifterMuerto');
 			s.setTint(0xaaaaaa)
 			s.body.enable = false;
-			dinero.generarPlort(s, 2);
 		}
-
 
 		s.detectionbox.y = s.y;
 		s.detectionbox.x = s.x;
-
-
 	})
 }
 
