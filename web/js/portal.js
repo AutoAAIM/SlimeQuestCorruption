@@ -48,6 +48,8 @@ function createPortal(obj)
 {
 	utilidades.convertToProperties(obj)
 
+	console.log(obj)
+
 
 	if(obj.type=="lab")
 	{
