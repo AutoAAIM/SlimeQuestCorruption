@@ -5,7 +5,7 @@ var scene;
 
 export function preload()
 {
-	this.load.image('plort','assets/particles/plort.png');
+	this.load.image('plort','assets/images/plort.png');
 	scene = this;
 }
 

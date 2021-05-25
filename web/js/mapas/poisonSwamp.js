@@ -68,6 +68,7 @@ export default class swamp extends Phaser.Scene {
         scene = this;
         
 		keys.create(scene);
+        mosquitos.create();
         
         document.body.style.cursor = "none";
         camera = this.cameras.main;

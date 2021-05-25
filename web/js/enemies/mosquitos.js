@@ -40,3 +40,37 @@ export function createEnemyMosquito(obj, conf){
     });
 
 }
+
+export function update(){
+    Phaser.Actions.Call(mosquitosGrupo.getChildren(), function(go) {
+        if (go.trigger.activado){
+            //console.log();
+            go.trigger.x = go.x;
+            go.trigger.y = go.y;
+            if(go.name == 'mosquito' && go.status != "paralizado"){
+                scene.physics.moveTo(go, heroes.cabeza.x, heroes.cabeza.y, Phaser.Math.Between(130, 140));
+                go.play('fly', true);  
+                if(go.x < heroes.cabeza.x){
+                  go.flipX = true;
+                }else{
+                  go.flipX = false;
+                }
+            }
+
+            if(go.status == "paralizado" && go.temporizador !=0){
+                go.temporizador--;
+                go.setVelocity(0);
+            }
+            if(go.temporizador == 0){
+                go.status = "none";
+            }
+            if(go.tiempoMoverse != 0){
+                go.tiempoMoverse--;
+
+            }
+        }
+        if(go.inmune >= 0){
+            go.inmune--;
+        }
+    }); 
+}
