@@ -2,6 +2,7 @@
 export var enemigoMosquito;
 var scene;
 var config;
+export var mosquitosGrupo;
 import * as glish from '../personajes/glish.js';
 import * as heroes from '../grupoHeroes.js';
 import * as enemigos from './enemigos.js';
@@ -12,9 +13,9 @@ export function preload(){
 
 }
 
-export function createEnemyMosquito(obj, conf,enemyList){
+export function createEnemyMosquito(obj, conf){
     config = conf;
-    enemigoMosquito = enemyList.create(obj.x,obj.y, 'mosq').setOrigin(0.5); 
+    enemigoMosquito = mosquitosGrupo.create(obj.x,obj.y, 'mosq').setOrigin(0.5); 
     enemigoMosquito.name = 'mosquito';
     enemigoMosquito.vida = 7;
     enemigoMosquito.dano = 1;

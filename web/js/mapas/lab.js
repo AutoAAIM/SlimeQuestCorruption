@@ -69,7 +69,7 @@ export default class lab extends Phaser.Scene {
 		portal.preload.call(this)
 		shapeShifter.preload.call(this)
 		scyther.preload.call(this)
-		dinero.preload()
+		dinero.preload.call(this)
 	}
 
 	create()

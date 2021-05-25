@@ -111,7 +111,7 @@ export default class swamp extends Phaser.Scene {
             if(obj.name == 'rana'){
                 ranas.createEnemyRana(obj, sc.config, enemyList);
             }else if(obj.name == 'mosquito'){
-                mosquitos.createEnemyMosquito(obj, sc.config, enemyList);
+                mosquitos.createEnemyMosquito(obj, sc.config);
             }else if(obj.name == 'conseguir_glish'){
                 npc.create(obj);        
             }else if(obj.name == 'BossCalamar' && !bossMuerto){
