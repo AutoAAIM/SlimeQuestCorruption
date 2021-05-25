@@ -5,8 +5,9 @@
 
 	if($_SERVER['REQUEST_METHOD']=='GET'){
 		try{
-			$respuesta = pg_query("select * from usuarios");
-			$respuestaz = pg_query("select * from zonas");
+
+			$respuesta = pg_query($db,"select * from usuarios");
+			$respuestaz = pg_query($db,"select * from zonas");
 
 			echo json_encode(array(
 				'respuesta'=>'200',
