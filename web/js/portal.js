@@ -51,7 +51,7 @@ function createPortal(obj)
 	console.log(obj)
 
 
-	if(obj.type=="lab")
+	if(obj.properties.tipo=="lab")
 	{
     	obj.setAlpha(1)
 		obj.setTexture('portal')

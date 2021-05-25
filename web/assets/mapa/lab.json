@@ -460,6 +460,11 @@
                          "name":"puerta",
                          "type":"int",
                          "value":1
+                        }, 
+                        {
+                         "name":"tipo",
+                         "type":"string",
+                         "value":"lab"
                         }],
                  "rotation":0,
                  "type":"lab",
@@ -771,6 +776,11 @@
                          "name":"puerta",
                          "type":"int",
                          "value":2
+                        }, 
+                        {
+                         "name":"tipo",
+                         "type":"string",
+                         "value":"lab"
                         }],
                  "rotation":0,
                  "type":"lab",
