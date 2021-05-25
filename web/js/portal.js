@@ -85,7 +85,7 @@ function teleportTimeout()
 	return true
 }
 
-function teleport(entity, obj)
+function teleport(obj, entity)
 {
 	if (obj.coolDown <= 0 && tiempoActivo == 10)
 	{
