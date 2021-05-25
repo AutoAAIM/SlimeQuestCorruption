@@ -48,14 +48,14 @@ function createPortal(obj)
 {
 	utilidades.convertToProperties(obj)
 
-	console.log(obj)
+	//console.log(obj)
 
 
 	if(obj.properties.tipo=="lab")
 	{
     	obj.setAlpha(1)
 		obj.setTexture('portal')
-		console.log('un portal mas')
+		//console.log('un portal mas')
 	}
 	else
 	{
@@ -70,7 +70,7 @@ function createPortal(obj)
 export function collisionPortal(obj)
 {
 	scene.physics.add.overlap(obj, portals, teleport, teleportTimeout, scene);
-	console.log('una colision creada')
+	//console.log('una colision creada')
 }
 
 function teleportTimeout()
@@ -97,7 +97,7 @@ function teleport(obj, entity)
 		tiempoActivo = 0;
 	}
 
-	console.log('muevete de '+obj+' a '+obj.destino)
+	//console.log('muevete de '+obj+' a '+obj.destino)
 
 }
 
