@@ -18,7 +18,7 @@ export function create()
 
 export function generarPlort(vector, cantidad)
 {
-	for(var i; i < cantidad; i++)
+	for(var i = 0; i < cantidad; i++)
 	{
 		
 		var p = grupoDinero.create(vector.x + Paser.Math.Between(-10,10), vector.y + Paser.Math.Between(-10,10), 'plort');
