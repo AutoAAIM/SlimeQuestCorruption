@@ -34,5 +34,5 @@ function recogerPlort(pj, pl)
 
 function incrementarPlorts (cantidad)
 {
-	scene.usuario.dinero += cantidad;
+	scene.game.usuario.dinero += cantidad;
 }
