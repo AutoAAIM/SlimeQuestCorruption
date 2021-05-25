@@ -8,8 +8,8 @@
 
 			echo 'estoy dentro';
 			$respuesta = pg_query($db,"select * from usuarios");
-			echo pg_fetch_all($respuesta);
-			
+			echo json_encode(pg_fetch_all($respuesta));
+
 			$respuestaz = pg_query($db,"select * from zonas");
 
 			echo json_encode(array(
