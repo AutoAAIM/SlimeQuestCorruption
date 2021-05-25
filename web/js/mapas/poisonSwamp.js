@@ -27,6 +27,8 @@ var cutTilesId;
 var cutTiles2;
 var cutTilesId2;
 var allLayers;
+var playerSpawnPoint;
+var spawnID;
 var destructibleTiles1;
 var destructibleTiles2;
 
@@ -105,6 +107,9 @@ export default class swamp extends Phaser.Scene {
         });
         enemyList = this.physics.add.group();
         enemyList.lengua = this.physics.add.group();
+
+        playerSpawnPoint = new Array();
+
         tileSpawner.forEach(obj => {
             this.physics.world.enable(obj);
             obj.setAlpha(0);
@@ -119,10 +124,13 @@ export default class swamp extends Phaser.Scene {
             }else if(obj.name == 'tentaculos' && !bossMuerto){
                 swampBoss.generateTentacles(obj);
             }else if(obj.name == 'entrada_3'){
-                heroes.create(obj, allLayers, null, sc.config)
+                playerSpawnPoint.unshift(obj);
             }
-
         })
+        spawnID = playerSpawnPoint.length-1;
+
+        heroes.create(playerSpawnPoint[spawnID], allLayers, null, sc.config)
+
         portal.createAnims();
         portal.create(tileSpawner);
         

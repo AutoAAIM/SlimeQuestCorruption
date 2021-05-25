@@ -59,11 +59,11 @@ export function updateEnemySwamp(s, enemyList){
 
 export function activarTrigger(e, go){
 
-    if(go.trigger != undefined){
+    if(go.trigger != undefined && (go != heroes.heroes || go != heroes.cabeza)){
     	go.trigger.activado = true;
 
     }
-	else if(e.trigger != undefined)
+	else if(e.trigger != undefined && (e != heroes.heroes || e != heroes.cabeza))
 	{
 		e.trigger.activado = true;
 	}
@@ -75,7 +75,7 @@ export function activarTrigger(e, go){
 
 export function recibirDanyo(obj1, obj2){
     var aleatorio;
-    //console.log("Ataque "+obj2.ataque+" vida "+obj1.vida);
+    console.log("Ataque "+obj2.ataque+" vida "+obj1.vida);
     if(obj1.inmune <= 0){
       obj1.setAlpha(0);
       scene.tweens.add({
