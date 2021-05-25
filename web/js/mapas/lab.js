@@ -76,8 +76,6 @@ export default class lab extends Phaser.Scene {
 	{
 		scene = this;
 
-		dinero.create()
-
 		music = this.sound.add('labchords');
 
     	music.play();
@@ -256,6 +254,8 @@ export default class lab extends Phaser.Scene {
 
 		scene.physics.add.overlap(heroes.armasHeroicas, shapeShifter.shapeShifterGroup, shapeShifter.herir, null, scene);
 		scene.physics.add.overlap(heroes.armasHeroicas, scyther.scytherGroup, scyther.herir, null, scene);
+
+		dinero.create();
 	}
 
 	createHuellas(obj,layer)

@@ -11,6 +11,12 @@ export function preload(){
   this.load.spritesheet('mosq','assets/images/mosqui.png', { frameWidth: 32, frameHeight: 32});
   scene = this;
 
+
+}
+
+export function create(){
+    mosquitosGrupo = scene.physics.add.group();
+    scene.physics.add.collider(mosquitosGrupo, mosquitosGrupo);
 }
 
 export function createEnemyMosquito(obj, conf){
