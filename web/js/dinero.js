@@ -34,5 +34,10 @@ function recogerPlort(pj, pl)
 
 function incrementarPlorts (cantidad)
 {
+	if(typeof scene.game.usuario.dinero === 'string')
+	{
+		scene.game.usuario.dinero = parseInt(scene.game.usuario.dinero)
+	}
 	scene.game.usuario.dinero += cantidad;
-}
+	console.log('guarra');
+	}
