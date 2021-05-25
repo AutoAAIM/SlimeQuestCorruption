@@ -181,7 +181,7 @@ export function poisonPlayer(obj, casilla) {
       casilla.setAlpha(1);
     }, 7000);
   }
-  //console.log(casilla.properties.veneno);
+  console.log(casilla.properties.veneno);
 }
 
 export function herir(obj, e) {
