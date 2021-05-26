@@ -50,7 +50,6 @@ export function activarTrigger(go, e){
 
     if(go.trigger != undefined && go != heroes.cabeza){
     	go.trigger.activado = true;
-        console.log(go.trigger.activado);
     }
 	else if(e.trigger != undefined && e != heroes.cabeza)
 	{
@@ -64,7 +63,7 @@ export function activarTrigger(go, e){
 
 export function update(){
     Phaser.Actions.Call(mosquitosGrupo.getChildren(), function(go) {
-        
+
         go.trigger.x = go.x;
         go.trigger.y = go.y;
 
