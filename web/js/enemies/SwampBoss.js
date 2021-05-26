@@ -300,9 +300,10 @@ export function recibirDanyo(obj1, obj2){
         if(obj2.trigger !=null){
             obj2.trigger.activado = false;
             obj2.trigger.destroy();
-            if(obj2.triggerAtaque !=null){
-              obj2.triggerAtaque.activado = false;
-              obj2.triggerAtaque.destroy();
+            if(obj2.block != null){
+                obj2.muerto = true;
+                obj2.block.body.enable = false;
+                //enemigoBoss.trigger.activado = false;
             }
         }
         dinero.generarPlort(obj2, 2);
@@ -332,9 +333,10 @@ export function recibirDanyo(obj1, obj2){
         if(obj1.trigger !=null){
             obj1.trigger.activado = false;
             obj1.trigger.destroy();
-            if(obj1.triggerAtaque !=null){
-              obj1.triggerAtaque.activado = false;
-              obj1.triggerAtaque.destroy();
+            if(obj1.block != null){
+                obj1.muerto = true;
+                obj1.block.body.enable = false;
+                //enemigoBoss.trigger.activado = false;
             }
         }
         dinero.generarPlort(obj1, 2);
