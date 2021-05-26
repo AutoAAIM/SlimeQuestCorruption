@@ -163,33 +163,19 @@ export default class registrar extends Phaser.Scene {
 			{
 				//console.log(this.responseText)
 				myObj = JSON.parse(this.responseText);
-				console.log(myObj);
+				//console.log(myObj);
 				//console.log(myObj)
 				//console.log(myObj)
-				/*for(var i = 0; i < myObj.length; i++)
+				if(myObj.usuarios.nombre == nameTextInput && myObj.usuarios.contrasena == contTextInput)
 				{
-					//console.log('holo')
-					if(myObj[i].nombre == nameTextInput && myObj[i].contrasena == contTextInput)
-					{
-						for(var z= 0; z < myZone.length; z++)
-						{
-							if(myObj[i].id_zona == myZone[z].id_zona)
-							{
-								scene.game.usuario = myObj[i]
-								scene.scene.start(myZone[z].nombre);
-							}
-							else{
-								responseTextOutput = 'este usuario no tiene zona'
-							}
-						}
-						//console.log(myObj[i].nombre)
-					}
-					else{
-						//console.log('no coincide')
-						responseTextOutput = 'no coincide'
-					}
-				}*/
-			}
+					scene.game.usuario = myObj.usuario;
+					scene.scene.start(myObj.zonanombre);
+				}
+				else{
+					//console.log('no coincide')
+					responseTextOutput = 'no coincide'
+				}
+		}
 		}
 		//console.log(xhr)
 		xhr.open("POST", "php/loguser.php?", true)
