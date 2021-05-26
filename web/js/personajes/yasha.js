@@ -107,6 +107,11 @@ export function create(spawn, allTiles, antorchas, conf, grupo, arHe)
 	puntero = new Phaser.Geom.Point();
 
 	pointer = scene.input.activePointer;
+
+	cursor = scene.add.sprite(0,0,'cursor').setDepth(20);
+	cursor.setOrigin(0.5)
+
+	cursor.pointer = pointer;
 }
 
 export function update(cabeza)
