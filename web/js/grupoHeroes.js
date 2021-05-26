@@ -169,14 +169,10 @@ export function poisonPlayer(obj, casilla) {
     }
     obj.ralentizar = 50;
 
-    //console.log(casilla.properties.veneno);
-    //console.log(obj)
   }
   else if ((casilla.properties.aspectoVeneno || casilla.properties.veneno) && obj.tipo == "ondaCura" && obj != cabeza && obj != heroes /*&& !swampBoss.enemigoBoss.trigger.activado*/) {
 
-    console.log(casilla.properties.veneno);
-    console.log(obj)
-
+    
     casilla.setAlpha(0);
     casilla.properties.veneno = false;
     setTimeout(() => {
