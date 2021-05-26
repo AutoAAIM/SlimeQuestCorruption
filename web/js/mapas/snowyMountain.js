@@ -6,6 +6,7 @@ import * as oscuridad from '../luz.js';
 import * as portal from '../portal.js';
 import * as bossHielo from '../enemies/bossHielo.js';
 import * as keys from '../keys.js';
+import * as sc from '../sceneConstructor.js';
 
 
 var scene;
@@ -109,7 +110,7 @@ export default class montelago extends Phaser.Scene {
 
 		console.log(scene.config)
 
-		heroes.create(spawn, allTiles, antorchas, scene.config);
+		heroes.create(spawn, allTiles, antorchas, sc.config);
 		jotun.create();
 		oscuridad.create(scene, allTiles);
 
