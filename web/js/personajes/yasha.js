@@ -123,7 +123,13 @@ export function update(cabeza)
 	if (!player.muerto && player.enCabeza && !player.inmovil)
     {
         input();
+		cursor.setAlpha(1)
     }
+	else
+	{
+		player.look = cabeza.look;
+		cursor.setAlpha(0)
+	}
 
 	updateFuego();
 	contFuego--;
