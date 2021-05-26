@@ -214,41 +214,7 @@ export function activarTrigger(go, e){
 
 export function recibirDanyo(obj1, obj2){
     var aleatorio;
-    console.log("ataque "+obj1.dano+"vida "+ obj2.vida);
-    if(obj2 !=heroes.cabeza && obj2.inmune <= 0){
-        obj2.setAlpha(0);
-        scene.tweens.add({
-            targets: obj2,
-            alpha: 1,
-            duration: 200,
-            ease: 'Linear',
-            repeat: 5,
-        });
-        obj2.vida -= obj1.dano;
-        if(obj1.stunt != undefined){ 
-            aleatorio = Math.floor(Math.random() * 100);
-            if(aleatorio <= obj1.stuntProb){
-                obj2.status = "paralizado";
-                obj2.temporizador = 230;
-            }
-        }
-        if(obj2.vida <= 0){
-            if(obj2.name == "rana" && contadorRana > 0){
-            contadorRana-=1;
-            }
-            if(obj2.trigger !=null){
-                obj2.trigger.activado = false;
-                obj2.trigger.destroy();
-                if(obj2.triggerAtaque !=null){
-                obj2.triggerAtaque.activado = false;
-                obj2.triggerAtaque.destroy();
-                }
-            }
-            dinero.generarPlort(obj2, 2);
-            obj2.destroy();
-        }
-        obj2.inmune = 60;
-    }
+    
     if(obj1 !=heroes.cabeza && obj1.inmune <= 0){
         obj1.setAlpha(0);
         scene.tweens.add({

@@ -101,7 +101,7 @@ export function update(){
 
 export function recibirDanyo(obj1, obj2){
     var aleatorio; 
-    console.log("Ataque2 "+obj1.dano+" vida2 "+obj2.vida);
+
     if(obj2 !=heroes.cabeza && obj2.inmune <= 0){
       obj2.setAlpha(0);
       scene.tweens.add({
