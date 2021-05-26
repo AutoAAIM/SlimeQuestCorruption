@@ -100,12 +100,12 @@ export function update(){
 
 export function activarTrigger(e, go){
 
+    console.log("go: "+go.trigger);
+    console.log("e: "+e.trigger);
     if(go.trigger != undefined && go != heroes.cabeza){
     	go.trigger.activado = true;
 
     }
-    console.log("go: "+go.trigger);
-    console.log("e: "+e.trigger);
     /*else if(go.triggerAtaque != undefined && go != heroes.cabeza){
         go.triggerAtaque.activado = true;
     }*/
