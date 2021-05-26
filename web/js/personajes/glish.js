@@ -175,7 +175,6 @@ function heavyMetal() {
   Phaser.Actions.Call(grupoHeroes.heroes.getChildren(), function(algo) {
     if (algo.vida < algo.maxVida && algo.vida > 0) {
       algo.vida += 2;
-      algo.status = "none";
       player.ralentizar = 0;
     }
     if(algo.vida > algo.maxVida){
@@ -230,16 +229,17 @@ function atacarPersonaje() {
   Phaser.Actions.Call(ondaList.getChildren(), function (go) {
     go.x = player.x;
     go.y = player.y;
-
+    Phaser.Actions.Call(grupoHeroes.heroes.getChildren(), function(algo) {
+        algo.status = "none";
+    });
     if (go.scale <= go.limite) {
-      go.scale += 0.07;
-
+        go.scale += 0.07;
     }
     if (go.scale != null) {
-      go.setScale(go.scale);
+        go.setScale(go.scale);
     }
     if (go.scale >= go.limite) {
-      go.destroy();
+        go.destroy();
     }
   });
 
