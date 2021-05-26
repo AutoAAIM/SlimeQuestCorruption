@@ -94,7 +94,7 @@ export function updateLenguaRana(atributo, o){
             calcularLengua(l, parent)
 
         console.log(heroes.cabeza.name);
-        scene.physics.add.overlap(heroes.cabeza,l.segmentos, recibirDanyo);
+        scene.physics.add.overlap(heroes.cabeza, l.segmentos, recibirDanyo);
 
         }
         l.time--;
@@ -217,7 +217,7 @@ export function activarTrigger(go, e){
 
 export function recibirDanyo(obj1, obj2){
     var aleatorio;
-
+    console.log("ataque "+obj1+"vida "+ obj2);
     if(obj2 !=heroes.cabeza && obj2.inmune <= 0){
         obj2.setAlpha(0);
         scene.tweens.add({
