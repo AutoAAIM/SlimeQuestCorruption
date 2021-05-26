@@ -21,7 +21,7 @@ export function preload()
 {
 	this.load.image('disparoHielo', 'assets/images/hielo.png');
 	this.load.image('textoHielo', 'assets/images/hieloTexto.png');
-	this.load.image('cursor','assets/images/cursor.png');
+	this.load.image('varita','assets/images/varita.png');
 	this.load.spritesheet('fuego', 'assets/images/fuego.png', {frameWidth:32, frameHeight:32});
 	this.load.spritesheet('YashaBackF', 'assets/images/yashaBackFuego.png', {frameWidth:32, frameHeight:32});
 	this.load.spritesheet('YashaBackFH', 'assets/images/yashaBackFuegoHielo.png', {frameWidth:32, frameHeight:32});
@@ -109,7 +109,7 @@ export function create(spawn, allTiles, antorchas, conf, grupo, arHe)
 
 	pointer = scene.input.activePointer;
 
-	cursor = scene.add.sprite(0,0,'cursor').setDepth(20);
+	cursor = scene.add.sprite(0,0,'varita').setDepth(20);
 	cursor.setOrigin(0.5)
 
 	cursor.pointer = pointer;
