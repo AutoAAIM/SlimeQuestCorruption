@@ -163,6 +163,7 @@ export function update(){
         
         go.trigger.x = go.x;
         go.trigger.y = go.y;
+        
         if (go.trigger.activado){
             //console.log();
             if(go.name == 'rana'){

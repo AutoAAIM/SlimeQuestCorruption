@@ -46,7 +46,7 @@ export function createEnemyMosquito(obj, conf){
 
 }
 
-export function activarTrigger(e, go){
+export function activarTrigger(go, e){
 
     if(go.trigger != undefined && go != heroes.cabeza){
     	go.trigger.activado = true;
@@ -64,10 +64,12 @@ export function activarTrigger(e, go){
 
 export function update(){
     Phaser.Actions.Call(mosquitosGrupo.getChildren(), function(go) {
+        
+        go.trigger.x = go.x;
+        go.trigger.y = go.y;
+
         if (go.trigger.activado){
             //console.log();
-            go.trigger.x = go.x;
-            go.trigger.y = go.y;
             if(go.name == 'mosquito' && go.status != "paralizado"){
                 scene.physics.moveTo(go, heroes.cabeza.x, heroes.cabeza.y, Phaser.Math.Between(130, 140));
                 go.play('fly', true);  

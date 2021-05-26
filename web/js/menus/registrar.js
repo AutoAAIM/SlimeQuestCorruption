@@ -162,11 +162,11 @@ export default class registrar extends Phaser.Scene {
 			if(this.readyState == 4 && this.status == 200)
 			{
 				//console.log(this.responseText)
-				myObj = JSON.parse(this.responseText.split('?')[1]);
-				myZone = JSON.parse(this.responseText.split('?')[2]);
+				myObj = JSON.parse(this.responseText);
+				console.log(myObj);
 				//console.log(myObj)
 				//console.log(myObj)
-				for(var i = 0; i < myObj.length; i++)
+				/*for(var i = 0; i < myObj.length; i++)
 				{
 					//console.log('holo')
 					if(myObj[i].nombre == nameTextInput && myObj[i].contrasena == contTextInput)
@@ -188,12 +188,13 @@ export default class registrar extends Phaser.Scene {
 						//console.log('no coincide')
 						responseTextOutput = 'no coincide'
 					}
-				}
+				}*/
 			}
 		}
 		//console.log(xhr)
-		xhr.open("GET", "php/loguser.php?", true)
-		xhr.send()
+		xhr.open("POST", "php/loguser.php?", true)
+		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+		xhr.send("nombre="+nameTextInput+"&contrasena="+contTextInput)
 	}
 
 
@@ -209,7 +210,7 @@ export default class registrar extends Phaser.Scene {
 			{
 				if(this.responseText != "")
 				{
-					scene.loginusuario()
+					responseTextOutput = 'se ha registrado con exito!! ahora dele a log in para entrar ☻'
 				}
 				else{
 					responseTextOutput = 'este usuario ya existe'
