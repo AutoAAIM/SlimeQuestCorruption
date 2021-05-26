@@ -63,7 +63,7 @@ export function update(){
         
         go.trigger.x = go.x;
         go.trigger.y = go.y;
-
+        console.log(go.trigger.activado);
         if (go.trigger.activado){
             //console.log();
             if(go.name == 'rana'){
@@ -110,10 +110,8 @@ export function activarTrigger(e, go){
     }
     else if(go.triggerAtaque != undefined && go != heroes.cabeza){
         go.triggerAtaque.activado = true;
-        console.log("2"+go.triggerAtaque);
     }
 	else{
-        console.log("3"+go);
     	go.activado = true;
     }
 
