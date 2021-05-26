@@ -92,9 +92,9 @@ export function update()
 			s.setVelocityY(0)
 		}
 		
-		if(s.vida <= 0 && s.body.enable == true)
+		if(s.vida <= 0 && s.detectionbox != undefined)
 		{
-			dinero.generarPlort(s, 2);
+			dinero.generarPlort(s, 3);
 		}
 
 		if(s.vida <= 0)

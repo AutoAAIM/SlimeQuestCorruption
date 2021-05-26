@@ -10,6 +10,7 @@ var ranas = new Array;
 
 import * as mosquitos from './mosquitos.js';
 import * as heroes from '../grupoHeroes.js';
+import * as dinero from '../dinero.js';
 
 export function preload(){
 	this.load.spritesheet('EnemigoRana','assets/images/portalAnim.png', { frameWidth: 32, frameHeight: 32});
@@ -130,6 +131,7 @@ export function recibirDanyo(obj1, obj2){
                 obj2.triggerAtaque.destroy();
                 }
             }
+            dinero.generarPlort(obj2, 2);
             obj2.destroy();
         }
         obj2.inmune = 60;
@@ -163,6 +165,7 @@ export function recibirDanyo(obj1, obj2){
                 obj1.triggerAtaque.destroy();
                 }
             }
+            dinero.generarPlort(obj1, 2);
             obj1.destroy();
         }
         obj1.inmune = 60;

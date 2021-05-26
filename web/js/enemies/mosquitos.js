@@ -7,6 +7,7 @@ export var mosquitosGrupo;
 import * as glish from '../personajes/glish.js';
 import * as heroes from '../grupoHeroes.js';
 import * as enemigos from './enemigos.js';
+import * as dinero from '../dinero.js';
 
 export function preload(){
   this.load.spritesheet('mosq','assets/images/mosqui.png', { frameWidth: 32, frameHeight: 32});
@@ -39,6 +40,22 @@ export function createEnemyMosquito(obj, conf){
       frameRate: 15,
       repeat: -1
     });
+
+}
+
+export function activarTrigger(e, go){
+
+    if(go.trigger != undefined && (go != heroes.heroes || go != heroes.cabeza)){
+    	go.trigger.activado = true;
+
+    }
+	else if(e.trigger != undefined && (e != heroes.heroes || e != heroes.cabeza))
+	{
+		e.trigger.activado = true;
+	}
+	else{
+    	go.activado = true;
+    }
 
 }
 
@@ -107,6 +124,7 @@ export function recibirDanyo(obj1, obj2){
               obj2.triggerAtaque.destroy();
             }
         }
+        dinero.generarPlort(obj2, 2);
         obj2.destroy();
       }
       obj2.inmune = 130;
@@ -138,6 +156,7 @@ export function recibirDanyo(obj1, obj2){
               obj1.triggerAtaque.destroy();
             }
         }
+        dinero.generarPlort(obj1, 2);
         obj1.destroy();
       }
       obj1.inmune = 130;
