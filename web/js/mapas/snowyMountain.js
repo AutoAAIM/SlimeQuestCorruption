@@ -152,11 +152,11 @@ export default class montelago extends Phaser.Scene {
 		muros.setCollisionByProperty({collides: true});
 		objetos2.setCollisionByProperty({collides: true});
 
-		portal.collisionPortal(heroes.player);
+		portal.collisionPortal(heroes.heroes);
 
-		this.physics.add.overlap(heroes.player, mago.mago.detectionbox, heroes.encenderHielito, null, this);
+		this.physics.add.overlap(heroes.heroes, mago.mago.detectionbox, yasha.encenderHielito, null, this);
 
-		this.physics.add.overlap(heroes.player, jotun.grupoDispEnemigo, jotun.quitarVida, null, this);
+		this.physics.add.overlap(heroes.heroes, jotun.grupoDispEnemigo, jotun.quitarVida, null, this);
 	}
 
 	update()
