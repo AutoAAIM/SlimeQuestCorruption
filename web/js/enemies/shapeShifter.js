@@ -91,11 +91,6 @@ export function update()
 			s.setVelocityX(0)
 			s.setVelocityY(0)
 		}
-		
-		if(s.vida <= 0 && s.detectionbox != undefined)
-		{
-			dinero.generarPlort(s, 3);
-		}
 
 		if(s.vida <= 0)
 		{
@@ -119,13 +114,13 @@ export function herir(obj, e) {
 			e.vida -= obj.dano;
 		}else{e.vida --;}
 		e.inmune = true;
-    if(obj.stunt != undefined){ 
-      var aleatoriedad = Math.floor(Math.random() * 100);
-      if(aleatoriedad <= obj.stuntProb){
-        console.log(aleatoriedad)
-        e.stunt = obj.stunt;
-      }
-    }
+		if(obj.stunt != undefined){ 
+			var aleatoriedad = Math.floor(Math.random() * 100);
+			if(aleatoriedad <= obj.stuntProb){
+				console.log(aleatoriedad)
+				e.stunt = obj.stunt;
+			}
+		}
 		scene.tweens.addCounter({
 			from: 100,
 			to: 0,
@@ -151,5 +146,9 @@ export function herir(obj, e) {
 	if(obj.fragil)
 	{
 		obj.destroy()
+	}
+	if(e.vida <= 0)
+	{
+		dinero.generarPlort(e, 3);
 	}
 }
