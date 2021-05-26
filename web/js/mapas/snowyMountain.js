@@ -103,7 +103,7 @@ export default class montelago extends Phaser.Scene {
 
 		spawn = new Phaser.Math.Vector2(-980, 2250)
 
-		heroes.create(spawn, allTiles, antorchas, config);
+		heroes.create(spawn, allTiles, antorchas, this.config);
 		jotun.create();
 		oscuridad.create(scene, allTiles);
 
