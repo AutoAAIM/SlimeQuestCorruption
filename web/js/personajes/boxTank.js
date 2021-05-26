@@ -106,7 +106,7 @@ export function create(spawn, allLayers, grupo, arHe)
 
 	if(this.lights != undefined)
 	{
-		boxTankLight = this.lights.addLight(player.x, player.y, 300)
+		boxTankLight = this.lights.addLight(player.x, player.y, 200, 0xFF7979)
 	}
 
 

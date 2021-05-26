@@ -197,7 +197,6 @@ export function recibirDanyo(obj1, obj2){
 
 
 function sacaLengua(atributo){
-    console.log(atributo);
 	for(var i = 0; i < ranas.length; i++)
 	{
 		if(ranas[i].triggerAtaque == atributo)
