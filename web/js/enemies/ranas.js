@@ -42,7 +42,7 @@ export function createEnemyRana(obj, conf){
     scene.physics.add.existing(enemigoRana.triggerAtaque, false);
     enemigoRana.triggerAtaque.activado = false;
 
-    
+
 
 	ranas.push(enemigoRana)
 
@@ -59,11 +59,12 @@ function esRana(enemy)
 
 export function update(){
     Phaser.Actions.Call(ranaGrupo.getChildren(), function(go) {
+        
+        go.trigger.x = go.x;
+        go.trigger.y = go.y;
 
         if (go.trigger.activado){
             //console.log();
-            go.trigger.x = go.x;
-            go.trigger.y = go.y;
             if(go.name == 'rana'){
                 
                 go.triggerAtaque.x = go.x;
@@ -102,19 +103,13 @@ export function update(){
 
 export function activarTrigger(e, go){
 
-    console.log("go: "+go.trigger);
-    console.log("e: "+e.trigger);
     if(go.trigger != undefined && go != heroes.cabeza){
     	go.trigger.activado = true;
 
     }
-    /*else if(go.triggerAtaque != undefined && go != heroes.cabeza){
+    else if(go.triggerAtaque != undefined && go != heroes.cabeza){
         go.triggerAtaque.activado = true;
-    }*/
-	else if(e.trigger != undefined && e != heroes.cabeza)
-	{
-		e.trigger.activado = true;
-	}
+    }
 	else{
     	go.activado = true;
     }
