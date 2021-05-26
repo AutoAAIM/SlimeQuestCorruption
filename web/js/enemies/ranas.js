@@ -111,6 +111,7 @@ export function activarTrigger(e, go){
         go.triggerAtaque.activado = true;
     }
 	else{
+        console.log(go.triggerAtaque);
     	go.activado = true;
     }
 
