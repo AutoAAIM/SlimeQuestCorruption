@@ -102,6 +102,8 @@ export function create(spawn, allLayers, grupo, arHe)
 	player.ralentizar = 0;
 	scene.physics.add.collider(player, allLayers);
 
+	this.light = this.lights.addLight(player.x, player.y, 300)
+
 	player.emitter = emitterHumo.createEmitter({
 		alpha: { start: 1, end: 0 },
 		scale: { start: 0.25, end: 1 },
@@ -263,6 +265,9 @@ export function updatebala()
 export function input()
 {
 	playerVelocidad = playerVelocidadReal;
+
+	this.light.x = player.x;
+	this.light.y = player.y;
 
 	if(player.enCabeza)
 	{
