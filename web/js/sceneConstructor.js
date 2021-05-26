@@ -1,6 +1,6 @@
 import lab from './mapas/lab.js'
 import swamp from './mapas/poisonSwamp.js'
-import lago from './mapas/snowyMountain.js'
+import montelago from './mapas/snowyMountain.js'
 import registrar from './menus/registrar.js'
 
 
@@ -28,7 +28,7 @@ export var config={
         	//autoCenter: Phaser.Scale.CENTER_BOTH,
 			//zoom: 2,
 		},
-		scene: [registrar, lab, swamp, lago],
+		scene: [registrar, lab, swamp, montelago],
 };
 
 var game=new Phaser.Game(config);

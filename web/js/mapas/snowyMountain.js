@@ -41,9 +41,9 @@ var Hielo;
 var i;
 var f;
 
-export default class lago extends Phaser.Scene {
+export default class montelago extends Phaser.Scene {
 	constructor(){
-		super("lago");
+		super("montelago");
 	}
 
 	preload()
