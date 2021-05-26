@@ -47,7 +47,7 @@ export function activarTrigger(e, go){
 
     if(go.trigger != undefined && go != heroes.cabeza){
     	go.trigger.activado = true;
-
+        console.log(go.trigger.activado);
     }
 	else if(e.trigger != undefined && e != heroes.cabeza)
 	{
@@ -94,8 +94,7 @@ export function update(){
 }
 
 export function recibirDanyo(obj1, obj2){
-    var aleatorio;
-    console.log("Ataque "+obj2.dano+" vida "+obj1.vida);
+    var aleatorio; 
     console.log("Ataque2 "+obj1.dano+" vida2 "+obj2.vida);
     if(obj2 !=heroes.cabeza && obj2.inmune <= 0){
       obj2.setAlpha(0);

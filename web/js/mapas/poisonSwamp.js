@@ -159,22 +159,23 @@ export default class swamp extends Phaser.Scene {
         boxTank.setDestructibles(obstaculos2, destructibleTiles1);
         boxTank.setDestructibles(obstaculos3, destructibleTiles2);
 
+        this.physics.add.overlap(heroes.cabeza, mosquitos.enemigoMosquito, mosquitos.activarTrigger);
+        this.physics.add.overlap(heroes.armasHeroicas, mosquitos.enemigoMosquito, mosquitos.activarTrigger);
 
         this.physics.add.overlap(heroes.armasHeroicas, mosquitos.mosquitosGrupo, mosquitos.recibirDanyo);
         this.physics.add.overlap(heroes.armasHeroicas, ranas.ranaGrupo, ranas.recibirDanyo);
 
-        this.physics.add.overlap(heroes.cabeza,mosquitos.mosquitosGrupo, heroes.herir);
-        this.physics.add.overlap(heroes.cabeza,ranas.ranaGrupo, heroes.herir);
-        this.physics.add.overlap(heroes.cabeza,swampBoss.tentacleSegmentsGroup, heroes.herir);
-        //this.physics.add.overlap(swampBoss.enemigoBoss, heroes.armasHeroicas,enemigos.recibirDanyo);
-        this.physics.add.overlap(heroes.cabeza,swampBoss.enemigoBoss, heroes.herir);
+        this.physics.add.overlap(heroes.heroes, mosquitos.mosquitosGrupo, heroes.herir);
 
-        this.physics.add.overlap(heroes.cabeza, mosquitos.enemigoMosquito.trigger, mosquitos.activarTrigger);
-        this.physics.add.overlap(heroes.armasHeroicas, mosquitos.enemigoMosquito, mosquitos.activarTrigger);
-
-        this.physics.add.overlap(heroes.cabeza, ranas.enemigoRana.trigger, ranas.activarTrigger);
-        this.physics.add.overlap(heroes.cabeza, ranas.enemigoRana.triggerAtaque, ranas.updateLenguaRana);
+        this.physics.add.overlap(heroes.cabeza, ranas.enemigoRana, ranas.activarTrigger);
+        this.physics.add.overlap(heroes.cabeza, ranas.enemigoRana, ranas.updateLenguaRana);
         this.physics.add.overlap(heroes.armasHeroicas, ranas.enemigoRana, ranas.activarTrigger);
+        
+        this.physics.add.overlap(heroes.heroes, ranas.ranaGrupo, heroes.herir);
+
+        this.physics.add.overlap(heroes.heroes, swampBoss.tentacleSegmentsGroup, heroes.herir);
+        //this.physics.add.overlap(swampBoss.enemigoBoss, heroes.armasHeroicas,enemigos.recibirDanyo);
+        this.physics.add.overlap(heroes.heroes, swampBoss.enemigoBoss, heroes.herir);
 
         //this.physics.add.overlap(heroes.cabeza, swampBoss.enemigoBoss.trigger, swampBoss.activarTrigger);
         //this.physics.add.overlap(heroes.armaHeroicas, swampBoss.enemigoBoss, swampBoss.activarTrigger);
