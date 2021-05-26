@@ -5,7 +5,7 @@ var scene;
 export function preload()
 {
 	this.load.spritesheet('enemigoJotun', 'assets/images/jotun.png', {frameWidth:32, frameHeight:32});
-	this.load.image('polvoHielo', 'assets/images/polvo.png');
+	this.load.image('polvoHielo', 'assets/particles/polvo.png');
 
 	scene = this;
 }
