@@ -17,8 +17,6 @@ var allLayers;
 
 export function preload()
 {
-	this.load.image('Yasha', 'assets/images/yasha.png');
-	this.load.image('YashaBack', 'assets/images/yashaBack.png');
 	this.load.image('disparoHielo', 'assets/images/hielo.png');
 	this.load.image('textoHielo', 'assets/images/hieloTexto.png');
 	this.load.image('cursor','assets/images/cursor.png');

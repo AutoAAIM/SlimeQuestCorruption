@@ -17,7 +17,7 @@ export function preload(){
 }
 
 export function create(){
-    mosquitosGrupo = scene.physics.add.staticGroup();
+    mosquitosGrupo = scene.physics.add.group();
     scene.physics.add.collider(mosquitosGrupo, mosquitosGrupo);
 }
 
