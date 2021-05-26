@@ -1,10 +1,11 @@
-import  * as heroes from '../grupoHeroes.js';
-import  * as yasha from '../personajes/yasha.js';
-import  * as jotun from '../enemies/jotun.js';
-import  * as mago from '../NPCs/magoNPC.js';
-import  * as oscuridad from '../luz.js';
-import  * as portal from '../portal.js';
-import  * as bossHielo from '../enemies/bossHielo.js';
+import * as heroes from '../grupoHeroes.js';
+import * as yasha from '../personajes/yasha.js';
+import * as jotun from '../enemies/jotun.js';
+import * as mago from '../NPCs/magoNPC.js';
+import * as oscuridad from '../luz.js';
+import * as portal from '../portal.js';
+import * as bossHielo from '../enemies/bossHielo.js';
+import * as keys from '../keys.js';
 
 
 var scene;
@@ -66,6 +67,8 @@ export default class montelago extends Phaser.Scene {
 	create()
 	{
 		scene = this;
+
+		keys.create();
 
 		const mapa = this.make.tilemap({key:'CuevaMago'});
 
