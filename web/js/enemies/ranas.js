@@ -82,10 +82,6 @@ function createLenguaRana(parent){
 }
 export function updateLenguaRana(atributo, o){
 
-    if(atributo == enemigoRana.triggerAtaque){
-        console.log("tonto")
-    }
-
 	var parent = sacaLengua(atributo)
 	var l = parent.lengua;
  
@@ -204,7 +200,7 @@ export function update(){
     }); 
 }
 
-export function activarTrigger(e, go){
+export function activarTrigger(go, e){
 
     console.log("1"+go.activado);
 
