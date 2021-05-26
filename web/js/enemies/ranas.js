@@ -94,7 +94,7 @@ export function updateLenguaRana(atributo, o){
             calcularLengua(l, parent)
 
 
-        //scene.physics.add.overlap(heroes.cabeza,l.segmentos, recibirDanyo);
+        scene.physics.add.overlap(heroes.cabeza,l.segmentos, recibirDanyo);
 
         }
         l.time--;
@@ -203,19 +203,14 @@ export function update(){
 
 export function activarTrigger(go, e){
 
-    console.log("1"+go.activado);
-
     if(go.trigger != undefined && go != heroes.cabeza){
     	go.trigger.activado = true;
-        console.log("2"+go.trigger);
     }
     else if(go.triggerAtaque != undefined && go != heroes.cabeza){
         go.triggerAtaque.activado = true;
-        console.log("3"+go.triggerAtaque.activado);
     }
 	else{
     	go.activado = true;
-        console.log("4"+go.activado);
     }
 
 }
