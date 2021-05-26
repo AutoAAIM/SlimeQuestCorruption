@@ -161,6 +161,8 @@ export default class montelago extends Phaser.Scene {
 
 		this.physics.add.overlap(heroes.heroes, mago.mago.detectionbox, yasha.encenderHielito, null, this);
 
+		console.log('hasta aqui')
+
 		//this.physics.add.overlap(heroes.heroes, jotun.grupoDispEnemigo, jotun.quitarVida, null, this);
 	}
 
