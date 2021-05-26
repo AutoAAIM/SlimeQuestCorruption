@@ -68,7 +68,7 @@ export default class montelago extends Phaser.Scene {
 	{
 		scene = this;
 
-		keys.create();
+		keys.create(scene);
 
 		const mapa = this.make.tilemap({key:'CuevaMago'});
 
