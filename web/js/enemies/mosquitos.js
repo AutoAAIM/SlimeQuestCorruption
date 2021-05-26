@@ -45,11 +45,11 @@ export function createEnemyMosquito(obj, conf){
 
 export function activarTrigger(e, go){
 
-    if(go.trigger != undefined && (go != heroes.heroes || go != heroes.cabeza)){
+    if(go.trigger != undefined && go != heroes.cabeza){
     	go.trigger.activado = true;
 
     }
-	else if(e.trigger != undefined && (e != heroes.heroes || e != heroes.cabeza))
+	else if(e.trigger != undefined && e != heroes.cabeza)
 	{
 		e.trigger.activado = true;
 	}

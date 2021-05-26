@@ -98,6 +98,22 @@ export function update(){
     }); 
 }
 
+export function activarTrigger(e, go){
+
+    if(go.trigger != undefined && go != heroes.cabeza){
+    	go.trigger.activado = true;
+
+    }
+	else if(e.trigger != undefined && e != heroes.cabeza)
+	{
+		e.trigger.activado = true;
+	}
+	else{
+    	go.activado = true;
+    }
+
+}
+
 export function recibirDanyo(obj1, obj2){
     var aleatorio;
     console.log("Ataque "+obj2.dano+" vida "+obj1.vida);
