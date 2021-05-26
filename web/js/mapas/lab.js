@@ -30,7 +30,7 @@ var arenaEmitter
 //var balas
 var huellas
 //
-var grupoEnemigos;
+var grupoEnemigos = new Array;
 var deadlyTiles
 var huellasTiles
 var destructibleTiles1
