@@ -121,8 +121,8 @@ export function update(cabeza)
 	updateFuego();
 	contFuego--;
 
-	//puntero.x = player.x - config.width / 2 + keys.pointer.x;
-	//puntero.y = player.y - config.height / 2 + keys.pointer.y;
+	puntero.x = player.x - config.width / 2 + keys.pointer.x;
+	puntero.y = player.y - config.height / 2 + keys.pointer.y;
 
 	player.luz.x = player.x
 	player.luz.y = player.y
@@ -133,8 +133,8 @@ export function update(cabeza)
 
 export function updatePuntero()
 {
-	puntero.x = player.x - config.width / 2 + keys.pointer.x - 14;
-	puntero.y = player.y - config.height / 2 + keys.pointer.y + 15;
+	//cursor.x = player.x - config.width / 2 + keys.pointer.x - 14;
+	//cursor.y = player.y - config.height / 2 + keys.pointer.y + 15;
 }
 
 function input()
