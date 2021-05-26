@@ -80,7 +80,7 @@ function createLenguaRana(parent){
 	l.cooldown = 60;
 	l.time = 0;
 }
-export function updateLenguaRana(o, atributo){
+export function updateLenguaRana(atributo, o){
 
     if(atributo == enemigoRana.triggerAtaque){
         console.log("tonto")

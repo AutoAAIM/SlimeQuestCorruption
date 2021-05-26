@@ -162,6 +162,17 @@ export function update(cabeza)
 
 	updatebala();
 	puntero();
+
+	if(player.boxTankLight != undefined)
+	{
+		player.boxTankLight.x = player.x;
+		player.boxTankLight.y = player.y;
+	}
+
+	if(player.muerto)
+	{
+		player.boxTankLight.
+	}
 }
 
 export function generatebala()
@@ -271,12 +282,6 @@ export function updatebala()
 export function input()
 {
 	playerVelocidad = playerVelocidadReal;
-
-	if(player.boxTankLight != undefined)
-	{
-		player.boxTankLight.x = player.x;
-		player.boxTankLight.y = player.y;
-	}
 
 	if(player.enCabeza)
 	{
