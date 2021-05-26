@@ -151,13 +151,13 @@ export default class montelago extends Phaser.Scene {
 		this.physics.add.collider(jotun.grupoEnemigos, heroes.heroes);
 		this.physics.add.collider(bossHielo.boss, heroes.heroes);
 
-		console.log('hasta aqui')
-	
 		objetos.setCollisionByProperty({collides: true});
 		muros.setCollisionByProperty({collides: true});
 		objetos2.setCollisionByProperty({collides: true});
 
 		portal.collisionPortal(heroes.heroes);
+		
+		console.log('hasta aqui')
 
 		this.physics.add.overlap(heroes.heroes, mago.mago.detectionbox, yasha.encenderHielito, null, this);
 
