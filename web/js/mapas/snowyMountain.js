@@ -41,6 +41,7 @@ var KeyD;
 var Hielo;
 var i;
 var f;
+var spawn;
 
 export default class montelago extends Phaser.Scene {
 	constructor(){
@@ -54,7 +55,7 @@ export default class montelago extends Phaser.Scene {
 		this.load.image('snowTiles', 'assets/mapas/snow.png');
 		this.load.tilemapTiledJSON('CuevaMago', 'assets/mapas/mapa_CuevaMago.json');
 
-		yasha.preload.call(this)
+		heroes.preload.call(this)
 		jotun.preload.call(this)
 		mago.preload.call(this)
 		portal.preload.call(this)
@@ -100,7 +101,9 @@ export default class montelago extends Phaser.Scene {
 
 		jotun.create();
 
-		yasha.create(allTiles, antorchas, config);
+		spawn = new Phaser.Math.Vector2(-980, 2250)
+
+		heroes.create(spawn, allTiles, antorchas, config);
 		jotun.create();
 		oscuridad.create(scene, allTiles);
 
@@ -129,36 +132,36 @@ export default class montelago extends Phaser.Scene {
 		darkTiles = luz.filterTiles(tile => tile.properties.dark).map(x => x.index);
 		snowTiles = objetos.filterTiles(tile => tile.properties.snow).map(x => x.index);
 
-		yasha.setFreeze(lago, freezeTiles);
-		var cosas = yasha.grupoHielo
+		heroes.setFreeze(lago, freezeTiles);
+		var cosas = heroes.grupoHielo
 
-		lago.setTileIndexCallback(freezeTiles, yasha.freeze, this.physics.add.overlap(yasha.grupoHielo, lago));
+		lago.setTileIndexCallback(freezeTiles, heroes.freeze, this.physics.add.overlap(heroes.grupoHielo, lago));
 		
-		lago.setTileIndexCallback(freezeTiles, yasha.freeze, this.physics.add.overlap(yasha.grupoFuego, lago));
+		lago.setTileIndexCallback(freezeTiles, heroes.freeze, this.physics.add.overlap(heroes.grupoFuego, lago));
 
-		luz.setTileIndexCallback(darkTiles, oscuridad.encenderOscuridad, this.physics.add.overlap(yasha, luz));
+		luz.setTileIndexCallback(darkTiles, oscuridad.encenderOscuridad, this.physics.add.overlap(heroes, luz));
 
-		objetos.setTileIndexCallback(snowTiles, yasha.derretir, this.physics.add.overlap(yasha.grupoFuego, objetos));
+		objetos.setTileIndexCallback(snowTiles, heroes.derretir, this.physics.add.overlap(heroes.grupoFuego, objetos));
 		
 
-		this.physics.add.collider(mago.mago, yasha.player);
-		this.physics.add.collider(jotun.grupoEnemigos, yasha.player);
-		this.physics.add.collider(bossHielo.boss, yasha.player);
+		this.physics.add.collider(mago.mago, heroes.player);
+		this.physics.add.collider(jotun.grupoEnemigos, heroes.player);
+		this.physics.add.collider(bossHielo.boss, heroes.player);
 	
 		objetos.setCollisionByProperty({collides: true});
 		muros.setCollisionByProperty({collides: true});
 		objetos2.setCollisionByProperty({collides: true});
 
-		portal.collisionPortal(yasha.player);
+		portal.collisionPortal(heroes.player);
 
-		this.physics.add.overlap(yasha.player, mago.mago.detectionbox, yasha.encenderHielito, null, this);
+		this.physics.add.overlap(heroes.player, mago.mago.detectionbox, heroes.encenderHielito, null, this);
 
-		this.physics.add.overlap(yasha.player, jotun.grupoDispEnemigo, jotun.quitarVida, null, this);
+		this.physics.add.overlap(heroes.player, jotun.grupoDispEnemigo, jotun.quitarVida, null, this);
 	}
 
 	update()
 	{
-		yasha.update();
+		heroes.update();
 		portal.update();
 		oscuridad.darkMode();
 		mago.magoTrue(antorchas);
