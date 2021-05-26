@@ -21,7 +21,7 @@ export function create(allLayers)
 	//scene.physics.add.collider(scytherGroup, scytherGroup);
 }
 
-export function createScyther(obj)
+export function createScyther(obj, gren)
 {
 	utilidades.convertToProperties(obj)
 	var s = scytherGroup.create(obj.x, obj.y, 'scyther', 3)
@@ -56,6 +56,8 @@ export function createScyther(obj)
 	createSegmentos(s)
 
 	scene.physics.add.overlap(heroes.heroes, s.detectionbox, detectarJugador, null, scene);
+
+	gren.unshift(s);
 
 	//s.setSize(20, 16)
 	//s.setOffset(6, 14)

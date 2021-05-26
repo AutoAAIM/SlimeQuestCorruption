@@ -22,7 +22,7 @@ export function create(allLayers)
 	scene.physics.add.collider(shapeShifterGroup, allLayers);
 }
 
-export function createShapeshifter(obj)
+export function createShapeshifter(obj, gren)
 {
 	var s = shapeShifterGroup.create(obj.x, obj.y, 'shapeshifter')
 	s.inmovil = false;
@@ -48,6 +48,8 @@ export function createShapeshifter(obj)
 
 	s.setSize(20, 16)
 	s.setOffset(6, 14)
+
+	gren.unshift(s);
 	//scene.physics.add.collider(s, shapeShifterGroup);
 }
 
