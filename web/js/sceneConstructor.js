@@ -1,6 +1,8 @@
 import lab from './mapas/lab.js'
 import swamp from './mapas/poisonSwamp.js'
+import lago from './mapas/snowyMountain.js'
 import registrar from './menus/registrar.js'
+
 
 export var config={
 		type:Phaser.AUTO,
