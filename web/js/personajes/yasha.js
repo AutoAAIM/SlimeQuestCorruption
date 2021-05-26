@@ -62,6 +62,34 @@ export function create(spawn, allTiles, antorchas, conf, grupo, arHe)
 		repeat: -1
 	});
 
+	scene.anims.create({
+		key:'backF',
+		frames: scene.anims.generateFrameNames('YashaBackF'),
+		frameRate: 3,
+		repeat: -1
+	});
+
+	scene.anims.create({
+		key:'backFH',
+		frames: scene.anims.generateFrameNames('YashaBackFH'),
+		frameRate: 3,
+		repeat: -1
+	});
+
+	scene.anims.create({
+		key:'yashaF',
+		frames: scene.anims.generateFrameNames('YashaF'),
+		frameRate: 3,
+		repeat: -1
+	});
+
+	scene.anims.create({
+		key:'yashaFH',
+		frames: scene.anims.generateFrameNames('YashaFH'),
+		frameRate: 3,
+		repeat: -1
+	});
+
 	if(antorchas != null)
 	{
 		scene.physics.add.overlap(grupoFuego, antorchas, burn, null, scene);
@@ -76,8 +104,6 @@ export function create(spawn, allTiles, antorchas, conf, grupo, arHe)
 	puntero = new Phaser.Geom.Point();
 
 	pointer = scene.input.activePointer;
-
-	//player.setPipeline('Light2D');
 }
 
 export function update(cabeza)
