@@ -140,8 +140,8 @@ export function update(cabeza)
 
 export function updatePuntero()
 {
-	//cursor.x = player.x - config.width / 2 + keys.pointer.x - 14;
-	//cursor.y = player.y - config.height / 2 + keys.pointer.y + 15;
+	cursor.x = player.x - config.width / 2 + keys.pointer.x - 14;
+	cursor.y = player.y - config.height / 2 + keys.pointer.y + 15;
 }
 
 function input()
