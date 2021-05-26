@@ -227,7 +227,7 @@ export function playerAnims()
 		player.play('backF', true);
 	}
 
-	else if(player.look == 'down' && player.look == 'left' && player.look == 'right')
+	else if(player.look == 'down' || player.look == 'left' || player.look == 'right')
 	{
 		player.play('yashaF', true);
 	}
