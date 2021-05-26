@@ -42,6 +42,8 @@ export function createEnemyRana(obj, conf){
     scene.physics.add.existing(enemigoRana.triggerAtaque, false);
     enemigoRana.triggerAtaque.activado = false;
 
+    
+
 	ranas.push(enemigoRana)
 
 	createLenguaRana(enemigoRana)
