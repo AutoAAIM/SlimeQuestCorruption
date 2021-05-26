@@ -81,23 +81,24 @@ function createLenguaRana(parent){
 	l.time = 0;
 }
 export function updateLenguaRana(atributo, o){
+    if(o == heroes.cabeza){
+        var parent = sacaLengua(atributo)
+        var l = parent.lengua;
+    
+        if(l.time <= 0)
+        {
+            l.time = l.cooldown;
 
-	var parent = sacaLengua(atributo)
-	var l = parent.lengua;
- 
-	if(l.time <= 0)
-	{
-		l.time = l.cooldown;
-
-		createLenguaSegments(l, parent)
-		
-		calcularLengua(l, parent)
+            createLenguaSegments(l, parent)
+            
+            calcularLengua(l, parent)
 
 
-    //scene.physics.add.overlap(heroes.cabeza,l.segmentos, recibirDanyo);
+        //scene.physics.add.overlap(heroes.cabeza,l.segmentos, recibirDanyo);
 
-	}
-	l.time--;
+        }
+        l.time--;
+    }
 }// Lengua es una struct,contiene .segmentos, una array que contiene varias sprites en la que la 0 es la punta, .maxLong que contiene el numero de segmentos maximos, el tiempo para ser lanzada
 
 function createLenguaSegments(l, parent)
