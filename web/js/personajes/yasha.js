@@ -231,6 +231,16 @@ export function playerAnims()
 	{
 		player.play('yashaF', true);
 	}
+
+	else if(player.look == 'left')
+	{
+		player.play('yashaF', true);
+	}
+
+	else if(player.look == 'right')
+	{
+		player.play('yashaF', true);
+	}
 }
 
 function generarFuego()
