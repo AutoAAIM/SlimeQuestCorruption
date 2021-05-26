@@ -51,9 +51,9 @@ export default class montelago extends Phaser.Scene {
 	preload()
 	{
 		//this.load.atlas('atlas', 'assets/atlas/atlas.png', 'assets/atlas/sprites.json');
-		this.load.image('cuevaTiles', 'assets/mapas/terrain.png');
-		this.load.image('snowTiles', 'assets/mapas/snow.png');
-		this.load.tilemapTiledJSON('CuevaMago', 'assets/mapas/mapa_CuevaMago.json');
+		this.load.image('cuevaTiles', 'assets/mapa/terrain.png');
+		this.load.image('snowTiles', 'assets/mapa/snow.png');
+		this.load.tilemapTiledJSON('CuevaMago', 'assets/mapa/mapa_CuevaMago.json');
 
 		heroes.preload.call(this)
 		jotun.preload.call(this)
