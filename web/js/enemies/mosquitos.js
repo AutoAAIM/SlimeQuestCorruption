@@ -34,7 +34,7 @@ export function createEnemyMosquito(obj, conf){
     scene.physics.add.existing(enemigoMosquito.trigger, false);
     enemigoMosquito.trigger.activado = false;
 
-    scene.physics.add.overlap(heroes.heroes, enemigoMosquito, activarTrigger);
+    scene.physics.add.overlap(heroes.heroes, enemigoMosquito.trigger, activarTrigger);
     scene.physics.add.overlap(heroes.armasHeroicas, enemigoMosquito, activarTrigger);
 
     scene.anims.create({
@@ -68,8 +68,10 @@ export function update(){
         go.trigger.y = go.y;
 
         if (go.trigger.activado){
-            //console.log();
-            if(go.name == 'mosquito' && go.status != "paralizado"){
+
+            go.setImmovable(false);
+
+            if(go.status != "paralizado"){
                 scene.physics.moveTo(go, heroes.cabeza.x, heroes.cabeza.y, Phaser.Math.Between(130, 140));
                 go.play('fly', true);  
                 if(go.x < heroes.cabeza.x){

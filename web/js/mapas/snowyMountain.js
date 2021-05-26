@@ -136,17 +136,17 @@ export default class montelago extends Phaser.Scene {
 		yasha.setFreeze(lago, freezeTiles);
 		var cosas = heroes.grupoHielo
 
-		lago.setTileIndexCallback(freezeTiles, heroes.freeze, this.physics.add.overlap(heroes.grupoHielo, lago));
+		lago.setTileIndexCallback(freezeTiles, heroes.freeze, this.physics.add.overlap(yasha.grupoHielo, lago));
 		
-		lago.setTileIndexCallback(freezeTiles, heroes.freeze, this.physics.add.overlap(heroes.grupoFuego, lago));
+		lago.setTileIndexCallback(freezeTiles, heroes.freeze, this.physics.add.overlap(yasha.grupoFuego, lago));
 
-		luz.setTileIndexCallback(darkTiles, oscuridad.encenderOscuridad, this.physics.add.overlap(heroes, luz));
+		luz.setTileIndexCallback(darkTiles, oscuridad.encenderOscuridad, this.physics.add.overlap(heroes.heroes, luz));
 
-		objetos.setTileIndexCallback(snowTiles, heroes.derretir, this.physics.add.overlap(heroes.grupoFuego, objetos));
+		objetos.setTileIndexCallback(snowTiles, heroes.derretir, this.physics.add.overlap(yasha.grupoFuego, objetos));
 		
-		this.physics.add.collider(mago.mago, heroes.player);
-		this.physics.add.collider(jotun.grupoEnemigos, heroes.player);
-		this.physics.add.collider(bossHielo.boss, heroes.player);
+		this.physics.add.collider(mago.mago, heroes.heroes);
+		this.physics.add.collider(jotun.grupoEnemigos, heroes.heroes);
+		this.physics.add.collider(bossHielo.boss, heroes.heroes);
 	
 		objetos.setCollisionByProperty({collides: true});
 		muros.setCollisionByProperty({collides: true});

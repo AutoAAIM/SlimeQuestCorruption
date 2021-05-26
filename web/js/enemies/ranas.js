@@ -165,21 +165,21 @@ export function update(){
         go.trigger.y = go.y;
         
         if (go.trigger.activado){
-            if(go.name == 'rana'){
+            
+            go.setImmovable(false);
                 
-                go.triggerAtaque.x = go.x;
-                go.triggerAtaque.y = go.y;
+            go.triggerAtaque.x = go.x;
+            go.triggerAtaque.y = go.y;
 
-                if(go.tiempoMoverse == 0 && go.status != "paralizado"){
-                    scene.physics.moveTo(go, heroes.cabeza.x, heroes.cabeza.y, 500);
-                    go.tiempoMoverse = -1;
-                    setTimeout(()=>{
-                        go.tiempoMoverse = Phaser.Math.Between(50, 70);
-                        if(go.body != undefined){
-                            go.setVelocity(0);
-                        }
-                    },300);
-                }
+            if(go.tiempoMoverse == 0 && go.status != "paralizado"){
+                scene.physics.moveTo(go, heroes.cabeza.x, heroes.cabeza.y, 500);
+                go.tiempoMoverse = -1;
+                setTimeout(()=>{
+                    go.tiempoMoverse = Phaser.Math.Between(50, 70);
+                    if(go.body != undefined){
+                        go.setVelocity(0);
+                    }
+                },300);
             }
 
             if(go.status == "paralizado" && go.temporizador !=0){
