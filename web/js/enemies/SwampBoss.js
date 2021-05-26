@@ -1,4 +1,5 @@
 import * as utilidades from '../utilidades.js';
+import * as dinero from '../dinero.js';
 import * as heroes from '../grupoHeroes.js';
 
 var config;
@@ -306,7 +307,7 @@ export function recibirDanyo(obj1, obj2){
                 //enemigoBoss.trigger.activado = false;
             }
         }
-        dinero.generarPlort(obj2, 2);
+        dinero.generarPlort(obj2, 300);
         obj2.destroy();
       }
       obj2.inmune = 130;
