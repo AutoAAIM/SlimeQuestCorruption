@@ -1,4 +1,5 @@
 import  * as heroes from '../grupoHeroes.js';
+import  * as yasha from '../personajes/yasha.js';
 import  * as jotun from '../enemies/jotun.js';
 import  * as mago from '../NPCs/magoNPC.js';
 import  * as oscuridad from '../luz.js';
@@ -132,7 +133,7 @@ export default class montelago extends Phaser.Scene {
 		darkTiles = luz.filterTiles(tile => tile.properties.dark).map(x => x.index);
 		snowTiles = objetos.filterTiles(tile => tile.properties.snow).map(x => x.index);
 
-		heroes.setFreeze(lago, freezeTiles);
+		yasha.setFreeze(lago, freezeTiles);
 		var cosas = heroes.grupoHielo
 
 		lago.setTileIndexCallback(freezeTiles, heroes.freeze, this.physics.add.overlap(heroes.grupoHielo, lago));
