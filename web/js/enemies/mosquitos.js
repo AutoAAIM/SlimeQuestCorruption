@@ -34,7 +34,7 @@ export function createEnemyMosquito(obj, conf){
     scene.physics.add.existing(enemigoMosquito.trigger, false);
     enemigoMosquito.trigger.activado = false;
 
-    scene.physics.add.overlap(heroes.cabeza, enemigoMosquito, activarTrigger);
+    scene.physics.add.overlap(heroes.heroes, enemigoMosquito, activarTrigger);
     scene.physics.add.overlap(heroes.armasHeroicas, enemigoMosquito, activarTrigger);
 
     scene.anims.create({
