@@ -163,9 +163,8 @@ export default class registrar extends Phaser.Scene {
 			{
 				//console.log(this.responseText)
 				myObj = JSON.parse(this.responseText);
-				//console.log(myObj);
-				//console.log(myObj)
-				//console.log(myObj)
+				console.log(myObj);
+
 				if(myObj.usuarios.nombre == nameTextInput && myObj.usuarios.contrasena == contTextInput)
 				{
 					scene.game.usuario = myObj.usuario;
