@@ -4,9 +4,9 @@ var scene;
 var config;
 export var contadorMosquitos = 1;
 export var mosquitosGrupo;
-import * as glish from '../personajes/glish.js';
 import * as heroes from '../grupoHeroes.js';
 import * as enemigos from './enemigos.js';
+import * as ranas from './ranas.js';
 import * as dinero from '../dinero.js';
 
 export function preload(){
@@ -17,7 +17,7 @@ export function preload(){
 }
 
 export function create(){
-    mosquitosGrupo = scene.physics.add.group();
+    mosquitosGrupo = scene.physics.add.staticGroup();
     scene.physics.add.collider(mosquitosGrupo, mosquitosGrupo);
 }
 

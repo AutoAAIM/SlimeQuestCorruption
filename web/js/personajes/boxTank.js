@@ -106,7 +106,7 @@ export function create(spawn, allLayers, grupo, arHe)
 
 	if(scene.lights != undefined)
 	{
-		player.boxTankLight = scene.lights.addLight(player.x, player.y, 200, 0xFF7979).setIntensity(1);
+		player.boxTankLight = scene.lights.addLight(player.x, player.y, 300, 0xFF7979).setIntensity(1);
 	}
 
 
@@ -167,11 +167,6 @@ export function update(cabeza)
 	{
 		player.boxTankLight.x = player.x;
 		player.boxTankLight.y = player.y;
-	}
-
-	if(player.muerto)
-	{
-		console.log(player.boxTankLight)
 	}
 }
 
