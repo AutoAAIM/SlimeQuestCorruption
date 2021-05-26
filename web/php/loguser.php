@@ -6,7 +6,7 @@
 	$nombre = $_REQUEST["nombre"];
 	$contrasena = $_REQUEST["contrasena"];	
 
-	$respuesta = pg_query("select * from usuarios);
+	$respuesta = pg_query("select * from usuarios");
 
 	$rstr = json_encode(pg_fetch_all($respuesta, true));
 	echo $rstr;
