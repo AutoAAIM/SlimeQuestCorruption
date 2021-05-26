@@ -104,9 +104,9 @@ export function create(spawn, allLayers, grupo, arHe)
 	player.ralentizar = 0;
 	scene.physics.add.collider(player, allLayers);
 
-	if(this.lights != undefined)
+	if(scene.lights != undefined)
 	{
-		boxTankLight = this.lights.addLight(player.x, player.y, 200, 0xFF7979).setScrollFactor(0.0).setIntensity(1);
+		boxTankLight = scene.lights.addLight(player.x, player.y, 200, 0xFF7979).setScrollFactor(0.0).setIntensity(1);
 	}
 
 
