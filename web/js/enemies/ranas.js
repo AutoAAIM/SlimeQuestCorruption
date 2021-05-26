@@ -103,14 +103,14 @@ export function update(){
 }
 
 export function activarTrigger(e, go){
-        console.log("1"+go);
+        console.log("1"+go.trigger);
     if(go.trigger != undefined && go != heroes.cabeza){
     	go.trigger.activado = true;
 
     }
     else if(go.triggerAtaque != undefined && go != heroes.cabeza){
         go.triggerAtaque.activado = true;
-        console.log("2"+go);
+        console.log("2"+go.triggerAtaque);
     }
 	else{
         console.log("3"+go);
