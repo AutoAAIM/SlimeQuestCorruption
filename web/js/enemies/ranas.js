@@ -14,8 +14,8 @@ import * as dinero from '../dinero.js';
 
 export function preload(){
 	this.load.spritesheet('EnemigoRana','assets/images/portalAnim.png', { frameWidth: 32, frameHeight: 32});
-  this.load.image('punta_Lengua', 'assets/images/punta_Lengua.png');
-  this.load.image('fragmento_Lengua', 'assets/images/fragmento_lengua.png');
+    this.load.image('punta_Lengua', 'assets/images/punta_Lengua.png');
+    this.load.image('fragmento_Lengua', 'assets/images/fragmento_lengua.png');
 	scene = this;
 
 }
@@ -42,7 +42,7 @@ export function createEnemyRana(obj, conf){
     scene.physics.add.existing(enemigoRana.triggerAtaque, false);
     enemigoRana.triggerAtaque.activado = false;
 
-
+    scene.physics.add.overlap(heroes.heroes, enemigoRana.trigger, activarTrigger);
 
 	ranas.push(enemigoRana)
 
@@ -194,7 +194,7 @@ export function recibirDanyo(obj1, obj2){
 
 
 function sacaLengua(atributo){
-
+    console.log(atributo);
 	for(var i = 0; i < ranas.length; i++)
 	{
 		if(ranas[i].triggerAtaque == atributo)

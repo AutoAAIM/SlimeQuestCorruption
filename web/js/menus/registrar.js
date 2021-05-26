@@ -26,8 +26,8 @@ export default class registrar extends Phaser.Scene {
 	{
 		this.load.image('sky','assets/images/fondo_menu.jpg');
 		//this.load.image('sky','assets/images/fondo_menu.jpg');
-		this.load.spritesheet('play','assets/images/play button.png', { frameWidth: 32, frameHeight: 32});
-		this.load.spritesheet('regbut','assets/images/reg button.png', { frameWidth: 32, frameHeight: 32});
+		this.load.spritesheet('play','assets/images/play button.png', { frameWidth: 48, frameHeight: 32});
+		this.load.spritesheet('regbut','assets/images/reg button.png', { frameWidth: 48, frameHeight: 32});
 	}
 
 	create()
@@ -62,7 +62,7 @@ export default class registrar extends Phaser.Scene {
 			//scene.scene.start('lab');
 		});
 
-		regButton = scene.physics.add.sprite(68, sc.config.height/2+30, 'regbut').setDepth(20);
+		regButton = scene.physics.add.sprite(100, sc.config.height/2+30, 'regbut').setDepth(20);
 		regButton.play('regAnim', true)
 		regButton.setInteractive();
 
