@@ -181,10 +181,11 @@ export default class swamp extends Phaser.Scene {
         this.physics.add.overlap(heroes.heroes, ranas.ranaGrupo, heroes.herir);
 
         this.physics.add.overlap(heroes.heroes, swampBoss.tentacleSegmentsGroup, heroes.herir);
+        //this.physics.add.overlap(swampBoss.enemigoBoss, heroes.armasHeroicas,enemigos.recibirDanyo);
         this.physics.add.overlap(heroes.heroes, swampBoss.enemigoBoss, heroes.herir);
 
         this.physics.add.overlap(heroes.cabeza, swampBoss.enemigoBoss.trigger, swampBoss.activarTrigger);
-        this.physics.add.overlap(heroes.armaHeroicas, swampBoss.enemigoBoss, swampBoss.activarTrigger);
+        //this.physics.add.overlap(heroes.armaHeroicas, swampBoss.enemigoBoss, swampBoss.activarTrigger);
 
         portal.collisionPortal(heroes.heroes)
 
@@ -202,6 +203,7 @@ export default class swamp extends Phaser.Scene {
     update(time, delta){
       
       heroes.update();
+      
       mosquitos.update();
       ranas.update();
 
