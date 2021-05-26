@@ -14,6 +14,7 @@ var config;
 var move;
 var armasHeroicas
 var allLayers;
+var cuadroTexto
 
 export function preload()
 {
