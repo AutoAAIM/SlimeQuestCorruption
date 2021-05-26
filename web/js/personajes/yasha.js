@@ -121,8 +121,8 @@ export function update(cabeza)
 	updateFuego();
 	contFuego--;
 
-	puntero.x = player.x - config.width / 2 + pointer.x;
-	puntero.y = player.y - config.height / 2 + pointer.y;
+	puntero.x = player.x - config.width / 2 + keys.pointer.x;
+	puntero.y = player.y - config.height / 2 + keys.pointer.y;
 
 	player.luz.x = player.x
 	player.luz.y = player.y
