@@ -217,7 +217,7 @@ export function activarTrigger(go, e){
 
 export function recibirDanyo(obj1, obj2){
     var aleatorio;
-    console.log("ataque "+obj1+"vida "+ obj2);
+    console.log("ataque "+obj1.dano+"vida "+ obj2.vida);
     if(obj2 !=heroes.cabeza && obj2.inmune <= 0){
         obj2.setAlpha(0);
         scene.tweens.add({
