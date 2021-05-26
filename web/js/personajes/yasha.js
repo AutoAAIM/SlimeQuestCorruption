@@ -17,9 +17,13 @@ var allLayers;
 
 export function preload()
 {
-	this.load.image('Yasha', 'assets/images/yasha.png');
-	this.load.image('disparoHielo', 'assets/images/hielo.png');
-	this.load.spritesheet('fuego', 'assets/images/fuego.png', {frameWidth:32, frameHeight:32});
+	this.load.image('Yasha', 'assets/sprites/yasha.png');
+	this.load.image('YashaBack', 'assets/sprites/yashaBack.png');
+	this.load.image('disparoHielo', 'assets/sprites/hielo.png');
+	this.load.image('textoHielo', 'assets/sprites/hieloTexto.png');
+	this.load.image('cursor','assets/sprites/cursor.png');
+	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
+	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
 
 	scene = this;
 }
@@ -234,4 +238,90 @@ function updateHielo()
 			h.destroy();
 		}
     }
+}
+
+export function derretir(fuego, nieve)
+{
+	if (nieve.properties != undefined && nieve.properties.snow == true && fuego.fuego)
+    {
+        nieve.setAlpha(0);
+
+		utilidades.collisionSwitch(nieve, false);
+
+        nieve.properties.snow = false;
+    }
+}
+
+export function freeze(objeto, lago)
+{
+    if (lago.properties != undefined && !lago.properties.freeze && objeto.hielo )
+    {
+        lago.setAlpha(0);
+
+        lago.properties.freeze = true;
+    }
+
+    if(lago.properties != undefined && lago.properties.freeze && objeto.fuego)
+    {
+		lago.setAlpha(1);
+
+        lago.properties.freeze = false;
+    }    
+}
+
+export function setFreeze(layer, id)
+{
+	layer.setTileIndexCallback(id, freeze, scene.physics.add.overlap(grupoHielo, layer));
+}
+
+function updateTexto()
+{
+	if(cuadroTexto != undefined)
+	{
+		cuadroTexto.x = player.x - config.width / 2 + config.width / 2;
+		cuadroTexto.y = player.y - config.height / 2 + config.height - 50;
+
+		cuadroTexto2.x = player.x - config.width / 2 + config.width / 2;
+		cuadroTexto2.y = player.y - config.height / 2 + config.height - 50;
+
+		scene.magoText.x = player.x - config.width / 2 + 16;
+		scene.magoText.y = player.y - config.height / 2 + 310;
+
+		imagenTexto.x = player.x - config.width / 2 + 540;
+		imagenTexto.y = player.y - config.height / 2 + 350;
+
+		if(Phaser.Geom.Intersects.RectangleToRectangle(player.getBounds(), mago.mago.detectionbox.getBounds()))
+		{
+			cuadroTexto.setAlpha(1)
+			cuadroTexto2.setAlpha(1)
+			scene.magoText.setAlpha(1)
+			imagenTexto.setAlpha(1)
+		}
+		else{
+			cuadroTexto.setAlpha(0)
+			cuadroTexto2.setAlpha(0)
+			scene.magoText.setAlpha(0)
+			imagenTexto.setAlpha(0)
+		}
+
+	}
+}
+
+export function encenderHielito(yasha, obj)
+{
+	player.hieloTrue = true;
+
+	if(textoMago == false)
+	{
+		cuadroTexto = scene.add.rectangle(player.x - config.width / 2 + config.width / 2, player.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16);
+
+
+		cuadroTexto2 = scene.add.rectangle(player.x - config.width / 2 + config.width/2, player.y - config.height / 2 + config.height - 50, config.width-8, 100 - 8, 0x000000).setDepth(17);
+
+		scene.magoText = scene.add.text(player.x - config.width / 2 + 16, player.y - config.height / 2 + 310, 'Mago: \nOtro novato en busca de poder... \nToma esto y dejame en paz.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(18);
+
+		imagenTexto = scene.physics.add.sprite(player.x - config.width / 2 + 540, player.y - config.height / 2 + 330, 'textoHielo').setDepth(18).setScale(2);
+	}
+
+	textoMago = true;
 }
