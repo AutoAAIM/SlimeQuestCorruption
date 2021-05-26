@@ -1,9 +1,10 @@
-import  * as yasha from './yasha.js';
-import  * as jotun from './jotun.js';
-import  * as mago from './magoNPC.js';
-import  * as oscuridad from './mapa.js';
-import  * as portal from './tp.js';
-import  * as bossHielo from './bossHielo.js';
+import  * as heroes from '../grupoHeroes.js';
+import  * as jotun from '../enemies/jotun.js';
+import  * as mago from '../NPCs/magoNPC.js';
+import  * as oscuridad from '../luz.js';
+import  * as portal from '../portal.js';
+import  * as bossHielo from '../enemies/bossHielo.js';
+
 
 var scene;
 var contFuego;
