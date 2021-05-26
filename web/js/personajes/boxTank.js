@@ -171,7 +171,7 @@ export function update(cabeza)
 
 	if(player.muerto)
 	{
-		player.boxTankLight
+		console.log(player.boxTankLight)
 	}
 }
 
