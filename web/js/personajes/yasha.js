@@ -12,6 +12,7 @@ var puntero;
 var pointer;
 var config;
 var move;
+var cursor;
 var armasHeroicas
 var allLayers;
 var cuadroTexto
