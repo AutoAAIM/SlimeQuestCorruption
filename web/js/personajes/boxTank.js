@@ -78,7 +78,7 @@ var scene
 
 var armasHeroicas
 
-var boxTankLight
+//var boxTankLight
 
 export function create(spawn, allLayers, grupo, arHe)
 {
@@ -272,10 +272,10 @@ export function input()
 {
 	playerVelocidad = playerVelocidadReal;
 
-	if(boxTankLight != undefined)
+	if(player.boxTankLight != undefined)
 	{
-		//boxTankLight.x = player.x;
-		//boxTankLight.y = player.y;
+		player.boxTankLight.x = player.x;
+		player.boxTankLight.y = player.y;
 	}
 
 	if(player.enCabeza)
