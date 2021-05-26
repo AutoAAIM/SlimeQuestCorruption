@@ -198,12 +198,12 @@ export function playerAnims()
 {
 	if(player.look == 'up')
 	{
-		player.setTexture('YashaBack');
+		player.play('backF', true);
 	}
 
 	else if(player.look == 'down')
 	{
-		player.setTexture('Yasha');
+		player.play('yashaF', true);
 	}
 }
 
