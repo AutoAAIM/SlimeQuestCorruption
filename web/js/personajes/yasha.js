@@ -128,6 +128,7 @@ export function update(cabeza)
 	else
 	{
 		player.look = cabeza.look;
+		playerAnims();
 		cursor.setAlpha(0)
 	}
 
