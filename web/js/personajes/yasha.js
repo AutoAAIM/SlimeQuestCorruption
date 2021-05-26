@@ -97,6 +97,8 @@ export function create(spawn, allTiles, antorchas, conf, grupo, arHe)
 
 	scene.physics.add.collider(player, allTiles);
 
+	player.luz = scene.lights.addLight(player.x, player.y, 0);
+
 	scene.cameras.main.startFollow(player);
 
 	camara = scene.cameras.main;
