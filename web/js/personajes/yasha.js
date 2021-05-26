@@ -129,7 +129,7 @@ export function update(cabeza)
 	{
 		player.look = cabeza.look;
 		playerAnims();
-		cursor.setAlpha(0)
+		cursor.setAlpha(0);
 	}
 
 	updateFuego();
