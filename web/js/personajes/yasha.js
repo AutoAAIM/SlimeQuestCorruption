@@ -17,13 +17,16 @@ var allLayers;
 
 export function preload()
 {
-	this.load.image('Yasha', 'assets/sprites/yasha.png');
-	this.load.image('YashaBack', 'assets/sprites/yashaBack.png');
-	this.load.image('disparoHielo', 'assets/sprites/hielo.png');
-	this.load.image('textoHielo', 'assets/sprites/hieloTexto.png');
-	this.load.image('cursor','assets/sprites/cursor.png');
-	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
-	this.load.spritesheet('fuego', 'assets/sprites/fuego.png', {frameWidth:32, frameHeight:32});
+	this.load.image('Yasha', 'assets/images/yasha.png');
+	this.load.image('YashaBack', 'assets/images/yashaBack.png');
+	this.load.image('disparoHielo', 'assets/images/hielo.png');
+	this.load.image('textoHielo', 'assets/images/hieloTexto.png');
+	this.load.image('cursor','assets/images/cursor.png');
+	this.load.spritesheet('fuego', 'assets/images/fuego.png', {frameWidth:32, frameHeight:32});
+	this.load.spritesheet('YashaBackF', 'assets/images/yashaBackFuego.png', {frameWidth:32, frameHeight:32});
+	this.load.spritesheet('YashaBackFH', 'assets/images/yashaBackFuegoHielo.png', {frameWidth:32, frameHeight:32});
+	this.load.spritesheet('YashaF', 'assets/images/yashaFuego.png', {frameWidth:32, frameHeight:32});
+	this.load.spritesheet('YashaBackFH', 'assets/images/yashaFuegoHielo.png', {frameWidth:32, frameHeight:32});
 
 	scene = this;
 }
@@ -145,6 +148,8 @@ function input()
 		generarHielo();
 	}
 
+	playerAnims();
+
 	player.dir = new Phaser.Math.Vector2( player.vectorX, player.vectorY);
 	player.dir.normalize();
 	player.setVelocityX(playerVelocidad*player.dir.x);
@@ -162,6 +167,19 @@ function input()
 	player.inmuneT--;
 	if (player.inmuneT <= 0) {
 		player.inmune = false;
+	}
+}
+
+export function playerAnims()
+{
+	if(player.look == 'up')
+	{
+		player.setTexture('YashaBack');
+	}
+
+	else if(player.look == 'down')
+	{
+		player.setTexture('Yasha');
 	}
 }
 
@@ -314,7 +332,6 @@ export function encenderHielito(yasha, obj)
 	if(textoMago == false)
 	{
 		cuadroTexto = scene.add.rectangle(player.x - config.width / 2 + config.width / 2, player.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16);
-
 
 		cuadroTexto2 = scene.add.rectangle(player.x - config.width / 2 + config.width/2, player.y - config.height / 2 + config.height - 50, config.width-8, 100 - 8, 0x000000).setDepth(17);
 
