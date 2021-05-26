@@ -40,7 +40,7 @@ export function create(spawn, allTiles, antorchas, conf, grupo, arHe)
 
 	playerVelocidad = 150;
 
-	player = grupo.create(spawn.x,spawn.y, 'Yasha').setDepth(5);
+	player = grupo.create(spawn.x,spawn.y, 'YashaF').setDepth(5);
 	player.name = "yasha"
 	player.heroe = true;
 	player.setCircle(16, 0);
@@ -130,13 +130,13 @@ function input()
 {
 	if(keys.Up.isDown)
 	{
-		player.vectorY=-1;
+		player.vectorY = -1;
 		player.look = "up"
 	}
 
 	else if(keys.Down.isDown)
 	{
-		player.vectorY=1;
+		player.vectorY = 1;
 		player.look = "down"
 	}
 
@@ -189,6 +189,7 @@ function input()
 	}
 
 	player.inmuneT--;
+
 	if (player.inmuneT <= 0) {
 		player.inmune = false;
 	}
