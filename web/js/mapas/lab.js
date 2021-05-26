@@ -111,18 +111,18 @@ export default class lab extends Phaser.Scene {
 			repeat: -1
 		});
 
-		const map = this.make.tilemap({key: 'laboratorio'}).setPipeline('Light2D');;
-		const tileset = map.addTilesetImage('Lab', 'labtiles').setPipeline('Light2D');;
-		const tileset2 = map.addTilesetImage('terrain', 'terraintiles').setPipeline('Light2D');;
-		const tileset3 = map.addTilesetImage('maniquiReal', 'maniquiReal').setPipeline('Light2D');;
+		const map = this.make.tilemap({key: 'laboratorio'});
+		const tileset = map.addTilesetImage('Lab', 'labtiles');
+		const tileset2 = map.addTilesetImage('terrain', 'terraintiles');
+		const tileset3 = map.addTilesetImage('maniquiReal', 'maniquiReal');
 		const allTilesets = [tileset, tileset2, tileset3];
-		map.createLayer('fondo', allTilesets).setDepth(0);
-		paredes = map.createLayer('salas', allTilesets).setDepth(0);
-		elementosMapa = map.createLayer('elementosSuelo', allTilesets).setDepth(0);
-		elementosMapa2 = map.createLayer('elementosSuelo2', allTilesets).setDepth(1);
-		obstaculos1 = map.createLayer('obstaculos', allTilesets).setDepth(10);
-		obstaculos2 = map.createLayer('obstaculos2', allTilesets).setDepth(10);
-		obstaculosManiqui = map.createLayer('maniquis', allTilesets).setDepth(10);
+		map.createLayer('fondo', allTilesets).setDepth(0).setPipeline('Light2D');
+		paredes = map.createLayer('salas', allTilesets).setDepth(0).setPipeline('Light2D');
+		elementosMapa = map.createLayer('elementosSuelo', allTilesets).setDepth(0).setPipeline('Light2D');
+		elementosMapa2 = map.createLayer('elementosSuelo2', allTilesets).setDepth(1).setPipeline('Light2D');
+		obstaculos1 = map.createLayer('obstaculos', allTilesets).setDepth(10).setPipeline('Light2D');
+		obstaculos2 = map.createLayer('obstaculos2', allTilesets).setDepth(10).setPipeline('Light2D');
+		obstaculosManiqui = map.createLayer('maniquis', allTilesets).setDepth(10).setPipeline('Light2D');
 
 		allLayers = [paredes, obstaculos1, obstaculos2, obstaculosManiqui]
 		
@@ -249,6 +249,8 @@ export default class lab extends Phaser.Scene {
 		})
 		elementosMapa.setTileIndexCallback(deadlyTiles, this.fallDeath, this.physics.add.overlap(shapeShifter.shapeShifterGroup, elementosMapa));
 		elementosMapa2.setTileIndexCallback(deadlyTiles, this.fallDeath, this.physics.add.overlap(shapeShifter.shapeShifterGroup, elementosMapa2));
+
+		grupoEnemigos..setPipeline('Light2D');
 
 		//this.physics.add.overlap(boxTank.player.taladro, shapeShifterGroup, herir, null, this);
 		//;text.setText('vida: ' + boxTank.player.vida, boxTank.player.x, boxTank.player.y);
