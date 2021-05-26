@@ -189,7 +189,7 @@ export function activarTrigger(){
 
 
 
-  scene.physics.add.collider(heroes.cabeza, enemigoBoss.block);
+  scene.physics.add.collider(heroes.heroes, enemigoBoss.block);
 
 
 }
