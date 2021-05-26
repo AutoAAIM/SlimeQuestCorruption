@@ -251,8 +251,9 @@ export default class lab extends Phaser.Scene {
 		elementosMapa2.setTileIndexCallback(deadlyTiles, this.fallDeath, this.physics.add.overlap(shapeShifter.shapeShifterGroup, elementosMapa2));
 
 		for(var i; i < grupoEnemigos.length; i++)
-		{}
+		{
 			grupoEnemigos[i].setPipeline('Light2D');
+		}
 
 		//this.physics.add.overlap(boxTank.player.taladro, shapeShifterGroup, herir, null, this);
 		//;text.setText('vida: ' + boxTank.player.vida, boxTank.player.x, boxTank.player.y);
