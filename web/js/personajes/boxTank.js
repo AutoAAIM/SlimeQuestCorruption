@@ -78,6 +78,8 @@ var scene
 
 var armasHeroicas
 
+var boxTankLight
+
 export function create(spawn, allLayers, grupo, arHe)
 {
 	armasHeroicas = arHe
@@ -102,7 +104,11 @@ export function create(spawn, allLayers, grupo, arHe)
 	player.ralentizar = 0;
 	scene.physics.add.collider(player, allLayers);
 
-	this.light = this.lights.addLight(player.x, player.y, 300)
+	if(this.lights != undefined)
+	{
+		boxTankLight = this.lights.addLight(player.x, player.y, 300)
+	}
+
 
 	player.emitter = emitterHumo.createEmitter({
 		alpha: { start: 1, end: 0 },
@@ -266,8 +272,11 @@ export function input()
 {
 	playerVelocidad = playerVelocidadReal;
 
-	this.light.x = player.x;
-	this.light.y = player.y;
+	if(boxTankLight != undefined)
+	{
+		boxTankLight.x = player.x;
+		boxTankLight.y = player.y;
+	}
 
 	if(player.enCabeza)
 	{

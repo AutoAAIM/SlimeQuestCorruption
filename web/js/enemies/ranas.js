@@ -42,8 +42,8 @@ export function createEnemyRana(obj, conf){
     scene.physics.add.existing(enemigoRana.triggerAtaque, false);
     enemigoRana.triggerAtaque.activado = false;
 
-    scene.physics.add.overlap(heroes.heroes, ranaGrupo, activarTrigger, null, scene);
-    scene.physics.add.overlap(heroes.heroes, enemigoRana.triggerAtaque, ranas.updateLenguaRana, null, scene);
+    scene.physics.add.overlap(heroes.heroes, enemigoRana.trigger, activarTrigger, null, scene);
+    scene.physics.add.overlap(heroes.heroes, enemigoRana.triggerAtaque, updateLenguaRana, null, scene);
 
 	ranas.push(enemigoRana)
 
