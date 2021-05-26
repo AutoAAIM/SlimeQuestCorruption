@@ -4,8 +4,8 @@ var scene;
 
 export function preload()
 {
-	this.load.spritesheet('enemigoJotun', 'assets/sprites/jotun.png', {frameWidth:32, frameHeight:32});
-	this.load.image('polvoHielo', 'assets/sprites/polvo.png');
+	this.load.spritesheet('enemigoJotun', 'assets/images/jotun.png', {frameWidth:32, frameHeight:32});
+	this.load.image('polvoHielo', 'assets/images/polvo.png');
 
 	scene = this;
 }

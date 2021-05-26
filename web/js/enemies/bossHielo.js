@@ -1,11 +1,11 @@
 import * as juego from '../mapas/snowyMountain.js';
-import * as yasha from '../personajes/yasha.js';
+import * as heroes from '../grupoHeroes.js';
 
 var scene;
 
 export function preload()
 {
-	this.load.spritesheet('bossHielo', 'assets/sprites/bossHielo.png', {frameWidth:32, frameHeight:32});
+	this.load.spritesheet('bossHielo', 'assets/images/bossHielo.png', {frameWidth:32, frameHeight:32});
 	//this.load.image('polvoHielo', 'assets/sprites/polvo.png');
 
 	scene = this;
@@ -60,7 +60,7 @@ export function generarBoss(obj)
 
 	boss.detectionbox.tiempoDisparo = 0;
 
-	scene.physics.add.overlap(yasha.player, boss.detectionbox, generarNieblaBoss, null, scene);
+	scene.physics.add.overlap(heroes.heroes, boss.detectionbox, generarNieblaBoss, null, scene);
 }
 
 function generarNieblaBoss(py,boss)

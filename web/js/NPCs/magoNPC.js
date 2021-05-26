@@ -2,7 +2,7 @@ var scene;
 
 export function preload()
 {
-	this.load.spritesheet('magoHielo', 'assets/sprites/magoHielo.png', {frameWidth:88, frameHeight:44});
+	this.load.spritesheet('magoHielo', 'assets/images/magoHielo.png', {frameWidth:88, frameHeight:44});
 
 	scene = this;
 }
