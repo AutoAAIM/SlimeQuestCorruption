@@ -124,6 +124,26 @@ export function update(cabeza)
 
 	puntero.x = player.x - config.width / 2 + pointer.x;
 	puntero.y = player.y - config.height / 2 + pointer.y;
+
+	  if(player.muerto == false)
+    {
+        input();
+    }
+
+    updateHielo();
+	contHielo--;
+
+	updateFuego();
+	contFuego--;
+
+	puntero.x = player.x - config.width / 2 + pointer.x;
+	puntero.y = player.y - config.height / 2 + pointer.y;
+
+	player.luz.x = player.x
+	player.luz.y = player.y
+
+	updatePuntero();
+	updateTexto();
 }
 
 function input()
