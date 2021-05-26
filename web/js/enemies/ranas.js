@@ -104,6 +104,11 @@ export function activarTrigger(e, go){
     	go.trigger.activado = true;
 
     }
+    console.log("go: "+go.trigger);
+    console.log("e: "+e.trigger);
+    /*else if(go.triggerAtaque != undefined && go != heroes.cabeza){
+        go.triggerAtaque.activado = true;
+    }*/
 	else if(e.trigger != undefined && e != heroes.cabeza)
 	{
 		e.trigger.activado = true;
