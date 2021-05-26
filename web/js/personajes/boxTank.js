@@ -106,7 +106,7 @@ export function create(spawn, allLayers, grupo, arHe)
 
 	if(scene.lights != undefined)
 	{
-		player.boxTankLight = scene.lights.addLight(player.x, player.y, 200).setScrollFactor(0.0).setIntensity(1);
+		player.boxTankLight = scene.lights.addLight(player.x, player.y, 200, 0xFF7979).setIntensity(1);
 	}
 
 
