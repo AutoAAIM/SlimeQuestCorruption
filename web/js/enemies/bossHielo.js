@@ -1,5 +1,5 @@
-import * as juego from './juego.js';
-import * as yasha from './yasha.js';
+import * as juego from '../mapas/snowyMountain.js';
+import * as yasha from '../personajes/yasha.js';
 
 var scene;
 

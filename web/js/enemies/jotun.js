@@ -1,5 +1,4 @@
-import * as juego from './juego.js';
-import * as yasha from './yasha.js';
+import * as heroes from '../grupoHeroes.js';
 
 var scene;
 
@@ -39,7 +38,7 @@ export function generarEnemigo(obj)
 
 	e.detectionbox.tiempoDisparo = 0;
 
-	scene.physics.add.overlap(yasha.player, e.detectionbox, disparoEnemigo, null, scene);
+	scene.physics.add.overlap(heroes.heroes, e.detectionbox, disparoEnemigo, null, scene);
 }
 
 function disparoEnemigo(py,en)
@@ -54,7 +53,7 @@ function disparoEnemigo(py,en)
 
 	 	var separar = Phaser.Math.Between(-50, 50)
 
-	 	scene.physics.moveTo(d, yasha.player.x + separar, yasha.player.y + separar, 50);
+	 	scene.physics.moveTo(d, heroes.cabeza.x + separar, heroes.cabeza.y + separar, 50);
 
 		d.tiempoVida = 320;
 	}

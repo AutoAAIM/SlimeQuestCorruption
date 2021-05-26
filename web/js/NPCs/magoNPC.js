@@ -1,6 +1,3 @@
-import * as juego from './juego.js';
-import * as yasha from './yasha.js';
-
 var scene;
 
 export function preload()
