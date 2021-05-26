@@ -5,8 +5,8 @@ export var player
 var contFuego;
 var contHielo;
 var playerVelocidad;
-var grupoFuego;
-var grupoHielo;
+export var grupoFuego;
+export var grupoHielo;
 var camara;
 var puntero;
 var pointer;
