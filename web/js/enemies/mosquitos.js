@@ -23,7 +23,7 @@ export function create(){
 
 export function createEnemyMosquito(obj, conf){
     config = conf;
-    enemigoMosquito = mosquitosGrupo.create(obj.x,obj.y, 'mosq').setOrigin(0.5); 
+    enemigoMosquito = mosquitosGrupo.create(obj.x,obj.y, 'mosq').setOrigin(0.5).setImmovable(true); 
     enemigoMosquito.name = 'mosquito';
     enemigoMosquito.vida = 7;
     enemigoMosquito.dano = 1;

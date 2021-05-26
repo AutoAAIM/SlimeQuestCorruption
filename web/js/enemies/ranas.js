@@ -28,7 +28,7 @@ export function create(){
 
 export function createEnemyRana(obj, conf){
     config = conf;
-    enemigoRana = ranaGrupo.create(obj.x,obj.y, 'EnemigoRana').setOrigin(0.5); 
+    enemigoRana = ranaGrupo.create(obj.x,obj.y, 'EnemigoRana').setOrigin(0.5).setImmovable(true); 
     enemigoRana.name = 'rana';
     enemigoRana.vida = 7;
     enemigoRana.dano = 1;
