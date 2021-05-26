@@ -18,6 +18,8 @@ var fondoAguaBuena;
 var fondo;
 var tileSpawner;
 export var enemyList;
+export var spawnID;
+export var playerSpawnPoint;
 var bossMuerto = false;
 var suelo;
 var poisonTiles;
@@ -109,7 +111,21 @@ export default class swamp extends Phaser.Scene {
         });
         enemyList = this.physics.add.group();
         enemyList.lengua = this.physics.add.group();
+        
+        playerSpawnPoint = new Array();
+
         tileSpawner.forEach(obj => {
+            this.physics.world.enable(obj);
+            obj.setAlpha(0);
+            if(obj.name == 'entrada_3'){
+			    playerSpawnPoint.unshift(obj);
+            }
+        })
+
+		spawnID = playerSpawnPoint.length-1;
+        heroes.create(playerSpawnPoint[spawnID], allLayers, null, sc.config)
+
+        tileSpawner.forEach(obj=>{
             this.physics.world.enable(obj);
             obj.setAlpha(0);
             if(obj.name == 'rana'){
@@ -122,11 +138,9 @@ export default class swamp extends Phaser.Scene {
                 swampBoss.createBoss(obj, sc.config);
             }else if(obj.name == 'tentaculos' && !bossMuerto){
                 swampBoss.generateTentacles(obj);
-            }else if(obj.name == 'entrada_3'){
-                heroes.create(obj, allLayers, null, sc.config)
             }
-
         })
+
         portal.createAnims();
         portal.create(tileSpawner);
         
