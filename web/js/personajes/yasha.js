@@ -57,7 +57,7 @@ export function create(spawn, allTiles, antorchas, conf, grupo, arHe)
 
 	scene.anims.create({
 		key:'hot',
-		frames: scene.anims.generateFrameNames('fuego', {start:0, end:3}),
+		frames: scene.anims.generateFrameNames('fuego'),
 		frameRate: 10,
 		repeat: -1
 	});
