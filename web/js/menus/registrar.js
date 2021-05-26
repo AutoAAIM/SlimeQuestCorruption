@@ -163,19 +163,18 @@ export default class registrar extends Phaser.Scene {
 			{
 				//console.log(this.responseText)
 				myObj = JSON.parse(this.responseText);
-				myObj = myObj[0];
 				console.log(myObj);
 
-				if(myObj.usuarios.nombre == nameTextInput && myObj.usuarios.contrasena == contTextInput)
+				if(myObj.nombre == nameTextInput && myObj.contrasena == contTextInput)
 				{
-					scene.game.usuario = myObj.usuario;
+					scene.game.usuario = myObj;
 					scene.scene.start(myObj.zonanombre);
 				}
 				else{
 					//console.log('no coincide')
 					responseTextOutput = 'no coincide'
 				}
-		}
+			}
 		}
 		//console.log(xhr)
 		xhr.open("POST", "php/loguser.php?", true)
