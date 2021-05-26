@@ -209,8 +209,8 @@ export default class swamp extends Phaser.Scene {
       
       heroes.update();
 
-      enemigos.updateEnemySwamp(scene, enemyList);
-      //mosquitos.update();
+      //enemigos.updateEnemySwamp(scene, enemyList);
+      mosquitos.update();
       ranas.update();
 
       swampBoss.updateBoss();
