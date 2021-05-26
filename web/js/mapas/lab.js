@@ -83,7 +83,7 @@ export default class lab extends Phaser.Scene {
 
     	music.play();
 
-		this.lights.enable().setAmbientColor(0x222222).setScrollFactor(0.0).setIntensity(1);
+		this.lights.enable().setAmbientColor(0x222222);
 
 		/*fpsText = this.add.text(16,32,'FPS: '+ game.loop.actualFps,{fontsize:'8px',fill:'#FFF'}).setScrollFactor(0).setScrollFactor(0);*/
 
@@ -111,10 +111,10 @@ export default class lab extends Phaser.Scene {
 			repeat: -1
 		});
 
-		const map = this.make.tilemap({key: 'laboratorio'});
-		const tileset = map.addTilesetImage('Lab', 'labtiles');
-		const tileset2 = map.addTilesetImage('terrain', 'terraintiles');
-		const tileset3 = map.addTilesetImage('maniquiReal', 'maniquiReal');
+		const map = this.make.tilemap({key: 'laboratorio'}).setPipeline('Light2D');;
+		const tileset = map.addTilesetImage('Lab', 'labtiles').setPipeline('Light2D');;
+		const tileset2 = map.addTilesetImage('terrain', 'terraintiles').setPipeline('Light2D');;
+		const tileset3 = map.addTilesetImage('maniquiReal', 'maniquiReal').setPipeline('Light2D');;
 		const allTilesets = [tileset, tileset2, tileset3];
 		map.createLayer('fondo', allTilesets).setDepth(0);
 		paredes = map.createLayer('salas', allTilesets).setDepth(0);

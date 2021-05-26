@@ -106,7 +106,7 @@ export function create(spawn, allLayers, grupo, arHe)
 
 	if(this.lights != undefined)
 	{
-		boxTankLight = this.lights.addLight(player.x, player.y, 200, 0xFF7979)
+		boxTankLight = this.lights.addLight(player.x, player.y, 200, 0xFF7979).setScrollFactor(0.0).setIntensity(1);
 	}
 
 
@@ -274,8 +274,8 @@ export function input()
 
 	if(boxTankLight != undefined)
 	{
-		boxTankLight.x = player.x;
-		boxTankLight.y = player.y;
+		//boxTankLight.x = player.x;
+		//boxTankLight.y = player.y;
 	}
 
 	if(player.enCabeza)
