@@ -1,3 +1,5 @@
+import * as heroes from '../grupoHeroes.js';
+
 var scene;
 
 export function preload()
@@ -31,7 +33,7 @@ export function create(obj)
 
 export function generarInventario(obj)
 {
-	imagenInventario = scene.physics.add.sprite(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 'inventario').setDepth(18);
+	imagenInventario = scene.physics.add.sprite(heroes.cabeza.x - config.width / 2 + config.width / 2, heroes.cabeza.y - config.height / 2 + config.height - 50, config.width - 8, 'inventario').setDepth(18);
 }
 
 export function generarPan(obj)
