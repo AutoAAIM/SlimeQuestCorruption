@@ -34,7 +34,10 @@ export function create(spawn, allTiles, antorchas, conf)
 {
 	if(fila != undefined)
 	{
-		fila.destroy();
+		for(var i = fila.length-1; i >= 0; i--)
+		{
+			fila[i].destroy();
+		}
 	}
 	fila = new Array();
 	//if(scene.game.heroesCargados != true)
