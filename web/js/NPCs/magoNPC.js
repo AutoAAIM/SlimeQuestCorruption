@@ -4,6 +4,7 @@ import * as heroes from '../grupoHeroes.js';
 var scene;
 var textoMago = false;
 var cuadroTexto;
+var cuadroTexto2;
 var config;
 
 export function preload()
