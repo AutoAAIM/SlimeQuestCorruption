@@ -57,5 +57,5 @@ export function generarMago(obj)
 	mago.detectionbox.body.enable = false;
 	mago.setAlpha(0);
 
-	scene.physics.add.overlap(heroes.heroes, mago.mago.detectionbox, yasha.encenderHielito, null, this);
+	scene.physics.add.overlap(heroes.heroes, mago.detectionbox, yasha.encenderHielito, null, this);
 }
