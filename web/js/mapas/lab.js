@@ -70,6 +70,7 @@ export default class lab extends Phaser.Scene {
 		shapeShifter.preload.call(this)
 		scyther.preload.call(this)
 		dinero.preload.call(this)
+		skull.preload.call(this)
 	}
 
 	create()
@@ -379,6 +380,8 @@ export default class lab extends Phaser.Scene {
 		tiempoEntreHuellas--;
 
 		portal.update()
+
+		skull.update();
 
 		//console.log(pointer.event.button)
 		

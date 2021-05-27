@@ -37,7 +37,7 @@ export function encenderTienda()
 
 		cuadroTexto2 = scene.add.rectangle(heroes.cabeza.x - config.width / 2 + config.width / 2, heroes.cabeza.y - config.height / 2 + config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17);
 
-		scene.magoText = scene.add.text(heroes.cabeza.x - config.width / 2 + 16, heroes.cabeza.y - config.height / 2 + 210, 'Skull: Ayudadme a financiar el laborarorio! usad los numeros para comprar.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(18);
+		scene.skullText = scene.add.text(heroes.cabeza.x - config.width / 2 + 16, heroes.cabeza.y - config.height / 2 + 210, 'Skull: Ayudadme a financiar el laborarorio! usad los numeros para comprar.', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(18);
 	}
 
 	textoMago = true;
