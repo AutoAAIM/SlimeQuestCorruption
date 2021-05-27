@@ -29,7 +29,7 @@ export var config={
 		//autoCenter: Phaser.Scale.CENTER_BOTH,
 		//zoom: 2,
 	},
-	scene: [registrar, lab, swamp, montelago],
+	scene: [registrar, lab, swamp, montelago, dessert],
 };
 
 var game=new Phaser.Game(config);
