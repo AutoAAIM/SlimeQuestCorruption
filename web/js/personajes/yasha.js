@@ -191,7 +191,7 @@ function input()
 		generarFuego();
 	}
 
-	if (Hielo.isDown && contHielo <= 0 && player.hieloTrue == true)
+	if (keys.Hielo.isDown && contHielo <= 0 && player.hieloTrue == true)
 	{
 		generarHielo();
 	}
