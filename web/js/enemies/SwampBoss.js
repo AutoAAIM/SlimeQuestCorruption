@@ -305,6 +305,7 @@ export function recibirDanyo(obj1, obj2){
                 //enemigoBoss.trigger.activado = false;
             }
         }
+        scene.game.bossMuerto = true;
         dinero.generarPlort(obj2, 100);
         obj2.destroy();
       }
@@ -335,6 +336,7 @@ export function recibirDanyo(obj1, obj2){
                 //enemigoBoss.trigger.activado = false;
             }
         }
+        scene.game.bossMuerto = true;
         dinero.generarPlort(obj1, 100);
         obj1.destroy();
       }

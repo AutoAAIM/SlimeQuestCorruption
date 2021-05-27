@@ -20,7 +20,6 @@ var tileSpawner;
 export var enemyList;
 export var spawnID;
 export var playerSpawnPoint;
-var bossMuerto = false;
 var suelo;
 var poisonTiles;
 var poisonAspectTiles;
@@ -134,9 +133,9 @@ export default class swamp extends Phaser.Scene {
                 mosquitos.createEnemyMosquito(obj, sc.config);
             }else if(obj.name == 'conseguir_glish' && scene.game.glishActivarCuracion != true){
                 npc.create(obj);   
-            }else if(obj.name == 'BossCalamar' && !bossMuerto){
+            }else if(obj.name == 'BossCalamar' && scene.game.bossMuerto != true){
                 swampBoss.createBoss(obj, sc.config);
-            }else if(obj.name == 'tentaculos' && !bossMuerto){
+            }else if(obj.name == 'tentaculos' && scene.game.bossVivo != true){
                 swampBoss.generateTentacles(obj);
             }
         })
@@ -205,8 +204,10 @@ export default class swamp extends Phaser.Scene {
         
         mosquitos.update();
         ranas.update();
-
-        swampBoss.updateBoss();
+        if(scene.game.bossVivo != true){
+            swampBoss.updateBoss();
+        }
+       
 
         portal.update();
         if(scene.game.glishActivarCuracion != true){
