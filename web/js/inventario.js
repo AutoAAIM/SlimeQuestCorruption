@@ -1,4 +1,4 @@
-import * as heroes from '../grupoHeroes.js';
+import * as heroes from './grupoHeroes.js';
 
 var scene;
 
