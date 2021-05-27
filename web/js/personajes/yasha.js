@@ -191,6 +191,7 @@ function input()
 		generarFuego();
 	}
 
+	console.log(player.hieloTrue)
 	if (keys.Hability.isDown && contHielo <= 0 && player.hieloTrue == true)
 	{
 		generarHielo();
