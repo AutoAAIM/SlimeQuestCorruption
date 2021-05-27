@@ -27,7 +27,7 @@ export function create(obj, config) {
 
     dialogoText2 = scene.add.text(16,210, 'Por favor si quieres la habilidad de quitar el veneno \nayudame a cazar la cena. \nnecesito estos ingredientes\nranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos, {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(4).setScrollFactor(0);
   
-    
+    scene.dialogoText3 = scene.add.text(npc1.x,npc1.y-32, 'Acercate a mi', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(3);
 
     npc1.trigger = scene.add.rectangle(npc1.x,npc1.y, 90, 90);
     scene.physics.add.existing(npc1.trigger, false);
@@ -55,10 +55,11 @@ function activarTrigger(player, npc){
     cuadroTexto.setAlpha(1);
     cuadroTexto2.setAlpha(1);
     dialogoText2.setAlpha(1);
+
   }
 
   if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
-      scene.dialogoText3 = scene.add.text(npc1.x,npc1.y-32, 'Acercate a mi', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(3);
+    scene.dialogoText3.setAlpha(1);
   }
 
 }
@@ -71,6 +72,7 @@ function recogerPersonaje(){
         dialogoText2.destroy();
         cuadroTexto.destroy();
         cuadroTexto2.destroy();
+        scene.dialogoText3.destroy();
         interacturar.destroy();
     }
 }
@@ -85,6 +87,7 @@ export function update(){
     cuadroTexto.setAlpha(0);
     cuadroTexto2.setAlpha(0);
     dialogoText2.setAlpha(0);
+    scene.dialogoText3.setAlpha(0);
   }
   dialogoText2.text = 'Por favor si quieres la habilidad de quitar el veneno \nayudame a cazar la cena. \nnecesito estos ingredientes\nranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos;
 
