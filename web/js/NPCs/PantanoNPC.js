@@ -33,8 +33,8 @@ export function create(obj) {
 		repeat: -1
 	});
 
-  scene.physics.add.overlap(heroes.cabeza, npc1.trigger, activarTrigger, null, scene);
-  scene.physics.add.overlap(heroes.cabeza, npc1, recogerPersonaje, null, scene);
+  scene.physics.add.overlap(heroes.heroes, npc1.trigger, activarTrigger, null, scene);
+  scene.physics.add.overlap(heroes.heroes, npc1, recogerPersonaje, null, scene);
 
 }
 

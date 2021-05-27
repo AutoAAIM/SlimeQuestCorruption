@@ -246,6 +246,11 @@ export default class lab extends Phaser.Scene {
 				skullAG.play('SkullAGAnim', true)
 				obj.destroy()
 			}
+			if(obj.name == 'bombilla')
+			{
+				
+				obj.destroy()
+			}
 		})
 		elementosMapa.setTileIndexCallback(deadlyTiles, this.fallDeath, this.physics.add.overlap(shapeShifter.shapeShifterGroup, elementosMapa));
 		elementosMapa2.setTileIndexCallback(deadlyTiles, this.fallDeath, this.physics.add.overlap(shapeShifter.shapeShifterGroup, elementosMapa2));
