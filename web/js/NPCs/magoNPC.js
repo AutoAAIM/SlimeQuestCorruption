@@ -1,6 +1,5 @@
 import * as yasha from '../personajes/yasha.js';
 import * as heroes from '../grupoHeroes.js';
-import * as bossHielo from '../enemies/bossHielo.js';
 
 var scene;
 var textoMago = false;
@@ -105,8 +104,6 @@ export function encenderHielito()
 
 		imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + 340, yasha.player.y - config.height / 2 + 240, 'textoHielo').setDepth(18).setScale(2);
 	}
-
-	generarBoss(obj);
 
 	textoMago = true;
 }
