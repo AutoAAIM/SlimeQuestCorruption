@@ -213,38 +213,68 @@ export function activarTrigger(go, e){
 export function recibirDanyo(obj1, obj2){
     var aleatorio;
     
+    if(obj2 !=heroes.cabeza && obj2.inmune <= 0){
+      obj2.setAlpha(0);
+      scene.tweens.add({
+          targets: obj2,
+          alpha: 1,
+          duration: 200,
+          ease: 'Linear',
+          repeat: 5,
+      });
+      obj2.vida -= obj1.dano;
+      aleatorio = Math.floor(Math.random() * (20-2+1)) + 2;
+      if(aleatorio == 3){
+          obj2.status = "paralizado";
+          obj2.temporizador = 230;
+      }
+      if(obj2.vida <= 0){
+        if(obj2.name == "rana" && contadorRana > 0){ 
+          contadorRana-=1;
+        }
+        if(obj2.trigger !=null){
+            obj2.trigger.activado = false;
+            obj2.trigger.destroy();
+            if(obj2.triggerAtaque !=null){
+              obj2.triggerAtaque.activado = false;
+              obj2.triggerAtaque.destroy();
+            }
+        }
+        dinero.generarPlort(obj2, 2);
+        obj2.destroy();
+      }
+      obj2.inmune = 130;
+    }
     if(obj1 !=heroes.cabeza && obj1.inmune <= 0){
-        obj1.setAlpha(0);
-        scene.tweens.add({
-            targets: obj1,
-            alpha: 1,
-            duration: 200,
-            ease: 'Linear',
-            repeat: 5,
-        });
-        obj1.vida -= obj2.dano;
-        if(obj2.stunt != undefined){ 
-            aleatorio = Math.floor(Math.random() * 100);
-            if(aleatorio <= obj1.stuntProb){
-                obj1.status = "paralizado";
-                obj1.temporizador = 230;
+      obj1.setAlpha(0);
+      scene.tweens.add({
+          targets: obj1,
+          alpha: 1,
+          duration: 200,
+          ease: 'Linear',
+          repeat: 5,
+      });
+      obj1.vida -= obj2.dano;
+      aleatorio = Math.floor(Math.random() * (20-2+1)) + 2;
+      if(aleatorio == 3){
+          obj1.status = "paralizado";
+          obj1.temporizador = 230;
+      }
+      if(obj1.vida <= 0){
+        if(obj1.name == "rana" && contadorRana > 0){ 
+          contadorRana-=1;
+        }
+        if(obj1.trigger !=null){
+            obj1.trigger.activado = false;
+            obj1.trigger.destroy();
+            if(obj1.triggerAtaque !=null){
+              obj1.triggerAtaque.activado = false;
+              obj1.triggerAtaque.destroy();
             }
         }
-        if(obj1.vida <= 0){
-            if(obj1.name == "rana" && contadorRana > 0){
-            contadorRana-=1;
-            }
-            if(obj1.trigger !=null){
-                obj1.trigger.activado = false;
-                obj1.trigger.destroy();
-                if(obj1.triggerAtaque !=null){
-                obj1.triggerAtaque.activado = false;
-                obj1.triggerAtaque.destroy();
-                }
-            }
-            dinero.generarPlort(obj1, 2);
-            obj1.destroy();
-        }
-        obj1.inmune = 60;
+        dinero.generarPlort(obj1, 2);
+        obj1.destroy();
+      }
+      obj1.inmune = 130;
     }
 }
