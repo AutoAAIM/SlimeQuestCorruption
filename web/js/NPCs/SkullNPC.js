@@ -71,13 +71,13 @@ function updateTexto()
 			cuadroTexto.setAlpha(1)
 			cuadroTexto2.setAlpha(1)
 			scene.skullText.setAlpha(1)
-			imagenTexto.setAlpha(1)
+			//imagenTexto.setAlpha(1)
 		}
 		else{
 			cuadroTexto.setAlpha(0)
 			cuadroTexto2.setAlpha(0)
 			scene.skullText.setAlpha(0)
-			imagenTexto.setAlpha(0)
+			//imagenTexto.setAlpha(0)
 		}
 
 	}
