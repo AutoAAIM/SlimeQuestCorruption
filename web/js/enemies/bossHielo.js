@@ -18,7 +18,7 @@ export function create(obj)
 	scene.anims.create({
 			key:'boss',
 			frames: scene.anims.generateFrameNames('bossHielo'),
-			frameRate: 4,
+			frameRate: 2,
 			repeat: -1
 		});
 
