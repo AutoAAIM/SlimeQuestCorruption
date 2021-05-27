@@ -92,7 +92,7 @@ function updateTexto()
 
 export function encenderHielito()
 {
-	yasha.player.hieloTrue = true;
+	scene.game.yashaActivarCuracion = true
 	
 	if(textoMago == false)
 	{

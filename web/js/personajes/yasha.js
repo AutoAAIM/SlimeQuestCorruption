@@ -192,7 +192,7 @@ function input()
 		generarFuego();
 	}
 
-	if (keys.Hability.isDown && contHielo <= 0 && player.hieloTrue == true)
+	if (keys.Hability.isDown && contHielo <= 0 && scene.game.yashaActivarCuracion == true)
 	{
 		generarHielo();
 	}
