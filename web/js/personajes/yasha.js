@@ -19,7 +19,6 @@ var allLayers;
 export function preload()
 {
 	this.load.image('disparoHielo', 'assets/images/hielo.png');
-	this.load.image('textoHielo', 'assets/images/hieloTexto.png');
 	this.load.image('varita','assets/images/varita.png');
 	this.load.spritesheet('fuego', 'assets/images/fuego.png', {frameWidth:32, frameHeight:32});
 	this.load.spritesheet('YashaBackF', 'assets/images/yashaBackFuego.png', {frameWidth:32, frameHeight:32});
