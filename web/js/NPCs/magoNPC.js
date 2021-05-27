@@ -91,6 +91,7 @@ function updateTexto()
 export function encenderHielito()
 {
 	yasha.player.hieloTrue = true;
+	console.log(yasha.player.hieloTrue)
 
 	if(textoMago == false)
 	{
