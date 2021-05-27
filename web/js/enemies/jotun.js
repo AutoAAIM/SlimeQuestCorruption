@@ -41,7 +41,7 @@ export function generarEnemigo(obj)
 	scene.physics.add.overlap(heroes.heroes, e.detectionbox, disparoEnemigo, null, scene);
 }
 
-function disparoEnemigo(py,en)
+function disparoEnemigo(en,py)
 {
 	if(en.tiempoDisparo <= 0)
 	{
