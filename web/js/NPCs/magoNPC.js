@@ -44,24 +44,23 @@ export function magoTrue(arrayObj)
 	}
 }
 
-
 function updateTexto()
 {
 	if(cuadroTexto != undefined)
 	{
-		cuadroTexto.x = player.x - config.width / 2 + config.width / 2;
-		cuadroTexto.y = player.y - config.height / 2 + config.height - 50;
+		cuadroTexto.x = yasha.player.x - config.width / 2 + config.width / 2;
+		cuadroTexto.y = yasha.player.y - config.height / 2 + config.height - 50;
 
-		cuadroTexto2.x = player.x - config.width / 2 + config.width / 2;
-		cuadroTexto2.y = player.y - config.height / 2 + config.height - 50;
+		cuadroTexto2.x = yasha.player.x - config.width / 2 + config.width / 2;
+		cuadroTexto2.y = yasha.player.y - config.height / 2 + config.height - 50;
 
-		scene.magoText.x = player.x - config.width / 2 + 16;
-		scene.magoText.y = player.y - config.height / 2 + 310;
+		scene.magoText.x = yasha.player.x - config.width / 2 + 16;
+		scene.magoText.y = yasha.player.y - config.height / 2 + 310;
 
-		imagenTexto.x = player.x - config.width / 2 + 540;
-		imagenTexto.y = player.y - config.height / 2 + 350;
+		imagenTexto.x = yasha.player.x - config.width / 2 + 540;
+		imagenTexto.y = yasha.player.y - config.height / 2 + 350;
 
-		if(Phaser.Geom.Intersects.RectangleToRectangle(player.getBounds(), mago.mago.detectionbox.getBounds()))
+		if(Phaser.Geom.Intersects.RectangleToRectangle(yasha.player.getBounds(), mago.mago.detectionbox.getBounds()))
 		{
 			cuadroTexto.setAlpha(1)
 			cuadroTexto2.setAlpha(1)
