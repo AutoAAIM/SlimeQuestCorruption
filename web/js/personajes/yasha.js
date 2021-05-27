@@ -308,7 +308,7 @@ function updateHielo()
     }
 }
 
-export function derretir(nieve, )
+export function derretir(fuego, nieve)
 {
 	if (nieve.properties != undefined && nieve.properties.snow == true && fuego.fuego)
     {
@@ -337,7 +337,7 @@ export function freeze(lago, objeto)
     }    
 }
 
-export function setFreeze(id, layer)
+export function setFreeze(layer, id, )
 {
 	layer.setTileIndexCallback(id, freeze, scene.physics.add.overlap(layer, grupoHielo));
 }
