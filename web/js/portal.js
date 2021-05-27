@@ -152,7 +152,7 @@ export function update()
 function changeScene(obj)
 {
 	var xhr = new XMLHttpRequest();
-	var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/reguser.php';
+	//var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/reguser.php';
 	
 	//obj.properties.destino
 
@@ -162,14 +162,15 @@ function changeScene(obj)
 		if(this.readyState == 4 && this.status == 200)
 		{
 			scene.game.usuario = myObj;
-			scene.scene.stop(scene);
-			scene.scene.start(myObj.zonanombre);
+			alert(xhr.responseText);
+			//scene.scene.stop(scene);
+			//scene.scene.start(myObj.zonanombre);
 
 		}
 	}
 	console.log(obj.properties.destino)
 	console.log(myObj.nombre)
-	xhr.open("POST", "php/guardar.php?", true)
+	xhr.open("POST", "php/guardar.php", true)
 	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
 	xhr.send("nombre="+myObj.nombre+"&contrasena="+myObj.contrasena+"&dinero="+myObj.dinero+"&zona="+obj.properties.destino)
 }
