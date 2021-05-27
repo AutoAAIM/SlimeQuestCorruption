@@ -339,7 +339,7 @@ export function freeze(lago, objeto)
 
 export function setFreeze(id, layer)
 {
-	layer.setTileIndexCallback(id, freeze, scene.physics.add.overlap(grupoHielo, layer));
+	layer.setTileIndexCallback(id, freeze, scene.physics.add.overlap(layer, grupoHielo));
 }
 
 function updateTexto()

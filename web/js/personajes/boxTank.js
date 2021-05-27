@@ -425,7 +425,7 @@ export function playerAnims()
 			player.setCircle(16, 0);
 			player.emitter.stop();
 		}
-		else
+		else if(player.muerto)
 		{
 			player.stop();
 			player.setTexture('tanqueMuerto');
