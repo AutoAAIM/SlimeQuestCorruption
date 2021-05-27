@@ -21,7 +21,7 @@ export function createBoss(obj, conf, el){
     tentacleList = scene.physics.add.group();
     config = conf;
     enemigoBoss = scene.physics.add.sprite(obj.x,obj.y, 'BossSwamp').setOrigin(0.5); 
-    enemigoBoss.vida = 30;
+    enemigoBoss.vida = 2;
     enemigoBoss.dano = 1;
     enemigoBoss.inmune = -1;
     enemigoBoss.temporizador = 0;
@@ -280,7 +280,7 @@ export function updateBoss(){
 export function recibirDanyo(obj1, obj2){
     var aleatorio; 
 
-    if(obj2 !=heroes.cabeza && obj2.inmune <= 0){
+    if(obj2 !=heroes.armasHeroicas && obj2.inmune <= 0){
       obj2.setAlpha(0);
       scene.tweens.add({
           targets: obj2,
@@ -296,9 +296,6 @@ export function recibirDanyo(obj1, obj2){
           obj2.temporizador = 230;
       }
       if(obj2.vida <= 0){
-        if(obj2.name == "mosquito" && contadorMosquitos > 0){ 
-          contadorMosquitos-=1;
-        }
         if(obj2.trigger !=null){
             obj2.trigger.activado = false;
             obj2.trigger.destroy();
@@ -312,5 +309,35 @@ export function recibirDanyo(obj1, obj2){
         obj2.destroy();
       }
       obj2.inmune = 130;
+    }
+    if(obj1 !=heroes.armasHeroicas && obj1.inmune <= 0){
+      obj1.setAlpha(0);
+      scene.tweens.add({
+          targets: obj1,
+          alpha: 1,
+          duration: 200,
+          ease: 'Linear',
+          repeat: 5,
+      });
+      obj1.vida -= obj2.dano;
+      aleatorio = Math.floor(Math.random() * (20-2+1)) + 2;
+      if(aleatorio == 3){
+          obj1.status = "paralizado";
+          obj1.temporizador = 230;
+      }
+      if(obj1.vida <= 0){
+        if(obj1.trigger !=null){
+            obj1.trigger.activado = false;
+            obj1.trigger.destroy();
+            if(obj1.block != null){
+                obj1.muerto = true;
+                obj1.block.body.enable = false;
+                //enemigoBoss.trigger.activado = false;
+            }
+        }
+        dinero.generarPlort(obj1, 100);
+        obj1.destroy();
+      }
+      obj1.inmune = 130;
     }
 }
