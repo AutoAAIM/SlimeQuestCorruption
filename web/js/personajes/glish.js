@@ -8,6 +8,7 @@ var keyRight;
 var keyLeft;
 var keyDown;
 var fire;
+export var checarCuracion = false;
 export var keyP;
 var puntero;
 var config;
@@ -44,7 +45,7 @@ export function create(spawn, allLayers, conf, grupo, arHe) {
   player = grupo.create(spawn.x,spawn.y, 'glish').setOrigin(0.5).setDepth(5);
   player.name = "glish";
   player.heroe = true;
-  player.curarTrue = false;
+  player.curarTrue = checarCuracion;
   player.status = "none";
   player.maxVida = 10;
   player.setCircle(16, 0);
