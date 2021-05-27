@@ -998,13 +998,13 @@
  "nextobjectid":18,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.6.0",
+ "tiledversion":"1.4.3",
  "tileheight":32,
  "tilesets":[
         {
          "columns":32,
          "firstgid":1,
-         "image":"terrain.png",
+         "image":"terrain4.png",
          "imageheight":1024,
          "imagewidth":1024,
          "margin":0,
@@ -29747,6 +29747,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":"1.6",
+ "version":1.4,
  "width":100
 }
