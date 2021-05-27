@@ -232,7 +232,7 @@ export function recibirDanyo(obj1, obj2){
                 obj2.temporizador = 230;
 			}
 		}
-        if(obj2.vida <= 0){
+        if(obj2.vida <= 0 || obj2.vida == NaN){
             if(obj2.name == "rana" && contadorRana > 0){ 
             contadorRana-=1;
             }
@@ -267,7 +267,7 @@ export function recibirDanyo(obj1, obj2){
                 obj1.temporizador = 230;
 			}
 		}
-        if(obj1.vida <= 0){
+        if(obj1.vida <= 0 || obj1.vida == NaN){
             if(obj1.name == "rana" && contadorRana > 0){ 
             contadorRana-=1;
             }
