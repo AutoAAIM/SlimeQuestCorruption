@@ -90,7 +90,7 @@ function generarNieblaBoss(boss, py)
 		d.setVelocityX(30*dir.x);
 		d.setVelocityY(30*dir.y);
 
-		d.tiempoVida = 240;
+		d.tiempoVida = 360;
 	}
 
 	boss.tiempoDisparo--;

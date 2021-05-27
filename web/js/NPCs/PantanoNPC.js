@@ -59,7 +59,7 @@ function recogerPersonaje(){
         npc1.destroy();
         dialogoText.destroy();
         dialogo.destroy();
-        interacturar.destroy();
+        //interacturar.destroy();
 
   }
 }
