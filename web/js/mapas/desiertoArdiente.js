@@ -61,6 +61,8 @@ import function create() {
 
 	segundo_suelo.alpha = 0;
 
+  var allLayers1
+
 	boss_desierto.createFireBossGroup.call();
 	slime.createFireGroup.call();
 

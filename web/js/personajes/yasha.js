@@ -308,7 +308,7 @@ function updateHielo()
     }
 }
 
-export function derretir(fuego, nieve)
+export function derretir(nieve, fuego)
 {
 	if (nieve.properties != undefined && nieve.properties.snow == true && fuego.fuego)
     {

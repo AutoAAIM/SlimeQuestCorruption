@@ -271,11 +271,3 @@ export function reHacerFila()
 		caminoTemp[i] = new Phaser.Geom.Point(cabeza.x, cabeza.y);
 	}
 }
-
-// Invisibilidad
-/*export function invisibilidad(obj) {
-  obj.invisibilidad = true;
-  obj.inmune = true;
-  heroes
-
-*/  
