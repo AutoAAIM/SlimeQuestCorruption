@@ -4,6 +4,7 @@ var scene;
 export var player
 var contFuego;
 var contHielo;
+var textoMago;
 var playerVelocidad;
 export var grupoFuego;
 export var grupoHielo;

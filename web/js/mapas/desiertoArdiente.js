@@ -11,6 +11,9 @@ var llave = false;
 var puerta = true;
 
 export default class dessert extends Phaser.Scene {
+  constructor(){
+		super("dessert");
+	}
   preload() {
 
 	  this.load.image('tiles','tilemap/terrain.png');
@@ -107,75 +110,76 @@ export default class dessert extends Phaser.Scene {
     this.physics.add.overlap(llave, heroes.heroes, cogerLlave, null, this);
     this.physics.add.overlap(lava, hielo, lavaFria, null, this);
     this.physics.add.overlap(lava, heroes.heroes, heroeFundido, null, this);
-}
-
-import function update() {
-
-	heroes.update.call();
-	escorpion.update.call();
-	slime.updateSlime.call();
-	slime.updateSuperSlime.call();
-
-	slime.updateVidaSlime.call();
-	slime.updateVidasuperSlime.call();
-	escorpion.updateVidaEscorpion.call();
-	// robin.updateVidaRobin.call();
-
-	// Puerta
-
-	if (llave) {
-		puerta = false;
-	}
-
-	// Boss
-
-	if (batalla) {
-		if (!creado) {
-			boss_desierto.create.call();
-			creado = true;
-		}
-		else {
-			boss_desierto.update.call();
-		}
-	}
-	
-  updateLava();
-
-	text.x = robin.x-190;
-	text.y = robin.y-145;
-}
-
-import function updateDunas(d,h) {
-	if (keyE.isDown) {
-		d.alpha = 0;
-	}
-}
-
-import function cogerLlave(l,h) {
-	if (keyE.isDown && !l) {
-		l = true;
-	}
-}
-
-import function lavaFria(l,h) {
-	l.alpha = 0;
-  l.tiempo = 1;
-	segundo_suelo.alpha = 1;
-}
-
-import function heroeFundido(l,h) {
-	if (l.alpha == 1) {
-		heroes.heroes.muerto = true;
-	}
-}
-
-import function updateLava() {
-  if (lava.tiempo != 0) {
-    lava.tiempo++;
   }
-  if (lava.tiempo > 1000) {
-    lava.alpha = 1;
-    segundo_suelo.alpha = 0;
-    lava.tiempo = 0;
+
+  update() {
+
+	  heroes.update.call();
+	  escorpion.update.call();
+	  slime.updateSlime.call();
+	  slime.updateSuperSlime.call();
+
+	  slime.updateVidaSlime.call();
+	  slime.updateVidasuperSlime.call();
+	  escorpion.updateVidaEscorpion.call();
+	  // robin.updateVidaRobin.call();
+
+	  // Puerta
+
+	  if (llave) {
+	  	puerta = false;
+	  }
+
+	  // Boss
+
+	  if (batalla) {
+	  	if (!creado) {
+	  		boss_desierto.create.call();
+	  		creado = true;
+	  	}
+	  	else {
+	  		boss_desierto.update.call();
+	  	}
+  	}
+	
+    updateLava();
+
+  	text.x = robin.x-190;
+  	text.y = robin.y-145;
+  }
+
+  updateDunas(d,h) {
+	  if (keyE.isDown) {
+		  d.alpha = 0;
+	  }
+  }
+
+  cogerLlave(l,h) {
+	  if (keyE.isDown && !l) {
+	  	l = true;
+  	}
+  }
+
+  lavaFria(l,h) {
+  	l.alpha = 0;
+    l.tiempo = 1;
+  	segundo_suelo.alpha = 1;
+  }
+
+ heroeFundido(l,h) {
+	  if (l.alpha == 1) {
+  		heroes.heroes.muerto = true;
+	  }
+  }
+
+  updateLava() {
+    if (lava.tiempo != 0) {
+      lava.tiempo++;
+    }
+    if (lava.tiempo > 1000) {
+      lava.alpha = 1;
+      segundo_suelo.alpha = 0;
+      lava.tiempo = 0;
+    }
   }
 }
