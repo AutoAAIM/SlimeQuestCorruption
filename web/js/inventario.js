@@ -1,6 +1,4 @@
 var scene;
-export var grupoCake;
-export var grupoPan;
 
 export function preload()
 {
@@ -10,6 +8,9 @@ export function preload()
 
 	scene = this;
 }
+
+export var grupoCake;
+export var grupoPan;
 
 export function create(obj)
 {
@@ -40,7 +41,7 @@ export function generarPan(obj)
 
 export function generarTarta(obj)
 {
-	tarta2 = grupo.create(spawn.x,spawn.y, 'tarta').setDepth(20);
+	t = grupo.create(spawn.x,spawn.y, 'tarta').setDepth(20);
 	tarta2.play('lie', true);
 }
 

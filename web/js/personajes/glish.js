@@ -151,7 +151,7 @@ function ondasRockeras() {
   
   ondaDeDanyo = beamList.create(player.x, player.y, 'ondas');
   ondaDeDanyo.stunt= 60;
-  ondaDeDanyo.stuntProb = 50;
+  ondaDeDanyo.stuntProb = 40;
   ondaDeDanyo.dano = 2;
   tiempo = 60;
   ondaDeDanyo.scale = 0.4;

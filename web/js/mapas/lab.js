@@ -63,8 +63,6 @@ export default class lab extends Phaser.Scene {
 
 		this.load.image('polvo','assets/particles/polvo.png');
 
-		this.load.spritesheet('SkullAG','assets/images/SkullAG.png', { frameWidth: 32, frameHeight: 48});
-
 		this.load.audio('labchords', ['assets/music/lab-teaser.wav']);
 
 		heroes.preload.call(this)
@@ -105,13 +103,6 @@ export default class lab extends Phaser.Scene {
 			frames: this.anims.generateFrameNumbers('shapeshifterSheet2'),
 			frameRate: 25,
 			repeat: 0
-		});
-
-		this.anims.create({
-			key: 'SkullAGAnim',
-			frames: this.anims.generateFrameNumbers('SkullAG'),
-			frameRate: 4,
-			repeat: -1
 		});
 
 		const map = this.make.tilemap({key: 'laboratorio'});

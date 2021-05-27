@@ -1,16 +1,16 @@
 import * as heroes from '../grupoHeroes.js';
-import * as bossHielo from '../enemies/bossHielo.js';
 
 var scene;
-var textoMago = false;
+var textoSkull = false;
 var cuadroTexto;
 var cuadroTexto2;
 var imagenTexto;
 var config;
+var skull;
 
 export function preload()
 {
-	this.load.spritesheet('magoHielo', 'assets/images/magoHielo.png', {frameWidth:88, frameHeight:44});
+	this.load.spritesheet('Skull','assets/images/SkullAG.png', { frameWidth: 32, frameHeight: 48});
 
 	scene = this;
 }
@@ -18,11 +18,11 @@ export function preload()
 export function create(obj, conf)
 {
 	scene.anims.create({
-			key:'magia',
-			frames: scene.anims.generateFrameNames('magoHielo'),
-			frameRate: 4,
-			repeat: -1
-		});
+		key: 'SkullAGAnim',
+		frames: this.anims.generateFrameNumbers('Skull'),
+		frameRate: 4,
+		repeat: -1
+	});
 
 	generarSkull(obj);
 
@@ -37,19 +37,19 @@ function updateTexto()
 {
 	if(cuadroTexto != undefined)
 	{
-		cuadroTexto.x = yasha.player.x - config.width / 2 + config.width / 2;
-		cuadroTexto.y = yasha.player.y - config.height / 2 + config.height - 50;
+		cuadroTexto.x = heroes.cabeza.x - config.width / 2 + config.width / 2;
+		cuadroTexto.y = heroes.cabeza.y - config.height / 2 + config.height - 50;
 
-		cuadroTexto2.x = yasha.player.x - config.width / 2 + config.width / 2;
-		cuadroTexto2.y = yasha.player.y - config.height / 2 + config.height - 50;
+		cuadroTexto2.x = heroes.cabeza.x - config.width / 2 + config.width / 2;
+		cuadroTexto2.y = heroes.cabeza.y - config.height / 2 + config.height - 50;
 
-		scene.skullText.x = yasha.player.x - config.width / 2 + 16;
-		scene.skullText.y = yasha.player.y - config.height / 2 + 210;
+		scene.skullText.x = heroes.cabeza.x - config.width / 2 + 16;
+		scene.skullText.y = heroes.cabeza.y - config.height / 2 + 210;
 
-		imagenTexto.x = yasha.player.x - config.width / 2 + 340;
-		imagenTexto.y = yasha.player.y - config.height / 2 + 240;
+		imagenTexto.x = heroes.cabeza.x - config.width / 2 + 340;
+		imagenTexto.y = heroes.cabeza.y - config.height / 2 + 240;
 
-		if(Phaser.Geom.Intersects.RectangleToRectangle(yasha.player.getBounds(), skull.detectionbox.getBounds()))
+		if(Phaser.Geom.Intersects.RectangleToRectangle(heroes.cabeza.getBounds(), skull.detectionbox.getBounds()))
 		{
 			cuadroTexto.setAlpha(1)
 			cuadroTexto2.setAlpha(1)
@@ -66,41 +66,18 @@ function updateTexto()
 	}
 }
 
-export function encenderHielito()
-{
-	scene.game.yashaActivarCuracion = true
-	
-	if(textoSkull == false)
-	{
-		bossHielo.boss.activo = true;
-		bossHielo.boss.setAlpha(1);
-		bossHielo.boss.body.enable = true;
-		bossHielo.boss.detectionbox.body.enable = true;
-
-		cuadroTexto = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16);
-
-		cuadroTexto2 = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17);
-
-		scene.skullText = scene.add.text(yasha.player.x - config.width / 2 + 16, yasha.player.y - config.height / 2 + 210, 'Skull: saludos heroes! \nComprad, debo financiar el laboratorio, {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(18);
-
-		//imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + 340, yasha.player.y - config.height / 2 + 240, 'textoHielo').setDepth(18).setScale(2);
-	}
-
-	textoSkull = true;
-}
-
 export function generarSkull(obj)
 {
 	skull = scene.physics.add.staticSprite(obj.x, obj.y, 'skull').setDepth(5);
 	skull.setSize(30, 39);
-	skull.play('magia', true);
+	skull.play('SkullAGAnim', true);
 
-	mago.detectionbox = scene.add.rectangle(mago.x, mago.y, 180, 180);
-	scene.physics.add.existing(mago.detectionbox, false);
+	skull.detectionbox = scene.add.rectangle(skull.x, skull.y, 180, 180);
+	scene.physics.add.existing(skull.detectionbox, false);
 
-	mago.body.enable = false;
-	mago.detectionbox.body.enable = false;
-	mago.setAlpha(0);
+	skull.body.enable = false;
+	skull.detectionbox.body.enable = false;
+	skull.setAlpha(0);
 
-	scene.physics.add.overlap(heroes.heroes, mago.detectionbox, encenderHielito, null, scene);
+	scene.physics.add.overlap(heroes.heroes, skull.detectionbox, encenderHielito, null, scene);
 }

@@ -30,7 +30,7 @@ export function createEnemyRana(obj, conf){
     config = conf;
     enemigoRana = ranaGrupo.create(obj.x,obj.y, 'EnemigoRana').setOrigin(0.5).setImmovable(true); 
     enemigoRana.name = 'rana';
-    enemigoRana.vida = 10;
+    enemigoRana.vida = 3;
     enemigoRana.dano = 1;
     enemigoRana.inmune = -1;
     enemigoRana.status = "none";
