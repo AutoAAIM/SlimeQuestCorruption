@@ -274,5 +274,5 @@ export function reHacerFila()
 
 // Invisibilidad
 /*export function invisibilidad(obj) {
-if (obj.invisibilidad = true) 
-  
+  obj.invis
+*/  
