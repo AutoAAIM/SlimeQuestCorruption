@@ -68,7 +68,7 @@ function generarNieblaBoss(boss, py)
 	{
 		boss.tiempoDisparo = 1;
 
-		var d = grupoDispBoss.create(boss.x - 15, boss.y + 5, 'polvoHielo').setDepth(2).setPipeline('Light2D');
+		var d = grupoDispBoss.create(boss.x - 15, boss.y + 5, 'polvoHielo').setDepth(5).setPipeline('Light2D');
 
 	 	d.setAlpha(0.3);
 

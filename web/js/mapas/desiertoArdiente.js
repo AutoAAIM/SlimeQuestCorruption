@@ -40,19 +40,34 @@ export default class dessert extends Phaser.Scene {
   	var lava = map.createLayer('Lava', tileset);
   	var muro = map.createLayer('Pared', tileset);
 
-    playerTileSpawner = map.createFromObjects('SpawnJugador');
-    slimeTileSpawner = map.createFromObjects('SpawnSlime');
-    superSlimeTileSpawner = map.createFromObjects('SpawnSuperSlime');
-    escorpionTileSpawner = map.createFromObjects('SpawnEscorpion');
+    playerTileSpawner = map.createFromObjects('SpawnJugador',4);
+    slimeTileSpawner = map.createFromObjects('SpawnSlime',19);
+    superSlimeTileSpawner = map.createFromObjects('SpawnSuperSlime',2);
+    escorpionTileSpawner = map.createFromObjects('SpawnEscorpion',23);
     bossTileSpawner = map.createFromObjects('SpawnBoss');
+    
     llaveTileSpawner = map.createFromObjects('Llave');
-
-    this.map.createFromObjects('objectsLayer', 81, 'zombie', 0, true, false, this.enemies);
-
+    
 	  playerSpawnPoint = new Array();
     slimeTileSpawner = new Array();
     superSlimeTileSpawner = new Array();
     escorpionTileSpawner = new Array();
+
+    tileSpawner.forEach(obj=>{
+      this.physics.world.enable(obj);
+        obj.setAlpha(0);
+      if(obj.name == 'rana'){
+        ranas.createEnemyRana(obj, sc.config);
+      }else if(obj.name == 'mosquito'){
+          mosquitos.createEnemyMosquito(obj, sc.config);
+        }else if(obj.name == 'conseguir_glish'){
+          npc.create(obj);        
+        }else if(obj.name == 'BossCalamar' && !bossMuerto){
+          swampBoss.createBoss(obj, sc.config);
+        }else if(obj.name == 'tentaculos' && !bossMuerto){
+          swampBoss.generateTentacles(obj);
+        }
+    })
 
 	  segundo_suelo.alpha = 0;
     lava.tiempo = 0;
