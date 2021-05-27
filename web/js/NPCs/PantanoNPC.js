@@ -5,7 +5,7 @@ import * as ranas from '../enemies/ranas.js';
 import * as mosquitos from '../enemies/mosquitos.js';
 import * as enemigos from '../enemies/enemigos.js';
 
-var npc1, scene, interacturar, keyE, dialogo, dialogoText;
+var npc1, scene, interacturar, keyE, dialogo, dialogoText2, ;
 
 export function preload() {
   this.load.spritesheet('npc1', 'assets/images/Glish.png', { frameWidth: 32, frameHeight: 32 });
@@ -20,8 +20,8 @@ export function create(obj) {
 
   npc1 = scene.physics.add.sprite(obj.x, obj.y, 'npc1');
   interacturar = scene.physics.add.sprite(obj.x, obj.y-32, 'buttonE');
-  dialogo = scene.physics.add.sprite(npc1.x+46, npc1.y-42, 'dialogo').setScale(1.7);;
-  dialogoText = scene.add.text(dialogo.x-32, dialogo.y-16, 'ranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos, { fontsize: '2px', fill: '#62f5cb' }).setDepth(1)
+  dialogo = scene.physics.add.sprite(npc1.x+46, npc1.y-42, 'dialogo').setScale(1.7);
+  dialogoText2 = scene.add.text(dialogo.x-32, dialogo.y-16, 'ranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos, { fontsize: '2px', fill: '#62f5cb' }).setDepth(1)
   npc1.trigger = scene.add.rectangle(npc1.x,npc1.y, 90, 90);
   scene.physics.add.existing(npc1.trigger, false);
   npc1.trigger.activado = false;
@@ -46,7 +46,7 @@ function activarTrigger(player, npc){
 
   if(keyE.isDown){
     dialogo.setAlpha(1);
-    dialogoText.setAlpha(1);
+    dialogoText2.setAlpha(1);
   }
 
 }
@@ -59,7 +59,7 @@ function recogerPersonaje(){
         //glish.activarCuracion(true);
         npc1.trigger.destroy();
         npc1.destroy();
-        dialogoText.destroy();
+        dialogoText2.destroy();
         dialogo.destroy();
         interacturar.destroy();
 
@@ -74,8 +74,8 @@ export function update(){
   }else{
     interacturar.setAlpha(0);
         dialogo.setAlpha(0);
-    dialogoText.setAlpha(0);
+    dialogoText2.setAlpha(0);
   }
-  dialogoText.text = "ranas: " + ranas.contadorRana + "\n mosquitos:"+ mosquitos.contadorMosquitos;
+  dialogoText2.text = "ranas: " + ranas.contadorRana + "\n mosquitos:"+ mosquitos.contadorMosquitos;
 
 }
