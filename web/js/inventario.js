@@ -35,11 +35,12 @@ export function generarInventario(obj)
 
 export function generarPan(obj)
 {
-	imagenPan = scene.physics.add.sprite(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 'pan').setDepth(18);
+	pan1 = scene.physics.add.sprite(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 'pan').setDepth(20);
 }
 
 export function generarTarta(obj)
 {
-	
+	tarta2 = grupo.create(spawn.x,spawn.y, 'tarta').setDepth(20);
+	tarta2.play('lie', true);
 }
 
