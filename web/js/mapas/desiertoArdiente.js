@@ -1,9 +1,10 @@
-import * as robin from '../personajes/robin.js';
-import * as escorpion from '../enemigos/escorpion.js';
-import * as slime from '../enemigos/slime.js';
-import * as boss from '../enemigos/boss_desierto.js';
+import * as boxTank from '../personajes/robin.js';
+import * as escorpion from '../enemies/escorpion.js';
+import * as slime from '../enemies/slime.js';
+import * as boss from '../enemies/boss_desierto.js';
 import * as keys from '../keys.js';
 import * as heroes from '../grupoHeroes.js';
+import * as sc from '../sceneConstructor.js';
 
 var game=new Phaser.Game(config);
 
