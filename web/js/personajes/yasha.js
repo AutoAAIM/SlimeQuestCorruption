@@ -44,7 +44,7 @@ export function create(spawn, allTiles, antorchas, conf, grupo, arHe)
 	playerVelocidad = 150;
 
 	player = grupo.create(spawn.x,spawn.y, 'YashaF').setDepth(5);
-	player.name = "yasha"
+	player.name = "yasha";
 	player.heroe = true;
 	player.setCircle(16, 0);
 	player.inmovil = false;
