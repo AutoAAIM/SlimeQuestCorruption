@@ -220,7 +220,7 @@ export function herir(obj, e) {
         if(e.name == "mosquito"){
             var aleatorio2 = Math.floor(Math.random() * (10-1+1)) + 1;
             if(aleatorio2 <= 3){
-                console.log(e.vida);
+                console.log("vida"+e.vida+" H"+e.name);
             e.vida +=1;
             }
         }
