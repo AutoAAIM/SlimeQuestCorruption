@@ -21,7 +21,7 @@ export function darkMode()
 
 	else
 	{
-		scene.lights.enable().setAmbientColor(0xffffff);
+		scene.lights.enable().setAmbientColor(0x9B9B9B);
 	}
 
 	oscuridad = false;

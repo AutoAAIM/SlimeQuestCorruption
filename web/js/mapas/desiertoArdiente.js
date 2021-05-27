@@ -45,7 +45,6 @@ export default class dessert extends Phaser.Scene {
     superSlimeTileSpawner = map.createFromObjects('SpawnSuperSlime',2);
     escorpionTileSpawner = map.createFromObjects('SpawnEscorpion',23);
     bossTileSpawner = map.createFromObjects('SpawnBoss');
-    
     llaveTileSpawner = map.createFromObjects('Llave');
     
 	  playerSpawnPoint = new Array();
@@ -56,23 +55,41 @@ export default class dessert extends Phaser.Scene {
     tileSpawner.forEach(obj=>{
       this.physics.world.enable(obj);
         obj.setAlpha(0);
-      if (obj.) {
-
+      if (obj.name == 'S') {
+        slime.createSlime(obj);
       }
 
 
-      if(obj.name == 'rana'){
-        ranas.createEnemyRana(obj, sc.config);
-      }else if(obj.name == 'mosquito'){
-        mosquitos.createEnemyMosquito(obj, sc.config);
-      }else if(obj.name == 'conseguir_glish'){
-        npc.create(obj);        
-      }else if(obj.name == 'BossCalamar' && !bossMuerto){
-        swampBoss.createBoss(obj, sc.config);
-      }else if(obj.name == 'tentaculos' && !bossMuerto){
-        swampBoss.generateTentacles(obj);
-        }
-    })
+
+
+     playerSpawnPoint = new Array();
+
+        tileSpawner.forEach(obj => {
+            this.physics.world.enable(obj);
+            obj.setAlpha(0);
+            if(obj.name == 'entrada_3'){
+			    playerSpawnPoint.unshift(obj);
+            }
+        })
+
+		spawnID = playerSpawnPoint.length-1;
+        heroes.create(playerSpawnPoint[spawnID], allLayers, null, sc.config)
+
+        tileSpawner.forEach(obj=>{
+            this.physics.world.enable(obj);
+            obj.setAlpha(0);
+            if(obj.name == 'rana'){
+                ranas.createEnemyRana(obj, sc.config);
+            }else if(obj.name == 'mosquito'){
+                mosquitos.createEnemyMosquito(obj, sc.config);
+            }else if(obj.name == 'conseguir_glish'){
+                npc.create(obj);        
+            }else if(obj.name == 'BossCalamar' && !bossMuerto){
+                swampBoss.createBoss(obj, sc.config);
+            }else if(obj.name == 'tentaculos' && !bossMuerto){
+                swampBoss.generateTentacles(obj);
+            }
+        })
 
 	  segundo_suelo.alpha = 0;
     lava.tiempo = 0;
