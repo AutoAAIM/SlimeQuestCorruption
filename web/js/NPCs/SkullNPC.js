@@ -11,6 +11,8 @@ var skull;
 export function preload()
 {
 	this.load.spritesheet('Skull','assets/images/SkullAG.png', { frameWidth: 32, frameHeight: 48});
+	this.load.spritesheet('cakeTienda', 'assets/images/strange_cake.png', {frameWidth:32, frameHeight:32});
+	this.load.image('panTienda', 'assets/images/pan.png');
 
 	scene = this;
 }
@@ -40,7 +42,7 @@ export function encenderTienda()
 		scene.skullText = scene.add.text(heroes.cabeza.x - config.width / 2 + 16, heroes.cabeza.y - config.height / 2 + 210, 'Skull: Ayudadme a financiar el laborarorio! usad los numeros para comprar.', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(18);
 	}
 
-	textoMago = true;
+	textoSkull = true;
 }
 
 export function update()
