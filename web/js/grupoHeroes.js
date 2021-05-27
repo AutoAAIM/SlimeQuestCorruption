@@ -32,41 +32,45 @@ var text;
 
 export function create(spawn, allTiles, antorchas, conf)
 {
-	//el espacio entre elementos de la fila
-	espacioEntreHeroes = 12;
-
-	//el grupo de elementos de la fila
-	heroes = scene.physics.add.group();
-
-	yasha.create(spawn, allTiles, antorchas, conf, heroes, armasHeroicas);
-	glish.create(spawn, allTiles, conf, heroes, armasHeroicas);
-	boxTank.create(spawn, allTiles, heroes, armasHeroicas);
-	//robin.create(spawn, allTiles, conf, heroes, armasHeroicas);
-
-
-	numHeroes = heroes.getLength();
-	//console.log(numHeroes);
-
-	for (var i = 0; i < numHeroes; i++)
+	if(conf.game.heroesCargados != true)
 	{
-		fila.unshift(heroes.getChildren()[i]);
+		conf.game.heroesCargados = true;
+		//el espacio entre elementos de la fila
+		espacioEntreHeroes = 12;
+
+		//el grupo de elementos de la fila
+		heroes = scene.physics.add.group();
+
+		yasha.create(spawn, allTiles, antorchas, conf, heroes, armasHeroicas);
+		glish.create(spawn, allTiles, conf, heroes, armasHeroicas);
+		boxTank.create(spawn, allTiles, heroes, armasHeroicas);
+		//robin.create(spawn, allTiles, conf, heroes, armasHeroicas);
+
+
+		numHeroes = heroes.getLength();
+		//console.log(numHeroes);
+
+		for (var i = 0; i < numHeroes; i++)
+		{
+			fila.unshift(heroes.getChildren()[i]);
+		}
+
+		//console.log(fila[0]);
+		cabeza = fila[0];
+		scene.cameras.main.startFollow(cabeza, true);
+
+		//Crea una array de puntos, estos seran el camino que deben seguir
+		caminoTemp = new Array();
+		for (var i = 0; i < numHeroes * espacioEntreHeroes; i++)
+		{
+			caminoTemp[i] = new Phaser.Geom.Point(cabeza.x, cabeza.y);
+		}
+
+
+		//Hay que hacer una variable que copruebe si la cabeza esta en movimiento
+		move = false;
+		text = scene.add.text(10, 10, 'vida: ' + cabeza.vida, { font: '16px Courier', fill: '#000000' }).setDepth(100).setScrollFactor(0);
 	}
-
-	//console.log(fila[0]);
-	cabeza = fila[0];
-	scene.cameras.main.startFollow(cabeza, true);
-
-	//Crea una array de puntos, estos seran el camino que deben seguir
-	caminoTemp = new Array();
-	for (var i = 0; i < numHeroes * espacioEntreHeroes; i++)
-	{
-		caminoTemp[i] = new Phaser.Geom.Point(cabeza.x, cabeza.y);
-	}
-
-
-	//Hay que hacer una variable que copruebe si la cabeza esta en movimiento
-	move = false;
-	text = scene.add.text(10, 10, 'vida: ' + cabeza.vida, { font: '16px Courier', fill: '#000000' }).setDepth(100).setScrollFactor(0);
 }
 
 export function update()
