@@ -1,7 +1,7 @@
 import * as robin from '../personajes/robin.js';
 import * as escorpion from '../enemigos/escorpion.js';
 import * as slime from '../enemigos/slime.js';
-import * as boss_desierto from '../enemigos/boss_desierto.js';
+import * as boss from '../enemigos/boss_desierto.js';
 import * as keys from '../keys.js';
 import * as heroes from '../grupoHeroes.js';
 
@@ -40,10 +40,10 @@ export default class dessert extends Phaser.Scene {
   	var lava = map.createLayer('Lava', tileset);
   	var muro = map.createLayer('Pared', tileset);
 
-    playerTileSpawner = map.createFromObjects('SpawnJugador',4);
-    slimeTileSpawner = map.createFromObjects('SpawnSlime',19);
-    superSlimeTileSpawner = map.createFromObjects('SpawnSuperSlime',2);
-    escorpionTileSpawner = map.createFromObjects('SpawnEscorpion',23);
+    playerTileSpawner = map.createFromObjects('SpawnJugador');
+    slimeTileSpawner = map.createFromObjects('SpawnSlime');           // 19
+    superSlimeTileSpawner = map.createFromObjects('SpawnSuperSlime'); // 2
+    escorpionTileSpawner = map.createFromObjects('SpawnEscorpion');   // 23
     bossTileSpawner = map.createFromObjects('SpawnBoss');
     llaveTileSpawner = map.createFromObjects('Llave');
     
@@ -52,7 +52,13 @@ export default class dessert extends Phaser.Scene {
     superSlimeTileSpawner = new Array();
     escorpionTileSpawner = new Array();
 
-    slimetileSpawner.forEach(obj=>{
+    boss_desierto.createFireBossGroup.call(allLayers2);
+	  slime.createFireGroup.call(allLayers2);
+	  escorpion.createGroup.call(allLayers1);
+	  slime.createSlimeGroup.call(allLayers2)
+	  slime.createSuperSlimeGroup.call(allLayers2);
+
+    slimeTileSpawner.forEach(obj=>{
       this.physics.world.enable(obj);
         obj.setAlpha(0);
       if (obj.name == 'S') {
@@ -65,68 +71,35 @@ export default class dessert extends Phaser.Scene {
       if (obj.name == 'S') {
         slime.createSuperSlime(obj);
       }
+    }
+    escorpionTileSpawner.forEach(obj=>{
+      this.physics.world.enable(obj);
+      obj.setAlpha(0);
       if (obj.name == 'E') {
-        slime.createSuperSlime(obj);
+        escorpion.createEscorpion(obj);
       }
+    }
+
+    bosstileSpawner.forEach(obj=>{
+      this.physics.world.enable(obj);
+      obj.setAlpha(0);
+      if (obj.name == 'E') {
+        boss.create(obj);
+      }
+    }
 
 
 
 
-     playerSpawnPoint = new Array();
-
-        tileSpawner.forEach(obj => {
-            this.physics.world.enable(obj);
-            obj.setAlpha(0);
-            if(obj.name == 'entrada_3'){
-			    playerSpawnPoint.unshift(obj);
-            }
-        })
+    playerSpawnPoint = new Array();
 
 		spawnID = playerSpawnPoint.length-1;
-        heroes.create(playerSpawnPoint[spawnID], allLayers, null, sc.config)
-
-        tileSpawner.forEach(obj=>{
-            this.physics.world.enable(obj);
-            obj.setAlpha(0);
-            if(obj.name == 'rana'){
-                ranas.createEnemyRana(obj, sc.config);
-            }else if(obj.name == 'mosquito'){
-                mosquitos.createEnemyMosquito(obj, sc.config);
-            }else if(obj.name == 'conseguir_glish'){
-                npc.create(obj);        
-            }else if(obj.name == 'BossCalamar' && !bossMuerto){
-                swampBoss.createBoss(obj, sc.config);
-            }else if(obj.name == 'tentaculos' && !bossMuerto){
-                swampBoss.generateTentacles(obj);
-            }
-        })
+    heroes.create(playerSpawnPoint[spawnID], allLayers, null, sc.config)
 
 	  segundo_suelo.alpha = 0;
     lava.tiempo = 0;
 
-    var allLayers1 = [oasis, dunas, lava, muro];
-    var allLayers2 = [oasis, dunas, muro];
-
     heroes.create.call();
-	  boss_desierto.createFireBossGroup.call(allLayers2);
-	  slime.createFireGroup.call(allLayers2);
-	  escorpion.createGroup.call(allLayers1);
-	
-	  for (i = 0; i < 23; i++) {
-	  	escorpion.createEscorpion.call();
-	  }
-
-	  slime.createSlimeGroup.call(allLayers2)
-	
-	  for (i = 0; i < 19; i++) {
-		  slime.createSlime.call();
-  	}
-
-	  slime.createSuperSlimeGroup.call(allLayers2);
-
-  	for (i = 0; i < 2; i++) {
-  		slime.createSuperSlime.call();
-  	}
 
   	this.physics.add.collider(heroes.heroes, muro);
 	  this.physics.add.collider(heroes.heroes, oasis);
