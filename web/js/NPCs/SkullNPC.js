@@ -19,7 +19,7 @@ export function create(obj, conf)
 {
 	scene.anims.create({
 		key: 'SkullAGAnim',
-		frames: this.anims.generateFrameNumbers('Skull'),
+		frames: scene.anims.generateFrameNumbers('Skull'),
 		frameRate: 4,
 		repeat: -1
 	});
