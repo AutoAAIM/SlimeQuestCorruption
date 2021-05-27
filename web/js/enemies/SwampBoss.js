@@ -21,7 +21,7 @@ export function createBoss(obj, conf, el){
     tentacleList = scene.physics.add.group();
     config = conf;
     enemigoBoss = scene.physics.add.sprite(obj.x,obj.y, 'BossSwamp').setOrigin(0.5); 
-    enemigoBoss.vida = 2;
+    enemigoBoss.vida = 30;
     enemigoBoss.dano = 1;
     enemigoBoss.inmune = -1;
     enemigoBoss.temporizador = 0;
