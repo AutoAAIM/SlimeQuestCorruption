@@ -1531,7 +1531,7 @@
                          "value":2
                         }, 
                         {
-                         "name":"type",
+                         "name":"tipo",
                          "type":"string",
                          "value":"none"
                         }],
@@ -1559,7 +1559,7 @@
                          "value":3
                         }, 
                         {
-                         "name":"type",
+                         "name":"tipo",
                          "type":"string",
                          "value":"none"
                         }],
@@ -1877,7 +1877,7 @@
                          "value":2
                         }, 
                         {
-                         "name":"type",
+                         "name":"tipo",
                          "type":"string",
                          "value":"interScene"
                         }],
