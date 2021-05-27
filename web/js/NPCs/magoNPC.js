@@ -110,7 +110,7 @@ export function encenderHielito()
 
 export function generarMago(obj)
 {
-	mago = scene.physics.add.staticSprite(obj.x, obj.y, 'magoHielo').setDepth(2).setPipeline('Light2D');
+	mago = scene.physics.add.staticSprite(obj.x, obj.y, 'magoHielo').setDepth(5).setPipeline('Light2D');
 	mago.setSize(30, 39);
 	mago.play('magia', true);
 
