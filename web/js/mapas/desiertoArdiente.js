@@ -5,28 +5,6 @@ import * as boss_desierto from '../enemigos/boss_desierto.js';
 import * as keys from '../keys.js';
 import * as heroes from '../grupoHeroes.js';
 
-var config={
-	type:Phaser.AUTO,
-	width:400,
-	height:300,
-	pixelArt: true,
-	physics:{
-		default:'arcade',
-		arcade:{
-			debug: true,
-			gravity:{y:0}
-		}
-	},
-	scene:{
-		preload:preload,
-		create:create,
-		update:update,
-	},
-	scale:{
-		zoom: 2
-	}
-};
-
 var game=new Phaser.Game(config);
 
 var llave = false;
