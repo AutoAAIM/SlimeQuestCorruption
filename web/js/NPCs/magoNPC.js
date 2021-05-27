@@ -70,7 +70,7 @@ function updateTexto()
 		scene.magoText.y = yasha.player.y - config.height / 2 + 210;
 
 		imagenTexto.x = yasha.player.x - config.width / 2 + 340;
-		imagenTexto.y = yasha.player.y - config.height / 2 + 260;
+		imagenTexto.y = yasha.player.y - config.height / 2 + 240;
 
 		if(Phaser.Geom.Intersects.RectangleToRectangle(yasha.player.getBounds(), mago.detectionbox.getBounds()))
 		{
@@ -102,7 +102,7 @@ export function encenderHielito()
 
 		scene.magoText = scene.add.text(yasha.player.x - config.width / 2 + 16, yasha.player.y - config.height / 2 + 210, 'Mago: \nOtro novato en busca de poder... \nToma esto y dejame en paz.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(18);
 
-		imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + 340, yasha.player.y - config.height / 2 + 260, 'textoHielo').setDepth(18).setScale(2);
+		imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + 340, yasha.player.y - config.height / 2 + 240, 'textoHielo').setDepth(18).setScale(2);
 	}
 
 	textoMago = true;
