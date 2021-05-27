@@ -5,7 +5,7 @@ import * as ranas from '../enemies/ranas.js';
 import * as mosquitos from '../enemies/mosquitos.js';
 import * as enemigos from '../enemies/enemigos.js';
 
-var npc1, scene, interacturar, keyE, dialogo, dialogoText2, ;
+var npc1, scene, interacturar, keyE, dialogo, dialogoText2, dialogoText;
 
 export function preload() {
   this.load.spritesheet('npc1', 'assets/images/Glish.png', { frameWidth: 32, frameHeight: 32 });
