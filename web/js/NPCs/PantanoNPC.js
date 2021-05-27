@@ -25,7 +25,7 @@ export function create(obj, config) {
 
     cuadroTexto2 = scene.add.rectangle(config.width / 2 + config.width / 2, config.height / 2 + config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17).setScrollFactor(0);
 
-    dialogoText2 = scene.add.text(heroes.cabeza.x - config.width / 2 + 16, heroes.cabeza.y - config.height / 2 + 210, 'Skull: Ayudadme a financiar el laborarorio!\nusad los numeros para comprar. \n'ranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(18).setScrollFactor(0);
+    dialogoText2 = scene.add.text(heroes.cabeza.x - config.width / 2 + 16, heroes.cabeza.y - config.height / 2 + 210, 'Skull: Ayudadme a financiar el laborarorio!\nusad los numeros para comprar. \nranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos, {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(18).setScrollFactor(0);
   
   
   npc1.trigger = scene.add.rectangle(npc1.x,npc1.y, 90, 90);
