@@ -154,7 +154,7 @@ function changeScene(obj)
 	var xhr = new XMLHttpRequest();
 	var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/reguser.php';
 	
-	obj.properties.destino
+	//obj.properties.destino
 
 	var myObj = scene.game.usuario;
 
