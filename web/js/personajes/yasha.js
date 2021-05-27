@@ -141,7 +141,6 @@ export function update(cabeza)
 	player.luz.y = player.y
 
 	updatePuntero();
-	updateTexto();
 }
 
 export function updatePuntero()
