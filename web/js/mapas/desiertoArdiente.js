@@ -47,6 +47,8 @@ export default class dessert extends Phaser.Scene {
     bossTileSpawner = map.createFromObjects('SpawnBoss');
     llaveTileSpawner = map.createFromObjects('Llave');
 
+    this.map.createFromObjects('objectsLayer', 81, 'zombie', 0, true, false, this.enemies);
+
 	  playerSpawnPoint = new Array();
     slimeTileSpawner = new Array();
     superSlimeTileSpawner = new Array();

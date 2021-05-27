@@ -31,6 +31,7 @@ var velocidad_fuego = 100;
 export function create(obj) {
 	
 	animacionBossDesierto();
+  this.anims.play('Walk')
 
 	var boss = this.physics.add.sprite(obj.x,obj.y,'Boss_volcan');
 	boss.vida = 50;

@@ -241,6 +241,7 @@ function generarFuego()
 	f.scale = 1;
 	contFuego = 30;
 	f.light = scene.lights.addLight(f.x, f.y, 100).setColor(0xffffff).setIntensity(1);
+	f.fuego = true;
 
 	armasHeroicas.unshift(f)
 }
@@ -284,6 +285,7 @@ function generarHielo()
 		h.tiempo = 0;
 		h.setCircle(2, 14, 14);
         h.dano = 1;
+		h.hielo = true;
 		scene.physics.add.collider(h, allLayers);
 		//console.log(h)
 		
@@ -311,7 +313,7 @@ function updateHielo()
 
 export function derretir(obj, fuego)
 {
-	if (obj.properties != undefined && obj.properties.snow == true && fuego.fuego)
+	if (obj.properties != undefined && obj.properties.snow == true && fuego.fuego == true)
     {
         obj.setAlpha(0);
 
@@ -325,14 +327,14 @@ export function freeze(objeto, lago)
 {
 	console.log(lago)
 	console.log(objeto)
-    if (lago.properties != undefined && !lago.properties.ice && objeto.hielo )
+    if (lago.properties != undefined && !lago.properties.ice && objeto.hielo == true)
     {
         lago.setAlpha(0);
 
         lago.properties.ice = true;
     }
 
-    if(lago.properties != undefined && lago.properties.ice && objeto.fuego)
+    if(lago.properties != undefined && lago.properties.ice && objeto.fuego == true)
     {
 		lago.setAlpha(1);
 
