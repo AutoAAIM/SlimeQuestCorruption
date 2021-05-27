@@ -51,7 +51,8 @@ function activarTrigger(player, npc){
   interacturar.anims.play('inter', true);
 
   if(keyE.isDown){
-    dialogo.setAlpha(1);
+    cuadroTexto.setAlpha(1);
+    cuadroTexto2.setAlpha(1);
     dialogoText2.setAlpha(1);
   }
 
@@ -66,7 +67,8 @@ function recogerPersonaje(){
         npc1.trigger.destroy();
         npc1.destroy();
         dialogoText2.destroy();
-        dialogo.destroy();
+        cuadroTexto.destroy();
+        cuadroTexto2.destroy();
         interacturar.destroy();
 
   }
@@ -79,7 +81,8 @@ export function update(){
 
   }else{
     interacturar.setAlpha(0);
-        dialogo.setAlpha(0);
+    cuadroTexto.setAlpha(0);
+    cuadroTexto2.setAlpha(0);
     dialogoText2.setAlpha(0);
   }
   dialogoText2.text = "ranas: " + ranas.contadorRana + "\n mosquitos:"+ mosquitos.contadorMosquitos;
