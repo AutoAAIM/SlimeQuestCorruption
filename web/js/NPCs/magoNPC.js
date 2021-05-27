@@ -25,6 +25,10 @@ export function create(obj)
 
 	generarMago(obj);
 }
+export function udate()
+{
+	updateTexto();
+}
 
 export function magoTrue(arrayObj)
 {
