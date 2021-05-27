@@ -160,14 +160,14 @@ function changeScene(obj)
 
 	xhr.onreadystatechange = function(){
 		console.log(this.responseText)
-		//1//myObj = JSON.parse(this.responseText);
-		//1//myObj = myObj[0];
+		myObj = JSON.parse(this.responseText);
+		myObj = myObj[0];
 		if(this.readyState == 4 && this.status == 200)
 		{
 			scene.game.usuario = myObj;
 			//alert(xhr.responseText);
 			//scene.scene.stop(scene);
-			//1//scene.scene.start(myObj.zonanombre);
+			scene.scene.start(myObj.zonanombre);
 
 		}
 	}
