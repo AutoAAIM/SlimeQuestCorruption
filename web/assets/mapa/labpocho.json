@@ -1130,7 +1130,7 @@
                         {
                          "name":"tipo",
                          "type":"string",
-                         "value":"lab"
+                         "value":"interScene"
                         }],
                  "rotation":0,
                  "type":"lab",
@@ -1186,7 +1186,7 @@
                         {
                          "name":"tipo",
                          "type":"string",
-                         "value":"lab"
+                         "value":"interScene"
                         }],
                  "rotation":0,
                  "type":"lab",

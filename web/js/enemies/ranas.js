@@ -82,7 +82,6 @@ function createLenguaRana(parent){
 }
 export function updateLenguaRana(atributo, o){
     if(o == heroes.cabeza){
-        console.log(heroes.cabeza.name);
         var parent = sacaLengua(atributo)
         var l = parent.lengua;
     

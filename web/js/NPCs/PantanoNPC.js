@@ -53,9 +53,9 @@ function activarTrigger(player, npc){
 
 function recogerPersonaje(){
   if(ranas.contadorRana > 0 && mosquitos.contadorMosquitos > 0){
-    console.log("todavia no puedes");
+
   }else if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
-    console.log("soy tuyo");
+
   }
 }
 
