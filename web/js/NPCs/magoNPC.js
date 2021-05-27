@@ -71,7 +71,7 @@ function updateTexto()
 		imagenTexto.x = yasha.player.x - config.width / 2 + 540;
 		imagenTexto.y = yasha.player.y - config.height / 2 + 350;
 
-		if(Phaser.Geom.Intersects.RectangleToRectangle(yasha.player.getBounds(), mago.mago.detectionbox.getBounds()))
+		if(Phaser.Geom.Intersects.RectangleToRectangle(yasha.player.getBounds(), mago.detectionbox.getBounds()))
 		{
 			cuadroTexto.setAlpha(1)
 			cuadroTexto2.setAlpha(1)
