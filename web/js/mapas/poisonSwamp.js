@@ -132,7 +132,7 @@ export default class swamp extends Phaser.Scene {
                 ranas.createEnemyRana(obj, sc.config);
             }else if(obj.name == 'mosquito'){
                 mosquitos.createEnemyMosquito(obj, sc.config);
-            }else if(obj.name == 'conseguir_glish' && scene.game.glishActivarCuracion == false){
+            }else if(obj.name == 'conseguir_glish' && scene.game.glishActivarCuracion != true){
                 npc.create(obj);   
             }else if(obj.name == 'BossCalamar' && !bossMuerto){
                 swampBoss.createBoss(obj, sc.config);
@@ -209,7 +209,7 @@ export default class swamp extends Phaser.Scene {
         swampBoss.updateBoss();
 
         portal.update();
-        if(scene.game.glishActivarCuracion == false){
+        if(scene.game.glishActivarCuracion != true){
             npc.update();
         }
     
