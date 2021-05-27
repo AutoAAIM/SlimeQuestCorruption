@@ -21,9 +21,9 @@ export function create(obj, config) {
   npc1 = scene.physics.add.sprite(obj.x, obj.y, 'npc1');
   interacturar = scene.physics.add.sprite(obj.x, obj.y-32, 'buttonE');
   
-    cuadroTexto = scene.add.rectangle(config.width / 2 + config.width, config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16).setScrollFactor(0);
+    cuadroTexto = scene.add.rectangle(config.width / 2,config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16).setScrollFactor(0);
 
-    cuadroTexto2 = scene.add.rectangle(config.width / 2 + config.width / 2, config.height / 2 + config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17).setScrollFactor(0);
+    cuadroTexto2 = scene.add.rectangle(config.width / 2,config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17).setScrollFactor(0);
 
     dialogoText2 = scene.add.text(heroes.cabeza.x - config.width / 2 + 16, heroes.cabeza.y - config.height / 2 + 210, 'Por favor si quieres la habilidad de quitar el veneno \nayudame a cazar la cena. \nnecesito estos ingredientes\nranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos, {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(18).setScrollFactor(0);
   
