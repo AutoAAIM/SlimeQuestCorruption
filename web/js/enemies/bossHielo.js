@@ -6,7 +6,6 @@ var scene;
 export function preload()
 {
 	this.load.spritesheet('bossHielo', 'assets/images/bossHielo.png', {frameWidth:32, frameHeight:32});
-	// this.load.image('polvoHielo', 'assets/sprites/polvo.png');
 
 	scene = this;
 }
