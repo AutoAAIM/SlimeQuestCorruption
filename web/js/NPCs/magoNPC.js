@@ -1,4 +1,5 @@
 import * as yasha from '../personajes/yasha.js';
+import * as heroes from '../grupoHeroes.js';
 
 var scene;
 
