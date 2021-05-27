@@ -65,11 +65,11 @@ function updateTexto()
 		cuadroTexto2.x = yasha.player.x - config.width / 2 + config.width / 2;
 		cuadroTexto2.y = yasha.player.y - config.height / 2 + config.height - 50;
 
-		scene.magoText.x = yasha.player.x - config.width / 2 + 16;
-		scene.magoText.y = yasha.player.y - config.height / 2 + 310;
+		scene.magoText.x = yasha.player.x - config.width / 2;
+		scene.magoText.y = yasha.player.y - config.height / 2;
 
-		imagenTexto.x = yasha.player.x - config.width / 2 + 540;
-		imagenTexto.y = yasha.player.y - config.height / 2 + 350;
+		imagenTexto.x = yasha.player.x - config.width / 2;
+		imagenTexto.y = yasha.player.y - config.height / 2;
 
 		if(Phaser.Geom.Intersects.RectangleToRectangle(yasha.player.getBounds(), mago.detectionbox.getBounds()))
 		{
