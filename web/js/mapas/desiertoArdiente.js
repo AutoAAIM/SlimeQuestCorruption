@@ -52,11 +52,21 @@ export default class dessert extends Phaser.Scene {
     superSlimeTileSpawner = new Array();
     escorpionTileSpawner = new Array();
 
-    tileSpawner.forEach(obj=>{
+    slimetileSpawner.forEach(obj=>{
       this.physics.world.enable(obj);
         obj.setAlpha(0);
       if (obj.name == 'S') {
         slime.createSlime(obj);
+      }
+    }
+    superSlimeTileSpawner.forEach(obj=>{
+      this.physics.world.enable(obj);
+      obj.setAlpha(0);
+      if (obj.name == 'S') {
+        slime.createSuperSlime(obj);
+      }
+      if (obj.name == 'E') {
+        slime.createSuperSlime(obj);
       }
 
 

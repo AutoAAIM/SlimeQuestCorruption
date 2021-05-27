@@ -324,7 +324,7 @@ export function derretir(fuego, obj)
     }
 }
 
-export function freeze(lago, objeto)
+export function freeze(objeto, lago)
 {
 	console.log(lago)
 	console.log(objeto)
