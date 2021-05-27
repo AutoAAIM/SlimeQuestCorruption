@@ -106,18 +106,3 @@ export function updateRobin() {
 		robin.basico.ataque = 4;
 	}
 }
-
-export function updateVidaRobin() {
-
-	if (!robin.invisibilidad && robin.vida > 0 && enfriamiento == 0) {
-		robin.vida--;
-		enfriamiento++;
-		if (robin.vida <= 0) { 
-			robin.muerto = true;
-		}
-	}
-	text.setText('Vida: ' + robin.vida);
-	if (enfriamiento >= 60) {
-		enfriamiento = 0;
-	}
-}
