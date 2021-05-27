@@ -4,12 +4,47 @@ import * as heroes from './grupoHeroes.js';
 export var inmune = false;
 
 export function preload() {
-	this.load.spritesheet('Escorpion','assets/sprites/Escorpion.png');
-	// Animacion salir
+	this.load.spritesheet('Escorpion','assets/animaciones/escorpion/Stand.png', { frameWidth: 32, frameHeight: 32 });
+  this.load.spritesheet('Arriba','assets/animaciones/escorpion/WalkUp.png', { frameWidth: 32, frameHeight: 32 });
+  this.load.spritesheet('Abajo','assets/animaciones/escorpion/WalkDown.png', { frameWidth: 32, frameHeight: 32 });
+  this.load.spritesheet('Derecha','assets/animaciones/escorpion/WalkRight.png', { frameWidth: 32, frameHeight: 32 });
+  this.load.spritesheet('Izquierda','assets/animaciones/escorpion/WalkLeft.png', { frameWidth: 32, frameHeight: 32 });
+  this.load.spritesheet('Attack','assets/animaciones/escorpion/ataque.png', { frameWidth: 32, frameHeight: 32 });
+
 }
 
 export function animacionEscorpion() {
-
+  this.physics.anims.create({
+      key: 'Stand',
+      frames: this.anims.generateFrameNames('Escorpion', { frames: start: 1, end: 4 }),
+      frameRate: 8,
+      repeat: -1
+  });
+  this.physics.anims.create({
+      key: 'WalkUp',
+      frames: this.anims.generateFrameNames('Arriba', { frames: start: 1, end: 4 }),
+      frameRate: 8
+  });
+  this.physics.anims.create({
+      key: 'WalkDown',
+      frames: this.anims.generateFrameNames('Abajo', { frames: start: 1, end: 4 }),
+      frameRate: 8
+  });
+  this.physics.anims.create({
+      key: 'WalkLeft',
+      frames: this.anims.generateFrameNames('Izquierda', { frames: start: 1, end: 2 }),
+      frameRate: 8
+  });
+  this.physics.anims.create({
+      key: 'WalkRight',
+      frames: this.anims.generateFrameNames('Derecha', { frames: start: 1, end: 2 }),
+      frameRate: 8
+  });
+  this.physics.anims.create({
+      key: 'golpe',
+      frames: this.anims.generateFrameNames('Attack', { frames: start: 1, end: 4 }),
+      frameRate: 8
+  });
 }
 
 export function createGroup(muros) {

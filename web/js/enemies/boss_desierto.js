@@ -2,14 +2,16 @@ import * as robin from '../personajes/robin.js';
 import * as heroes from './grupoHeroes.js';
 
 export function preload() {
-	this.load.spritesheet('Boss_volcan','assets/sprites/Boss.png');
-	this.load.spritesheet('fireball','assets/sprites/fireball.png');
+	this.load.spritesheet('Boss_volcan','assets/sprites/Boss.png', { frameWidth: 32, frameHeight: 32 });
+	this.load.spritesheet('fireball','assets/sprites/fireball.png', { frameWidth: 32, frameHeight: 32 });
+  this.load.image('enfadado','assets/animaciones/boss/Enfadado.png');
+  this.load.image('disparo','assets/animaciones/boss/fireball.png');
 }
 
 export function animacionBossDesierto() {
   this.physics.anims.create({
       key: 'Walk',
-      frames: this.anims.generateFrameNames('Basico', { frames: start: 1, end: 4 }),
+      frames: this.anims.generateFrameNames('Boss_volcan', { frames: start: 1, end: 4 }),
       frameRate: 8,
       repeat: -1
   });
@@ -175,6 +177,8 @@ export function createFireBossGroup() {
 
 export function createBolaFuego (boss) {
 	
+  animacionFuego();
+
 	var f = fireList.create(boss.x,boss.y,'Fuego');
 	f.tiempo = 0; // El tiempo para que desaparezca
 	f.ataque = 1; 
@@ -191,6 +195,8 @@ export function createBolaFuego (boss) {
 
 export function createConoFuego(boss,x,y) {
 	
+  animacionFuego();
+
 	var f = fireList.create(boss.x,boss.y,'Fuego');
 	f.tiempo = 0; // El tiempo para que desaparezca
 	f.ataque = 1; 
@@ -201,6 +207,8 @@ export function createConoFuego(boss,x,y) {
 
 export function createPrision(x,y,tipo,dir1,dir2) {
 	
+  
+
 	var pos = 0;
 
 	pos.x = heroes.heroes.x + x; 
@@ -224,67 +232,6 @@ export function updateFire(f) {
 	}
 	else {
 		f.tiempo++;
-	}
-}
-
-export function createFire(x,y,c) {
-	const angulo = 0;
-	var fire;
-
-	if (c == 1) {
-		fire = fireList.create(x,y,'fireball');
-		fire.setVelocity(0,100);
-	}
-	else if (c == 3) {
-		for (i = 0; i < c; i++) { 
-			if (i == 1) {
-				fire = fireList.create(x,y,'fireball');
-				fire.setVelocity(75,100);
-			}
-			else if (i == 2) {
-				fire = fireList.create(x,y,'fireball');
-				fire.setVelocity(0,100);
-			}
-			else if (i == 3) {
-				fire = fireList.create(x,y,'fireball');
-				fire.setVelocity(-75,100);
-			}	
-		}
-	}
-	else if (c == 4) {
-		for (i = 0; i < c; i++) {
-			if (i == 0) {
-				fire = fireList.create(x,y + 70,'fireball');
-				fire.setVelocity(0,100);
-			}
-			if (i == 1) {
-				fire = fireList.create(x + 70,y,'fireball');
-				fire.setVelocity(100,0);
-			}
-			else if (i == 2) {
-				fire = fireList.create(x - 70,y,'fireball');
-				fire.setVelocity(-100,0);
-			}
-			else if (i == 3) {
-				fire = fireList.create(x,y - 70,'fireball');
-				fire.setVelocity(0,-100);
-			}
-		}
-	}
-	else if (c == 6) {
-		angulo = 0;
-		for (i = 0; i < c; i++) { 
-			if (i < 3) {
-				fire = fireList.create(x,y,'fireball');
-				fire.setVelocity(0.5 * angulo,100);
-				angulo = angulo - 36;
-			}
-			else if (i > 2) {
-				fire = fireList.create(x,y,'fireball');
-				fire.setVelocity(-0.5 * angulo,100);
-				angulo = angulo + 36;
-			}	
-		}
 	}
 }
 

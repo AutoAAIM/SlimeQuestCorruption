@@ -216,6 +216,7 @@ export function recibirDanyo(obj1, obj2){
     
     if(obj2 !=heroes.cabeza && obj2.inmune <= 0){
         obj2.setAlpha(0);
+		obj2.trigger.activado = true;
         scene.tweens.add({
             targets: obj2,
             alpha: 1,
@@ -251,6 +252,7 @@ export function recibirDanyo(obj1, obj2){
     }
     if(obj1 !=heroes.cabeza && obj1.inmune <= 0){
         obj1.setAlpha(0);
+		obj1.trigger.activado = true;
         scene.tweens.add({
             targets: obj1,
             alpha: 1,
