@@ -83,7 +83,7 @@ export default class lab extends Phaser.Scene {
 
 		music = this.sound.add('labchords');
 
-    	music.play();
+    	music.play(true);
 
 		this.lights.enable().setAmbientColor(0x555555);
 

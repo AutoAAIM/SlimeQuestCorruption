@@ -52,6 +52,9 @@ export default class dessert extends Phaser.Scene {
     superSlimeTileSpawner = new Array();
     escorpionTileSpawner = new Array();
 
+    var allLayers1 = [oasis, dunas, lava, muro];
+    var allLayers2 = [oasis, dunas, muro];
+
     boss_desierto.createFireBossGroup.call(allLayers2);
 	  slime.createFireGroup.call(allLayers2);
 	  escorpion.createGroup.call(allLayers1);
@@ -68,7 +71,7 @@ export default class dessert extends Phaser.Scene {
     superSlimeTileSpawner.forEach(obj=>{
       this.physics.world.enable(obj);
       obj.setAlpha(0);
-      if (obj.name == 'S') {
+      if (obj.name == 'SS') {
         slime.createSuperSlime(obj);
       }
     }
@@ -79,19 +82,13 @@ export default class dessert extends Phaser.Scene {
         escorpion.createEscorpion(obj);
       }
     }
-
-    bosstileSpawner.forEach(obj=>{
+    bossTileSpawner.forEach(obj=>{
       this.physics.world.enable(obj);
       obj.setAlpha(0);
       if (obj.name == 'E') {
         boss.create(obj);
       }
     }
-
-
-
-
-    playerSpawnPoint = new Array();
 
 		spawnID = playerSpawnPoint.length-1;
     heroes.create(playerSpawnPoint[spawnID], allLayers, null, sc.config)

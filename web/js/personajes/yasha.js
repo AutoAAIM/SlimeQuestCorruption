@@ -241,7 +241,7 @@ function generarFuego()
     f.dano = 1;
 	f.scale = 1;
 	contFuego = 30;
-	f.light = scene.lights.addLight(f.x, f.y, 50).setColor(0xffffff).setIntensity(1);
+	f.light = scene.lights.addLight(f.x, f.y, 100).setColor(0xffffff).setIntensity(1);
 	f.fuego = true;
 
 	armasHeroicas.unshift(f)
