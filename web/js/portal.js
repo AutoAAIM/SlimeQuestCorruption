@@ -159,6 +159,7 @@ function changeScene(obj)
 	var myObj = scene.game.usuario;
 
 	xhr.onreadystatechange = function(){
+		console.log(this.responseText)
 		myObj = JSON.parse(this.responseText);
 		myObj = myObj[0];
 		if(this.readyState == 4 && this.status == 200)
