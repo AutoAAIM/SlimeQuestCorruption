@@ -5,6 +5,7 @@ var scene;
 var textoMago = false;
 var cuadroTexto;
 var cuadroTexto2;
+var imagenTexto;
 var config;
 
 export function preload()
