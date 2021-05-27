@@ -95,7 +95,7 @@ export function updateLenguaRana(atributo, o){
             calcularLengua(l, parent)
         }
         l.time--;
-        scene.physics.add.overlap(heroes.cabeza, l.segmentos, recibirDanyo);
+        scene.physics.add.overlap(heroes.cabeza, l.segmentos, heroes.herir);
     }
 }// Lengua es una struct,contiene .segmentos, una array que contiene varias sprites en la que la 0 es la punta, .maxLong que contiene el numero de segmentos maximos, el tiempo para ser lanzada
 
