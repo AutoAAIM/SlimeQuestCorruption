@@ -207,7 +207,7 @@ export function createConoFuego(boss,x,y) {
 
 export function createPrision(x,y,tipo,dir1,dir2) {
 	
-  
+  animacionFuego();
 
 	var pos = 0;
 
