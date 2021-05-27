@@ -66,11 +66,11 @@ function updateTexto()
 		cuadroTexto2.x = yasha.player.x - config.width / 2 + config.width / 2;
 		cuadroTexto2.y = yasha.player.y - config.height / 2 + config.height - 50;
 
-		scene.magoText.x = yasha.player.x - config.width / 2;
-		scene.magoText.y = yasha.player.y - config.height / 2;
+		scene.magoText.x = yasha.player.x - config.width / 2 + 16;
+		scene.magoText.y = yasha.player.y - config.height / 2 + 210;
 
-		imagenTexto.x = yasha.player.x - config.width / 2;
-		imagenTexto.y = yasha.player.y - config.height / 2;
+		imagenTexto.x = yasha.player.x - config.width / 2 + 340;
+		imagenTexto.y = yasha.player.y - config.height / 2 + 260;
 
 		if(Phaser.Geom.Intersects.RectangleToRectangle(yasha.player.getBounds(), mago.detectionbox.getBounds()))
 		{
@@ -100,9 +100,9 @@ export function encenderHielito()
 
 		cuadroTexto2 = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width/2, yasha.player.y - config.height / 2 + config.height - 50, config.width-8, 100 - 8, 0x000000).setDepth(17);
 
-		scene.magoText = scene.add.text(yasha.player.x - config.width / 2, yasha.player.y - config.height / 2, 'Mago: \nOtro novato en busca de poder... \nToma esto y dejame en paz.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(18);
+		scene.magoText = scene.add.text(yasha.player.x - config.width / 2 + 16, yasha.player.y - config.height / 2 + 210, 'Mago: \nOtro novato en busca de poder... \nToma esto y dejame en paz.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(18);
 
-		imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2, yasha.player.y - config.height / 2, 'textoHielo').setDepth(18).setScale(2);
+		imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + 340, yasha.player.y - config.height / 2 + 260, 'textoHielo').setDepth(18).setScale(2);
 	}
 
 	textoMago = true;
