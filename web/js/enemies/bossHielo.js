@@ -6,7 +6,7 @@ var scene;
 export function preload()
 {
 	this.load.spritesheet('bossHielo', 'assets/images/bossHielo.png', {frameWidth:32, frameHeight:32});
-	this.load.image('polvoHielo', 'assets/sprites/polvo.png');
+	// this.load.image('polvoHielo', 'assets/sprites/polvo.png');
 
 	scene = this;
 }
@@ -69,7 +69,7 @@ function generarNieblaBoss(boss, py)
 	{
 		boss.tiempoDisparo = 1;
 
-		var d = grupoDispBoss.create(boss.x - 15, boss.y + 5, 'polvoHielo').setDepth(2).setPipeline('Light2D');
+		var d = grupoDispBoss.create(boss.x - 15, boss.y + 5, 'polvoHielo').setDepth(5).setPipeline('Light2D');
 
 	 	d.setAlpha(0.3);
 
