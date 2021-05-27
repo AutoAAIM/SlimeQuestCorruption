@@ -18,6 +18,6 @@
 
 	$result = pg_query($queryz);
 
-	echo $result;
+	echo json_encode(pg_fetch_all($respuesta, true));;
 
 ?>
