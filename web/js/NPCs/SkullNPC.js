@@ -35,7 +35,7 @@ export function encenderTienda()
 {
 	if(textoSkull == false)
 	{
-		cuadroTexto = scene.add.rectangle(heroes.cabeza.x - config.width / 2 + config.width / 2, heroes.cabeza.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16).setPosition(0);
+		cuadroTexto = scene.add.rectangle(heroes.cabeza.x - config.width / 2 + config.width / 2, heroes.cabeza.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16);
 
 		cuadroTexto2 = scene.add.rectangle(heroes.cabeza.x - config.width / 2 + config.width / 2, heroes.cabeza.y - config.height / 2 + config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17);
 
