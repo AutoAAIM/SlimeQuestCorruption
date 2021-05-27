@@ -4,6 +4,7 @@ import * as heroes from '../grupoHeroes.js';
 var scene;
 var textoMago = false;
 var cuadroTexto;
+var config;
 
 export function preload()
 {
@@ -14,7 +15,7 @@ export function preload()
 
 export var mago;
 
-export function create(obj)
+export function create(obj, conf)
 {
 	scene.anims.create({
 			key:'magia',
@@ -24,6 +25,8 @@ export function create(obj)
 		});
 
 	generarMago(obj);
+
+	config = conf;
 }
 export function update()
 {

@@ -118,7 +118,7 @@ export default class montelago extends Phaser.Scene {
 			if(obj.name == 'mago')
 			{
 				obj.setAlpha(0)
-				mago.create(obj);
+				mago.create(obj, sc.config);
 			}
 
 			if(obj.name == 'jotun')
