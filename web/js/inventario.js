@@ -36,7 +36,7 @@ export function generarInventario(obj)
 
 export function generarPan(obj)
 {
-	var p = grupoPan.create(spawn.x + 20, spawn.x, 'cake').setDepth(20).setPipeline('Light2D');
+	var p = grupoPan.create(spawn.x + 30, spawn.x, 'cake').setDepth(20).setPipeline('Light2D');
 }
 
 export function generarTarta(obj)

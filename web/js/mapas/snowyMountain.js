@@ -63,6 +63,7 @@ export default class montelago extends Phaser.Scene {
 		mago.preload.call(this)
 		portal.preload.call(this)
 		bossHielo.preload.call(this)
+		inventario.preload.call(this)
 	}
 
 	create()

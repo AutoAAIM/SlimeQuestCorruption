@@ -33,13 +33,11 @@ export function encenderTienda()
 {
 	if(textoSkull == false)
 	{
-		cuadroTexto = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16);
+		cuadroTexto = scene.add.rectangle(heroes.cabeza.x - config.width / 2 + config.width / 2, heroes.cabeza.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16);
 
-		cuadroTexto2 = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17);
+		cuadroTexto2 = scene.add.rectangle(heroes.cabeza.x - config.width / 2 + config.width / 2, heroes.cabeza.y - config.height / 2 + config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17);
 
-		scene.magoText = scene.add.text(yasha.player.x - config.width / 2 + 16, yasha.player.y - config.height / 2 + 210, 'Mago: \nOtro novato en busca de poder... \nToma esto y dejame en paz.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(18);
-
-		imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + 340, yasha.player.y - config.height / 2 + 240, 'textoHielo').setDepth(18).setScale(2);
+		scene.magoText = scene.add.text(heroes.cabeza.x - config.width / 2 + 16, heroes.cabeza.y - config.height / 2 + 210, 'Skull: Ayudadme a financiar el laborarorio! usad los numeros para comprar.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(18);
 	}
 
 	textoMago = true;
