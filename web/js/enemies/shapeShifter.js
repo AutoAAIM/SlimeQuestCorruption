@@ -49,6 +49,8 @@ export function createShapeshifter(obj, gren)
 	s.setSize(20, 16)
 	s.setOffset(6, 14)
 
+	s.setPipeline('Light2D');
+
 	gren.unshift(s);
 	//scene.physics.add.collider(s, shapeShifterGroup);
 }
