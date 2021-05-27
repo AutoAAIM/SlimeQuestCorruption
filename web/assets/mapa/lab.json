@@ -407,6 +407,17 @@
                  "width":32,
                  "x":640,
                  "y":320
+                }, 
+                {
+                 "height":32,
+                 "id":118,
+                 "name":"Spawn",
+                 "rotation":0,
+                 "type":"spawnPoint",
+                 "visible":true,
+                 "width":32,
+                 "x":416,
+                 "y":288
                 }],
          "offsetx":-64,
          "offsety":0,
@@ -442,8 +453,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":400,
-                 "y":304
+                 "x":592,
+                 "y":272
                 }, 
                 {
                  "height":0,
@@ -475,24 +486,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":75,
-                 "name":"scyther",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"maxLong",
-                         "type":"int",
-                         "value":10
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":832,
-                 "y":320
-                }, 
-                {
-                 "height":0,
                  "id":76,
                  "name":"shapeshifter",
                  "point":true,
@@ -502,42 +495,6 @@
                  "width":0,
                  "x":880,
                  "y":-176
-                }, 
-                {
-                 "height":0,
-                 "id":77,
-                 "name":"scyther",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"maxLong",
-                         "type":"int",
-                         "value":10
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":864,
-                 "y":304
-                }, 
-                {
-                 "height":0,
-                 "id":78,
-                 "name":"scyther",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"maxLong",
-                         "type":"int",
-                         "value":0
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":896,
-                 "y":288
                 }, 
                 {
                  "height":0,
@@ -1106,6 +1063,126 @@
                  "width":0,
                  "x":1056,
                  "y":-704
+                }, 
+                {
+                 "height":0,
+                 "id":115,
+                 "name":"portal",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"destino",
+                         "type":"int",
+                         "value":2
+                        }, 
+                        {
+                         "name":"puerta",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"tipo",
+                         "type":"string",
+                         "value":"lab"
+                        }],
+                 "rotation":0,
+                 "type":"lab",
+                 "visible":true,
+                 "width":0,
+                 "x":304,
+                 "y":240
+                }, 
+                {
+                 "height":0,
+                 "id":116,
+                 "name":"portal",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"destino",
+                         "type":"int",
+                         "value":2
+                        }, 
+                        {
+                         "name":"puerta",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"tipo",
+                         "type":"string",
+                         "value":"lab"
+                        }],
+                 "rotation":0,
+                 "type":"lab",
+                 "visible":true,
+                 "width":0,
+                 "x":304,
+                 "y":304
+                }, 
+                {
+                 "height":0,
+                 "id":117,
+                 "name":"portal",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"destino",
+                         "type":"int",
+                         "value":2
+                        }, 
+                        {
+                         "name":"puerta",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"tipo",
+                         "type":"string",
+                         "value":"lab"
+                        }],
+                 "rotation":0,
+                 "type":"lab",
+                 "visible":true,
+                 "width":0,
+                 "x":304,
+                 "y":368
+                }, 
+                {
+                 "height":0,
+                 "id":119,
+                 "name":"bombilla",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":400,
+                 "y":304
+                }, 
+                {
+                 "height":0,
+                 "id":120,
+                 "name":"bombilla",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":912,
+                 "y":304
+                }, 
+                {
+                 "height":0,
+                 "id":121,
+                 "name":"bombilla",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":656,
+                 "y":304
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1114,10 +1191,10 @@
          "y":0
         }],
  "nextlayerid":16,
- "nextobjectid":115,
+ "nextobjectid":122,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.4.3",
+ "tiledversion":"1.6.0",
  "tileheight":32,
  "tilesets":[
         {
@@ -25674,6 +25751,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":1.4,
+ "version":"1.6",
  "width":100
 }

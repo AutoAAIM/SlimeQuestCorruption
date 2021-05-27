@@ -12,7 +12,7 @@ export function preload() {
 export function animacionRobin() {
 	this.physics.anims.create({
         key: 'basico',
-        frames: this.anims.generateFrameNames('espadazo', { start: 1, end: 3 }),
+        frames: this.anims.generateFrameNames('espadazo', { frames: start: 1, end: 3 }),
         frameRate: 8,
     });
     this.anims.create({
@@ -33,7 +33,7 @@ export function animacionRobin() {
 export function createRobin(spawn,muros,team,armas) {
 	var armas_heroe = armas;
 
-	//animacionRobin();
+	animacionRobin();
 
 	export var robin = team.create(spawn.x,spawn.y,'Robin');
 	robin.name= "Robin";
@@ -44,8 +44,9 @@ export function createRobin(spawn,muros,team,armas) {
 	robin.velocidad = 200;
 	robin.muerto = false;
 	robin.contador = 0;
-	robin.invisibilidad = false;
-  robin.enfriamiento = 0;
+	robin.invisibilidad = 0;
+
+	this.physics.add.collider(robin, muros);
 
 	var cursor = this.add.image(0,0,'espadita');
 	cursor.pointer = keys.pointer;
@@ -83,16 +84,16 @@ export function updateRobin() {
 
 	if (keys.Hability.isDown && robin.contador == 0) {
 		robin.contador++;
-		robin.invisibilidad = true;
+		robin.invisibilidad = 1;
 		robin.inmune = true;
 	}
-	if (robin.contador <= 300 && robin.invisibilidad) {
+	if (robin.contador <= 300 && robin.invisibilidad == 1) {
 		robin.contador++;
 		robin.alpha=0.4;
 	}
 	if (robin.contador >= 300) {
 		robin.contador++;
-		robin.invisibilidad = false;
+		robin.invisibilidad = 0;
 		robin.alpha = 1;
 		robin.inmune = false;
 	}
@@ -108,15 +109,15 @@ export function updateRobin() {
 
 export function updateVidaRobin() {
 
-	if (!robin.invisibilidad && robin.vida > 0 && robin.enfriamiento == 0) {
+	if (!robin.invisibilidad && robin.vida > 0 && enfriamiento == 0) {
 		robin.vida--;
-		robin.enfriamiento++;
+		enfriamiento++;
 		if (robin.vida <= 0) { 
-      robin.muerto = true;
+			robin.muerto = true;
 		}
 	}
 	text.setText('Vida: ' + robin.vida);
-	if (robin.enfriamiento >= 60) {
-		robin.enfriamiento = 0;
+	if (enfriamiento >= 60) {
+		enfriamiento = 0;
 	}
 }

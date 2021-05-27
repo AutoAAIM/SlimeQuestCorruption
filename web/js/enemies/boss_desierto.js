@@ -1,4 +1,4 @@
-import * as robin from '../personajes/robin.js'
+import * as robin from '../personajes/robin.js';
 import * as heroes from './grupoHeroes.js';
 
 export function preload() {
@@ -29,6 +29,16 @@ export function create(obj) {
 }
 
 export function update(boss) {
+
+	const posicion = 150;
+	const tipo;
+
+	if (boss.fase == 1) {
+		tipo = 1;
+	}
+	else {
+		tipo = -1;
+	}
 
 	if (boss.posicion > 480) {
 		boss.direccion = 0;
@@ -70,7 +80,10 @@ export function update(boss) {
 	switch(boss.accion) {
 		case 1: // Tres bolas de fuego en forma de cono
 			if (boss.tiempo > 50) {
-				createFuegoCono(3,boss);
+				createConoFuego(boss,0,-1); 		
+				createConoFuego(boss,0.5,0.87);		// ( 1/2, -(raiz de 3)/2 )
+				createConoFuego(boss,-0.5,0.87);	// ( -1/2, -(raiz de 3)/2 ) 
+			
 				boss.tiempo = 0;
 			}
 			else {
@@ -98,7 +111,11 @@ export function update(boss) {
 		break;
 		case 4: // Cuatro bolas de fuego
 			if (boss.tiempo > 50) {
-				createPrision(boss);
+				createPrision(posicion, 0,tipo, 1 , 0);
+				createPrision(-posicion, ,tipo, -1, 0);
+				createPrision(0, posicion,tipo, 0, 1);
+				createPrision(0, -posicion,tipo, 0, -1);
+
 				boss.tiempo = 0;
 			}
 			else {
@@ -107,7 +124,12 @@ export function update(boss) {
 		break;
 		default: // 5 bolas de fuego en forma de cono
 			if (boss.tiempo > 50) {
-				createFuegoCono(5,boss);
+				createConoFuego(boss,0,-1); 		
+				createConoFuego(boss,0.5,0.87);		// ( 1/2, -(raiz de 3)/2 )
+				createConoFuego(boss,-0.5,0.87);	// ( -1/2, -(raiz de 3)/2 ) 
+				createConoFuego(boss,1,-1);			
+				createConoFuego(boss,-1,-1);
+			
 				boss.tiempo = 0;
 			}
 			else {
@@ -126,9 +148,11 @@ export function update(boss) {
 	else if (boss.vida <= 0) {
 		destroyBoss(boss);
 	}
-
-	updateFire();
-
+	
+	for (i = 0; i < shootList.getChildren().length; i++) {
+		var fuego = shootList.getChildren()[i];
+		updateFire(fuego);
+	}
 }
 
 export function createFireBossGroup() {
@@ -151,27 +175,37 @@ export function createBolaFuego (boss) {
 	this.physics.moveTo(f,heroes.cabeza.x,heroes.cabeza.y,velocidad_fuego); 
 }
 
-export function createFuegoCono(c,boss) {
+export function createConoFuego(boss,x,y) {
 	
 	var f = fireList.create(boss.x,boss.y,'Fuego');
 	f.tiempo = 0; // El tiempo para que desaparezca
 	f.ataque = 1; 
 	f.persigue = false;
+	f.setVelocity(x * velocidad_fuego, y * velocidad_fuego);
+
 }
 
-export function createPrision(boss) {
+export function createPrision(x,y,tipo,dir1,dir2) {
 	
-	var f = fireList.create(boss.x,boss.y,'Fuego');
+	var pos = 0;
+
+	pos.x = heroes.heroes.x + x; 
+	pos.y = heroes.heroes.y + y; 
+
+	var f = fireList.create(pos.x,pos.y,'Fuego');
 	f.tiempo = 0; // El tiempo para que desaparezca
 	f.ataque = 1; 
 	f.persigue = false;
+
+	f.setVelocityX(velocidad_fuego * tipo * dir1);
+	f.setVelocityY(velocidad_fuego * tipo * dir2);
 }
 
 export function updateFire(f) {
 	if (f.persigue) {
 		this.physics.moveTo(f,heroes.cabeza.x,heroes.cabeza.y,velocidad_fuego);
 	}
-	if (f.tiempo > 50) {
+	if (f.tiempo > 250) {
 		destroyFire(f);
 	}
 	else {
