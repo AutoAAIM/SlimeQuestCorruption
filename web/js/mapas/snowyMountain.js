@@ -142,13 +142,13 @@ export default class montelago extends Phaser.Scene {
 		yasha.setFreeze(lago, freezeTiles);
 		var cosas = yasha.grupoHielo
 
-		lago.setTileIndexCallback(freezeTiles, yasha.freeze, this.physics.add.overlap(yasha.grupoHielo, lago));
+		lago.setTileIndexCallback(freezeTiles, yasha.freeze, scene.physics.add.overlap(yasha.grupoHielo, lago));
 		
-		lago.setTileIndexCallback(freezeTiles, yasha.freeze, this.physics.add.overlap(yasha.grupoFuego, lago));
+		lago.setTileIndexCallback(freezeTiles, yasha.freeze, scene.physics.add.overlap(yasha.grupoFuego, lago));
 
-		luz.setTileIndexCallback(darkTiles, oscuridad.encenderOscuridad, this.physics.add.overlap(heroes.heroes, luz));
+		luz.setTileIndexCallback(darkTiles, oscuridad.encenderOscuridad, scene.physics.add.overlap(heroes.heroes, luz));
 
-		objetos.setTileIndexCallback(snowTiles, yasha.derretir, this.physics.add.overlap(yasha.grupoFuego, objetos));
+		objetos.setTileIndexCallback(snowTiles, yasha.derretir, scene.physics.add.overlap(yasha.grupoFuego, objetos));
 		
 		this.physics.add.collider(mago.mago, heroes.heroes);
 		this.physics.add.collider(jotun.grupoEnemigos, heroes.heroes);
