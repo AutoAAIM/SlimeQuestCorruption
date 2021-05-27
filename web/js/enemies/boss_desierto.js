@@ -7,7 +7,11 @@ export function preload() {
 }
 
 export function animacionBossDesierto() {
-
+  this.physics.anims.create({
+      key: 'Walk',
+      frames: this.anims.generateFrameNames('Basico', { frames: start: 1, end: 3 }),
+      frameRate: 8,
+  });
 }
 
 var velocidad_fuego = 100;

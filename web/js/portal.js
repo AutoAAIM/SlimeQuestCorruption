@@ -4,6 +4,7 @@ var portals = new Array();
 var coolDown = 30
 var scene
 var tiempoActivo = 0;
+var sceneChanged;
 
 export function preload()
 {
@@ -38,6 +39,8 @@ export function create(capa)
 			createPortal(obj);
 		}
 	})
+
+	sceneChanged = false;
 
 	createLinks(scene)
 
@@ -151,29 +154,33 @@ export function update()
 
 function changeScene(obj)
 {
-	var xhr = new XMLHttpRequest();
-	//var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/reguser.php';
-	
-	//obj.properties.destino
+	if(sceneChanged == false)
+	{
+		sceneChanged = true;
+		var xhr = new XMLHttpRequest();
+		//var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/reguser.php';
+		
+		//obj.properties.destino
 
-	var myObj = scene.game.usuario;
+		var myObj = scene.game.usuario;
 
-	xhr.onreadystatechange = function(){
-		console.log(this.responseText)
-		myObj = JSON.parse(this.responseText);
-		myObj = myObj[0];
-		if(this.readyState == 4 && this.status == 200)
-		{
-			scene.game.usuario = myObj;
-			//alert(xhr.responseText);
-			//scene.scene.stop(scene);
-			scene.scene.start(myObj.zonanombre);
+		xhr.onreadystatechange = function(){
+			console.log(this.responseText)
+			myObj = JSON.parse(this.responseText);
+			myObj = myObj[0];
+			if(this.readyState == 4 && this.status == 200)
+			{
+				scene.game.usuario = myObj;
+				//alert(xhr.responseText);
+				//scene.scene.stop(scene);
+				scene.scene.start(myObj.zonanombre);
 
+			}
 		}
+		console.log(obj.properties.destino)
+		console.log(myObj.nombre)
+		xhr.open("POST", "php/guardar.php", true)
+		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+		xhr.send("nombre="+myObj.nombre+"&contrasena="+myObj.contrasena+"&dinero="+myObj.dinero+"&zona="+obj.properties.destino)
 	}
-	console.log(obj.properties.destino)
-	console.log(myObj.nombre)
-	xhr.open("POST", "php/guardar.php", true)
-	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
-	xhr.send("nombre="+myObj.nombre+"&contrasena="+myObj.contrasena+"&dinero="+myObj.dinero+"&zona="+obj.properties.destino)
 }

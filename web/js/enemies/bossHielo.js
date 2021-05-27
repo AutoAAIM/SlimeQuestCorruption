@@ -47,7 +47,7 @@ export function bossTrue(arrayObj)
 
 export function generarBoss(obj)
 {
-	boss = scene.physics.add.staticSprite(obj.x, obj.y, 'bossHielo').setDepth(2).setPipeline('Light2D');
+	boss = scene.physics.add.staticSprite(obj.x, obj.y, 'bossHielo').setDepth(5).setPipeline('Light2D');
 	boss.setSize(30, 39);
 	boss.setScale(5);
 	boss.play('boss', true);
