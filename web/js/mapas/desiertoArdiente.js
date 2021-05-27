@@ -61,13 +61,25 @@ export default class dessert extends Phaser.Scene {
 	  slime.createSlimeGroup.call(allLayers2)
 	  slime.createSuperSlimeGroup.call(allLayers2);
 
+
+    playerTileSpawner.forEach(obj => {
+      this.physics.world.enable(obj);
+      obj.setAlpha(0);
+      if(obj.name == 'Entrada'){
+	      playerSpawnPoint.unshift(obj);
+      }
+    })
+
+    var spawnID = playerSpawnPoint.lenght - 1;
+    heroes.create(playerSpawnPoint[spawnID], allLayers, null, sc.config)
+
     slimeTileSpawner.forEach(obj=>{
       this.physics.world.enable(obj);
         obj.setAlpha(0);
       if (obj.name == 'S') {
         slime.createSlime(obj);
       }
-    }
+    })
     superSlimeTileSpawner.forEach(obj=>{
       this.physics.world.enable(obj);
       obj.setAlpha(0);
@@ -118,6 +130,8 @@ export default class dessert extends Phaser.Scene {
 	  text.setText([
         'Vida: ' + robin.data.get('life')
     ]);
+
+    keys.create(this)
 
     // Overlap
 

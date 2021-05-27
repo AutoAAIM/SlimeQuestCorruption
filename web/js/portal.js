@@ -5,6 +5,7 @@ var coolDown = 30
 var scene
 var tiempoActivo = 0;
 var sceneChanged;
+var musica;
 
 export function preload()
 {
@@ -24,8 +25,9 @@ export function createAnims()
 
 }
 
-export function create(capa)
+export function create(capa, music)
 {
+	musica = music;
 	capa.forEach(obj => {
 		if(obj.name == 'portal')
 		{
@@ -156,6 +158,10 @@ function changeScene(obj)
 {
 	if(sceneChanged == false)
 	{
+		if(musica != undefined)
+		{
+			musica.stop();
+		}
 		sceneChanged = true;
 		var xhr = new XMLHttpRequest();
 		//var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/reguser.php';

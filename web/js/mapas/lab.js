@@ -83,7 +83,8 @@ export default class lab extends Phaser.Scene {
 
 		music = this.sound.add('labchords');
 
-    	music.play(true);
+    	music.play();
+		music.setLoop(true);
 
 		this.lights.enable().setAmbientColor(0x555555);
 
@@ -216,7 +217,7 @@ export default class lab extends Phaser.Scene {
 
 		//console.log(npc)
 
-		gates = portal.create(npc);
+		gates = portal.create(npc, music);
 
 		shapeShifter.create(allLayers);
 
