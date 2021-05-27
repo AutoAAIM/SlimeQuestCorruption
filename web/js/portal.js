@@ -161,6 +161,8 @@ function changeScene(obj)
 	xhr.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200)
 		{
+			scene.game.usuario = myObj;
+			scene.scene.start(myObj.zonanombre);
 			/*if(this.responseText != "")
 			{
 				responseTextOutput = 'se ha registrado con exito!! ahora dele a log in para entrar ☻'

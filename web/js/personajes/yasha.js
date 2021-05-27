@@ -308,15 +308,15 @@ function updateHielo()
     }
 }
 
-export function derretir(nieve, fuego)
+export function derretir(obj, fuego)
 {
-	if (nieve.properties != undefined && nieve.properties.snow == true && fuego.fuego)
+	if (obj.properties != undefined && obj.properties.snow == true && fuego.fuego)
     {
-        nieve.setAlpha(0);
+        obj.setAlpha(0);
 
-		utilidades.collisionSwitch(nieve, false);
+		utilidades.collisionSwitch(obj, false);
 
-        nieve.properties.snow = false;
+        obj.properties.snow = false;
     }
 }
 

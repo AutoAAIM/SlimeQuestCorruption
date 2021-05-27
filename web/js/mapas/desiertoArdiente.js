@@ -57,17 +57,18 @@ import function create() {
 	var segundo_suelo = map.createLayer('Second_Ground', tileset);
 	var lava = map.createLayer('Lava', tileset);
 	var muro = map.createLayer('Pared', tileset);
-	var spawn = map.createFromObjects('SpawnJugador',tileset);
 
   playerTileSpawner = map.createFromObjects('SpawnJugador');
   slimeTileSpawner = map.createFromObjects('SpawnSlime');
-  sTileSpawner = map.createFromObjects('SpawnSuperSlime');
-  playerTileSpawner = map.createFromObjects('SpawnEscorpion');
-  playerTileSpawner = map.createFromObjects('SpawnBoss');
-  playerTileSpawner = map.createFromObjects('Llave');
+  superSlimeTileSpawner = map.createFromObjects('SpawnSuperSlime');
+  escorpionTileSpawner = map.createFromObjects('SpawnEscorpion');
+  bossTileSpawner = map.createFromObjects('SpawnBoss');
+  llaveTileSpawner = map.createFromObjects('Llave');
 
 	playerSpawnPoint = new Array();
-
+  slimeTileSpawner = new Array();
+  superSlimeTileSpawner = new Array();
+  escorpionTileSpawner = new Array();
 
 	segundo_suelo.alpha = 0;
   lava.tiempo = 0;
