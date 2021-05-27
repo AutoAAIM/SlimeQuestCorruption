@@ -1,3 +1,5 @@
+import * as yasha from '../personajes/yasha.js';
+
 var scene;
 
 export function preload()
@@ -53,4 +55,6 @@ export function generarMago(obj)
 	mago.body.enable = false;
 	mago.detectionbox.body.enable = false;
 	mago.setAlpha(0);
+
+	scene.physics.add.overlap(heroes.heroes, mago.mago.detectionbox, yasha.encenderHielito, null, this);
 }
