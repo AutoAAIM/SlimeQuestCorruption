@@ -49,6 +49,7 @@ export function create(spawn, allTiles, antorchas, conf, grupo, arHe)
 	player.maxVida = 8;
   	player.vida = player.maxVida;
 	player.setOrigin(0.5);
+	player.hieloTrue = false;
 
 	grupoFuego = scene.physics.add.group();
 
@@ -190,7 +191,7 @@ function input()
 		generarFuego();
 	}
 
-	if (keys.Hability.isDown && contHielo <= 0)
+	if (Hielo.isDown && contHielo <= 0 && player.hieloTrue == true)
 	{
 		generarHielo();
 	}
