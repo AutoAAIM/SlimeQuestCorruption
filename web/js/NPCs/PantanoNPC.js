@@ -16,21 +16,22 @@ export function preload() {
 
 export function create(obj, config) {
 
-  keyE = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
+    keyE = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
 
-  npc1 = scene.physics.add.sprite(obj.x, obj.y, 'npc1');
-  interacturar = scene.physics.add.sprite(obj.x, obj.y-32, 'buttonE');
+    npc1 = scene.physics.add.sprite(obj.x, obj.y, 'npc1');
+    interacturar = scene.physics.add.sprite(obj.x, obj.y-32, 'buttonE');
   
-    cuadroTexto = scene.add.rectangle(config.width / 2,config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16).setScrollFactor(0);
+    cuadroTexto = scene.add.rectangle(config.width / 2,config.height - 50, config.width, 100, 0xaaaaaa).setDepth(2).setScrollFactor(0);
 
-    cuadroTexto2 = scene.add.rectangle(config.width / 2,config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17).setScrollFactor(0);
+    cuadroTexto2 = scene.add.rectangle(config.width / 2,config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(3).setScrollFactor(0);
 
-    dialogoText2 = scene.add.text(16,210, 'Por favor si quieres la habilidad de quitar el veneno \nayudame a cazar la cena. \nnecesito estos ingredientes\nranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos, {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(18).setScrollFactor(0);
+    dialogoText2 = scene.add.text(16,210, 'Por favor si quieres la habilidad de quitar el veneno \nayudame a cazar la cena. \nnecesito estos ingredientes\nranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos, {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(4).setScrollFactor(0);
   
-  
-  npc1.trigger = scene.add.rectangle(npc1.x,npc1.y, 90, 90);
-  scene.physics.add.existing(npc1.trigger, false);
-  npc1.trigger.activado = false;
+    
+
+    npc1.trigger = scene.add.rectangle(npc1.x,npc1.y, 90, 90);
+    scene.physics.add.existing(npc1.trigger, false);
+    npc1.trigger.activado = false;
 
 	scene.anims.create({
 		key: 'inter',
@@ -39,8 +40,8 @@ export function create(obj, config) {
 		repeat: -1
 	});
 
-  scene.physics.add.overlap(heroes.heroes, npc1.trigger, activarTrigger, null, scene);
-  scene.physics.add.overlap(heroes.heroes, npc1, recogerPersonaje, null, scene);
+    scene.physics.add.overlap(heroes.heroes, npc1.trigger, activarTrigger, null, scene);
+    scene.physics.add.overlap(heroes.heroes, npc1, recogerPersonaje, null, scene);
 
 }
 
@@ -56,22 +57,22 @@ function activarTrigger(player, npc){
     dialogoText2.setAlpha(1);
   }
 
+  if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
+      scene.dialogoText3 = scene.add.text(npc1.x,npc1.y-32, 'Acercate a mi', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(3);
+  }
+
 }
 
 function recogerPersonaje(){
-  if(ranas.contadorRana > 0 && mosquitos.contadorMosquitos > 0){
-
-  }else if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
+    if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
         scene.game.glishActivarCuracion = true;
-        //glish.activarCuracion(true);
         npc1.trigger.destroy();
         npc1.destroy();
         dialogoText2.destroy();
         cuadroTexto.destroy();
         cuadroTexto2.destroy();
         interacturar.destroy();
-
-  }
+    }
 }
 
 export function update(){
