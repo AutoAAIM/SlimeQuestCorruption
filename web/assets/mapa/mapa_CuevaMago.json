@@ -980,6 +980,34 @@
                  "width":0,
                  "x":-496,
                  "y":1328
+                }, 
+                {
+                 "height":0,
+                 "id":18,
+                 "name":"portal",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"destino",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"puerta",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"tipo",
+                         "type":"string",
+                         "value":"interScene"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":-1288,
+                 "y":2296
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -988,7 +1016,7 @@
          "y":0
         }],
  "nextlayerid":13,
- "nextobjectid":18,
+ "nextobjectid":19,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.4.3",
@@ -997,7 +1025,7 @@
         {
          "columns":32,
          "firstgid":1,
-         "image":"terrain4.png",
+         "image":"IFP\/Proyecto\/Tiled\/terrain.png",
          "imageheight":1024,
          "imagewidth":1024,
          "margin":0,
@@ -24627,7 +24655,7 @@
         {
          "columns":15,
          "firstgid":1025,
-         "image":"snow.png",
+         "image":"IFP\/Proyecto\/Tiled\/snow.png",
          "imageheight":480,
          "imagewidth":480,
          "margin":0,
