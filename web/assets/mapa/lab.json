@@ -1101,7 +1101,7 @@
                         {
                          "name":"destino",
                          "type":"int",
-                         "value":2
+                         "value":3
                         }, 
                         {
                          "name":"puerta",
@@ -1111,7 +1111,7 @@
                         {
                          "name":"tipo",
                          "type":"string",
-                         "value":"lab"
+                         "value":"interScene"
                         }],
                  "rotation":0,
                  "type":"lab",
@@ -1129,7 +1129,7 @@
                         {
                          "name":"destino",
                          "type":"int",
-                         "value":2
+                         "value":4
                         }, 
                         {
                          "name":"puerta",
