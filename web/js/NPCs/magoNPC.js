@@ -100,7 +100,7 @@ export function encenderHielito()
 
 		scene.magoText = scene.add.text(yasha.player.x - config.width / 2 + 16, yasha.player.y - config.height / 2 + 310, 'Mago: \nOtro novato en busca de poder... \nToma esto y dejame en paz.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(18);
 
-		imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + 540, yasha.player.y - config.height / 2 + 330, 'textoHielo').setDepth(18).setScale(2);
+		imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + 340, yasha.player.y - config.height / 2 + 130, 'textoHielo').setDepth(18).setScale(2);
 	}
 
 	textoMago = true;
