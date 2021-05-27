@@ -167,7 +167,7 @@ function changeScene(obj)
 
 		}
 	}
-	//console.log(xhr)
+	console.log(obj.properties.destino)
 	xhr.open("POST", "php/reguser.php?", true)
 	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
 	xhr.send("nombre="+myObj.nombre+"&contrasena="+myObj.contrasena+"&dinero="+myObj.dinero+"&zona="+obj.properties.destino)
