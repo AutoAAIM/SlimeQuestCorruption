@@ -21,7 +21,7 @@ export var heroes;
 var numHeroes;
 export var cabeza
 var caminoTemp = new Array();
-var fila = new Array();
+var fila// = new Array();
 export var armasHeroicas = new Array();
 var move;
 var pausado = false;
@@ -32,6 +32,11 @@ var text;
 
 export function create(spawn, allTiles, antorchas, conf)
 {
+	if(fila != undefined)
+	{
+		fila.destroy();
+	}
+	fila = new Array();
 	//if(scene.game.heroesCargados != true)
 	//scene.game.heroesCargados = true;
 	//el espacio entre elementos de la fila
