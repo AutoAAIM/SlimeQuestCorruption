@@ -61,6 +61,7 @@ export function generarBoss(obj)
 	scene.physics.add.existing(boss.detectionbox, false);
 
 	boss.detectionbox.tiempoDisparo = 0;
+	boss.detectionbox.delayDisparo = 0;
 
 	scene.physics.add.overlap(heroes.heroes, boss.detectionbox, generarNieblaBoss, null, scene);
 
@@ -75,7 +76,7 @@ function generarNieblaBoss(boss, py)
 
 		if(boss.delayDisparo <= -30)
 		{
-			boss.delayDisparo = 1;
+			boss.delayDisparo = 340;
 		}
 
 		var d = grupoDispBoss.create(boss.x - 15, boss.y + 5, 'polvoHielo').setDepth(5).setPipeline('Light2D');
@@ -93,6 +94,7 @@ function generarNieblaBoss(boss, py)
 	}
 
 	boss.tiempoDisparo--;
+	boss.delayDisparo--;
 }
 
 export function updateNieblaBoss()
