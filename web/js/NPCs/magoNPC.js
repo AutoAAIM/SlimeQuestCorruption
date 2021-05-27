@@ -1,5 +1,6 @@
 import * as yasha from '../personajes/yasha.js';
 import * as heroes from '../grupoHeroes.js';
+import * as bossHielo from '../enemies/bossHielo.js';
 
 var scene;
 var textoMago = false;
