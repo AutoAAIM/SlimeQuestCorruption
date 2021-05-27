@@ -309,7 +309,7 @@ function updateHielo()
     }
 }
 
-export function derretir(fuego, obj)
+export function derretir(obj, fuego)
 {
 	if (obj.properties != undefined && obj.properties.snow == true && fuego.fuego)
     {
@@ -321,7 +321,7 @@ export function derretir(fuego, obj)
     }
 }
 
-export function freeze(lago, objeto)
+export function freeze(objeto, lago)
 {
     if (lago.properties != undefined && !lago.properties.freeze && objeto.hielo )
     {
