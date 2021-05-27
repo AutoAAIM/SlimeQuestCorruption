@@ -843,12 +843,12 @@
                         {
                          "name":"destino",
                          "type":"int",
-                         "value":2
+                         "value":4
                         }, 
                         {
                          "name":"puerta",
                          "type":"int",
-                         "value":1
+                         "value":5
                         }],
                  "rotation":0,
                  "type":"",
@@ -866,12 +866,12 @@
                         {
                          "name":"destino",
                          "type":"int",
-                         "value":1
+                         "value":5
                         }, 
                         {
                          "name":"puerta",
                          "type":"int",
-                         "value":2
+                         "value":4
                         }],
                  "rotation":0,
                  "type":"",

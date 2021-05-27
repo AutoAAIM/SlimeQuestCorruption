@@ -512,12 +512,12 @@
                         {
                          "name":"destino",
                          "type":"int",
-                         "value":2
+                         "value":6
                         }, 
                         {
                          "name":"puerta",
                          "type":"int",
-                         "value":1
+                         "value":5
                         }, 
                         {
                          "name":"tipo",
@@ -774,12 +774,12 @@
                         {
                          "name":"destino",
                          "type":"int",
-                         "value":1
+                         "value":5
                         }, 
                         {
                          "name":"puerta",
                          "type":"int",
-                         "value":2
+                         "value":6
                         }, 
                         {
                          "name":"tipo",
