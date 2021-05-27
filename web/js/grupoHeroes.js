@@ -216,10 +216,11 @@ export function herir(obj, e) {
 			}
 		});
 		obj.inmuneT = 90;
-		console.log(obj);
+		//console.log(obj);
     if(e.name == "mosquito"){
         var aleatorio2 = Math.floor(Math.random() * (10-1+1)) + 1;
         if(aleatorio2 <= 3){
+            console.log(e.vida);
           e.vida +=1;
         }
     }
