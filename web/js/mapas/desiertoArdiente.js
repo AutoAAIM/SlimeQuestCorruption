@@ -37,7 +37,7 @@ import function preload() {
 	this.load.image('tiles','tilemap/terrain.png');
 	this.load.tilemapTiledJSON('dessert','tilemap/mapita.json');
 
-	robin.preload.call(this);
+	heroes.preload.call(this);
 	escorpion.preload.call(this);
 	slime.preload.call(this);
 	boss_desierto.preload.call(this);
@@ -61,24 +61,25 @@ import function create() {
 
 	segundo_suelo.alpha = 0;
 
-  var allLayers1
+  var allLayers1 = [oasis, dunas, lava, muro];
+  var allLayers2 = [oasis, dunas, muro];
 
-	boss_desierto.createFireBossGroup.call();
-	slime.createFireGroup.call();
-
-	escorpion.createGroup.call();
+  heroes.create.call();
+	boss_desierto.createFireBossGroup.call(allLayers2);
+	slime.createFireGroup.call(allLayers2);
+	escorpion.createGroup.call(allLayers1);
 	
 	for (i = 0; i < 40; i++) {
 		escorpion.createEscorpion.call();
 	}
 
-	slime.createSlimeGroup.call()
+	slime.createSlimeGroup.call(allLayers2)
 	
 	for (i = 0; i < 40; i++) {
 		slime.createSlime.call();
 	}
 
-	slime.createSuperSlimeGroup.call();
+	slime.createSuperSlimeGroup.call(allLayers2);
 
 	for (i = 0; i < 40; i++) {
 		slime.createSuperSlime.call();

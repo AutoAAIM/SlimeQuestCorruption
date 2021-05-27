@@ -148,7 +148,7 @@ export default class montelago extends Phaser.Scene {
 
 		luz.setTileIndexCallback(darkTiles, oscuridad.encenderOscuridad, scene.physics.add.overlap(heroes.heroes, luz));
 
-		objetos.setTileIndexCallback(snowTiles, yasha.derretir, scene.physics.add.overlap(objetos, yasha.grupoFuego));
+		objetos.setTileIndexCallback(snowTiles, yasha.derretir, scene.physics.add.overlap(yasha.grupoFuego, objetos));
 		
 		this.physics.add.collider(mago.mago, heroes.heroes);
 		this.physics.add.collider(jotun.grupoEnemigos, heroes.heroes);
@@ -159,12 +159,8 @@ export default class montelago extends Phaser.Scene {
 		objetos2.setCollisionByProperty({collides: true});
 
 		portal.collisionPortal(heroes.heroes);
-		
-		console.log('hasta aqui')
 
 		this.physics.add.overlap(heroes.heroes, mago.mago.detectionbox, yasha.encenderHielito, null, this);
-
-		console.log('hasta aqui')
 
 		//this.physics.add.overlap(heroes.heroes, jotun.grupoDispEnemigo, jotun.quitarVida, null, this);
 	}

@@ -30,7 +30,7 @@ export function animacionRobin() {
     });
 }
 
-export function createRobin(spawn,muros,team,armas) {
+export function create(spawn,muros,team,armas) {
 	var armas_heroe = armas;
 
 	animacionRobin();
