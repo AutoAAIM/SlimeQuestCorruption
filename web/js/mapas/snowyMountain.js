@@ -77,13 +77,13 @@ export default class montelago extends Phaser.Scene {
 
 		allTilesets = [tileset, tileset2]
 
-		lago = mapa.createLayer('lago', allTilesets).setDepth(6).setPipeline('Light2D');
+		lago = mapa.createLayer('lago', allTilesets).setDepth(4).setPipeline('Light2D');
 		fondo = mapa.createLayer('fondo', allTilesets).setPipeline('Light2D');
 		tierra = mapa.createLayer('tierra', allTilesets).setPipeline('Light2D');
 		luz = mapa.createLayer('luz', allTilesets).setPipeline('Light2D');
 		muros = mapa.createLayer('muros', allTilesets).setDepth(0).setPipeline('Light2D');
 		objetos = mapa.createLayer('objetos', allTilesets).setDepth(7).setPipeline('Light2D');
-		objetos2 = mapa.createLayer('objetos2', allTilesets).setDepth(4).setPipeline('Light2D');
+		objetos2 = mapa.createLayer('objetos2', allTilesets).setDepth(6).setPipeline('Light2D');
 
 		mapa.x = 0;
 		mapa.y = 0;
