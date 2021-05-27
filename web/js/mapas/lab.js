@@ -6,6 +6,7 @@ import * as portal from '../portal.js';
 import * as heroes from '../grupoHeroes.js';
 import * as sc from '../sceneConstructor.js';
 import * as dinero from '../dinero.js';
+import * as skull from '../NPCs/SkullNPC.js'
 
 var tiempoEntreSpawn = 60;
 var tiempoEntreHuellas = 0;
