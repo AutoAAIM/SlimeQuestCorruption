@@ -5,7 +5,7 @@ import * as ranas from '../enemies/ranas.js';
 import * as mosquitos from '../enemies/mosquitos.js';
 import * as enemigos from '../enemies/enemigos.js';
 
-var npc1, scene, interacturar, keyE, dialogo, dialogoText2, dialogoText;
+var npc1, scene, interacturar, keyE, dialogo, dialogoText2, dialogoText, cuadroTexto, cuadroTexto2;
 
 export function preload() {
   this.load.spritesheet('npc1', 'assets/images/Glish.png', { frameWidth: 32, frameHeight: 32 });
@@ -14,14 +14,22 @@ export function preload() {
   scene = this;
 }
 
-export function create(obj) {
+export function create(obj, config) {
 
   keyE = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
 
   npc1 = scene.physics.add.sprite(obj.x, obj.y, 'npc1');
   interacturar = scene.physics.add.sprite(obj.x, obj.y-32, 'buttonE');
-  dialogo = scene.physics.add.sprite(npc1.x+46, npc1.y-42, 'dialogo').setScale(1.7);
-  dialogoText2 = scene.add.text(dialogo.x-32, dialogo.y-16, 'ranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos, { fontsize: '2px', fill: '#62f5cb' }).setDepth(1)
+  
+    cuadroTexto = scene.add.rectangle(config.width / 2 + config.width, config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16).setScrollFactor(0);
+
+    cuadroTexto2 = scene.add.rectangle(config.width / 2 + config.width / 2, config.height / 2 + config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17).setScrollFactor(0);
+
+    dialogoText2 = scene.add.text(heroes.cabeza.x - config.width / 2 + 16, heroes.cabeza.y - config.height / 2 + 210, 'Skull: Ayudadme a financiar el laborarorio!\nusad los numeros para comprar. \n1.pan = 15 Plorts          \n2.pastel = 50 Plorts', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(18).setScrollFactor(0);
+
+   = scene.add.text(dialogo.x-32, dialogo.y-16, 'ranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos, { fontsize: '2px', fill: '#62f5cb' }).setDepth(1)
+  
+  
   npc1.trigger = scene.add.rectangle(npc1.x,npc1.y, 90, 90);
   scene.physics.add.existing(npc1.trigger, false);
   npc1.trigger.activado = false;
