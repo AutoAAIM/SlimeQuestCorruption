@@ -74,9 +74,9 @@ function generarNieblaBoss(boss, py)
 	{
 		boss.tiempoDisparo = 1;
 
-		if(boss.delayDisparo <= -30)
+		if(boss.delayDisparo <= -120)
 		{
-			boss.delayDisparo = 340;
+			boss.delayDisparo = 600;
 		}
 
 		var d = grupoDispBoss.create(boss.x - 15, boss.y + 5, 'polvoHielo').setDepth(5).setPipeline('Light2D');
@@ -90,7 +90,7 @@ function generarNieblaBoss(boss, py)
 		d.setVelocityX(30*dir.x);
 		d.setVelocityY(30*dir.y);
 
-		d.tiempoVida = 180;
+		d.tiempoVida = 240;
 	}
 
 	boss.tiempoDisparo--;
