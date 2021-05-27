@@ -35,11 +35,11 @@ export function encenderTienda()
 {
 	if(textoSkull == false)
 	{
-		cuadroTexto = scene.add.rectangle(heroes.cabeza.x - config.width / 2 + config.width / 2, heroes.cabeza.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16);
+		cuadroTexto = scene.add.rectangle(heroes.cabeza.x - config.width / 2 + config.width / 2, heroes.cabeza.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16).setScrollFactor(0);
 
-		cuadroTexto2 = scene.add.rectangle(heroes.cabeza.x - config.width / 2 + config.width / 2, heroes.cabeza.y - config.height / 2 + config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17);
+		cuadroTexto2 = scene.add.rectangle(heroes.cabeza.x - config.width / 2 + config.width / 2, heroes.cabeza.y - config.height / 2 + config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17).setScrollFactor(0);
 
-		scene.skullText = scene.add.text(heroes.cabeza.x - config.width / 2 + 16, heroes.cabeza.y - config.height / 2 + 210, 'Skull: Ayudadme a financiar el laborarorio!\nusad los numeros para comprar. \n1.pan = 15 Plorts          \n2.pastel = 50 Plorts', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(18);
+		scene.skullText = scene.add.text(heroes.cabeza.x - config.width / 2 + 16, heroes.cabeza.y - config.height / 2 + 210, 'Skull: Ayudadme a financiar el laborarorio!\nusad los numeros para comprar. \n1.pan = 15 Plorts          \n2.pastel = 50 Plorts', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(18).setScrollFactor(0);
 	}
 
 	textoSkull = true;
@@ -54,14 +54,14 @@ function updateTexto()
 {
 	if(cuadroTexto != undefined)
 	{
-		cuadroTexto.x = heroes.cabeza.x - config.width / 2 + config.width / 2;
-		cuadroTexto.y = heroes.cabeza.y - config.height / 2 + config.height - 50;
+		//cuadroTexto.x = heroes.cabeza.x - config.width / 2 + config.width / 2;
+		//cuadroTexto.y = heroes.cabeza.y - config.height / 2 + config.height - 50;
 
-		cuadroTexto2.x = heroes.cabeza.x - config.width / 2 + config.width / 2;
-		cuadroTexto2.y = heroes.cabeza.y - config.height / 2 + config.height - 50;
+		//cuadroTexto2.x = heroes.cabeza.x - config.width / 2 + config.width / 2;
+		//cuadroTexto2.y = heroes.cabeza.y - config.height / 2 + config.height - 50;
 
-		scene.skullText.x = heroes.cabeza.x - config.width / 2 + 16;
-		scene.skullText.y = heroes.cabeza.y - config.height / 2 + 210;
+		//scene.skullText.x = heroes.cabeza.x - config.width / 2 + 16;
+		//scene.skullText.y = heroes.cabeza.y - config.height / 2 + 210;
 
 		//imagenTexto.x = heroes.cabeza.x - config.width / 2 + 340;
 		//imagenTexto.y = heroes.cabeza.y - config.height / 2 + 240;
