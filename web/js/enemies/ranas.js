@@ -42,14 +42,12 @@ export function createEnemyRana(obj, conf){
     scene.physics.add.existing(enemigoRana.triggerAtaque, false);
     enemigoRana.triggerAtaque.activado = false;
 
+	ranas.push(enemigoRana)
+	createLenguaRana(enemigoRana)
+
     scene.physics.add.overlap(heroes.heroes, enemigoRana.trigger, activarTrigger);
     scene.physics.add.overlap(heroes.armasHeroicas, enemigoRana, activarTrigger);
-    //scene.physics.add.overlap(heroes.heroes, enemigoRana.triggerAtaque, updateLenguaRana);        
-
-
-	ranas.push(enemigoRana)
-
-	createLenguaRana(enemigoRana)
+    scene.physics.add.overlap(heroes.cabeza, enemigoRana.triggerAtaque, updateLenguaRana);
 }
 
 function esRana(enemy)
