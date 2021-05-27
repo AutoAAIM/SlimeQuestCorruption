@@ -164,7 +164,6 @@ export default class montelago extends Phaser.Scene {
 
 	update()
 	{
-		update();
 		heroes.update();
 		portal.update();
 		oscuridad.darkMode();

@@ -1523,12 +1523,12 @@
                         {
                          "name":"destino",
                          "type":"int",
-                         "value":2
+                         "value":3
                         }, 
                         {
                          "name":"puerta",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }, 
                         {
                          "name":"type",
@@ -1551,12 +1551,12 @@
                         {
                          "name":"destino",
                          "type":"int",
-                         "value":1
+                         "value":2
                         }, 
                         {
                          "name":"puerta",
                          "type":"int",
-                         "value":2
+                         "value":3
                         }, 
                         {
                          "name":"type",
@@ -1741,12 +1741,12 @@
                         {
                          "name":"destino",
                          "type":"int",
-                         "value":4
+                         "value":6
                         }, 
                         {
                          "name":"puerta",
                          "type":"int",
-                         "value":3
+                         "value":5
                         }, 
                         {
                          "name":"tipo",
@@ -1774,7 +1774,7 @@
                         {
                          "name":"puerta",
                          "type":"int",
-                         "value":4
+                         "value":6
                         }, 
                         {
                          "name":"tipo",
