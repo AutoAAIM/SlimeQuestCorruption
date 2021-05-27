@@ -224,6 +224,7 @@ export function recibirDanyo(obj1, obj2){
             repeat: 5,
         });
         obj2.vida -= obj1.dano;
+        console.log(obj2.vida);
         if(obj1.stunt != undefined){ 
 			aleatorio = Math.floor(Math.random() * 100);
 			if(aleatorio <= obj1.stuntProb){
@@ -258,6 +259,7 @@ export function recibirDanyo(obj1, obj2){
             repeat: 5,
         });
         obj1.vida -= obj2.dano;
+        console.log(obj1.vida);
         if(obj2.stunt != undefined){ 
 			aleatorio = Math.floor(Math.random() * 100);
 			if(aleatorio <= obj2.stuntProb){

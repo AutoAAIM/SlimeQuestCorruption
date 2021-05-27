@@ -8,7 +8,6 @@ import * as bossHielo from '../enemies/bossHielo.js';
 import * as keys from '../keys.js';
 import * as sc from '../sceneConstructor.js';
 
-
 var scene;
 var contFuego;
 var contHielo;
@@ -165,6 +164,7 @@ export default class montelago extends Phaser.Scene {
 
 	update()
 	{
+		update();
 		heroes.update();
 		portal.update();
 		oscuridad.darkMode();
