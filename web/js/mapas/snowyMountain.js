@@ -139,7 +139,7 @@ export default class montelago extends Phaser.Scene {
 		darkTiles = luz.filterTiles(tile => tile.properties.dark).map(x => x.index);
 		snowTiles = objetos.filterTiles(tile => tile.properties.snow).map(x => x.index);
 
-		yasha.setFreeze(freezeTiles, lago);
+		yasha.setFreeze(lago, freezeTiles);
 		var cosas = yasha.grupoHielo
 
 		lago.setTileIndexCallback(freezeTiles, yasha.freeze, scene.physics.add.overlap(lago, yasha.grupoHielo));
