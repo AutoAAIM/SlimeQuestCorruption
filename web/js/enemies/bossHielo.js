@@ -21,8 +21,6 @@ export function create(obj)
 			frameRate: 4,
 			repeat: -1
 		});
-
-	generarBoss(obj);
 }
 
 export function bossTrue(arrayObj)
