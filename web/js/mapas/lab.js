@@ -259,7 +259,7 @@ export default class lab extends Phaser.Scene {
 		
 		for(var i = 0; i < grupoEnemigos.length; i++)
 		{
-			grupoEnemigos[i].setPipeline('Light2D');
+			//1//grupoEnemigos[i].setPipeline('Light2D');
 		}
 
 		//this.physics.add.overlap(boxTank.player.taladro, shapeShifterGroup, herir, null, this);
