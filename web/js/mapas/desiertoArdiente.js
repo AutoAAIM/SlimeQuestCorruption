@@ -10,89 +10,90 @@ var game=new Phaser.Game(config);
 var llave = false;
 var puerta = true;
 
-import function preload() {
+export default class dessert extends Phaser.Scene {
+  preload() {
 
-	this.load.image('tiles','tilemap/terrain.png');
-	this.load.tilemapTiledJSON('dessert','tilemap/mapita.json');
+	  this.load.image('tiles','tilemap/terrain.png');
+	  this.load.tilemapTiledJSON('dessert','tilemap/mapita.json');
 
-	heroes.preload.call(this);
-	escorpion.preload.call(this);
-	slime.preload.call(this);
-	boss_desierto.preload.call(this);
-}
+	  heroes.preload.call(this);
+  	escorpion.preload.call(this);
+	  slime.preload.call(this);
+  	boss_desierto.preload.call(this);
+  }
 
-import function create() {
+  create() {
 
-	this.add.sprite(0,0,'tiles');
+  	this.add.sprite(0,0,'tiles');
 
-	var map = this.make.tilemap({ key: 'dessert',});
-	var tileset = map.addTilesetImage('terrain', 'tiles');
+  	var map = this.make.tilemap({ key: 'dessert',});
+  	var tileset = map.addTilesetImage('terrain', 'tiles');
 
-	var suelo = map.createLayer('Ground', tileset);
-	var oasis = map.createLayer('Agua', tileset);
-	var decoracion = map.createLayer('Decoracion', tileset);
-	var dunas = map.createLayer('Dunas', tileset);
-	var segundo_suelo = map.createLayer('Second_Ground', tileset);
-	var lava = map.createLayer('Lava', tileset);
-	var muro = map.createLayer('Pared', tileset);
+  	var suelo = map.createLayer('Ground', tileset);
+  	var oasis = map.createLayer('Agua', tileset);
+  	var decoracion = map.createLayer('Decoracion', tileset);
+  	var dunas = map.createLayer('Dunas', tileset);
+  	var segundo_suelo = map.createLayer('Second_Ground', tileset);
+  	var lava = map.createLayer('Lava', tileset);
+  	var muro = map.createLayer('Pared', tileset);
 
-  playerTileSpawner = map.createFromObjects('SpawnJugador');
-  slimeTileSpawner = map.createFromObjects('SpawnSlime');
-  superSlimeTileSpawner = map.createFromObjects('SpawnSuperSlime');
-  escorpionTileSpawner = map.createFromObjects('SpawnEscorpion');
-  bossTileSpawner = map.createFromObjects('SpawnBoss');
-  llaveTileSpawner = map.createFromObjects('Llave');
+    playerTileSpawner = map.createFromObjects('SpawnJugador');
+    slimeTileSpawner = map.createFromObjects('SpawnSlime');
+    superSlimeTileSpawner = map.createFromObjects('SpawnSuperSlime');
+    escorpionTileSpawner = map.createFromObjects('SpawnEscorpion');
+    bossTileSpawner = map.createFromObjects('SpawnBoss');
+    llaveTileSpawner = map.createFromObjects('Llave');
 
-	playerSpawnPoint = new Array();
-  slimeTileSpawner = new Array();
-  superSlimeTileSpawner = new Array();
-  escorpionTileSpawner = new Array();
+	  playerSpawnPoint = new Array();
+    slimeTileSpawner = new Array();
+    superSlimeTileSpawner = new Array();
+    escorpionTileSpawner = new Array();
 
-	segundo_suelo.alpha = 0;
-  lava.tiempo = 0;
+	  segundo_suelo.alpha = 0;
+    lava.tiempo = 0;
 
-  var allLayers1 = [oasis, dunas, lava, muro];
-  var allLayers2 = [oasis, dunas, muro];
+    var allLayers1 = [oasis, dunas, lava, muro];
+    var allLayers2 = [oasis, dunas, muro];
 
-  heroes.create.call();
-	boss_desierto.createFireBossGroup.call(allLayers2);
-	slime.createFireGroup.call(allLayers2);
-	escorpion.createGroup.call(allLayers1);
+    heroes.create.call();
+	  boss_desierto.createFireBossGroup.call(allLayers2);
+	  slime.createFireGroup.call(allLayers2);
+	  escorpion.createGroup.call(allLayers1);
 	
-	for (i = 0; i < 23; i++) {
-		escorpion.createEscorpion.call();
-	}
+	  for (i = 0; i < 23; i++) {
+	  	escorpion.createEscorpion.call();
+	  }
 
-	slime.createSlimeGroup.call(allLayers2)
+	  slime.createSlimeGroup.call(allLayers2)
 	
-	for (i = 0; i < 19; i++) {
-		slime.createSlime.call();
-	}
+	  for (i = 0; i < 19; i++) {
+		  slime.createSlime.call();
+  	}
 
-	slime.createSuperSlimeGroup.call(allLayers2);
+	  slime.createSuperSlimeGroup.call(allLayers2);
 
-	for (i = 0; i < 2; i++) {
-		slime.createSuperSlime.call();
-	}
+  	for (i = 0; i < 2; i++) {
+  		slime.createSuperSlime.call();
+  	}
 
-	this.physics.add.collider(heroes.heroes, muro);
-	this.physics.add.collider(heroes.heroes, oasis);
+  	this.physics.add.collider(heroes.heroes, muro);
+	  this.physics.add.collider(heroes.heroes, oasis);
 
-	muro.setCollisionByProperty({collides: true});
-	oasis.setCollisionByProperty({collides: true});
+	  muro.setCollisionByProperty({collides: true});
+	  oasis.setCollisionByProperty({collides: true});
 
-	// Camara
+	  // Camara
 
-	this.cameras.main.startFollow(heroes.heroes);	
+	  this.cameras.main.startFollow(heroes.heroes);	
 
-	// Texto
+	  // Texto
 
-	text=this.add.text(heroes.heroes.x-190,heroes.heroes.y-145,'Score: ',{fontsize:'8px',fill:'#FFF'});
-	const list = ['Vida:', 'life' ];
-	robin.setDataEnabled();
-	robin.data.set('life','12');
+	  text=this.add.text(heroes.heroes.x-190,heroes.heroes.y-145,'Score: ',{fontsize:'8px',fill:'#FFF'});
+	  const list = ['Vida:', 'life' ];
+	  robin.setDataEnabled();
+	  robin.data.set('life','12');
 
-	text.setText([
+	  text.setText([
         'Vida: ' + robin.data.get('life')
     ]);
 
