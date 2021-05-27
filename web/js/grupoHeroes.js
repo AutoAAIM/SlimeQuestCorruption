@@ -219,7 +219,6 @@ export function herir(obj, e) {
 		obj.inmuneT = 90;
 		//console.log(obj);
         if(e.name == "mosquito"){
-            console.log("vida"+e.vida+" H"+e.name);
             aleatorio2 = Math.floor(Math.random() * (10-1+1)) + 1;
             if(aleatorio2 <= 3){
             e.vida +=1;
@@ -275,5 +274,5 @@ export function reHacerFila()
 
 // Invisibilidad
 /*export function invisibilidad(obj) {
-  if (obj.invisibilidad = true;
-}*/
+if (obj.invisibilidad = true) 
+  
