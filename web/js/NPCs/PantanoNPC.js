@@ -85,6 +85,6 @@ export function update(){
     cuadroTexto2.setAlpha(0);
     dialogoText2.setAlpha(0);
   }
-  dialogoText2.text = "ranas: " + ranas.contadorRana + "\n mosquitos:"+ mosquitos.contadorMosquitos;
+  dialogoText2.text = 'Por favor si quieres la habilidad de quitar el veneno \nayudame a cazar la cena. \nnecesito estos ingredientes\nranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos;
 
 }
