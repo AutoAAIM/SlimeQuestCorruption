@@ -46,7 +46,7 @@ export function generarPan(obj)
 	scene.physics.add.overlap(heroes.heroes, e.detectionbox, disparoEnemigo, null, scene);
 }
 
-export function generarPan(obj)
+export function generarTarta(obj)
 {
 	var e = grupoEnemigos.create(obj.x, obj.y, 'enemigoJotun').setDepth(5).setPipeline('Light2D');
 	e.setScale(2);
