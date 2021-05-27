@@ -21,7 +21,7 @@ export function createBoss(obj, conf, el){
     tentacleList = scene.physics.add.group();
     config = conf;
     enemigoBoss = scene.physics.add.sprite(obj.x,obj.y, 'BossSwamp').setOrigin(0.5); 
-    enemigoBoss.vida = 2;
+    enemigoBoss.vida = 30;
     enemigoBoss.dano = 1;
     enemigoBoss.inmune = -1;
     enemigoBoss.temporizador = 0;
@@ -308,42 +308,9 @@ export function recibirDanyo(obj1, obj2){
                 //enemigoBoss.trigger.activado = false;
             }
         }
-        dinero.generarPlort(obj2, 300);
+        dinero.generarPlort(obj2, 100);
         obj2.destroy();
       }
       obj2.inmune = 130;
-    }
-    if(obj1 !=heroes.cabeza && obj1.inmune <= 0){
-      obj1.setAlpha(0);
-      scene.tweens.add({
-          targets: obj1,
-          alpha: 1,
-          duration: 200,
-          ease: 'Linear',
-          repeat: 5,
-      });
-      obj1.vida -= obj2.dano;
-      aleatorio = Math.floor(Math.random() * (20-2+1)) + 2;
-      if(aleatorio == 3){
-          obj1.status = "paralizado";
-          obj1.temporizador = 230;
-      }
-      if(obj1.vida <= 0){
-        if(obj1.name == "mosquito" && contadorMosquitos > 0){ 
-          contadorMosquitos-=1;
-        }
-        if(obj1.trigger !=null){
-            obj1.trigger.activado = false;
-            obj1.trigger.destroy();
-            if(obj1.block != null){
-                obj1.muerto = true;
-                obj1.block.body.enable = false;
-                //enemigoBoss.trigger.activado = false;
-            }
-        }
-        dinero.generarPlort(obj1, 2);
-        obj1.destroy();
-      }
-      obj1.inmune = 130;
     }
 }
