@@ -28,7 +28,7 @@ export function create(obj)
 
 export function generarEnemigo(obj)
 {
-	var e = grupoEnemigos.create(obj.x, obj.y, 'enemigoJotun').setDepth(2).setPipeline('Light2D');
+	var e = grupoEnemigos.create(obj.x, obj.y, 'enemigoJotun').setDepth(5).setPipeline('Light2D');
 	e.setScale(2);
 	e.setCircle(22);
 	e.play('slime', true);

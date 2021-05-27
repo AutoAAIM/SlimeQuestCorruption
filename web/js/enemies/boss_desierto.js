@@ -2,15 +2,25 @@ import * as robin from '../personajes/robin.js';
 import * as heroes from './grupoHeroes.js';
 
 export function preload() {
-	this.load.image('Boss_volcan','assets/sprites/Boss.png');
-	this.load.image('fireball','assets/sprites/fireball.png');
+	this.load.spritesheet('Boss_volcan','assets/sprites/Boss.png');
+	this.load.spritesheet('fireball','assets/sprites/fireball.png');
 }
 
 export function animacionBossDesierto() {
   this.physics.anims.create({
       key: 'Walk',
-      frames: this.anims.generateFrameNames('Basico', { frames: start: 1, end: 3 }),
+      frames: this.anims.generateFrameNames('Basico', { frames: start: 1, end: 4 }),
       frameRate: 8,
+      repeat: -1
+  });
+}
+
+export function animacionFuego() {
+  this.physics.anims.create({
+    key: 'Fuego',
+    frames: this.anims.generateFrameNames('fireball', { frames: start: 1, end: 2 }),
+    frameRate: 8,
+    repeat: -1
   });
 }
 
