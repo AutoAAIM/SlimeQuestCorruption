@@ -56,16 +56,21 @@ export default class dessert extends Phaser.Scene {
     tileSpawner.forEach(obj=>{
       this.physics.world.enable(obj);
         obj.setAlpha(0);
+      if (obj.) {
+
+      }
+
+
       if(obj.name == 'rana'){
         ranas.createEnemyRana(obj, sc.config);
       }else if(obj.name == 'mosquito'){
-          mosquitos.createEnemyMosquito(obj, sc.config);
-        }else if(obj.name == 'conseguir_glish'){
-          npc.create(obj);        
-        }else if(obj.name == 'BossCalamar' && !bossMuerto){
-          swampBoss.createBoss(obj, sc.config);
-        }else if(obj.name == 'tentaculos' && !bossMuerto){
-          swampBoss.generateTentacles(obj);
+        mosquitos.createEnemyMosquito(obj, sc.config);
+      }else if(obj.name == 'conseguir_glish'){
+        npc.create(obj);        
+      }else if(obj.name == 'BossCalamar' && !bossMuerto){
+        swampBoss.createBoss(obj, sc.config);
+      }else if(obj.name == 'tentaculos' && !bossMuerto){
+        swampBoss.generateTentacles(obj);
         }
     })
 

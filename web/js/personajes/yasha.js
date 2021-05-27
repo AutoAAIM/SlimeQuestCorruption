@@ -1,4 +1,5 @@
 import * as keys from '../keys.js';
+import * as utilidades from '../utilidades.js';
 
 var scene;
 export var player
