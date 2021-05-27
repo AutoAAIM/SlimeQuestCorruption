@@ -53,7 +53,7 @@ export default class dessert extends Phaser.Scene {
     slimeTileSpawner = new Array();
     superSlimeTileSpawner = new Array();
     escorpionTileSpawner = new Array();
-    objetosTileSpawner
+    objetosTileSpawner = new Array();
 
     // Crear grupos
 
@@ -74,6 +74,9 @@ export default class dessert extends Phaser.Scene {
       if(obj.name == 'Entrada'){
 	      playerSpawnPoint.unshift(obj);
       }
+      /*else if (obj.name == 'Npc') {
+
+      }*/
     })
 
     var spawnID = playerSpawnPoint.lenght - 1;

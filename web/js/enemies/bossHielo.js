@@ -63,6 +63,8 @@ export function generarBoss(obj)
 	boss.detectionbox.tiempoDisparo = 0;
 
 	scene.physics.add.overlap(heroes.heroes, boss.detectionbox, generarNieblaBoss, null, scene);
+
+	boss.detectionbox.body.enable = false;
 }
 
 function generarNieblaBoss(boss, py)
