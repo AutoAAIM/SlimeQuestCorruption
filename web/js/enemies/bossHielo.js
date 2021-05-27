@@ -69,9 +69,14 @@ export function generarBoss(obj)
 
 function generarNieblaBoss(boss, py)
 {
-	if(boss.tiempoDisparo <= 0)
+	if(boss.tiempoDisparo <= 0 && boss.delayDisparo <= 0)
 	{
 		boss.tiempoDisparo = 1;
+
+		if(boss.delayDisparo <= -30)
+		{
+			boss.delayDisparo = 1;
+		}
 
 		var d = grupoDispBoss.create(boss.x - 15, boss.y + 5, 'polvoHielo').setDepth(5).setPipeline('Light2D');
 

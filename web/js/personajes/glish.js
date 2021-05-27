@@ -44,6 +44,7 @@ export function create(spawn, allLayers, conf, grupo, arHe) {
   player = grupo.create(spawn.x,spawn.y, 'glish').setOrigin(0.5).setDepth(5);
   player.name = "glish";
   player.heroe = true;
+  player.curarTrue = false;
   player.status = "none";
   player.maxVida = 10;
   player.setCircle(16, 0);
@@ -83,7 +84,7 @@ export function update(cabeza) {
   	if (pointer.isDown && tiempo == 0) {
 		  ondasRockeras.call(scene);
 		}
-		if (keys.Hability.isDown && tiempo2 == 0) {
+		if (keys.Hability.isDown && tiempo2 == 0 && player.curarTrue == true) {
 		  heavyMetal.call(scene);
 		}
 		updateEstadosDelJugador.call(scene);

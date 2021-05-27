@@ -10,6 +10,7 @@ var game=new Phaser.Game(config);
 
 var llave = false;
 var puerta = true;
+var batalla = false;
 
 export default class dessert extends Phaser.Scene {
   constructor(){
@@ -189,9 +190,13 @@ export default class dessert extends Phaser.Scene {
 	
     updateLava();
 
+    // Actualizar texto
+
   	text.x = robin.x-190;
   	text.y = robin.y-145;
   }
+
+  // Actualizar las dunas (quitarlas)
 
   updateDunas(d,h) {
 	  if (keyE.isDown) {
@@ -199,11 +204,15 @@ export default class dessert extends Phaser.Scene {
 	  }
   }
 
+  // Coger objeto clave para continuar el nivel
+
   cogerLlave(l,h) {
 	  if (keyE.isDown && !l) {
 	  	l = true;
   	}
   }
+
+  // Congelar la lava
 
   lavaFria(l,h) {
   	l.alpha = 0;
@@ -211,11 +220,15 @@ export default class dessert extends Phaser.Scene {
   	segundo_suelo.alpha = 1;
   }
 
+  // Muerte por caer en la lava
+
  heroeFundido(l,h) {
 	  if (l.alpha == 1) {
   		heroes.heroes.muerto = true;
 	  }
   }
+
+  // Actualizar la lava cuando se enfria
 
   updateLava() {
     if (lava.tiempo != 0) {

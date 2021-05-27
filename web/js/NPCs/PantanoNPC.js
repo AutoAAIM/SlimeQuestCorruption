@@ -55,7 +55,11 @@ function recogerPersonaje(){
   if(ranas.contadorRana > 0 && mosquitos.contadorMosquitos > 0){
 
   }else if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
-
+        glish.player.curarTrue = true;
+        dialogoText.destroy();
+        dialogo.destroy();
+        interacturar.destroy();
+        npc1.destroy();
   }
 }
 
