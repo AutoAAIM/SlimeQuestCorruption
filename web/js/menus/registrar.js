@@ -22,8 +22,6 @@ export default class registrar extends Phaser.Scene {
 		super("registrar");
 	}
 
-	...
-
 	preload()
 	{
 		this.load.image('sky','assets/images/fondo_menu.jpg');
