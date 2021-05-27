@@ -44,7 +44,7 @@ export function createEnemyRana(obj, conf){
 
     scene.physics.add.overlap(heroes.heroes, enemigoRana.trigger, activarTrigger);
     scene.physics.add.overlap(heroes.heroes, enemigoRana.triggerAtaque, updateLenguaRana);        
-    scene.physics.add.overlap(heroes.armasHeroicas, ranaGrupo, activarTrigger);
+    scene.physics.add.overlap(heroes.armasHeroicas, enemigoRana, activarTrigger);
 
 	ranas.push(enemigoRana)
 
@@ -202,9 +202,6 @@ export function activarTrigger(go, e){
 
     if(go.trigger != undefined && go != heroes.cabeza){
     	go.trigger.activado = true;
-    }
-    else if(go.triggerAtaque != undefined && go != heroes.cabeza){
-        go.triggerAtaque.activado = true;
     }
 	else{
     	go.activado = true;

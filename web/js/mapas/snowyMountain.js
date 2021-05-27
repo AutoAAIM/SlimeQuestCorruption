@@ -148,7 +148,7 @@ export default class montelago extends Phaser.Scene {
 
 		luz.setTileIndexCallback(darkTiles, oscuridad.encenderOscuridad, scene.physics.add.overlap(heroes.heroes, luz));
 
-		objetos.setTileIndexCallback(snowTiles, yasha.derretir, scene.physics.add.overlap(yasha.grupoFuego, objetos));
+		objetos.setTileIndexCallback(snowTiles, yasha.derretir, scene.physics.add.overlap(objetos, yasha.grupoFuego));
 		
 		this.physics.add.collider(mago.mago, heroes.heroes);
 		this.physics.add.collider(jotun.grupoEnemigos, heroes.heroes);
