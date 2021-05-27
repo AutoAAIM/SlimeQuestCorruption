@@ -4,8 +4,12 @@ import * as heroes from '../grupoHeroes.js';
 var enfriamiento = 0;
 
 export function preload() {
-	this.load.spritesheet('Robin','assets/sprites/Robin.png', { frameWidth: 32, frameHeight: 32 });
-	this.load.spritesheet('Robin','assets/animaciones/espadazo.png', { frameWidth: 32, frameHeight: 32 });
+	this.load.spritesheet('Robin','assets/animaciones/robin/Stand.png', { frameWidth: 32, frameHeight: 32 });
+	this.load.spritesheet('Robin','assets/animaciones/robin/espadazo.png', { frameWidth: 32, frameHeight: 32 });
+  this.load.spritesheet('Arriba','assets/animaciones/robin/WalkUp.png', { frameWidth: 32, frameHeight: 32 });
+  this.load.spritesheet('Abajo','assets/animaciones/robin/WalkDown.png', { frameWidth: 32, frameHeight: 32 });
+  this.load.spritesheet('Derecha','assets/animaciones/robin/WalkRight.png', { frameWidth: 32, frameHeight: 32 });
+  this.load.spritesheet('Izquierda','assets/animaciones/robin/WalkLeft.png', { frameWidth: 32, frameHeight: 32 });
 	this.load.image('espadita','assets/images/cursor.png');
 }
 
@@ -16,18 +20,35 @@ export function animacionRobin() {
         frameRate: 8,
     });
     this.anims.create({
-  		key: 'idle',
+  		key: 'quieto',
   		frames: this.anims.generateFrameNames('Robin', { start: 0, end: 2 }),
   		frameRate: 4,
   		repeat: -1
 	});
-
 	this.anims.create({
+        key: '',
+        frames: this.anims.generateFrameNames('Robin', { start: 3, end: 5 }),
+        frameRate: 4,
+        repeat: -1
+  });
+  this.anims.create({
         key: 'walk',
         frames: this.anims.generateFrameNames('Robin', { start: 3, end: 5 }),
         frameRate: 4,
         repeat: -1
-    });
+  });
+  this.anims.create({
+      key: 'walk',
+      frames: this.anims.generateFrameNames('Robin', { start: 3, end: 5 }),
+      frameRate: 4,
+      repeat: -1
+  });
+  this.anims.create({
+      key: 'walk',
+      frames: this.anims.generateFrameNames('Robin', { start: 3, end: 5 }),
+      frameRate: 4,
+      repeat: -1
+   });
 }
 
 export function create(spawn,muros,team,armas) {
