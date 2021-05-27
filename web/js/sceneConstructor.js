@@ -1,6 +1,7 @@
 import lab from './mapas/lab.js'
 import swamp from './mapas/poisonSwamp.js'
 import montelago from './mapas/snowyMountain.js'
+//import dessert from './mapas/desiertoArdiente.js'
 import registrar from './menus/registrar.js'
 
 
