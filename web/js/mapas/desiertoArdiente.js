@@ -60,8 +60,8 @@ import function create() {
 	var spawn = map.createFromObjects('SpawnJugador',tileset);
 
   playerTileSpawner = map.createFromObjects('SpawnJugador');
-  playerTileSpawner = map.createFromObjects('SpawnSlime');
-  playerTileSpawner = map.createFromObjects('SpawnSuperSlime');
+  slimeTileSpawner = map.createFromObjects('SpawnSlime');
+  sTileSpawner = map.createFromObjects('SpawnSuperSlime');
   playerTileSpawner = map.createFromObjects('SpawnEscorpion');
   playerTileSpawner = map.createFromObjects('SpawnBoss');
   playerTileSpawner = map.createFromObjects('Llave');
