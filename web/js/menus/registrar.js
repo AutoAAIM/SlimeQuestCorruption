@@ -189,7 +189,6 @@ export default class registrar extends Phaser.Scene {
 		var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/reguser.php';
 		
 		var myObj;
-		var myZone;
 
 		xhr.onreadystatechange = function(){
 			if(this.readyState == 4 && this.status == 200)

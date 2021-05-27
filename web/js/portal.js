@@ -57,6 +57,11 @@ function createPortal(obj)
 		obj.setTexture('portal')
 		//console.log('un portal mas')
 	}
+	else if(obj.properties.tipo=="interScene")
+	{
+		obj.setAlpha(1)
+		obj.setTexture('portal')
+	}
 	else
 	{
 		obj.setAlpha(0)
@@ -95,6 +100,10 @@ function teleport(obj, entity)
 		entity.x = obj.destino.x
 		entity.y = obj.destino.y
 		tiempoActivo = 0;
+	}
+	if(obj.properties.tipo=="interScene")
+	{
+		changeScene(obj);
 	}
 
 	//console.log('muevete de '+obj+' a '+obj.destino)
@@ -138,4 +147,32 @@ export function update()
 			portals[i].setTexture('portalApagado')
 		}
 	}
+}
+
+function changeScene(obj)
+{
+	var xhr = new XMLHttpRequest();
+	var url = 'https://SlimeQuestCorruption.autoaaim.repl.co/reguser.php';
+	
+	obj.properties.destino
+
+	var myObj = scene.game.usuario;
+
+	xhr.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200)
+		{
+			/*if(this.responseText != "")
+			{
+				responseTextOutput = 'se ha registrado con exito!! ahora dele a log in para entrar ☻'
+			}
+			else{
+				responseTextOutput = 'este usuario ya existe'
+			}*/
+			//console.log(this)
+		}
+	}
+	//console.log(xhr)
+	xhr.open("POST", "php/reguser.php?", true)
+	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+	xhr.send("nombre="+myObj.nombre+"&contrasena="+myObj.contrasena obj.properties.destino)
 }

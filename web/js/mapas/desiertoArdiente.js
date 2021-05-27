@@ -59,7 +59,18 @@ import function create() {
 	var muro = map.createLayer('Pared', tileset);
 	var spawn = map.createFromObjects('SpawnJugador',tileset);
 
+  playerTileSpawner = map.createFromObjects('SpawnJugador');
+  playerTileSpawner = map.createFromObjects('SpawnSlime');
+  playerTileSpawner = map.createFromObjects('SpawnSuperSlime');
+  playerTileSpawner = map.createFromObjects('SpawnEscorpion');
+  playerTileSpawner = map.createFromObjects('SpawnBoss');
+  playerTileSpawner = map.createFromObjects('Llave');
+
+	playerSpawnPoint = new Array();
+
+
 	segundo_suelo.alpha = 0;
+  lava.tiempo = 0;
 
   var allLayers1 = [oasis, dunas, lava, muro];
   var allLayers2 = [oasis, dunas, muro];
@@ -69,19 +80,19 @@ import function create() {
 	slime.createFireGroup.call(allLayers2);
 	escorpion.createGroup.call(allLayers1);
 	
-	for (i = 0; i < 40; i++) {
+	for (i = 0; i < 23; i++) {
 		escorpion.createEscorpion.call();
 	}
 
 	slime.createSlimeGroup.call(allLayers2)
 	
-	for (i = 0; i < 40; i++) {
+	for (i = 0; i < 19; i++) {
 		slime.createSlime.call();
 	}
 
 	slime.createSuperSlimeGroup.call(allLayers2);
 
-	for (i = 0; i < 40; i++) {
+	for (i = 0; i < 2; i++) {
 		slime.createSuperSlime.call();
 	}
 
@@ -120,7 +131,7 @@ import function create() {
 
 import function update() {
 
-	robin.updateRobin.call();
+	heroes.update.call();
 	escorpion.update.call();
 	slime.updateSlime.call();
 	slime.updateSuperSlime.call();
@@ -148,6 +159,8 @@ import function update() {
 		}
 	}
 	
+  updateLava();
+
 	text.x = robin.x-190;
 	text.y = robin.y-145;
 }
@@ -166,6 +179,7 @@ import function cogerLlave(l,h) {
 
 import function lavaFria(l,h) {
 	l.alpha = 0;
+  l.tiempo = 1;
 	segundo_suelo.alpha = 1;
 }
 
@@ -173,4 +187,15 @@ import function heroeFundido(l,h) {
 	if (l.alpha == 1) {
 		heroes.heroes.muerto = true;
 	}
+}
+
+import function updateLava() {
+  if (lava.tiempo != 0) {
+    lava.tiempo++;
+  }
+  if (lava.tiempo > 1000) {
+    lava.alpha = 1;
+    segundo_suelo.alpha = 0;
+    lava.tiempo = 0;
+  }
 }
