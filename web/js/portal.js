@@ -162,6 +162,7 @@ function changeScene(obj)
 		if(this.readyState == 4 && this.status == 200)
 		{
 			scene.game.usuario = myObj;
+			scene.scene.stop(scene);
 			scene.scene.start(myObj.zonanombre);
 			/*if(this.responseText != "")
 			{

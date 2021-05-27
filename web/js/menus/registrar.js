@@ -169,6 +169,7 @@ export default class registrar extends Phaser.Scene {
 				if(myObj.nombre == nameTextInput && myObj.contrasena == contTextInput)
 				{
 					scene.game.usuario = myObj;
+					scene.scene.stop(scene);
 					scene.scene.start(myObj.zonanombre);
 				}
 				else{
