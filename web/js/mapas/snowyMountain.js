@@ -54,7 +54,7 @@ export default class montelago extends Phaser.Scene {
 	preload()
 	{
 		//this.load.atlas('atlas', 'assets/atlas/atlas.png', 'assets/atlas/sprites.json');
-		this.load.image('cuevaTiles', 'assets/mapa/terrain.png');
+		this.load.image('cuevaTiles', 'assets/mapa/terrain4.png');
 		this.load.image('snowTiles', 'assets/mapa/snow.png');
 		this.load.tilemapTiledJSON('CuevaMago', 'assets/mapa/mapa_CuevaMago.json');
 
@@ -73,7 +73,7 @@ export default class montelago extends Phaser.Scene {
 
 		const mapa = this.make.tilemap({key:'CuevaMago'});
 
-		const tileset = mapa.addTilesetImage('terrain', 'cuevaTiles');
+		const tileset = mapa.addTilesetImage('terrain4', 'cuevaTiles');
 		const tileset2 = mapa.addTilesetImage('snow', 'snowTiles');
 
 		allTilesets = [tileset, tileset2]
