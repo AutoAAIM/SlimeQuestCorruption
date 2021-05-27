@@ -274,5 +274,8 @@ export function reHacerFila()
 
 // Invisibilidad
 /*export function invisibilidad(obj) {
-  obj.invis
+  obj.invisibilidad = true;
+  obj.inmune = true;
+  heroes
+
 */  
