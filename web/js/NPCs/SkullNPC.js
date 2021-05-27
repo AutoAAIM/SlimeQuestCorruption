@@ -96,5 +96,5 @@ export function generarSkull(obj)
 	skull.detectionbox.body.enable = false;
 	skull.setAlpha(0);
 
-	scene.physics.add.overlap(heroes.heroes, skull.detectionbox, encenderTienda null, scene);
+	scene.physics.add.overlap(heroes.heroes, skull.detectionbox, encenderTienda, null, scene);
 }
