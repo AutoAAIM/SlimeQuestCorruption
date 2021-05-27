@@ -235,6 +235,7 @@ function generarFuego()
 {
 	var f = grupoFuego.create(puntero.x, puntero.y, 'fuego').setDepth(20);
 	f.play('hot');
+    f..dano = 1;
 	f.scale = 1;
 	contFuego = 30;
 	f.light = scene.lights.addLight(f.x, f.y, 100).setColor(0xffffff).setIntensity(1);
@@ -280,7 +281,7 @@ function generarHielo()
 		h.fragil = true;
 		h.tiempo = 0;
 		h.setCircle(2, 14, 14);
-
+        h.dano = 1;
 		scene.physics.add.collider(h, allLayers);
 		//console.log(h)
 		
