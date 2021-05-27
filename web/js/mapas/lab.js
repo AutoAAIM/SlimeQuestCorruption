@@ -250,7 +250,7 @@ export default class lab extends Phaser.Scene {
 			}
 			if(obj.name == 'bombilla')
 			{
-				lights.unshift(scene.lights.addLight(obj.x, obj.y, 1000, 0x111111).setIntensity(10))
+				lights.unshift(scene.lights.addLight(obj.x, obj.y, 1000, 0xffffff).setIntensity(2))
 				obj.destroy()
 			}
 		})
