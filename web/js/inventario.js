@@ -21,12 +21,14 @@ export function create(obj)
 			repeat: -1
 		});
 
-	
+	generarInventario(obj);
+	generarPan(obj);
+	generarPan(obj);
 }
 
 export function generarInventario(obj)
 {
-	imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 'textoHielo').setDepth(18).setScale(2);
+	imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 'inventario').setDepth(18);
 }
 
 export function generarPan(obj)

@@ -5,6 +5,7 @@ import * as mago from '../NPCs/magoNPC.js';
 import * as oscuridad from '../luz.js';
 import * as portal from '../portal.js';
 import * as bossHielo from '../enemies/bossHielo.js';
+import * as inventario from '../inventario.js';
 import * as keys from '../keys.js';
 import * as sc from '../sceneConstructor.js';
 
@@ -104,6 +105,7 @@ export default class montelago extends Phaser.Scene {
 		gates = portal.create(tilePortal);
 
 		jotun.create();
+		inventario.create();
 
 		spawn = new Phaser.Math.Vector2(-980, 2250)
 
