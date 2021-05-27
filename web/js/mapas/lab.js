@@ -57,7 +57,7 @@ export default class lab extends Phaser.Scene {
 		this.load.image('labtiles','assets/mapa/Labspritesheet.png');
 		this.load.image('terraintiles','assets/mapa/terrain.png');
 		this.load.image('maniquiReal','assets/mapa/maniquiReal.png');
-		this.load.tilemapTiledJSON('laboratorio', 'assets/mapa/lab.json');
+		this.load.tilemapTiledJSON('laboratorio', 'assets/mapa/labpocho.json');
 
 		this.load.image('polvo','assets/particles/polvo.png');
 
