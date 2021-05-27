@@ -26,6 +26,7 @@ export var armasHeroicas = new Array();
 var move;
 var pausado = false;
 var tEntreCambio = 0;
+var aleatorio2;
 
 var text;
 
@@ -218,9 +219,9 @@ export function herir(obj, e) {
 		obj.inmuneT = 90;
 		//console.log(obj);
         if(e.name == "mosquito"){
-            var aleatorio2 = Math.floor(Math.random() * (10-1+1)) + 1;
+            console.log("vida"+e.vida+" H"+e.name);
+            aleatorio2 = Math.floor(Math.random() * (10-1+1)) + 1;
             if(aleatorio2 <= 3){
-                console.log("vida"+e.vida+" H"+e.name);
             e.vida +=1;
             }
         }
