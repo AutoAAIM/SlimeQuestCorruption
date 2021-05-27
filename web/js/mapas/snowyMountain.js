@@ -73,7 +73,7 @@ export default class montelago extends Phaser.Scene {
 
 		const mapa = this.make.tilemap({key:'CuevaMago'});
 
-		const tileset = mapa.addTilesetImage('terrain4', 'cuevaTiles');
+		const tileset = mapa.addTilesetImage('terrain', 'cuevaTiles');
 		const tileset2 = mapa.addTilesetImage('snow', 'snowTiles');
 
 		allTilesets = [tileset, tileset2]
