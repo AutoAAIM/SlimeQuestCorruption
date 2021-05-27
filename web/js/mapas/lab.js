@@ -43,6 +43,8 @@ var skullAG
 var move
 var gates
 
+var lights = new Array;
+
 var music
 
 //var game = new Phaser.Game(config);
@@ -248,7 +250,7 @@ export default class lab extends Phaser.Scene {
 			}
 			if(obj.name == 'bombilla')
 			{
-				
+				lights.unshift
 				obj.destroy()
 			}
 		})
