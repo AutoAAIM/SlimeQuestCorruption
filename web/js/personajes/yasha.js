@@ -261,7 +261,7 @@ function updateFuego()
 	});
 }
 
-export function burn(objeto, fuego)
+export function burn(fuego, objeto)
 {
 	if(!objeto.encendido)
 	{
@@ -308,7 +308,7 @@ function updateHielo()
     }
 }
 
-export function derretir(fuego, nieve)
+export function derretir(nieve, fuego)
 {
 	if (nieve.properties != undefined && nieve.properties.snow == true && fuego.fuego)
     {
@@ -320,7 +320,7 @@ export function derretir(fuego, nieve)
     }
 }
 
-export function freeze(objeto, lago)
+export function freeze(lago, objeto)
 {
     if (lago.properties != undefined && !lago.properties.freeze && objeto.hielo )
     {
@@ -337,7 +337,7 @@ export function freeze(objeto, lago)
     }    
 }
 
-export function setFreeze(layer, id)
+export function setFreeze(id, layer)
 {
 	layer.setTileIndexCallback(id, freeze, scene.physics.add.overlap(grupoHielo, layer));
 }
@@ -375,7 +375,7 @@ function updateTexto()
 	}
 }
 
-export function encenderHielito(yasha, obj)
+export function encenderHielito()
 {
 	player.hieloTrue = true;
 

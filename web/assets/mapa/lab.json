@@ -365,6 +365,20 @@
                  "y":-32
                 }, 
                 {
+                 "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1097, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1097, 0, 0, 1097, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1097, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1097, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1097, 1097, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1097, 1097, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                 "height":16,
+                 "width":16,
+                 "x":32,
+                 "y":-32
+                }, 
+                {
+                 "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1097, 1097, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1097, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1097, 0, 1097, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                 "height":16,
+                 "width":16,
+                 "x":48,
+                 "y":-32
+                }, 
+                {
                  "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1097, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1097, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1097, 0, 0, 1097, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                  "height":16,
                  "width":16,
@@ -388,7 +402,7 @@
          "starty":-32,
          "type":"tilelayer",
          "visible":true,
-         "width":32,
+         "width":64,
          "x":0,
          "y":0
         }, 
@@ -418,6 +432,39 @@
                  "width":32,
                  "x":416,
                  "y":288
+                }, 
+                {
+                 "height":32,
+                 "id":122,
+                 "name":"Spawn",
+                 "rotation":0,
+                 "type":"spawnPoint",
+                 "visible":true,
+                 "width":32,
+                 "x":880,
+                 "y":-144
+                }, 
+                {
+                 "height":32,
+                 "id":123,
+                 "name":"Spawn",
+                 "rotation":0,
+                 "type":"spawnPoint",
+                 "visible":true,
+                 "width":32,
+                 "x":752,
+                 "y":-816
+                }, 
+                {
+                 "height":32,
+                 "id":124,
+                 "name":"Spawn",
+                 "rotation":0,
+                 "type":"spawnPoint",
+                 "visible":true,
+                 "width":32,
+                 "x":1552,
+                 "y":-656
                 }],
          "offsetx":-64,
          "offsety":0,
@@ -1183,6 +1230,246 @@
                  "width":0,
                  "x":656,
                  "y":304
+                }, 
+                {
+                 "height":0,
+                 "id":125,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":20
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1328,
+                 "y":-912
+                }, 
+                {
+                 "height":0,
+                 "id":126,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":20
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1328,
+                 "y":-832
+                }, 
+                {
+                 "height":0,
+                 "id":127,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":20
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1680,
+                 "y":-832
+                }, 
+                {
+                 "height":0,
+                 "id":128,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":20
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1680,
+                 "y":-912
+                }, 
+                {
+                 "height":0,
+                 "id":129,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":20
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1456,
+                 "y":-944
+                }, 
+                {
+                 "height":0,
+                 "id":130,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":20
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1552,
+                 "y":-944
+                }, 
+                {
+                 "height":0,
+                 "id":131,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":20
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1328,
+                 "y":-752
+                }, 
+                {
+                 "height":0,
+                 "id":132,
+                 "name":"scyther",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"maxLong",
+                         "type":"int",
+                         "value":20
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1680,
+                 "y":-752
+                }, 
+                {
+                 "height":0,
+                 "id":133,
+                 "name":"shapeshifter",
+                 "point":true,
+                 "rotation":0,
+                 "type":"shapeshifter",
+                 "visible":true,
+                 "width":0,
+                 "x":1392,
+                 "y":-880
+                }, 
+                {
+                 "height":0,
+                 "id":134,
+                 "name":"shapeshifter",
+                 "point":true,
+                 "rotation":0,
+                 "type":"shapeshifter",
+                 "visible":true,
+                 "width":0,
+                 "x":1616,
+                 "y":-880
+                }, 
+                {
+                 "height":0,
+                 "id":135,
+                 "name":"shapeshifter",
+                 "point":true,
+                 "rotation":0,
+                 "type":"shapeshifter",
+                 "visible":true,
+                 "width":0,
+                 "x":1456,
+                 "y":-896
+                }, 
+                {
+                 "height":0,
+                 "id":136,
+                 "name":"shapeshifter",
+                 "point":true,
+                 "rotation":0,
+                 "type":"shapeshifter",
+                 "visible":true,
+                 "width":0,
+                 "x":1552,
+                 "y":-896
+                }, 
+                {
+                 "height":0,
+                 "id":137,
+                 "name":"shapeshifter",
+                 "point":true,
+                 "rotation":0,
+                 "type":"shapeshifter",
+                 "visible":true,
+                 "width":0,
+                 "x":1552,
+                 "y":-848
+                }, 
+                {
+                 "height":0,
+                 "id":138,
+                 "name":"shapeshifter",
+                 "point":true,
+                 "rotation":0,
+                 "type":"shapeshifter",
+                 "visible":true,
+                 "width":0,
+                 "x":1456,
+                 "y":-848
+                }, 
+                {
+                 "height":0,
+                 "id":139,
+                 "name":"shapeshifter",
+                 "point":true,
+                 "rotation":0,
+                 "type":"shapeshifter",
+                 "visible":true,
+                 "width":0,
+                 "x":1408,
+                 "y":-800
+                }, 
+                {
+                 "height":0,
+                 "id":140,
+                 "name":"shapeshifter",
+                 "point":true,
+                 "rotation":0,
+                 "type":"shapeshifter",
+                 "visible":true,
+                 "width":0,
+                 "x":1600,
+                 "y":-800
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1191,7 +1478,7 @@
          "y":0
         }],
  "nextlayerid":16,
- "nextobjectid":122,
+ "nextobjectid":141,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.6.0",
