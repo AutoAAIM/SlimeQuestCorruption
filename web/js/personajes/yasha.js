@@ -132,6 +132,7 @@ export function update(cabeza)
 	}
 
 	updateFuego();
+	updateHielo();
 	contFuego--;
 
 	puntero.x = player.x - config.width / 2 + keys.pointer.x;
@@ -190,7 +191,6 @@ function input()
 		generarFuego();
 	}
 
-	//console.log(player.hieloTrue)
 	if (keys.Hability.isDown && contHielo <= 0 && player.hieloTrue == true)
 	{
 		generarHielo();
