@@ -1,4 +1,6 @@
 var scene;
+export var grupoCake;
+export var grupoPan;
 
 export function preload()
 {
@@ -28,36 +30,16 @@ export function create(obj)
 
 export function generarInventario(obj)
 {
-	imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 'inventario').setDepth(18);
+	imagenInventario = scene.physics.add.sprite(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 'inventario').setDepth(18);
 }
 
 export function generarPan(obj)
 {
-	var e = grupoEnemigos.create(obj.x, obj.y, 'enemigoJotun').setDepth(5).setPipeline('Light2D');
-	e.setScale(2);
-	e.setCircle(22);
-	e.play('lie', true);
-
-	e.detectionbox = scene.add.rectangle(e.x, e.y, 290, 290);
-	scene.physics.add.existing(e.detectionbox, false);
-
-	e.detectionbox.tiempoDisparo = 0;
-
-	scene.physics.add.overlap(heroes.heroes, e.detectionbox, disparoEnemigo, null, scene);
+	imagenPan = scene.physics.add.sprite(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 'pan').setDepth(18);
 }
 
 export function generarTarta(obj)
 {
-	var e = grupoEnemigos.create(obj.x, obj.y, 'enemigoJotun').setDepth(5).setPipeline('Light2D');
-	e.setScale(2);
-	e.setCircle(22);
-	e.play('lie', true);
-
-	e.detectionbox = scene.add.rectangle(e.x, e.y, 290, 290);
-	scene.physics.add.existing(e.detectionbox, false);
-
-	e.detectionbox.tiempoDisparo = 0;
-
-	scene.physics.add.overlap(heroes.heroes, e.detectionbox, disparoEnemigo, null, scene);
+	
 }
 

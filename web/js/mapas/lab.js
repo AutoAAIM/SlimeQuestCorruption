@@ -245,8 +245,7 @@ export default class lab extends Phaser.Scene {
 			{
 				//shapeShifterGroup.add(obj)
 				//createShapeshifter(obj);
-				skullAG = this.add.sprite(obj.x, obj.y-8, 'SkullAG').setDepth(5)
-				skullAG.play('SkullAGAnim', true)
+				skullAG.create(obj)// = this.add.sprite(obj.x, obj.y-8, 'SkullAG').setDepth(5)
 				obj.destroy()
 			}
 			if(obj.name == 'bombilla')

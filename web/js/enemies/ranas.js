@@ -145,7 +145,7 @@ function calcularLengua(l, parent)
 			},
 			onComplete: function()
 			{
-				for(var i=0; i<l.maxLong; i++)
+				for(var i=0; i<l.maxLong+1; i++)
 				{
 					l.segmentos[i].destroy();
 				}
