@@ -164,14 +164,7 @@ function changeScene(obj)
 			scene.game.usuario = myObj;
 			scene.scene.stop(scene);
 			scene.scene.start(myObj.zonanombre);
-			/*if(this.responseText != "")
-			{
-				responseTextOutput = 'se ha registrado con exito!! ahora dele a log in para entrar ☻'
-			}
-			else{
-				responseTextOutput = 'este usuario ya existe'
-			}*/
-			//console.log(this)
+
 		}
 	}
 	//console.log(xhr)

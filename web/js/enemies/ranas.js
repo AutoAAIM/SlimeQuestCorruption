@@ -30,7 +30,7 @@ export function createEnemyRana(obj, conf){
     config = conf;
     enemigoRana = ranaGrupo.create(obj.x,obj.y, 'EnemigoRana').setOrigin(0.5).setImmovable(true); 
     enemigoRana.name = 'rana';
-    enemigoRana.vida = 7;
+    enemigoRana.vida = 10;
     enemigoRana.dano = 1;
     enemigoRana.inmune = -1;
     enemigoRana.status = "none";
@@ -245,7 +245,7 @@ export function recibirDanyo(obj1, obj2){
             dinero.generarPlort(obj2, 2);
             obj2.destroy();
         }
-        obj2.inmune = 130;
+        obj2.inmune = 70;
     }
     if(obj1 !=heroes.cabeza && obj1.inmune <= 0){
         obj1.setAlpha(0);
@@ -279,6 +279,6 @@ export function recibirDanyo(obj1, obj2){
             dinero.generarPlort(obj1, 2);
             obj1.destroy();
         }
-        obj1.inmune = 130;
+        obj1.inmune = 70;
     }
 }
