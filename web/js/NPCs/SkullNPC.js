@@ -63,8 +63,8 @@ function updateTexto()
 		scene.skullText.x = heroes.cabeza.x - config.width / 2 + 16;
 		scene.skullText.y = heroes.cabeza.y - config.height / 2 + 210;
 
-		imagenTexto.x = heroes.cabeza.x - config.width / 2 + 340;
-		imagenTexto.y = heroes.cabeza.y - config.height / 2 + 240;
+		//imagenTexto.x = heroes.cabeza.x - config.width / 2 + 340;
+		//imagenTexto.y = heroes.cabeza.y - config.height / 2 + 240;
 
 		if(Phaser.Geom.Intersects.RectangleToRectangle(heroes.cabeza.getBounds(), skull.detectionbox.getBounds()))
 		{
