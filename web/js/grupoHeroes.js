@@ -32,9 +32,9 @@ var text;
 
 export function create(spawn, allTiles, antorchas, conf)
 {
-	if(conf.game.heroesCargados != true)
+	if(scene.game.heroesCargados != true)
 	{
-		conf.game.heroesCargados = true;
+		scene.game.heroesCargados = true;
 		//el espacio entre elementos de la fila
 		espacioEntreHeroes = 12;
 
