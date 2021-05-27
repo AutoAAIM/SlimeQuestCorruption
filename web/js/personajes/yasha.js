@@ -261,7 +261,7 @@ function updateFuego()
 	});
 }
 
-export function burn(fuego, objeto)
+export function burn(objeto, fuego)
 {
 	if(!objeto.encendido)
 	{
@@ -308,7 +308,7 @@ function updateHielo()
     }
 }
 
-export function derretir(nieve, fuego)
+export function derretir(nieve, )
 {
 	if (nieve.properties != undefined && nieve.properties.snow == true && fuego.fuego)
     {

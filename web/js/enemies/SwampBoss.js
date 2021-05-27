@@ -270,8 +270,9 @@ export function updateBoss(){
     pata.setAlpha(0)
     
     });
-
-    enemigoBoss.block.destroy();
+    if(enemigoBoss.block != undefined){
+        enemigoBoss.block.destroy();
+    }
 
   }
 }
