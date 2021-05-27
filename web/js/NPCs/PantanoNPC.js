@@ -56,6 +56,7 @@ function recogerPersonaje(){
 
   }else if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
         glish.checarCuracion = true;
+        //glish.activarCuracion(true);
         npc1.trigger.destroy();
         npc1.destroy();
         dialogoText.destroy();

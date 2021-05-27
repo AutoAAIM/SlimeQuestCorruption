@@ -196,6 +196,10 @@ function heavyMetal() {
   tiempo2 = 400;
 }
 
+export function activarCuracion(atributo){
+    activarCuracion = atributo;
+}
+
 function atacarPersonaje() {
 
   if (tiempo > 0) {
