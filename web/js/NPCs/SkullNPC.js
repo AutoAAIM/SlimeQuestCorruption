@@ -28,6 +28,23 @@ export function create(obj, conf)
 
 	config = conf;
 }
+
+export function encenderTienda()
+{
+	if(textoSkull == false)
+	{
+		cuadroTexto = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16);
+
+		cuadroTexto2 = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17);
+
+		scene.magoText = scene.add.text(yasha.player.x - config.width / 2 + 16, yasha.player.y - config.height / 2 + 210, 'Mago: \nOtro novato en busca de poder... \nToma esto y dejame en paz.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(18);
+
+		imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + 340, yasha.player.y - config.height / 2 + 240, 'textoHielo').setDepth(18).setScale(2);
+	}
+
+	textoMago = true;
+}
+
 export function update()
 {
 	updateTexto();
@@ -66,6 +83,8 @@ function updateTexto()
 	}
 }
 
+//#68FF00
+
 export function generarSkull(obj)
 {
 	skull = scene.physics.add.staticSprite(obj.x, obj.y, 'skull').setDepth(5);
@@ -79,5 +98,5 @@ export function generarSkull(obj)
 	skull.detectionbox.body.enable = false;
 	skull.setAlpha(0);
 
-	scene.physics.add.overlap(heroes.heroes, skull.detectionbox, encenderHielito, null, scene);
+	scene.physics.add.overlap(heroes.heroes, skull.detectionbox, encenderTienda null, scene);
 }

@@ -84,7 +84,7 @@ export default class lab extends Phaser.Scene {
     	music.play();
 		music.setLoop(true);
 
-		this.lights.enable().setAmbientColor(0x555555);
+		this.lights.enable().setAmbientColor(0x333333);
 
 		/*fpsText = this.add.text(16,32,'FPS: '+ game.loop.actualFps,{fontsize:'8px',fill:'#FFF'}).setScrollFactor(0).setScrollFactor(0);*/
 

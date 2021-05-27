@@ -36,12 +36,12 @@ export function generarInventario(obj)
 
 export function generarPan(obj)
 {
-	pan1 = scene.physics.add.sprite(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 'pan').setDepth(20);
+	var p = grupoPan.create(spawn.x + 20, spawn.x, 'cake').setDepth(20).setPipeline('Light2D');
 }
 
 export function generarTarta(obj)
 {
-	t = grupo.create(spawn.x,spawn.y, 'tarta').setDepth(20);
-	tarta2.play('lie', true);
+	var c = grupoCake.create(spawn.x, spawn.x, 'cake').setDepth(20).setPipeline('Light2D');
+	c.play('lie', true);
 }
 
