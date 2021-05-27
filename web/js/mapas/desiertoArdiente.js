@@ -27,6 +27,8 @@ export default class dessert extends Phaser.Scene {
 
   create() {
 
+    // Tilemap
+
   	this.add.sprite(0,0,'tiles');
 
   	var map = this.make.tilemap({ key: 'dessert',});
@@ -45,12 +47,15 @@ export default class dessert extends Phaser.Scene {
     superSlimeTileSpawner = map.createFromObjects('SpawnSuperSlime'); // 2
     escorpionTileSpawner = map.createFromObjects('SpawnEscorpion');   // 23
     bossTileSpawner = map.createFromObjects('SpawnBoss');
-    llaveTileSpawner = map.createFromObjects('Llave');
+    objetosTileSpawner = map.createFromObjects('Objetos');
     
 	  playerSpawnPoint = new Array();
     slimeTileSpawner = new Array();
     superSlimeTileSpawner = new Array();
     escorpionTileSpawner = new Array();
+    objetosTileSpawner
+
+    // Crear grupos
 
     var allLayers1 = [oasis, dunas, lava, muro];
     var allLayers2 = [oasis, dunas, muro];
@@ -61,6 +66,7 @@ export default class dessert extends Phaser.Scene {
 	  slime.createSlimeGroup.call(allLayers2)
 	  slime.createSuperSlimeGroup.call(allLayers2);
 
+    // Spawn
 
     playerTileSpawner.forEach(obj => {
       this.physics.world.enable(obj);
@@ -101,20 +107,16 @@ export default class dessert extends Phaser.Scene {
         boss.create(obj);
       }
     }
-
-		spawnID = playerSpawnPoint.length-1;
-    heroes.create(playerSpawnPoint[spawnID], allLayers, null, sc.config)
+    
+    // Variables
 
 	  segundo_suelo.alpha = 0;
     lava.tiempo = 0;
 
-    heroes.create.call();
+    // Colisiones
 
   	this.physics.add.collider(heroes.heroes, muro);
-	  this.physics.add.collider(heroes.heroes, oasis);
-
 	  muro.setCollisionByProperty({collides: true});
-	  oasis.setCollisionByProperty({collides: true});
 
 	  // Camara
 
@@ -130,6 +132,8 @@ export default class dessert extends Phaser.Scene {
 	  text.setText([
         'Vida: ' + robin.data.get('life')
     ]);
+
+    // Controles
 
     keys.create(this)
 
@@ -147,10 +151,14 @@ export default class dessert extends Phaser.Scene {
 
   update() {
 
+    // Actualizar personajes
+
 	  heroes.update.call();
 	  escorpion.update.call();
 	  slime.updateSlime.call();
 	  slime.updateSuperSlime.call();
+
+    // Actualizar estado (vida) 
 
 	  slime.updateVidaSlime.call();
 	  slime.updateVidasuperSlime.call();

@@ -1,5 +1,6 @@
 import * as yasha from '../personajes/yasha.js';
 import * as heroes from '../grupoHeroes.js';
+import * as bossHielo from '../enemies/bossHielo.js';
 
 var scene;
 var textoMago = false;
@@ -92,10 +93,13 @@ function updateTexto()
 export function encenderHielito()
 {
 	yasha.player.hieloTrue = true;
-	//console.log(yasha.player.hieloTrue)
-
+	
 	if(textoMago == false)
 	{
+		bossHielo.activo = true;
+		bossHielo.setAlpha(1);
+		bossHielo.body.enable = true;
+
 		cuadroTexto = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16);
 
 		cuadroTexto2 = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width/2, yasha.player.y - config.height / 2 + config.height - 50, config.width-8, 100 - 8, 0x000000).setDepth(17);

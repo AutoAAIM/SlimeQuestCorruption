@@ -51,6 +51,9 @@ export function generarBoss(obj)
 	boss.setSize(30, 39);
 	boss.setScale(5);
 	boss.play('boss', true);
+	boss.activo = false;
+	boss.setAlpha(0);
+	boss.body.enable = false;
 
 	grupoDispBoss = scene.physics.add.group();
 
@@ -79,7 +82,7 @@ function generarNieblaBoss(boss, py)
 		d.setVelocityX(30*dir.x);
 		d.setVelocityY(30*dir.y);
 
-		d.tiempoVida = 300;
+		d.tiempoVida = 180;
 	}
 
 	boss.tiempoDisparo--;
