@@ -25,7 +25,7 @@ export function create(obj)
 
 	generarMago(obj);
 }
-export function udate()
+export function update()
 {
 	updateTexto();
 }

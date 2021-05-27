@@ -7,7 +7,7 @@
 	$zona = $_REQUEST["zona"];
 
 	$db = pg_connect("host=$dbserver port=5432 dbname=$database user=$user password=$password");
-	$query = "UPDATE usuarios SET id_zona=$zona, dinero=$dinero WHERE nombre = $nombre AND contrasena = $contrasena";
+	$query = "UPDATE usuarios SET id_zona=$zona, dinero=$dinero WHERE nombre = '$nombre' AND contrasena = '$contrasena'";
 	echo $query;
 	pg_query($query);
 
