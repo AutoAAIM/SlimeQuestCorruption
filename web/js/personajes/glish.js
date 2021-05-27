@@ -8,7 +8,6 @@ var keyRight;
 var keyLeft;
 var keyDown;
 var fire;
-export var checarCuracion = false;
 export var keyP;
 var puntero;
 var config;
@@ -40,38 +39,38 @@ export function preload() {
 export function create(spawn, allLayers, conf, grupo, arHe) {
 
 	armasHeroicas = arHe;
-  createCursor();
+    createCursor();
 
-  player = grupo.create(spawn.x,spawn.y, 'glish').setOrigin(0.5).setDepth(5);
-  player.name = "glish";
-  player.heroe = true;
-  player.curarTrue = checarCuracion;
-  player.status = "none";
-  player.maxVida = 10;
-  player.setCircle(16, 0);
-  player.vida = player.maxVida;
-  player.tiempoStatus = 0;
-  player.inmune = false;
-  player.inmuneT = 0;
+    player = grupo.create(spawn.x,spawn.y, 'glish').setOrigin(0.5).setDepth(5);
+    player.name = "glish";
+    player.heroe = true;
+    player.status = "none";
+    player.maxVida = 10;
+    player.setCircle(16, 0);
+    player.vida = player.maxVida;
+    player.tiempoStatus = 0;
+    player.inmune = false;
+    player.inmuneT = 0;
 	player.inmovil = false;
 	player.muerto = false;
-  player.ralentizar = 0;
+    player.ralentizar = 0;
 
-	scene.physics.add.collider(player, allLayers);
+    scene.physics.add.collider(player, allLayers);
 
-  scene.cameras.main.startFollow(player);
-  beamList = scene.physics.add.group();
-  ondaList = scene.physics.add.group();
+    scene.cameras.main.startFollow(player);
+    beamList = scene.physics.add.group();
+    ondaList = scene.physics.add.group();
 
-  velocity = 150;
-  ondaVelocity = 400;
-  tiempo = 0;
-  tiempo2 = 0;
-  tiempoEstado = 0;
+    velocity = 150;
+    ondaVelocity = 400;
+    tiempo = 0;
+    tiempo2 = 0;
+    tiempoEstado = 0;
 
-  config = conf;
-  layers = allLayers;
+    config = conf;
+    layers = allLayers;
 
+    
 }
 
 export function update(cabeza) {
@@ -85,7 +84,7 @@ export function update(cabeza) {
   	if (pointer.isDown && tiempo == 0) {
 		  ondasRockeras.call(scene);
 		}
-		if (keys.Hability.isDown && tiempo2 == 0 && player.curarTrue == true) {
+		if (keys.Hability.isDown && tiempo2 == 0 && scene.game.glishActivarCuracion == true) {
 		  heavyMetal.call(scene);
 		}
 		updateEstadosDelJugador.call(scene);
@@ -194,10 +193,6 @@ function heavyMetal() {
     go.dir.normalize();
   });
   tiempo2 = 400;
-}
-
-export function activarCuracion(atributo){
-    activarCuracion = atributo;
 }
 
 function atacarPersonaje() {

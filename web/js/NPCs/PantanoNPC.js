@@ -55,7 +55,7 @@ function recogerPersonaje(){
   if(ranas.contadorRana > 0 && mosquitos.contadorMosquitos > 0){
 
   }else if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
-        glish.checarCuracion = true;
+        scene.game.glishActivarCuracion = true;
         //glish.activarCuracion(true);
         npc1.trigger.destroy();
         npc1.destroy();
