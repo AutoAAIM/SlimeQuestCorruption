@@ -190,7 +190,10 @@ export function update(boss) {
 	
 	for (i = 0; i < shootList.getChildren().length; i++) {
 		var fuego = shootList.getChildren()[i];
-		updateFire(fuego);
+		if (fuego.persigue) {
+		  this.physics.moveTo(fuego,heroes.cabeza.x,heroes.cabeza.y,velocidad_fuego);
+	  }
+    updateFire(fuego);
 	}
 }
 
@@ -248,9 +251,6 @@ export function createPrision(x,y,tipo,dir1,dir2) {
 }
 
 export function updateFire(f) {
-	if (f.persigue) {
-		this.physics.moveTo(f,heroes.cabeza.x,heroes.cabeza.y,velocidad_fuego);
-	}
 	if (f.tiempo > 250) {
 		destroyFire(f);
 	}

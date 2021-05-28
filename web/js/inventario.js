@@ -40,7 +40,7 @@ export function generarInventario()
 	huecos[1] = new Phaser.Geom.Point(imagenInventario.x - 0, imagenInventario.y);
 	huecos[2] = new Phaser.Geom.Point(imagenInventario.x + 0, imagenInventario.y);
 	huecos[3] = new Phaser.Geom.Point(imagenInventario.x + 0, imagenInventario.y);
-	generarPan(huecos[2]);
+	generarTarta(huecos[2]);
 }
 
 export function generarPan(obj)
