@@ -97,7 +97,7 @@ export function update(cabeza) {
 function createCursor() {
   pointer = scene.input.activePointer;
   //Cursor
-  cursor = scene.physics.add.sprite(0, 0, 'missile1').setDepth(1);
+  cursor = scene.physics.add.sprite(0, 0, 'missile1').setDepth(20);
   puntero = new Phaser.Geom.Point();
 }
 

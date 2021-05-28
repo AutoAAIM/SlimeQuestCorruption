@@ -37,7 +37,7 @@ export function create(obj) {
 	boss.vida = 50;
 	boss.fase = 1;
 	boss.velocidad = 150;
-	boss.frecuencia = 50; // Tiempo entre ataques
+	boss.frecuencia = 90; // Tiempo entre ataques
 	boss.contador = 0;  // Contador de tiempo en el que esta quieto
 	boss.posicion = 240; // Espacio lateral de 48 a 528 --> (480)
 	boss.direccion = 1; // 0 - Izquierda, 1 - Derecha, 2 - Quieto 
@@ -162,7 +162,7 @@ export function update(boss) {
 		boss.fase = 2;
 		boss.aux = 1;
 		boss.velocidad = 200;
-		boss.frecuencia = 30;
+		boss.frecuencia = 60;
 	}
 	else if (boss.vida <= 0) {
 		destroyBoss(boss);
