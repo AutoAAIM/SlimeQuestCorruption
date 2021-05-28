@@ -46,7 +46,7 @@ export function create(spawn, allTiles, antorchas, conf, grupo, arHe)
 	player.heroe = true;
 	player.setCircle(16, 0);
 	player.inmovil = false;
-	player.maxVida = 8;
+	player.maxVida = 12;
   	player.vida = player.maxVida;
 	player.setOrigin(0.5);
 	player.hieloTrue = false;

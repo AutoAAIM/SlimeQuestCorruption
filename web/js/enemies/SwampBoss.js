@@ -37,36 +37,38 @@ export function createBoss(obj, conf, el){
 
 export function generateTentacles(obj){
 
-  utilidades.convertToProperties(obj)
-  s =  tentacleList.create(obj.x,obj.y, 'tentacle'/*, 3*/);
-	s.inmovil = false;
-	s.dano = 1;
+    utilidades.convertToProperties(obj);
+    if(tentacleList != undefined){
+        s =  tentacleList.create(obj.x,obj.y, 'tentacle');
+        s.inmovil = false;
+        s.dano = 1;
 
-	s.animado=false;
+        s.animado=false;
 
-	s.setDepth(4);
-	s.vida = 8;
-	if(obj.properties.maxLong != undefined && obj.properties.maxLong > 0)
-	{
-		s.maxLong = obj.properties.maxLong;
-	}
-	else
-	{
-		s.maxLong = 10;
-	}
-	
+        s.setDepth(4);
+        s.vida = 8;
+        if(obj.properties.maxLong != undefined && obj.properties.maxLong > 0)
+        {
+            s.maxLong = obj.properties.maxLong;
+        }
+        else
+        {
+            s.maxLong = 10;
+        }
+        
 
-	s.detectionbox = scene.add.rectangle(s.x, s.y, 200, 200);
-	scene.physics.add.existing(s.detectionbox, false);
+        s.detectionbox = scene.add.rectangle(s.x, s.y, 200, 200);
+        scene.physics.add.existing(s.detectionbox, false);
 
-	s.detectionbox.detectado = false;
-	s.time = 0
-	s.cooldown = 120;
-	//s.enable = false
+        s.detectionbox.detectado = false;
+        s.time = 0
+        s.cooldown = 120;
+        //s.enable = false
 
-	createSegmentos(s)
+        createSegmentos(s)
 
-	scene.physics.add.overlap(s.detectionbox, heroes.cabeza, detectarJugador);
+        scene.physics.add.overlap(s.detectionbox, heroes.cabeza, detectarJugador);
+    }
 
 }
 

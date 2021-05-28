@@ -45,7 +45,7 @@ export function create(spawn, allLayers, conf, grupo, arHe) {
     player.name = "glish";
     player.heroe = true;
     player.status = "none";
-    player.maxVida = 10;
+    player.maxVida = 14;
     player.setCircle(16, 0);
     player.vida = player.maxVida;
     player.tiempoStatus = 0;
