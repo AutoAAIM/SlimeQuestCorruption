@@ -30,8 +30,6 @@ export function create()
 		});
 
 	generarInventario();
-	//generarPan();
-	//generarPan();
 }
 
 export function generarInventario()
