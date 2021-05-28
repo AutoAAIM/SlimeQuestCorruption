@@ -11,7 +11,7 @@ export function preload() {
 export function animacionBossDesierto() {
   this.physics.anims.create({
       key: 'Walk',
-      frames: this.anims.generateFrameNames('Boss_volcan', { frames: start: 1, end: 4 }),
+      frames: this.anims.generateFrameNames('Boss_volcan', { frames: start: 0, end: 3 }),
       frameRate: 8,
       repeat: -1
   });
@@ -20,7 +20,7 @@ export function animacionBossDesierto() {
 export function animacionFuego() {
   this.physics.anims.create({
     key: 'Fuego',
-    frames: this.anims.generateFrameNames('fireball', { frames: start: 1, end: 2 }),
+    frames: this.anims.generateFrameNames('fireball', { frames: start: 0, end: 1 }),
     frameRate: 8,
     repeat: -1
   });

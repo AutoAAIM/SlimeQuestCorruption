@@ -36,7 +36,7 @@ export function create()
 
 export function generarInventario()
 {
-	imagenInventario = scene.add.sprite(sc.config.width / 2,sc.config.height - 17, 'inventarios').setDepth(18).setScrollFactor(0);
+	imagenInventario = scene.add.sprite(sc.config.width / 2,sc.config.height - 19, 'inventarios').setDepth(18).setScrollFactor(0);
 
 	huecos[0] = new Phaser.Geom.Point(imagenInventario.x - 0, imagenInventario.y);
 	huecos[1] = new Phaser.Geom.Point(imagenInventario.x - 0, imagenInventario.y);
@@ -47,12 +47,12 @@ export function generarInventario()
 
 export function generarPan(obj)
 {
-	var p = grupoPan.create(obj.x, obj.y, 'cake').setDepth(20).setPipeline('Light2D');
+	var p = grupoPan.create(obj.x, obj.y, 'pan').setDepth(20);
 }
 
 export function generarTarta(obj)
 {
-	var c = grupoCake.create(obj.x, obj.y, 'cake').setDepth(20).setPipeline('Light2D');
+	var c = grupoCake.create(obj.x, obj.y, 'cake').setDepth(20);
 	c.play('lie', true);
 }
 

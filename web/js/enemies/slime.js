@@ -15,28 +15,28 @@ export function preload() {
 export function animacionSlime() {
   this.physics.anims.create({
       key: 'Stand',
-      frames: this.anims.generateFrameNames('Slime', { frames: start: 1, end: 2 }),
+      frames: this.anims.generateFrameNames('Slime', { frames: start: 0, end: 1 }),
       frameRate: 8,
       repeat: -1
   });
   this.physics.anims.create({
       key: 'WalkUp',
-      frames: this.anims.generateFrameNames('Arriba', { frames: start: 1, end: 3 }),
+      frames: this.anims.generateFrameNames('Arriba', { frames: start: 0, end: 2 }),
       frameRate: 8
   });
   this.physics.anims.create({
       key: 'WalkDown',
-      frames: this.anims.generateFrameNames('Abajo', { frames: start: 1, end: 3 }),
+      frames: this.anims.generateFrameNames('Abajo', { frames: start: 0, end: 2 }),
       frameRate: 8
   });
   this.physics.anims.create({
       key: 'WalkLeft',
-      frames: this.anims.generateFrameNames('Izquierda', { frames: start: 1, end: 3 }),
+      frames: this.anims.generateFrameNames('Izquierda', { frames: start: 0, end: 2 }),
       frameRate: 8
   });
   this.physics.anims.create({
       key: 'WalkRight',
-      frames: this.anims.generateFrameNames('Derecha', { frames: start: 1, end: 3 }),
+      frames: this.anims.generateFrameNames('Derecha', { frames: start: 0, end: 2 }),
       frameRate: 8
   });
 }

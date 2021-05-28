@@ -16,33 +16,33 @@ export function preload() {
 export function animacionRobin() {
 	export var basico = this.physics.anims.create({
         key: 'basico',
-        frames: this.anims.generateFrameNames('Basico', { frames: start: 1, end: 3 }),
+        frames: this.anims.generateFrameNames('Basico', { frames: start: 0, end: 2 }),
         frameRate: 8,
   });
   this.anims.create({
   		key: 'quieto',
-  		frames: this.anims.generateFrameNames('Robin', { start: 1, end: 3 }),
+  		frames: this.anims.generateFrameNames('Robin', { start: 0, end: 2 }),
   		frameRate: 4,
   		repeat: -1
 	});
 	this.anims.create({
         key: 'WalkUp',
-        frames: this.anims.generateFrameNames('Arriba', { start: 1, end: 2 }),
+        frames: this.anims.generateFrameNames('Arriba', { start: 0, end: 1 }),
         frameRate: 4
   });
   this.anims.create({
         key: 'WalkDown',
-        frames: this.anims.generateFrameNames('Abajo', { start: 1, end: 3 }),
+        frames: this.anims.generateFrameNames('Abajo', { start: 0, end: 2 }),
         frameRate: 4
   });
   this.anims.create({
       key: 'WalkRight',
-      frames: this.anims.generateFrameNames('Derecha', { start: 1, end: 2 }),
+      frames: this.anims.generateFrameNames('Derecha', { start: 0, end: 1 }),
       frameRate: 4
   });
   this.anims.create({
       key: 'WalkLeft',
-      frames: this.anims.generateFrameNames('Izquierda', { start: 1, end: 2 }),
+      frames: this.anims.generateFrameNames('Izquierda', { start: 0, end: 1 }),
       frameRate: 4
    });
 }

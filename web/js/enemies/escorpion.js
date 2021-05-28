@@ -16,33 +16,33 @@ export function preload() {
 export function animacionEscorpion() {
   this.physics.anims.create({
       key: 'Stand',
-      frames: this.anims.generateFrameNames('Escorpion', { frames: start: 1, end: 4 }),
+      frames: this.anims.generateFrameNames('Escorpion', { frames: start: 0, end: 3 }),
       frameRate: 8,
       repeat: -1
   });
   this.physics.anims.create({
       key: 'WalkUp',
-      frames: this.anims.generateFrameNames('Arriba', { frames: start: 1, end: 4 }),
+      frames: this.anims.generateFrameNames('Arriba', { frames: start: 0, end: 3 }),
       frameRate: 8
   });
   this.physics.anims.create({
       key: 'WalkDown',
-      frames: this.anims.generateFrameNames('Abajo', { frames: start: 1, end: 4 }),
+      frames: this.anims.generateFrameNames('Abajo', { frames: start: 0, end: 3 }),
       frameRate: 8
   });
   this.physics.anims.create({
       key: 'WalkLeft',
-      frames: this.anims.generateFrameNames('Izquierda', { frames: start: 1, end: 2 }),
+      frames: this.anims.generateFrameNames('Izquierda', { frames: start: 0, end: 1 }),
       frameRate: 8
   });
   this.physics.anims.create({
       key: 'WalkRight',
-      frames: this.anims.generateFrameNames('Derecha', { frames: start: 1, end: 2 }),
+      frames: this.anims.generateFrameNames('Derecha', { frames: start: 0, end: 1 }),
       frameRate: 8
   });
   this.physics.anims.create({
       key: 'golpe',
-      frames: this.anims.generateFrameNames('Attack', { frames: start: 1, end: 4 }),
+      frames: this.anims.generateFrameNames('Attack', { frames: start: 0, end: 3 }),
       frameRate: 8
   });
 }
