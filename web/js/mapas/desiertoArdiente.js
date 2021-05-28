@@ -17,8 +17,8 @@ export default class dessert extends Phaser.Scene {
 	}
   preload() {
 
-	  this.load.image('tiles','tilemap/terrain.png');
-	  this.load.tilemapTiledJSON('dessert','tilemap/mapita.json');
+	  this.load.image('tiles','assets/mapa/terrain.png');
+	  this.load.tilemapTiledJSON('dessert','assets/mapa/mapita.json');
 
 	  heroes.preload.call(this);
   	escorpion.preload.call(this);

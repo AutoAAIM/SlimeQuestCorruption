@@ -4,6 +4,8 @@ import * as sc from './sceneConstructor.js';
 var scene;
 var imagenInventario
 
+var 
+
 export function preload()
 {
 	this.load.spritesheet('cake', 'assets/images/strange_cake.png', {frameWidth:32, frameHeight:32});
@@ -28,22 +30,22 @@ export function create(obj)
 			repeat: -1
 		});
 
-	generarInventario(obj);
-	generarPan(obj);
-	generarPan(obj);
+	generarInventario();
+	generarPan();
+	generarPan();
 }
 
-export function generarInventario(obj)
+export function generarInventario()
 {
-	imagenInventario = scene.physics.add.sprite(sc.config.width / 2,sc.config.height - 50, sc.config.width - 8, 'inventario').setDepth(18).setScrollFactor(0);
+	imagenInventario = scene.add.sprite(sc.config.width / 2,sc.config.height - 50, sc.config.width - 8, 'inventario').setDepth(18).setScrollFactor(0);
 }
 
-export function generarPan(obj)
+export function generarPan()
 {
 	//var p = grupoPan.create(spawn.x + 30, spawn.x, 'cake').setDepth(20).setPipeline('Light2D');
 }
 
-export function generarTarta(obj)
+export function generarTarta()
 {
 	//var c = grupoCake.create(spawn.x, spawn.x, 'cake').setDepth(20).setPipeline('Light2D');
 	//c.play('lie', true);
