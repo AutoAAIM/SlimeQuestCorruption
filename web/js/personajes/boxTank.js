@@ -95,7 +95,7 @@ export function create(spawn, allLayers, grupo, arHe)
 	player.inmovil = false;
 	player.muerto = false;
 	player.emitter = new Phaser.Events.EventEmitter();
-	player.maxVida = 12;
+	player.maxVida = 20;
 	player.vida = player.maxVida;
   	player.tiempoStatus = 0;
 	player.inmuneT = 0;
