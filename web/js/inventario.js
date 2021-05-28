@@ -16,7 +16,7 @@ export function preload()
 export var grupoCake;
 export var grupoPan;
 
-export function create(obj)
+export function create()
 {
 	grupoPan = scene.physics.add.staticGroup();
 	grupoCake = scene.physics.add.staticGroup();
