@@ -10,7 +10,9 @@ var regButton
 
 var nameTextInput = new String
 var contTextInput = new String
+var contTextShowed = new String
 var responseTextOutput = new String
+
 
 var activeText
 
@@ -122,14 +124,17 @@ export default class registrar extends Phaser.Scene {
 				if(c.slice(0,3) == "Key" || c.slice(0,5) == "Digit")
 				{
 					contTextInput += c.toLowerCase().charAt(c.length-1)
+					contTextShowed += '*'
 				}
 				else if(c == "Space")
 				{
 					contTextInput += ' '
+					contTextShowed += '*'
 				}
 				else if(c == "Backspace" )
 				{
 					contTextInput = contTextInput.slice(0,contTextInput.length-1)
+					contTextShowed = contTextInput.slice(0,contTextInput.length-1)
 				}
 			}
 
@@ -147,7 +152,7 @@ export default class registrar extends Phaser.Scene {
 		sky.tilePositionX+=2;
 
 		this.nameText.setText('Nombre: >' + nameTextInput +'<');
-		this.contText.setText('Contraseña: >' + contTextInput +'<');
+		this.contText.setText('Contraseña: >' + contTextShowed +'<');
 		this.responseText.setText('//' + responseTextOutput);
 	}
 
@@ -196,7 +201,7 @@ export default class registrar extends Phaser.Scene {
 			{
 				if(this.responseText != "")
 				{
-					responseTextOutput = 'se ha registrado con exito!! ahora dele a log in para entrar ☻'
+					responseTextOutput = 'se ha registrado con exito!!☻'
 				}
 				else{
 					responseTextOutput = 'este usuario ya existe'
