@@ -42,7 +42,7 @@ export function create(obj) {
 	boss.posicion = 240; // Espacio lateral de 48 a 528 --> (480)
 	boss.direccion = 1; // 0 - Izquierda, 1 - Derecha, 2 - Quieto 
 	boss.tiempo = 0; // contador del tiempo entre los ataques
-  boss.tiempo2 = 0; // tiempo para las animaciones
+  boss.tiempo2 = 40; // tiempo para las animaciones
 	boss.aux = 0;
 
   boss.play('Walk')
@@ -97,6 +97,12 @@ export function update(boss) {
 		boss.accion = Phaser.Math.Between(2,5); 
 	}
 
+  // Tiempo en el que hace la animacion
+
+  if (boss.tiempo2 > 40) {
+		boss.play('Walk')
+	}
+
 	switch(boss.accion) {
 		case 1: // Tres bolas de fuego en forma de cono
 			if (boss.tiempo > boss.frecuencia) {
@@ -115,7 +121,8 @@ export function update(boss) {
 		break;
 		case 2: // Una bola de fuego
 			if (boss.tiempo > boss.frecuencia) {
-				createBolaFuego(boss);
+				boss.setTexture('disparo');
+        createBolaFuego(boss);
 				boss.tiempo = 0;
         boss.tiempo2 = 0;
 			}
@@ -137,7 +144,8 @@ export function update(boss) {
 		break;
 		case 4: // Cuatro bolas de fuego
 			if (boss.tiempo > boss.frecuencia) {
-				createPrision(posicion, 0,tipo, 1 , 0);
+				boss.setTexture('enfadado');
+        createPrision(posicion, 0,tipo, 1 , 0);
 				createPrision(-posicion, ,tipo, -1, 0);
 				createPrision(0, posicion,tipo, 0, 1);
 				createPrision(0, -posicion,tipo, 0, -1);
@@ -152,7 +160,8 @@ export function update(boss) {
 		break;
 		default: // 5 bolas de fuego en forma de cono
 			if (boss.tiempo > boss.frecuencia) {
-				createConoFuego(boss,0,-1); 		
+				boss.setTexture('disparo');
+        createConoFuego(boss,0,-1); 		
 				createConoFuego(boss,0.5,0.87);		// ( 1/2, -(raiz de 3)/2 )
 				createConoFuego(boss,-0.5,0.87);	// ( -1/2, -(raiz de 3)/2 ) 
 				createConoFuego(boss,1,-1);			

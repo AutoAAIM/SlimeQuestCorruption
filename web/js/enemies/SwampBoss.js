@@ -21,7 +21,7 @@ export function createBoss(obj, conf, el){
     tentacleList = scene.physics.add.group();
     config = conf;
     enemigoBoss = scene.physics.add.sprite(obj.x,obj.y, 'BossSwamp').setOrigin(0.5); 
-    enemigoBoss.vida = 30;
+    enemigoBoss.vida = 4;
     enemigoBoss.dano = 1;
     enemigoBoss.inmune = -1;
     enemigoBoss.temporizador = 0;
@@ -180,8 +180,8 @@ export function detectarJugador(db, pj)
 export function activarTrigger(){
   enemigoBoss.trigger.activado = true;
   if(enemigoBoss.teleportar){
-    heroes.heroes.x = enemigoBoss.x;
-    heroes.heroes.y = enemigoBoss.y+250;
+    heroes.cabeza.x = enemigoBoss.x;
+    heroes.cabeza.y = enemigoBoss.y+250;
     enemigoBoss.teleportar = false;
     enemigoBoss.block = scene.add.rectangle(enemigoBoss.x-5,enemigoBoss.y+420, 600, 100);
     scene.physics.add.existing(enemigoBoss.block, true);
