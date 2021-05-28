@@ -6,6 +6,7 @@ import * as portal from '../portal.js';
 import * as heroes from '../grupoHeroes.js';
 import * as sc from '../sceneConstructor.js';
 import * as dinero from '../dinero.js';
+import * as inventario from '../inventario.js';
 import * as skull from '../NPCs/SkullNPC.js'
 
 var tiempoEntreSpawn = 60;
@@ -71,6 +72,7 @@ export default class lab extends Phaser.Scene {
 		shapeShifter.preload.call(this)
 		scyther.preload.call(this)
 		dinero.preload.call(this)
+        inventario.preload.call(this)
 		skull.preload.call(this)
 	}
 
@@ -171,6 +173,8 @@ export default class lab extends Phaser.Scene {
 		arenaEmitter.setPosition(heroes.cabeza.x, heroes.cabeza.y).stop();
 		//heroes.ponerEmitter(arenaEmitter)
 
+		inventario.create();
+        
 		huellas = this.add.group();
 
 		scene.cameras.main.setLerp(0.1, 0.1);

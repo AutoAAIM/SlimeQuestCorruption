@@ -43,7 +43,7 @@ export function animacionEscorpion() {
   this.physics.anims.create({
       key: 'golpe',
       frames: this.anims.generateFrameNames('Attack', { start: 0, end: 3 }),
-      frameRate: 8
+      frameRate: 4
   });
 }
 
@@ -80,7 +80,7 @@ export function detectar(e,h) {
 }
 
 export function atacar(e,h) {
-  e.play('golpe')
+  e.play('golpe');
 }
 
 export function update(e) {
@@ -93,6 +93,9 @@ export function update(e) {
 	}
 	if (e.perseguir) {
 		this.physics.moveTo(e,heroes.cabeza.x,heroes.cabeza.y,e.velocidad);
+    if (heroes.) {
+
+    }
 	}
 }
 
@@ -120,9 +123,7 @@ export function updateVidaEscorpion(e) {
 	}
 	else if (e.vida <= 0) {
 		destroyEscorpion(e);
-    
 	}
-	
 }
 
 export function destroyEscorpion(e) {
