@@ -36,12 +36,12 @@ export function generarInventario()
 {
 	imagenInventario = scene.add.sprite(sc.config.width / 2,sc.config.height - 19, 'inventarios').setDepth(18).setScrollFactor(0);
 
-	scene.magoText = scene.add.text(sc.config.width/2 + 71, 210, scene.game.usuario.dinero, {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(19).setScrollFactor(0);
+	scene.magoText = scene.add.text(sc.config.width / 2, 210, scene.game.usuario.dinero, {fontSize: '10px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(19).setScrollFactor(0);
 
-	huecos[0] = new Phaser.Geom.Point(sc.config.width/2 - 73, imagenInventario.y).setScrollFactor(0);
-	huecos[1] = new Phaser.Geom.Point(sc.config.width/2 - 37, imagenInventario.y).setScrollFactor(0);
-	huecos[2] = new Phaser.Geom.Point(sc.config.width/2 - 1, imagenInventario.y).setScrollFactor(0);
-	huecos[3] = new Phaser.Geom.Point(sc.config.width/2 + 35, imagenInventario.y).setScrollFactor(0);
+	huecos[0] = new Phaser.Geom.Point(imagenInventario.x - 73, imagenInventario.y);
+	huecos[1] = new Phaser.Geom.Point(imagenInventario.x - 37, imagenInventario.y);
+	huecos[2] = new Phaser.Geom.Point(imagenInventario.x - 1, imagenInventario.y);
+	huecos[3] = new Phaser.Geom.Point(imagenInventario.x + 35, imagenInventario.y);
 	generarTarta(huecos[0]);
 	generarPan(huecos[1]);
 }
