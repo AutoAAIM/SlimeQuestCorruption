@@ -167,7 +167,11 @@ export function update(){
                 
             go.triggerAtaque.x = go.x;
             go.triggerAtaque.y = go.y;
-
+            if(go.x < heroes.cabeza.x){
+                  go.flipX = true;
+                }else{
+                  go.flipX = false;
+            }
             if(go.tiempoMoverse == 0 && go.status != "paralizado"){
                 scene.physics.moveTo(go, heroes.cabeza.x, heroes.cabeza.y, 500);
                 go.tiempoMoverse = -1;
