@@ -39,7 +39,7 @@ export function encenderTienda()
 
 		cuadroTexto2 = scene.add.rectangle(config.width / 2,config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(101).setScrollFactor(0);
 
-		scene.skullText = scene.add.text(16,210, 'Skull: Ayudadme a financiar el laborarorio!\nusad los numeros para comprar. \n1.pan = 15 Plorts\n2.pastel = 50 Plorts\n                    Plorts actuales: '+scene.game.usuario.dinero, {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102).setScrollFactor(0);
+		scene.skullText = scene.add.text(16,210, 'Skull: Ayudadme a financiar el laborarorio!\nusad los numeros para comprar. \n1.pan = 15 Plorts\n2.pastel = 50 Plorts\n\n                                    Plorts actuales: '+scene.game.usuario.dinero, {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102).setScrollFactor(0);
 	}
 
 	textoSkull = true;
