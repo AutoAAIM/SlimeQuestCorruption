@@ -2,6 +2,7 @@ import * as heroes from './grupoHeroes.js';
 import * as sc from './sceneConstructor.js';
 
 var scene;
+var imagenInventario
 
 export function preload()
 {
