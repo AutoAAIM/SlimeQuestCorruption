@@ -65,7 +65,6 @@ export function createSuperSlimeGroup(pared) {
 export function createSlime(s) {
 	
 	animacionSlime();
-  this.anims.play('Stand')
 
 	var s = slimeList.create(s.x,s.y,'Slime');
 
@@ -74,7 +73,9 @@ export function createSlime(s) {
 	s.ataque = 1;
 	s.velocidad = 20;
 	s.contador = 0;
-	
+  
+  s.play('Stand')
+
 	s.circulo = this.add.circle(s.x,s.y,30);
 	this.physics.add.existing(s.circulo,false);
 	s.circulo.encontrado = false;
@@ -85,7 +86,6 @@ export function createSlime(s) {
 export function createSuperSlime(ss) {
 	
 	animacionSlime();
-  ss.play('Stand')
 
 	var ss = slimeList.create(ss.x,ss.y,'Slime').setScale(2);
 
@@ -94,6 +94,8 @@ export function createSuperSlime(ss) {
 	ss.ataque = 1;
 	ss.velocidad = 10;
 	ss.contador = 0;
+  
+  ss.play('Stand')
 	
 	ss.circulo = this.add.circle(ss.x,ss.y,50);
 	this.physics.add.existing(ss.circulo,false);
@@ -104,6 +106,7 @@ export function createSuperSlime(ss) {
 
 export function detectarHeroe(slime,h) {
 	slime.circulo.encontrado = true;
+  slime.stop('Stand');
 }
 
 export function updateSlime(s) {

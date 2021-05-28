@@ -5,6 +5,7 @@ import * as boss from '../enemies/boss_desierto.js';
 import * as keys from '../keys.js';
 import * as heroes from '../grupoHeroes.js';
 import * as sc from '../sceneConstructor.js';
+import * as dinero from '../dinero.js';
 
 var llave = false;
 var puerta = true;
@@ -23,6 +24,7 @@ export default class dessert extends Phaser.Scene {
   	escorpion.preload.call(this);
 	  slime.preload.call(this);
   	boss_desierto.preload.call(this);
+    dinero.preload.call(this);
   }
 
   create() {
@@ -65,6 +67,7 @@ export default class dessert extends Phaser.Scene {
 	  escorpion.createGroup.call(allLayers1);
 	  slime.createSlimeGroup.call(allLayers2)
 	  slime.createSuperSlimeGroup.call(allLayers2);
+    dinero.create.call(this);
 
     // Spawn
 

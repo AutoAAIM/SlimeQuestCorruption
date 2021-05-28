@@ -14,7 +14,7 @@ export function preload() {
 }
 
 export function animacionRobin() {
-	this.physics.anims.create({
+	export var basico = this.physics.anims.create({
         key: 'basico',
         frames: this.anims.generateFrameNames('Basico', { frames: start: 1, end: 3 }),
         frameRate: 8,
@@ -28,26 +28,22 @@ export function animacionRobin() {
 	this.anims.create({
         key: 'WalkUp',
         frames: this.anims.generateFrameNames('Arriba', { start: 1, end: 2 }),
-        frameRate: 4,
-        repeat: -1
+        frameRate: 4
   });
   this.anims.create({
         key: 'WalkDown',
         frames: this.anims.generateFrameNames('Abajo', { start: 1, end: 3 }),
-        frameRate: 4,
-        repeat: -1
+        frameRate: 4
   });
   this.anims.create({
       key: 'WalkRight',
       frames: this.anims.generateFrameNames('Derecha', { start: 1, end: 2 }),
-      frameRate: 4,
-      repeat: -1
+      frameRate: 4
   });
   this.anims.create({
       key: 'WalkLeft',
       frames: this.anims.generateFrameNames('Izquierda', { start: 1, end: 2 }),
-      frameRate: 4,
-      repeat: -1
+      frameRate: 4
    });
 }
 
@@ -67,40 +63,41 @@ export function create(spawn,muros,team,armas) {
 	robin.contador = 0;
 	robin.invisibilidad = 0;
 
+  robin.play('quieto')
+
 	this.physics.add.collider(robin, muros);
 
 	var cursor = this.add.image(0,0,'espadita');
 	cursor.pointer = keys.pointer;
 
-	//this.cameras.main.startFollow(robin);
-
+  this.physics.add.overlap(e, basico, ataqueBasico, null, this);
 }
 
 export function updateRobin() {
 	
 	if (keys.Right.isDown) {
 		robin.setVelocityX(-robin.velocidad);
-		robin.play('walk');
+		robin.play('WalkRight');
 	}
 	else if (keys.Left.isDown) {
 		robin.setVelocityX(robin.velocidad);
-		robin.play('walk');
+		robin.play('WalkLeft');
 	}
 	else {
 		robin.setVelocityX(0);
-		robin.play('idle');
+		robin.play('quieto')
 	}
 	if (keys.Down.isDown) {
 		robin.setVelocityY(robin.velocidad);
-		robin.play('walk');
+		robin.play('WalkDown');
 	}
 	else if (keys.Up.isDown) {
 		robin.setVelocityY(-robin.velocidad);
-		robin.play('walk');
+		robin.play('WalkUp');
 	}
 	else {
 		robin.setVelocityY(0);
-		robin.play('idle');
+		robin.play('quieto')
 	}
 
 	if (keys.Hability.isDown && robin.contador == 0) {
@@ -123,7 +120,11 @@ export function updateRobin() {
 	}
 
 	if (keys.pointer.isDown && acabado) {
-		robin.basico.play('basico');
-		robin.basico.ataque = 4;
+		basico.play('basico');
+		basico.ataque = 4;
 	}
+}
+
+export function ataqueBasico(e,b) {
+  e.vida = e.vida - basico.ataque;
 }

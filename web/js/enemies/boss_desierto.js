@@ -31,9 +31,9 @@ var velocidad_fuego = 100;
 export function create(obj) {
 	
 	animacionBossDesierto();
-  this.anims.play('Walk')
 
 	var boss = this.physics.add.sprite(obj.x,obj.y,'Boss_volcan');
+  boss.setScale(2);
 	boss.vida = 50;
 	boss.fase = 1;
 	boss.velocidad = 150;
@@ -43,6 +43,8 @@ export function create(obj) {
 	boss.direccion = 1; // 0 - Izquierda, 1 - Derecha, 2 - Quieto 
 	boss.tiempo = 0; // contador del tiempo entre los ataques
 	boss.aux = 0;
+
+   boss.play('Walk')
 }
 
 export function update(boss) {

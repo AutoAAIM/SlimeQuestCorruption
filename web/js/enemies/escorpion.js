@@ -56,7 +56,6 @@ export function createGroup(muros) {
 export function createEscorpion(e) {
 
 	animacionEscorpion();
-  this.anims.play('Stand')
 
 	var e = escorpionList.create(e.x,e.y,'Escorpion');
 	
@@ -64,6 +63,8 @@ export function createEscorpion(e) {
 	e.buscar = false;
 	e.ataque = 1;
 	e.velocidad = 150;
+
+  e.play('Stand')
 
 	e.detect = this.add.circle(e.x,e.y,30);
 	this.physics.add.existing(e.detect,false);
@@ -74,6 +75,7 @@ export function createEscorpion(e) {
 
 export function detectar(e,h) {
 	e.detect.encontrado = true;
+  e.stop('Stand');
 }
 
 export function update(e) {
@@ -113,6 +115,7 @@ export function updateVidaEscorpion(e) {
 	}
 	else if (e.vida <= 0) {
 		destroyEscorpion(e);
+    
 	}
 	
 }

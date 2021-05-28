@@ -34,7 +34,7 @@ export function create(obj)
 
 export function generarInventario(obj)
 {
-	imagenInventario = scene.physics.add.sprite(heroes.cabeza.x - sc.config.width / 2 + sc.config.width / 2, heroes.cabeza.y - sc.config.height / 2 + sc.config.height - 50, sc.config.width - 8, 'inventario').setDepth(18);
+	imagenInventario = scene.physics.add.sprite(sc.config.width / 2,sc.config.height - 50, sc.config.width - 8, 'inventario').setDepth(18).setScrollFactor(0);
 }
 
 export function generarPan(obj)
