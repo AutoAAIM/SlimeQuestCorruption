@@ -1,5 +1,5 @@
 import * as heroes from './grupoHeroes.js';
-import * as sc from '../sceneConstructor.js';
+import * as sc from './sceneConstructor.js';
 
 var scene;
 

@@ -65,6 +65,7 @@ export function createSuperSlimeGroup(pared) {
 export function createSlime(s) {
 	
 	animacionSlime();
+  this.anims.play('Stand')
 
 	var s = slimeList.create(s.x,s.y,'Slime');
 
@@ -84,6 +85,7 @@ export function createSlime(s) {
 export function createSuperSlime(ss) {
 	
 	animacionSlime();
+  ss.play('Stand')
 
 	var ss = slimeList.create(ss.x,ss.y,'Slime').setScale(2);
 
