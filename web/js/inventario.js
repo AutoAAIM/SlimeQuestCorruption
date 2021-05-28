@@ -37,7 +37,7 @@ export function generarInventario()
 {
 	imagenInventario = scene.add.sprite(sc.config.width / 2,sc.config.height - 19, 'inventarios').setDepth(18).setScrollFactor(0);
 
-	dineroText = scene.add.text(sc.config.width / 2 + 73, 260, scene.game.usuario.dinero, {fontSize: '10px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(19).setScrollFactor(0);
+	dineroText = scene.add.text(sc.config.width / 2 + 68, 262, scene.game.usuario.dinero, {fontSize: '10px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(19).setScrollFactor(0);
 
 	huecos[0] = new Phaser.Geom.Point(imagenInventario.x - 73, imagenInventario.y);
 	huecos[1] = new Phaser.Geom.Point(imagenInventario.x - 37, imagenInventario.y);
@@ -47,7 +47,7 @@ export function generarInventario()
 	generarPan(huecos[1]);
 }
 
-function update()
+export function update()
 {
 	dineroText.setText(dineroText);
 }
