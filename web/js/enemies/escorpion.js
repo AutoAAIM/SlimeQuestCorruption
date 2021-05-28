@@ -56,6 +56,7 @@ export function createGroup(muros) {
 export function createEscorpion(e) {
 
 	animacionEscorpion();
+  this.anims.play('Stand')
 
 	var e = escorpionList.create(e.x,e.y,'Escorpion');
 	
