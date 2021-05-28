@@ -45,12 +45,12 @@ export function generarInventario()
 
 export function generarPan(obj)
 {
-	var p = grupoPan.create(obj.x, obj.y, 'pan').setDepth(20);
+	var p = grupoPan.create(obj.x, obj.y, 'pan').setDepth(20).setScrollFactor(0);
 }
 
 export function generarTarta(obj)
 {
-	var c = grupoCake.create(obj.x, obj.y, 'cake').setDepth(20);
+	var c = grupoCake.create(obj.x, obj.y, 'cake').setDepth(20).setScrollFactor(0);
 	c.play('lie', true);
 }
 

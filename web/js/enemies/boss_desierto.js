@@ -11,7 +11,7 @@ export function preload() {
 export function animacionBossDesierto() {
   this.physics.anims.create({
       key: 'Walk',
-      frames: this.anims.generateFrameNames('Boss_volcan', { frames: start: 0, end: 3 }),
+      frames: this.anims.generateFrameNames('Boss_volcan', { start: 0, end: 3 }),
       frameRate: 8,
       repeat: -1
   });
@@ -20,7 +20,7 @@ export function animacionBossDesierto() {
 export function animacionFuego() {
   this.physics.anims.create({
     key: 'Fuego',
-    frames: this.anims.generateFrameNames('fireball', { frames: start: 0, end: 1 }),
+    frames: this.anims.generateFrameNames('fireball', { start: 0, end: 1 }),
     frameRate: 8,
     repeat: -1
   });
@@ -42,9 +42,10 @@ export function create(obj) {
 	boss.posicion = 240; // Espacio lateral de 48 a 528 --> (480)
 	boss.direccion = 1; // 0 - Izquierda, 1 - Derecha, 2 - Quieto 
 	boss.tiempo = 0; // contador del tiempo entre los ataques
+  boss.tiempo2 = 0; // tiempo para las animaciones
 	boss.aux = 0;
 
-   boss.play('Walk')
+  boss.play('Walk')
 }
 
 export function update(boss) {
@@ -104,9 +105,11 @@ export function update(boss) {
 				createConoFuego(boss,-0.5,0.87);	// ( -1/2, -(raiz de 3)/2 ) 
 			
 				boss.tiempo = 0;
+        boss.tiempo2 = 0;
 			}
 			else {
 				boss.tiempo++;
+        boss.tiempo2++;
 			}
 		
 		break;
@@ -114,18 +117,22 @@ export function update(boss) {
 			if (boss.tiempo > boss.frecuencia) {
 				createBolaFuego(boss);
 				boss.tiempo = 0;
+        boss.tiempo2 = 0;
 			}
 			else {
 				boss.tiempo++;
+        boss.tiempo2++;
 			}
 		break;
 		case 3: // Ataque de pinzas
 			if (boss.tiempo > boss.frecuencia) {
 				createFire(boss);
 				boss.tiempo = 0;
+        boss.tiempo2 = 0;
 			}
 			else {
 				boss.tiempo++;
+        boss.tiempo2++;
 			}
 		break;
 		case 4: // Cuatro bolas de fuego
@@ -136,9 +143,11 @@ export function update(boss) {
 				createPrision(0, -posicion,tipo, 0, -1);
 
 				boss.tiempo = 0;
+        boss.tiempo2 = 0;
 			}
 			else {
 				boss.tiempo++;
+        boss.tiempo2++;
 			}
 		break;
 		default: // 5 bolas de fuego en forma de cono
@@ -150,9 +159,11 @@ export function update(boss) {
 				createConoFuego(boss,-1,-1);
 			
 				boss.tiempo = 0;
+        boss.tiempo2 = 0;
 			}
 			else {
 				boss.tiempo++;
+        boss.tiempo2++;
 			}
 		break;
 	}
