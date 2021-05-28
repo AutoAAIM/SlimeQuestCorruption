@@ -82,7 +82,7 @@ export default class dessert extends Phaser.Scene {
       }*/
     })
 
-    var spawnID = playerSpawnPoint.lenght - 1;
+    //var spawnID = playerSpawnPoint.lenght - 1;
     heroes.create(playerSpawnPoint[spawnID], allLayers, null, sc.config)
 
     slimeTileSpawner.forEach(obj=>{
