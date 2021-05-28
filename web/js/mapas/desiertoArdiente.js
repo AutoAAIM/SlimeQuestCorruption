@@ -6,8 +6,6 @@ import * as keys from '../keys.js';
 import * as heroes from '../grupoHeroes.js';
 import * as sc from '../sceneConstructor.js';
 
-var game=new Phaser.Game(config);
-
 var llave = false;
 var puerta = true;
 var batalla = false;

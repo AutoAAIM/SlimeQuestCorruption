@@ -179,6 +179,7 @@ export function createFireBossGroup() {
 export function createBolaFuego (boss) {
 	
   animacionFuego();
+  this.anims.play('Fuego')
 
 	var f = fireList.create(boss.x,boss.y,'Fuego');
 	f.tiempo = 0; // El tiempo para que desaparezca

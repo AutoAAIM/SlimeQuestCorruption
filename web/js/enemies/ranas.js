@@ -47,7 +47,7 @@ export function createEnemyRana(obj, conf){
 
     scene.physics.add.overlap(heroes.heroes, enemigoRana.trigger, activarTrigger);
     scene.physics.add.overlap(heroes.armasHeroicas, enemigoRana, activarTrigger);
-    scene.physics.add.overlap(heroes.cabeza, enemigoRana.triggerAtaque, updateLenguaRana);
+    scene.physics.add.overlap(heroes.heroes, enemigoRana.triggerAtaque, updateLenguaRana);
 }
 
 function esRana(enemy)
@@ -80,6 +80,7 @@ function createLenguaRana(parent){
 	l.time = 0;
 }
 export function updateLenguaRana(atributo, o){
+    console.log(o);
     if(o == heroes.cabeza){
         var parent = sacaLengua(atributo)
         var l = parent.lengua;
