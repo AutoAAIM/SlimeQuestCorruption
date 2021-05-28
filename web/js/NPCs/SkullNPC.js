@@ -39,7 +39,7 @@ export function encenderTienda()
 
 		cuadroTexto2 = scene.add.rectangle(config.width / 2,config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(101).setScrollFactor(0);
 
-		scene.skullText = scene.add.text(16,210, 'Skull: Ayudadme a financiar el laborarorio!\nusad los numeros para comprar. \n1.pan = 15 Plorts          \n2.pastel = 50 Plorts', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102).setScrollFactor(0);
+		scene.skullText = scene.add.text(16,210, 'Skull: Ayudadme a financiar el laborarorio!\nusad los numeros para comprar. \n1.pan = 15 Plorts            Plorts actuales: '+scene.game.usuario.dinero+'\n2.pastel = 50 Plorts', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102).setScrollFactor(0);
 	}
 
 	textoSkull = true;
@@ -65,6 +65,8 @@ function updateTexto()
 
 		//imagenTexto.x = heroes.cabeza.x - config.width / 2 + 340;
 		//imagenTexto.y = heroes.cabeza.y - config.height / 2 + 240;
+
+		scene.skullText.setText('Skull: Ayudadme a financiar el laborarorio!\nusad los numeros para comprar. \n1.pan = 15 Plorts            Plorts actuales: '+scene.game.usuario.dinero+'\n2.pastel = 50 Plorts')
 
 		if(Phaser.Geom.Intersects.RectangleToRectangle(heroes.cabeza.getBounds(), skull.detectionbox.getBounds()))
 		{
