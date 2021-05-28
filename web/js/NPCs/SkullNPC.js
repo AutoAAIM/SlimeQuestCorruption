@@ -1,5 +1,5 @@
 import * as heroes from '../grupoHeroes.js';
-import * as dinero from '..dinero.js'
+import * as dinero from '../dinero.js'
 
 var scene;
 var textoSkull = false;
