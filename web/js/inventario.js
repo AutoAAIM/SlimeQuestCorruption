@@ -49,7 +49,7 @@ export function generarInventario()
 
 export function update()
 {
-	dineroText.setText(dineroText);
+	dineroText.setText(scene.game.usuario.dinero);
 }
 
 export function generarPan(obj)
