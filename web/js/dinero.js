@@ -2,6 +2,7 @@ import * as heroes from './grupoHeroes.js';
 import * as inventario from './inventario.js';
 
 var grupoDinero;
+export var dinero;
 var scene;
 
 export function preload()
@@ -15,6 +16,8 @@ export function create()
 	grupoDinero = scene.physics.add.group();
 
 	scene.physics.add.overlap(heroes.heroes, grupoDinero, recogerPlort, null, scene);
+
+	dinero = scene.game.usuario.dinero
 }
 
 export function generarPlort(vector, cantidad)
@@ -40,6 +43,7 @@ function incrementarPlorts (cantidad)
 		scene.game.usuario.dinero = parseInt(scene.game.usuario.dinero)
 	}
 	scene.game.usuario.dinero += cantidad;
+	dinero = scene.game.usuario.dinero
 	inventario.update();
 	//console.log('guarra');
 }
