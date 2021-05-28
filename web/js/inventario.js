@@ -36,11 +36,12 @@ export function generarInventario()
 {
 	imagenInventario = scene.add.sprite(sc.config.width / 2,sc.config.height - 19, 'inventarios').setDepth(18).setScrollFactor(0);
 
-	huecos[0] = new Phaser.Geom.Point(imagenInventario.x - 0, imagenInventario.y);
-	huecos[1] = new Phaser.Geom.Point(imagenInventario.x - 0, imagenInventario.y);
-	huecos[2] = new Phaser.Geom.Point(imagenInventario.x + 0, imagenInventario.y);
-	huecos[3] = new Phaser.Geom.Point(imagenInventario.x + 0, imagenInventario.y);
-	generarTarta(huecos[2]);
+	huecos[0] = new Phaser.Geom.Point(imagenInventario.x - 72, imagenInventario.y);
+	huecos[1] = new Phaser.Geom.Point(imagenInventario.x - 36, imagenInventario.y);
+	huecos[2] = new Phaser.Geom.Point(imagenInventario.x + 0 imagenInventario.y);
+	huecos[3] = new Phaser.Geom.Point(imagenInventario.x + 36, imagenInventario.y);
+	generarTarta(huecos[0]);
+	generarPan(huecos[1]);
 }
 
 export function generarPan(obj)

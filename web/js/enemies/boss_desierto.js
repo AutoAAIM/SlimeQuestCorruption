@@ -26,8 +26,6 @@ export function animacionFuego() {
   });
 }
 
-var velocidad_fuego = 100;
-
 export function create(obj) {
 	
 	animacionBossDesierto();
@@ -209,6 +207,7 @@ export function createBolaFuego (boss) {
 	var f = fireList.create(boss.x,boss.y,'Fuego');
 	f.tiempo = 0; // El tiempo para que desaparezca
 	f.ataque = 1; 
+  f.velocidad = 100;
 
 	if (boss.fase == 1) {
 		f.persigue = false;
@@ -217,7 +216,7 @@ export function createBolaFuego (boss) {
 		f.persigue = true;
 	}
 
-	this.physics.moveTo(f,heroes.cabeza.x,heroes.cabeza.y,velocidad_fuego); 
+	this.physics.moveTo(f,heroes.cabeza.x,heroes.cabeza.y,f.velocidad); 
 }
 
 export function createConoFuego(boss,x,y) {
@@ -227,8 +226,9 @@ export function createConoFuego(boss,x,y) {
 	var f = fireList.create(boss.x,boss.y,'Fuego');
 	f.tiempo = 0; // El tiempo para que desaparezca
 	f.ataque = 1; 
+  f.velocidad = 100;
 	f.persigue = false;
-	f.setVelocity(x * velocidad_fuego, y * velocidad_fuego);
+	f.setVelocity(x * f.velocidad, y * f.velocidad);
 
 }
 
@@ -244,6 +244,7 @@ export function createPrision(x,y,tipo,dir1,dir2) {
 	var f = fireList.create(pos.x,pos.y,'Fuego');
 	f.tiempo = 0; // El tiempo para que desaparezca
 	f.ataque = 1; 
+  f.velocidad = 100;
 	f.persigue = false;
 
 	f.setVelocityX(velocidad_fuego * tipo * dir1);
