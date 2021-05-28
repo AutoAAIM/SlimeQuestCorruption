@@ -309,7 +309,7 @@ export function recibirDanyo(obj1, obj2){
         dinero.generarPlort(obj2, 100);
         obj2.destroy();
       }
-      obj2.inmune = 130;
+      obj2.inmune = 120;
     }
     if(obj1 !=heroes.armasHeroicas && obj1.inmune <= 0){
       obj1.setAlpha(0);
@@ -340,6 +340,6 @@ export function recibirDanyo(obj1, obj2){
         dinero.generarPlort(obj1, 100);
         obj1.destroy();
       }
-      obj1.inmune = 130;
+      obj1.inmune = 120;
     }
 }
