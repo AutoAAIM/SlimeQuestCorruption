@@ -24,7 +24,7 @@ export function create()
 
 	scene.anims.create({
 			key:'lie',
-			frames: scene.anims.generateFrameNames('cake'),
+			frames: scene.anims.generateFrameNames('cake', { start: 0, end: 9 }),
 			frameRate: 4,
 			repeat: -1
 		});
