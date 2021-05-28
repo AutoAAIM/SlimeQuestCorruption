@@ -70,6 +70,7 @@ export function createEscorpion(e) {
 	this.physics.add.existing(e.detect,false);
 	e.detect.encontrado = false;
 
+  this.physics.add.overlap(e.detect, heroes.heroes, detectar, null, this);
 	this.physics.add.overlap(escorpionList, heroes.heroes, detectar, null, this);
 }
 

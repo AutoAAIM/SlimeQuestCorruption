@@ -7,6 +7,7 @@ import * as utilidades from '../utilidades.js';
 import * as enemigos from '../enemies/enemigos.js';
 import * as portal from '../portal.js';
 import * as keys from '../keys.js';
+import * as inventario from '../inventario.js';
 import * as npc from '../NPCs/PantanoNPC.js';
 import * as swampBoss from '../enemies/SwampBoss.js'
 import * as dinero from '../dinero.js';
@@ -56,6 +57,7 @@ export default class swamp extends Phaser.Scene {
         npc.preload.call(this);
         swampBoss.preload.call(this);
         dinero.preload.call(this);
+        inventario.preload.call(this)
     }
 /*
   =======    =========    ========    =======    ===============    ========
@@ -140,6 +142,8 @@ export default class swamp extends Phaser.Scene {
             }
         })
 
+		inventario.create();
+        
         portal.createAnims();
         portal.create(tileSpawner);
         
