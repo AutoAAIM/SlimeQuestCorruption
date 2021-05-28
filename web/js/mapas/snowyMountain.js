@@ -63,7 +63,8 @@ export default class montelago extends Phaser.Scene {
 		mago.preload.call(this)
 		portal.preload.call(this)
 		bossHielo.preload.call(this)
-		inventario.preload.call(this)
+        this.load.image('inventario', 'assets/images/inventario.png');
+		//inventario.preload.call(this)
 	}
 
 	create()
@@ -106,7 +107,10 @@ export default class montelago extends Phaser.Scene {
 		gates = portal.create(tilePortal);
 
 		jotun.create();
-		inventario.create();
+
+		//inventario.create();
+
+        scene.imagenInventario = scene.add.sprite(sc.config.width / 2,sc.config.height - 50, sc.config.width - 8, 'inventario').setDepth(18).setScrollFactor(0);
 
 		spawn = new Phaser.Math.Vector2(-980, 2250)
 
