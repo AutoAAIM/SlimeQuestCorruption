@@ -1,4 +1,5 @@
 import * as heroes from './grupoHeroes.js';
+import * as inventario from './inventario.js';
 
 var grupoDinero;
 var scene;
@@ -39,5 +40,6 @@ function incrementarPlorts (cantidad)
 		scene.game.usuario.dinero = parseInt(scene.game.usuario.dinero)
 	}
 	scene.game.usuario.dinero += cantidad;
+	inventario.update();
 	//console.log('guarra');
 }
