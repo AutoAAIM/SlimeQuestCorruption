@@ -1,4 +1,3 @@
-import * as boxTank from '../personajes/robin.js';
 import * as escorpion from '../enemies/escorpion.js';
 import * as slime from '../enemies/slime.js';
 import * as boss from '../enemies/boss_desierto.js';
@@ -6,6 +5,7 @@ import * as keys from '../keys.js';
 import * as heroes from '../grupoHeroes.js';
 import * as sc from '../sceneConstructor.js';
 import * as dinero from '../dinero.js';
+import * as dinero from '../portal.js';
 
 var llave = false;
 var puerta = true;
