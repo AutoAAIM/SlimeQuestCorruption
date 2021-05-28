@@ -13,7 +13,7 @@ import * as heroes from '../grupoHeroes.js';
 import * as dinero from '../dinero.js';
 
 export function preload(){
-	this.load.spritesheet('EnemigoRana','assets/images/portalAnim.png', { frameWidth: 32, frameHeight: 32});
+	this.load.spritesheet('EnemigoRana','assets/images/rana.png');
     this.load.image('punta_Lengua', 'assets/images/punta_Lengua.png');
     this.load.image('fragmento_Lengua', 'assets/images/fragmento_lengua.png');
 	scene = this;
