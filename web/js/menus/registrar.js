@@ -134,7 +134,7 @@ export default class registrar extends Phaser.Scene {
 				else if(c == "Backspace" )
 				{
 					contTextInput = contTextInput.slice(0,contTextInput.length-1)
-					contTextShowed = contTextInput.slice(0,contTextShowed.length-1)
+					contTextShowed = contTextShowed.slice(0,contTextShowed.length-1)
 				}
 			}
 
