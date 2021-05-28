@@ -8,7 +8,7 @@ export function preload()
 {
 	this.load.spritesheet('cake', 'assets/images/strange_cake.png', {frameWidth:32, frameHeight:32});
 	this.load.image('pan', 'assets/images/pan.png');
-	this.load.image('inventario', 'assets/images/inventario.png');
+	this.load.image('inventarios', 'assets/images/tablaInventario.png');
 
 	scene = this;
 }
@@ -35,7 +35,7 @@ export function create()
 
 export function generarInventario()
 {
-	imagenInventario = scene.add.sprite(sc.config.width / 2,sc.config.height - 50, sc.config.width - 8, 'inventario').setDepth(18).setScrollFactor(0);
+	imagenInventario = scene.add.sprite(sc.config.width / 2,sc.config.height - 50, sc.config.width - 8, 'inventarios').setDepth(18).setScrollFactor(0);
 }
 
 export function generarPan()
