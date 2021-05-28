@@ -93,8 +93,17 @@ export function update(e) {
 	}
 	if (e.perseguir) {
 		this.physics.moveTo(e,heroes.cabeza.x,heroes.cabeza.y,e.velocidad);
-    if (heroes.) {
+    if () {
 
+    }
+    else if () {
+
+    }
+    else if () {
+      
+    }
+    else if () {
+      
     }
 	}
 }

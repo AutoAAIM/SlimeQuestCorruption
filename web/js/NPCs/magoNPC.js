@@ -101,13 +101,13 @@ export function encenderHielito()
 		bossHielo.boss.body.enable = true;
 		bossHielo.boss.detectionbox.body.enable = true;
 
-		cuadroTexto = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16);
+		cuadroTexto = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(100);
 
-		cuadroTexto2 = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17);
+		cuadroTexto2 = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(101);
 
-		scene.magoText = scene.add.text(yasha.player.x - config.width / 2 + 16, yasha.player.y - config.height / 2 + 210, 'Mago: \nOtro novato en busca de poder... \nToma esto y dejame en paz.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(18);
+		scene.magoText = scene.add.text(yasha.player.x - config.width / 2 + 16, yasha.player.y - config.height / 2 + 210, 'Mago: \nOtro novato en busca de poder... \nToma esto y dejame en paz.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(102);
 
-		imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + 340, yasha.player.y - config.height / 2 + 240, 'textoHielo').setDepth(18).setScale(2);
+		imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + 340, yasha.player.y - config.height / 2 + 240, 'textoHielo').setDepth(102).setScale(2);
 	}
 
 	textoMago = true;

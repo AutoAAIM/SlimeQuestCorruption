@@ -21,13 +21,13 @@ export function create(obj, config) {
     npc1 = scene.physics.add.sprite(obj.x, obj.y, 'npc1');
     interacturar = scene.physics.add.sprite(obj.x, obj.y-32, 'buttonE');
   
-    cuadroTexto = scene.add.rectangle(config.width / 2,config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16).setScrollFactor(0);
+    cuadroTexto = scene.add.rectangle(config.width / 2,config.height - 50, config.width, 100, 0xaaaaaa).setDepth(100).setScrollFactor(0);
 
-    cuadroTexto2 = scene.add.rectangle(config.width / 2,config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17).setScrollFactor(0);
+    cuadroTexto2 = scene.add.rectangle(config.width / 2,config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(101).setScrollFactor(0);
 
-    dialogoText2 = scene.add.text(16,210, 'Por favor si quieres la habilidad de quitar el veneno \nayudame a cazar la cena. \nnecesito estos ingredientes\nranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos, {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(18).setScrollFactor(0);
+    dialogoText2 = scene.add.text(16,210, 'Por favor si quieres la habilidad de quitar el veneno \nayudame a cazar la cena. \nnecesito estos ingredientes\nranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos, {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102).setScrollFactor(0);
   
-    scene.dialogoText3 = scene.add.text(npc1.x-32,npc1.y-32, 'Acercate a mi', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(18);
+    scene.dialogoText3 = scene.add.text(npc1.x-32,npc1.y-32, 'Acercate a mi', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102);
 
     npc1.trigger = scene.add.rectangle(npc1.x,npc1.y, 90, 90);
     scene.physics.add.existing(npc1.trigger, false);

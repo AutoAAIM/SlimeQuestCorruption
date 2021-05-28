@@ -35,11 +35,11 @@ export function encenderTienda()
 {
 	if(textoSkull == false)
 	{
-		cuadroTexto = scene.add.rectangle(config.width / 2,config.height - 50, config.width, 100, 0xaaaaaa).setDepth(16).setScrollFactor(0);
+		cuadroTexto = scene.add.rectangle(config.width / 2,config.height - 50, config.width, 100, 0xaaaaaa).setDepth(100).setScrollFactor(0);
 
-		cuadroTexto2 = scene.add.rectangle(config.width / 2,config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(17).setScrollFactor(0);
+		cuadroTexto2 = scene.add.rectangle(config.width / 2,config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(101).setScrollFactor(0);
 
-		scene.skullText = scene.add.text(16,210, 'Skull: Ayudadme a financiar el laborarorio!\nusad los numeros para comprar. \n1.pan = 15 Plorts          \n2.pastel = 50 Plorts', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(18).setScrollFactor(0);
+		scene.skullText = scene.add.text(16,210, 'Skull: Ayudadme a financiar el laborarorio!\nusad los numeros para comprar. \n1.pan = 15 Plorts          \n2.pastel = 50 Plorts', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102).setScrollFactor(0);
 	}
 
 	textoSkull = true;
