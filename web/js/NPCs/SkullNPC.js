@@ -28,7 +28,6 @@ export function create(obj, conf)
 	});
 
 	generarSkull(obj);
-	encenderTienda()
 
 	config = conf;
 }
