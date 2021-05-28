@@ -35,7 +35,7 @@ export function create()
 
 export function generarInventario()
 {
-	imagenInventario = scene.add.sprite(sc.config.width / 2,sc.config.height - 50, sc.config.width - 8, 'inventarios').setDepth(18).setScrollFactor(0);
+	imagenInventario = scene.add.sprite(sc.config.width / 2,sc.config.height - 50, 'inventarios').setDepth(18).setScrollFactor(0);
 }
 
 export function generarPan()
