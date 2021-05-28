@@ -98,7 +98,7 @@ export function update(boss) {
 
 	switch(boss.accion) {
 		case 1: // Tres bolas de fuego en forma de cono
-			if (boss.tiempo > 50) {
+			if (boss.tiempo > boss.frecuencia) {
 				createConoFuego(boss,0,-1); 		
 				createConoFuego(boss,0.5,0.87);		// ( 1/2, -(raiz de 3)/2 )
 				createConoFuego(boss,-0.5,0.87);	// ( -1/2, -(raiz de 3)/2 ) 
@@ -111,7 +111,7 @@ export function update(boss) {
 		
 		break;
 		case 2: // Una bola de fuego
-			if (boss.tiempo > 50) {
+			if (boss.tiempo > boss.frecuencia) {
 				createBolaFuego(boss);
 				boss.tiempo = 0;
 			}
@@ -120,7 +120,7 @@ export function update(boss) {
 			}
 		break;
 		case 3: // Ataque de pinzas
-			if (boss.tiempo > 50) {
+			if (boss.tiempo > boss.frecuencia) {
 				createFire(boss);
 				boss.tiempo = 0;
 			}
@@ -129,7 +129,7 @@ export function update(boss) {
 			}
 		break;
 		case 4: // Cuatro bolas de fuego
-			if (boss.tiempo > 50) {
+			if (boss.tiempo > boss.frecuencia) {
 				createPrision(posicion, 0,tipo, 1 , 0);
 				createPrision(-posicion, ,tipo, -1, 0);
 				createPrision(0, posicion,tipo, 0, 1);
@@ -142,7 +142,7 @@ export function update(boss) {
 			}
 		break;
 		default: // 5 bolas de fuego en forma de cono
-			if (boss.tiempo > 50) {
+			if (boss.tiempo > boss.frecuencia) {
 				createConoFuego(boss,0,-1); 		
 				createConoFuego(boss,0.5,0.87);		// ( 1/2, -(raiz de 3)/2 )
 				createConoFuego(boss,-0.5,0.87);	// ( -1/2, -(raiz de 3)/2 ) 
