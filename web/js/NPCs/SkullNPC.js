@@ -66,7 +66,7 @@ function updateTexto()
 		//imagenTexto.x = heroes.cabeza.x - config.width / 2 + 340;
 		//imagenTexto.y = heroes.cabeza.y - config.height / 2 + 240;
 
-		scene.skullText.setText('Skull: Ayudadme a financiar el laborarorio!\nusad los numeros para comprar. \n1.pan = 15 Plorts\n2.pastel = 50 Plorts\n\n.............................Plorts actuales: '+scene.game.usuario.dinero)
+		scene.skullText.setText('Skull: Ayudadme a financiar el laborarorio!\nusad los numeros para comprar. \n1.pan = 15 Plorts\n2.pastel = 50 Plorts\n\n..........................................................Plorts actuales: '+scene.game.usuario.dinero)
 
 		if(Phaser.Geom.Intersects.RectangleToRectangle(heroes.cabeza.getBounds(), skull.detectionbox.getBounds()))
 		{
