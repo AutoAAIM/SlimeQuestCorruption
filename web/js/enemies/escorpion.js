@@ -71,12 +71,16 @@ export function createEscorpion(e) {
 	e.detect.encontrado = false;
 
   this.physics.add.overlap(e.detect, heroes.heroes, detectar, null, this);
-	this.physics.add.overlap(escorpionList, heroes.heroes, detectar, null, this);
+	this.physics.add.overlap(escorpionList, heroes.heroes, atacar, null, this);
 }
 
 export function detectar(e,h) {
 	e.detect.encontrado = true;
   e.stop('Stand');
+}
+
+export function atacar(e,h) {
+  e.play('golpe')
 }
 
 export function update(e) {
