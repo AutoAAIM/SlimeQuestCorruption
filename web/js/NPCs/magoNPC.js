@@ -61,17 +61,17 @@ function updateTexto()
 {
 	if(cuadroTexto != undefined)
 	{
-		cuadroTexto.x = yasha.player.x - config.width / 2 + config.width / 2;
-		cuadroTexto.y = yasha.player.y - config.height / 2 + config.height - 50;
+		//cuadroTexto.x = yasha.player.x - config.width / 2 + config.width / 2;
+		//cuadroTexto.y = yasha.player.y - config.height / 2 + config.height - 50;
 
-		cuadroTexto2.x = yasha.player.x - config.width / 2 + config.width / 2;
-		cuadroTexto2.y = yasha.player.y - config.height / 2 + config.height - 50;
+		//cuadroTexto2.x = yasha.player.x - config.width / 2 + config.width / 2;
+		//cuadroTexto2.y = yasha.player.y - config.height / 2 + config.height - 50;
 
-		scene.magoText.x = yasha.player.x - config.width / 2 + 16;
-		scene.magoText.y = yasha.player.y - config.height / 2 + 210;
+		//scene.magoText.x = yasha.player.x - config.width / 2 + 16;
+		//scene.magoText.y = yasha.player.y - config.height / 2 + 210;
 
-		imagenTexto.x = yasha.player.x - config.width / 2 + 340;
-		imagenTexto.y = yasha.player.y - config.height / 2 + 240;
+		//imagenTexto.x = yasha.player.x - config.width / 2 + 340;
+		//imagenTexto.y = yasha.player.y - config.height / 2 + 240;
 
 		if(Phaser.Geom.Intersects.RectangleToRectangle(yasha.player.getBounds(), mago.detectionbox.getBounds()))
 		{
@@ -101,13 +101,13 @@ export function encenderHielito()
 		bossHielo.boss.body.enable = true;
 		bossHielo.boss.detectionbox.body.enable = true;
 
-		cuadroTexto = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width, 100, 0xaaaaaa).setDepth(100);
+		cuadroTexto = scene.add.rectangle(config.width / 2,config.height - 50, config.width, 100, 0xaaaaaa).setDepth(100).setScrollFactor(0);
 
-		cuadroTexto2 = scene.add.rectangle(yasha.player.x - config.width / 2 + config.width / 2, yasha.player.y - config.height / 2 + config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(101);
+		cuadroTexto2 = scene.add.rectangle(config.width / 2,config.height - 50, config.width - 8, 100 - 8, 0x000000).setDepth(101).setScrollFactor(0);
 
-		scene.magoText = scene.add.text(yasha.player.x - config.width / 2 + 16, yasha.player.y - config.height / 2 + 210, 'Mago: \nOtro novato en busca de poder... \nToma esto y dejame en paz.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(102);
+		scene.magoText = scene.add.text(16, 210, 'Mago: \nOtro novato en busca de poder... \nToma esto y dejame en paz.', {fontSize: '12px', fill: '#FFFFFF', fontFamily: 'sans-serif'}).setDepth(102).setScrollFactor(0);
 
-		imagenTexto = scene.physics.add.sprite(yasha.player.x - config.width / 2 + 340, yasha.player.y - config.height / 2 + 240, 'textoHielo').setDepth(102).setScale(2);
+		imagenTexto = scene.physics.add.sprite(340, 240, 'textoHielo').setDepth(102).setScale(2).setScrollFactor(0);
 	}
 
 	textoMago = true;
