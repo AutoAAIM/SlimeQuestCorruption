@@ -76,7 +76,7 @@ export function create(spawn, allTiles, antorchas, conf)
 
 	//Hay que hacer una variable que copruebe si la cabeza esta en movimiento
 	move = false;
-	text = scene.add.text(10, 10, 'vida: ' + cabeza.vida, { font: '16px Courier', fill: '#000000' }).setDepth(100).setScrollFactor(0);
+	text = scene.add.text(10, 10, 'vida: ' + cabeza.vida, { font: '16px Courier', fill: '#7dfdff' }).setDepth(100).setScrollFactor(0);
 
 	console.log(fila)
 }

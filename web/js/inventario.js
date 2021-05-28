@@ -15,6 +15,7 @@ export function preload()
 
 export var grupoCake;
 export var grupoPan;
+var huecos = new Array;
 
 export function create()
 {
@@ -29,23 +30,29 @@ export function create()
 		});
 
 	generarInventario();
-	generarPan();
-	generarPan();
+	//generarPan();
+	//generarPan();
 }
 
 export function generarInventario()
 {
 	imagenInventario = scene.add.sprite(sc.config.width / 2,sc.config.height - 17, 'inventarios').setDepth(18).setScrollFactor(0);
+
+	huecos[0] = new Phaser.Geom.Point(imagenInventario.x - 0, imagenInventario.y);
+	huecos[1] = new Phaser.Geom.Point(imagenInventario.x - 0, imagenInventario.y);
+	huecos[2] = new Phaser.Geom.Point(imagenInventario.x + 0, imagenInventario.y);
+	huecos[3] = new Phaser.Geom.Point(imagenInventario.x + 0, imagenInventario.y);
+	generarPan(huecos[2]);
 }
 
-export function generarPan()
+export function generarPan(obj)
 {
-	//var p = grupoPan.create(spawn.x + 30, spawn.x, 'cake').setDepth(20).setPipeline('Light2D');
+	var p = grupoPan.create(obj.x, obj.y, 'cake').setDepth(20).setPipeline('Light2D');
 }
 
-export function generarTarta()
+export function generarTarta(obj)
 {
-	//var c = grupoCake.create(spawn.x, spawn.x, 'cake').setDepth(20).setPipeline('Light2D');
-	//c.play('lie', true);
+	var c = grupoCake.create(obj.x, obj.y, 'cake').setDepth(20).setPipeline('Light2D');
+	c.play('lie', true);
 }
 
