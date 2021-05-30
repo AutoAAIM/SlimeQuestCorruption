@@ -60,29 +60,34 @@ export function update()
 export function generarPan()
 {
 	var indice = grupoObjetos.getLength();
-	if(indice >= hu)
-	var p = grupoObjetos.create(huecos[indice].x, huecos[indice].y, 'pan').setDepth(20).setScrollFactor(0);
-	p.curacion = 4;
+	if(indice < huecos.length)
+	{
+		var p = grupoObjetos.create(huecos[indice].x, huecos[indice].y, 'pan').setDepth(20).setScrollFactor(0);
+		p.curacion = 4;
 
-	p.setInteractive();
-	p.on('pointerdown', function (puntero) {
-		var obj = p;
-		consumir(puntero, obj);
-	});
+		p.setInteractive();
+		p.on('pointerdown', function (puntero) {
+			var obj = p;
+			consumir(puntero, obj);
+		});
+	}
 }
 
 export function generarTarta()
 {
 	var indice = grupoObjetos.getLength();
-	var c = grupoObjetos.create(huecos[indice].x, huecos[indice].y, 'cake').setDepth(20).setScrollFactor(0);
-	c.play('lie', true);
-	c.curacion = 8;
+	if(indice < huecos.length)
+	{
+		var c = grupoObjetos.create(huecos[indice].x, huecos[indice].y, 'cake').setDepth(20).setScrollFactor(0);
+		c.play('lie', true);
+		c.curacion = 8;
 
-	c.setInteractive();
-	c.on('pointerdown', function (puntero, obj) {
-		var obj = c;
-		consumir(puntero, obj);
-	});
+		c.setInteractive();
+		c.on('pointerdown', function (puntero, obj) {
+			var obj = c;
+			consumir(puntero, obj);
+		});
+	}
 }
 
 export function consumir(puntero, obj)

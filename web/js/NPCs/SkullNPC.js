@@ -108,7 +108,7 @@ export function generarSkull(obj)
 			var c = event.code
 			if( c.slice(0,5) == "Digit")
 			{
-				var numKey += c.toLowerCase().charAt(c.length-1)
+				var numKey = c.toLowerCase().charAt(c.length-1)
 
 				if(numKey == 1)
 				{
