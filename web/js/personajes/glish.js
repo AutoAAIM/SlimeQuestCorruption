@@ -100,8 +100,8 @@ export function update(cabeza) {
 	}
 	else{
         cursor.setAlpha(0);
-        player.play('GlishF', true);
     }
+    player.play('GlishF', true);
 	atacarPersonaje.call(scene);
 }
 
