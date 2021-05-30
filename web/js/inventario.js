@@ -64,7 +64,7 @@ export function generarPan()
 	p.curacion = 4;
 
 	p.setInteractive();
-	p.on('pointerdown', function (puntero, obj) {
+	p.on('pointerdown', function (puntero, c1, obj) {
 		console.log(puntero)
 		console.log(obj)
 		consumir(puntero, obj);
