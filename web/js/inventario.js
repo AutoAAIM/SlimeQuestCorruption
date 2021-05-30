@@ -42,15 +42,17 @@ export function generarInventario()
 	huecos[2] = new Phaser.Geom.Point(imagenInventario.x - 1, imagenInventario.y);
 	huecos[3] = new Phaser.Geom.Point(imagenInventario.x + 35, imagenInventario.y);
 
-	for(var i = 0; i < 4; i++)
-	{
-		if(inventario.grupoObjetos.getChildren()[i] != undefined){
-			objetos[i] = inventario.grupoObjetos.getChildren()[i].name
-		}
-		else{
-			objetos[i] = null
-		}
-	}
+	if(scene.game.usuario.inventario1 == "pan"){generarPan()}
+	else if(scene.game.usuario.inventario1 == "pastelraro"){generarTarta()}
+
+	if(scene.game.usuario.inventario2 == "pan"){generarPan()}
+	else if(scene.game.usuario.inventario2 == "pastelraro"){generarTarta()}
+
+	if(scene.game.usuario.inventario3 == "pan"){generarPan()}
+	else if(scene.game.usuario.inventario3 == "pastelraro"){generarTarta()}
+
+	if(scene.game.usuario.inventario4 == "pan"){generarPan()}
+	else if(scene.game.usuario.inventario4 == "pastelraro"){generarTarta()}
 }
 
 export function update()
