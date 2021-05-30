@@ -41,9 +41,6 @@ export function generarInventario()
 	huecos[1] = new Phaser.Geom.Point(imagenInventario.x - 37, imagenInventario.y);
 	huecos[2] = new Phaser.Geom.Point(imagenInventario.x - 1, imagenInventario.y);
 	huecos[3] = new Phaser.Geom.Point(imagenInventario.x + 35, imagenInventario.y);
-	generarPan();
-	generarPan();
-	generarTarta();
 }
 
 export function update()
