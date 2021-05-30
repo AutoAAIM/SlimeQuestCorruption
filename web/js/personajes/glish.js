@@ -76,7 +76,8 @@ export function create(spawn, allLayers, conf, grupo, arHe) {
 
     config = conf;
     layers = allLayers;
-
+    
+    player.play('GlishF', true);
     
 }
 
