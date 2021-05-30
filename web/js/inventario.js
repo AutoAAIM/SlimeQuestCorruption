@@ -49,7 +49,9 @@ export function generarInventario()
 	huecos[1] = new Phaser.Geom.Point(imagenInventario.x - 37, imagenInventario.y);
 	huecos[2] = new Phaser.Geom.Point(imagenInventario.x - 1, imagenInventario.y);
 	huecos[3] = new Phaser.Geom.Point(imagenInventario.x + 35, imagenInventario.y);
-	//generarPan();
+	generarPan();
+	generarPan();
+	generarPan();
 }
 
 export function update()
@@ -103,4 +105,10 @@ export function consumir(puntero, obj)
 		});
 	}
 	obj.destroy();
+
+	for(var i = 0; i < grupoObjetos.getLength(); i++)
+	{
+		grupoObjetos.getChildren()[i].x = huecos[i].x
+		grupoObjetos.getChildren()[i].y = huecos[i].y
+	}
 }
