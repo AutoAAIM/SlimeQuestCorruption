@@ -65,6 +65,8 @@ export function generarPan()
 
 	p.setInteractive();
 	p.on('pointerdown', function (puntero, obj) {
+		console.log(puntero)
+		console.log(obj)
 		consumir(puntero, obj);
 	});
 }
