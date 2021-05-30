@@ -11,7 +11,7 @@
 	$objeto4 = $_REQUEST["inventario4"];
 
 	$db = pg_connect("host=$dbserver port=5432 dbname=$database user=$user password=$password");
-	$update = "UPDATE usuarios SET id_zona=$zona, dinero=$dinero, inventario1=$objeto1, inventario2=$objeto2, inventario3=$objeto3, inventario4=$objeto4 WHERE nombre = '$nombre' AND contrasena = '$contrasena'";
+	$update = "UPDATE usuarios SET id_zona=$zona, dinero=$dinero, inventario1='$objeto1', inventario2='$objeto2', inventario3='$objeto3', inventario4='$objeto4' WHERE nombre = '$nombre' AND contrasena = '$contrasena'";
 	//echo $query;
 	pg_query($update);
 
