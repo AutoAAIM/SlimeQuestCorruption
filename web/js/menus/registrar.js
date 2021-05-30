@@ -114,7 +114,6 @@ export default class registrar extends Phaser.Scene {
 					nameTextInput = nameTextInput.slice(0,nameTextInput.length-1)
 				}
 			}
-
     	})
 
 		this.input.keyboard.on('keydown', (event) => {
@@ -137,7 +136,6 @@ export default class registrar extends Phaser.Scene {
 					contTextShowed = contTextShowed.slice(0,contTextShowed.length-1)
 				}
 			}
-
     	})
   
     //this.input.keyboard.on('keydown', callback, context);

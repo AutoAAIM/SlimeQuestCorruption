@@ -14,14 +14,12 @@ export function preload()
 	scene = this;
 }
 
-export var grupoCake;
-export var grupoPan;
+export var grupoObjetos;
 var huecos = new Array;
 
 export function create()
 {
-	grupoPan = scene.physics.add.staticGroup();
-	grupoCake = scene.physics.add.staticGroup();
+	grupoObjetos = scene.physics.add.staticGroup();
 
 	scene.anims.create({
 			key:'lie',
@@ -31,6 +29,14 @@ export function create()
 		});
 
 	generarInventario();
+
+	scene.input.keyboard.on('keydown', (event) => {
+		var c = event.code
+		if(c.slice(0,5) == "Digit")
+		{
+			consumir(c.toLowerCase().charAt(c.length-1))
+		}
+	})
 }
 
 export function generarInventario()
@@ -43,8 +49,7 @@ export function generarInventario()
 	huecos[1] = new Phaser.Geom.Point(imagenInventario.x - 37, imagenInventario.y);
 	huecos[2] = new Phaser.Geom.Point(imagenInventario.x - 1, imagenInventario.y);
 	huecos[3] = new Phaser.Geom.Point(imagenInventario.x + 35, imagenInventario.y);
-	generarTarta(huecos[0]);
-	generarPan(huecos[1]);
+	generarPan();
 }
 
 export function update()
@@ -52,14 +57,37 @@ export function update()
 	dineroText.setText(scene.game.usuario.dinero);
 }
 
-export function generarPan(obj)
+export function generarPan()
 {
-	var p = grupoPan.create(obj.x, obj.y, 'pan').setDepth(20).setScrollFactor(0);
+	var indice = grupoObjetos.getLength()-1;
+	var p = grupoObjetos.create(huecos[indice].x, huecos[indice].y, 'pan').setDepth(20).setScrollFactor(0);
+	p.curacion = 4;
+
+	p.setInteractive();
+	p.on('pointerdown', function (obj) {
+		consumir(obj);
+	});
 }
 
-export function generarTarta(obj)
+export function generarTarta()
 {
-	var c = grupoCake.create(obj.x, obj.y, 'cake').setDepth(20).setScrollFactor(0);
+	var indice = grupoObjetos.getLength()-1;
+	var c = grupoObjetos.create(huecos[indice].x, huecos[indice].y, 'cake').setDepth(20).setScrollFactor(0);
 	c.play('lie', true);
+	c.curacion = 8;
+
+	c.setInteractive();
+	c.on('pointerdown', function (obj) {
+		consumir(obj);
+	});
 }
 
+export function consumir(obj)
+{
+	if(obj.curacion != undefined)
+	{
+		Phaser.Actions.Call(heroes.heroes.getChildren(), function (pj) {
+			pj.vida += obj.curacion;
+		});
+	}
+}
