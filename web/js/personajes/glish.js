@@ -55,6 +55,13 @@ export function create(spawn, allLayers, conf, grupo, arHe) {
 	player.muerto = false;
     player.ralentizar = 0;
 
+    scene.anims.create({
+		key:'GlishF',
+		frames: scene.anims.generateFrameNames('glish'),
+		frameRate: 3,
+		repeat: -1
+	});
+
     scene.physics.add.collider(player, allLayers);
 
     scene.cameras.main.startFollow(player);
@@ -90,7 +97,10 @@ export function update(cabeza) {
 		updateEstadosDelJugador.call(scene);
 		cursor.setAlpha(1)
 	}
-	else{cursor.setAlpha(0)}
+	else{
+        cursor.setAlpha(0);
+        player.play('GlishF', true);
+    }
 	atacarPersonaje.call(scene);
 }
 
