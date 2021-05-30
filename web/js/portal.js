@@ -189,8 +189,8 @@ function changeScene(obj)
         {
             console.log(inventario.grupoObjetos.getChildren()[i]);
             if(inventario.grupoObjetos.getChildren()[i] == undefined){
-				//inventario.grupoObjetos.getChildren()[i] = new Object;
-                inventario.grupoObjetos.getChildren()[i].name = null;
+				inventario.grupoObjetos.getChildren()[i] = new Object;
+                inventario.grupoObjetos.getChildren()[i].name = "";
             }
         }
 		console.log(obj.properties.destino)
