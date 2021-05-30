@@ -60,6 +60,7 @@ export function update()
 export function generarPan()
 {
 	var indice = grupoObjetos.getLength();
+	if(indice >= hu)
 	var p = grupoObjetos.create(huecos[indice].x, huecos[indice].y, 'pan').setDepth(20).setScrollFactor(0);
 	p.curacion = 4;
 

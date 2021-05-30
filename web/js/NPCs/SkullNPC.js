@@ -110,9 +110,16 @@ export function generarSkull(obj)
 			{
 				var numKey += c.toLowerCase().charAt(c.length-1)
 
-				if(numKey = 1)
+				if(numKey == 1)
 				{
-					inventario.generar
+					inventario.generarPan()
+					dinero.dinero -= 15
+				}
+				else if(numKey == 2)
+				{
+					inventario.generarTarta()
+					dinero.dinero -= 50
+
 				}
 			}
     	})
