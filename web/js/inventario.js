@@ -90,5 +90,5 @@ export function consumir(obj)
 			pj.vida += obj.curacion;
 		});
 	}
-	obj.destroy();
+	obj.destroy()
 }
