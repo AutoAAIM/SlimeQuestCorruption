@@ -113,12 +113,12 @@ export function generarSkull(obj)
 			if(numKey == 1)
 			{
 				inventario.generarPan()
-				dinero.dinero -= 15
+				dinero.incrementarPlorts(-15)
 			}
 			else if(numKey == 2)
 			{
 				inventario.generarTarta()
-				dinero.dinero -= 50
+				dinero.incrementarPlorts(-50)
 
 			}
 		}

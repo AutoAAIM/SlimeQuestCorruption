@@ -36,7 +36,7 @@ function recogerPlort(pj, pl)
 	incrementarPlorts(1);
 }
 
-function incrementarPlorts (cantidad)
+export function incrementarPlorts (cantidad)
 {
 	if(typeof scene.game.usuario.dinero === 'string')
 	{
