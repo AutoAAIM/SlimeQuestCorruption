@@ -187,11 +187,12 @@ function changeScene(obj)
 		
 		for(var i = 0; i < 4; i++)
         {
-            console.log(inventario.grupoObjetos.getChildren()[i]);
+            console.log("H"+inventario.grupoObjetos.getChildren()[i]);
             if(inventario.grupoObjetos.getChildren()[i] == undefined){
 				inventario.grupoObjetos.getChildren()[i] = new Object;
                 inventario.grupoObjetos.getChildren()[i].name = "";
             }
+            console.log("s"+inventario.grupoObjetos.getChildren()[i]);
         }
 		console.log(obj.properties.destino)
 		console.log(myObj.nombre)
