@@ -55,6 +55,7 @@ export function generarPan()
 	{
 		var p = grupoObjetos.create(huecos[indice].x, huecos[indice].y, 'pan').setDepth(20).setScrollFactor(0);
 		p.curacion = 4;
+		p.name = "pan"
 
 		p.setInteractive();
 		p.on('pointerdown', function (puntero) {
@@ -72,6 +73,7 @@ export function generarTarta()
 		var c = grupoObjetos.create(huecos[indice].x, huecos[indice].y, 'cake').setDepth(20).setScrollFactor(0);
 		c.play('lie', true);
 		c.curacion = 8;
+		c.name = "pastelraro"
 
 		c.setInteractive();
 		c.on('pointerdown', function (puntero, obj) {

@@ -1,4 +1,5 @@
 import * as utilidades from './utilidades.js';
+import * as inventario from './inventario.js'
 
 var portals = new Array();
 var coolDown = 30
@@ -187,6 +188,6 @@ function changeScene(obj)
 		console.log(myObj.nombre)
 		xhr.open("POST", "php/guardar.php", true)
 		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
-		xhr.send("nombre="+myObj.nombre+"&contrasena="+myObj.contrasena+"&dinero="+myObj.dinero+"&zona="+obj.properties.destino)
+		xhr.send("nombre="+myObj.nombre+"&contrasena="+myObj.contrasena+"&dinero="+myObj.dinero+"&zona="+obj.properties.destino+"&inventario1="+inventario.grupoObjetos.getChildren()[0].name+"&inventario2="+inventario.grupoObjetos.getChildren()[1].name+"&inventario3="+inventario.grupoObjetos.getChildren()[2].name+"&inventario4="+inventario.grupoObjetos.getChildren()[3].name)
 	}
 }
