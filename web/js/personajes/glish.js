@@ -30,7 +30,7 @@ import * as grupoHeroes from '../grupoHeroes.js';
 
 export function preload() {
   this.load.image('missile1', 'assets/images/missile1.png');
-  this.load.spritesheet('glish', 'assets/images/Glish.png', { frameWidth: 32, frameHeight: 32 });
+  this.load.spritesheet('glish', 'assets/images/yasha.png', { frameWidth: 32, frameHeight: 32 });
   this.load.spritesheet('ondas', 'assets/images/ondas.png', { frameWidth: 32, frameHeight: 32 });
   this.load.spritesheet('cura', 'assets/images/AitorMolestaParte1.png', { frameWidth: 32, frameHeight: 32 });
   scene = this;
@@ -83,7 +83,7 @@ export function create(spawn, allLayers, conf, grupo, arHe) {
 export function update(cabeza) {
     
     player.play('GlishF', true);
-
+ 
 	if(player == cabeza){ player.enCabeza = true}
 	else{player.enCabeza = false}
 	

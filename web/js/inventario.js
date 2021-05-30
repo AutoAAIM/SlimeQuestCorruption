@@ -64,14 +64,8 @@ export function generarPan()
 	p.curacion = 4;
 
 	p.setInteractive();
-	p.on('pointerdown', function (puntero, c1, c2, c3, c4, obj) {
-		console.log(puntero)
-		console.log(c1)
-		console.log(c2)
-		console.log(c3)
-		console.log(c4)
-		console.log(obj)
-		console.log(p)
+	p.on('pointerdown', function (puntero) {
+		var obj = p;
 		consumir(puntero, obj);
 	});
 }
@@ -85,6 +79,7 @@ export function generarTarta()
 
 	c.setInteractive();
 	c.on('pointerdown', function (puntero, obj) {
+		var obj = c;
 		consumir(puntero, obj);
 	});
 }
@@ -97,5 +92,5 @@ export function consumir(puntero, obj)
 			pj.vida += obj.curacion;
 		});
 	}
-	obj.destroy()
+	obj.destroy();
 }
