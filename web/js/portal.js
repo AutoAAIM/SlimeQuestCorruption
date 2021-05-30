@@ -187,7 +187,7 @@ function changeScene(obj)
 		
 		for(var i = 0; i < 4; i++)
         {
-            console.log(inventario.grupoObjetos.getChildren()[i]);
+            console.log(inventario.grupoObjetos.getChildren()[0]);
             /*if(inventario.grupoObjetos.getChildren()[i] == undefined){
 				inventario.grupoObjetos.getChildren()[i] = new Object;
                 inventario.grupoObjetos.getChildren()[i].name = null;
