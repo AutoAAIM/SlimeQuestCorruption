@@ -97,12 +97,12 @@ export function generarSkull(obj)
 		{
 			var numKey = c.toLowerCase().charAt(c.length-1)
 
-			if(numKey == 1)
+			if(numKey == 1 && dinero.dinero >=15)
 			{
 				inventario.generarPan()
 				dinero.incrementarPlorts(-15)
 			}
-			else if(numKey == 2)
+			else if(numKey == 2 && dinero.dinero >=15)
 			{
 				inventario.generarTarta()
 				dinero.incrementarPlorts(-50)
