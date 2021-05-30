@@ -187,15 +187,16 @@ function changeScene(obj)
 		
 		for(var i = 0; i < 4; i++)
         {
-            if(inventario.grupoObjetos.getChildren()[i] == undefined){
+            console.log(inventario.grupoObjetos.getChildren()[i]);
+            /*if(inventario.grupoObjetos.getChildren()[i] == undefined){
 				inventario.grupoObjetos.getChildren()[i] = new Object;
                 inventario.grupoObjetos.getChildren()[i].name = null;
-            }
+            }*/
         }
 		console.log(obj.properties.destino)
 		console.log(myObj.nombre)
 		xhr.open("POST", "php/guardar.php", true)
 		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
-		xhr.send("nombre="+myObj.nombre+"&contrasena="+myObj.contrasena+"&dinero="+myObj.dinero+"&zona="+obj.properties.destino+"&inventario1="+inventario.grupoObjetos.getChildren()[0].name+"&inventario2="+inventario.grupoObjetos.getChildren()[1].name+"&inventario3="+inventario.grupoObjetos.getChildren()[2].name+"&inventario4="+inventario.grupoObjetos.getChildren()[3].name)
+		xhr.send("nombre="+myObj.nombre+"&contrasena="+myObj.contrasena+"&dinero="+myObj.dinero+"&zona="+obj.properties.destino/*+"&inventario1="+inventario.grupoObjetos.getChildren()[0].name+"&inventario2="+inventario.grupoObjetos.getChildren()[1].name+"&inventario3="+inventario.grupoObjetos.getChildren()[2].name+"&inventario4="+inventario.grupoObjetos.getChildren()[3].name*/)
 	}
 }
