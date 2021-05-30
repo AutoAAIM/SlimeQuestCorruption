@@ -1,5 +1,6 @@
 import * as heroes from '../grupoHeroes.js';
 import * as dinero from '../dinero.js'
+import * as inventario from '../inventario.js'
 
 var scene;
 var textoSkull = false;
@@ -102,4 +103,17 @@ export function generarSkull(obj)
 	//skull.setAlpha(0);
 
 	scene.physics.add.overlap(heroes.heroes, skull.detectionbox, encenderTienda, null, scene);
+
+	this.input.keyboard.on('keydown', (event) => {
+			var c = event.code
+			if( c.slice(0,5) == "Digit")
+			{
+				var numKey += c.toLowerCase().charAt(c.length-1)
+
+				if(numKey = 1)
+				{
+					inventario.generar
+				}
+			}
+    	})
 }

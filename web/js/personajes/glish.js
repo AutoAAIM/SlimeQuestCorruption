@@ -57,7 +57,7 @@ export function create(spawn, allLayers, conf, grupo, arHe) {
 
     scene.anims.create({
 		key:'GlishF',
-		frames: scene.anims.generateFrameNames('glish'),
+		frames: scene.anims.generateFrameNames('glish', { start: 0, end: 1 }),
 		frameRate: 3,
 		repeat: -1
 	});
@@ -76,7 +76,7 @@ export function create(spawn, allLayers, conf, grupo, arHe) {
 
     config = conf;
     layers = allLayers;
-    
+
     player.play('GlishF', true);
     
 }
