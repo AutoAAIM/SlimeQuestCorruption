@@ -29,14 +29,6 @@ export function create()
 		});
 
 	generarInventario();
-
-	scene.input.keyboard.on('keydown', (event) => {
-		var c = event.code
-		if(c.slice(0,5) == "Digit")
-		{
-			consumir(c.toLowerCase().charAt(c.length-1))
-		}
-	})
 }
 
 export function generarInventario()

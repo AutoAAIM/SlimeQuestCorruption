@@ -105,22 +105,22 @@ export function generarSkull(obj)
 	scene.physics.add.overlap(heroes.heroes, skull.detectionbox, encenderTienda, null, scene);
 
 	scene.input.keyboard.on('keydown', (event) => {
-			var c = event.code
-			if( c.slice(0,5) == "Digit")
+		var c = event.code
+		if( c.slice(0,5) == "Digit")
+		{
+			var numKey = c.toLowerCase().charAt(c.length-1)
+
+			if(numKey == 1)
 			{
-				var numKey = c.toLowerCase().charAt(c.length-1)
-
-				if(numKey == 1)
-				{
-					inventario.generarPan()
-					dinero.dinero -= 15
-				}
-				else if(numKey == 2)
-				{
-					inventario.generarTarta()
-					dinero.dinero -= 50
-
-				}
+				inventario.generarPan()
+				dinero.dinero -= 15
 			}
-    	})
+			else if(numKey == 2)
+			{
+				inventario.generarTarta()
+				dinero.dinero -= 50
+
+			}
+		}
+	})
 }
