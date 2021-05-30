@@ -90,6 +90,10 @@ export function consumir(puntero, obj)
 	{
 		Phaser.Actions.Call(heroes.heroes.getChildren(), function (pj) {
 			pj.vida += obj.curacion;
+			if(pj.vida > pj.maxVida)
+			{
+				pj.vida = pj.maxVida;
+			}
 		});
 	}
 	obj.destroy();
