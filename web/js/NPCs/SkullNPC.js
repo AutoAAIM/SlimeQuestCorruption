@@ -104,7 +104,7 @@ export function generarSkull(obj)
 
 	scene.physics.add.overlap(heroes.heroes, skull.detectionbox, encenderTienda, null, scene);
 
-	this.input.keyboard.on('keydown', (event) => {
+	scene.input.keyboard.on('keydown', (event) => {
 			var c = event.code
 			if( c.slice(0,5) == "Digit")
 			{
