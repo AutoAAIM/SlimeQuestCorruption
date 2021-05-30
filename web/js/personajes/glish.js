@@ -81,12 +81,15 @@ export function create(spawn, allLayers, conf, grupo, arHe) {
 }
 
 export function update(cabeza) {
+    
+    player.play('GlishF', true);
 
 	if(player == cabeza){ player.enCabeza = true}
 	else{player.enCabeza = false}
-	if(!player.muerto && !player.inmovil && player.enCabeza == true)
+	
+    if(!player.muerto && !player.inmovil && player.enCabeza == true)
 	{
-        player.play('GlishF', true);
+
 		moverPersonaje.call(scene);
 		updateCursor();
   	    if (pointer.isDown && tiempo == 0) {
@@ -101,7 +104,7 @@ export function update(cabeza) {
 	else{
         cursor.setAlpha(0);
     }
-    player.play('GlishF', true);
+    //player.play('GlishF', true);
 	atacarPersonaje.call(scene);
 }
 
