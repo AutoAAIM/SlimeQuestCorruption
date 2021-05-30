@@ -187,11 +187,12 @@ function changeScene(obj)
 		
 		for(var i = 0; i < 4; i++)
         {
-            console.log(inventario.grupoObjetos.getChildren()[0]);
-            /*if(inventario.grupoObjetos.getChildren()[i] == undefined){
-				inventario.grupoObjetos.getChildren()[i] = new Object;
-                inventario.grupoObjetos.getChildren()[i].name = null;
-            }*/
+            console.log(inventario.grupoObjetos.getChildren()[i]);
+            if(inventario.grupoObjetos.getChildren()[i] == undefined){
+				console.log("tonso")
+                /*inventario.grupoObjetos.getChildren()[i] = new Object;
+                inventario.grupoObjetos.getChildren()[i].name = null;*/
+            }
         }
 		console.log(obj.properties.destino)
 		console.log(myObj.nombre)
