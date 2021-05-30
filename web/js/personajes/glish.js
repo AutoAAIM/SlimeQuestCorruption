@@ -86,9 +86,10 @@ export function update(cabeza) {
 	else{player.enCabeza = false}
 	if(!player.muerto && !player.inmovil && player.enCabeza == true)
 	{
+        player.play('GlishF', true);
 		moverPersonaje.call(scene);
 		updateCursor();
-  	if (pointer.isDown && tiempo == 0) {
+  	    if (pointer.isDown && tiempo == 0) {
 		  ondasRockeras.call(scene);
 		}
 		if (keys.Hability.isDown && tiempo2 == 0 && scene.game.glishActivarCuracion == true) {
