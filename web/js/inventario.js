@@ -59,7 +59,7 @@ export function update()
 
 export function generarPan()
 {
-	var indice = grupoObjetos.getLength()-1;
+	var indice = grupoObjetos.getLength();
 	var p = grupoObjetos.create(huecos[indice].x, huecos[indice].y, 'pan').setDepth(20).setScrollFactor(0);
 	p.curacion = 4;
 
@@ -71,7 +71,7 @@ export function generarPan()
 
 export function generarTarta()
 {
-	var indice = grupoObjetos.getLength()-1;
+	var indice = grupoObjetos.getLength();
 	var c = grupoObjetos.create(huecos[indice].x, huecos[indice].y, 'cake').setDepth(20).setScrollFactor(0);
 	c.play('lie', true);
 	c.curacion = 8;
