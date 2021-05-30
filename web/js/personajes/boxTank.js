@@ -488,11 +488,8 @@ export function puntero()
 		cursor.setAlpha(0)
 	}
 	//console.log(keys.pointer)
-	if(keys.pointer != null)
-	{
-		cursor.x = player.x - scene.game.scale.width / 2 + keys.pointer.x;
-		cursor.y = player.y - scene.game.scale.height / 2 + keys.pointer.y;
-	}
+	cursor.x = player.x - scene.game.scale.width / 2 + keys.pointer.x;
+	cursor.y = player.y - scene.game.scale.height / 2 + keys.pointer.y;
 	//cursor.x = keys.pointer.x;
 	//cursor.y = keys.pointer.y;
 }

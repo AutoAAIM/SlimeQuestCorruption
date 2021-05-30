@@ -64,8 +64,8 @@ export function generarPan()
 	p.curacion = 4;
 
 	p.setInteractive();
-	p.on('pointerdown', function (obj) {
-		consumir(obj);
+	p.on('pointerdown', function (puntero, obj) {
+		consumir(puntero, obj);
 	});
 }
 
@@ -77,12 +77,12 @@ export function generarTarta()
 	c.curacion = 8;
 
 	c.setInteractive();
-	c.on('pointerdown', function (obj) {
-		consumir(obj);
+	c.on('pointerdown', function (puntero, obj) {
+		consumir(puntero, obj);
 	});
 }
 
-export function consumir(obj)
+export function consumir(puntero, obj)
 {
 	if(obj.curacion != undefined)
 	{
