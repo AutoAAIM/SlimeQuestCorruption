@@ -15,7 +15,7 @@
 	//echo $query;
 	pg_query($update);
 
-	$queryz = "select usuarios.nombre, usuarios.contrasena, usuarios.dinero, zonas.nombre as zonanombre from usuarios, zonas where usuarios.nombre = '$nombre' and usuarios.contrasena = '$contrasena' and usuarios.id_zona = zonas.id_zona";
+	$queryz = "select usuarios.nombre, usuarios.contrasena, usuarios.dinero, zonas.nombre as zonanombre, usuarios.inventario1, usuarios.inventario2, usuarios.inventario3, usuarios.inventario4 from usuarios, zonas where usuarios.nombre = '$nombre' and usuarios.contrasena = '$contrasena' and usuarios.id_zona = zonas.id_zona";
 
 
 	//ejemplo de update//UPDATE usuarios SET id_zona=2 WHERE nombre = $nombre AND contrasena = $contrasena"
