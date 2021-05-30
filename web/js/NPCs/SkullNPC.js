@@ -102,7 +102,7 @@ export function generarSkull(obj)
 				inventario.generarPan()
 				dinero.incrementarPlorts(-15)
 			}
-			else if(numKey == 2 && dinero.dinero >=15)
+			else if(numKey == 2 && dinero.dinero >=50)
 			{
 				inventario.generarTarta()
 				dinero.incrementarPlorts(-50)
