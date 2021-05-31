@@ -91,6 +91,7 @@ export function quitarVida(obj, e)
 {
 	if (!e.inmune) 
 	{
+		console.log(e.vida+"y"+obj.dano);
 		e.detectionbox.detectado = true;
 
 		if (obj.dano != null) 
@@ -123,6 +124,7 @@ export function quitarVida(obj, e)
 			}
 		});
 	}
+
 	if(obj.fragil)
 	{
 		obj.destroy()
