@@ -124,10 +124,11 @@ export function quitarVida(obj, e)
 				}
 			}
 		});
+        
+        if(e.vida <= 0)
+        {
+            e.destroy()
+        }
 	}
 
-	if(obj.fragil)
-	{
-		obj.destroy()
-	}
 }

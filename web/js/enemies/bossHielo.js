@@ -156,9 +156,10 @@ export function quitarVida(obj, e)
 				}
 			}
 		});
-	}
-	if(obj.fragil)
-	{
-		obj.destroy()
+
+		if(e.vida <= 0)
+        {
+            e.destroy()
+        }
 	}
 }
