@@ -15,6 +15,14 @@ export function preload()
 export var boss;
 export var grupoDispBoss;
 
+export function update()
+{
+	if(boss.vida <= 0)
+	{
+		boss.destroy;
+	}
+}
+
 export function create(obj)
 {
 	scene.anims.create({
@@ -56,6 +64,7 @@ export function generarBoss(obj)
 	boss.activo = false;
 	boss.setAlpha(0);
 	boss.body.enable = false;
+	boss.vida = 30;
 
 	grupoDispBoss = scene.physics.add.group();
 

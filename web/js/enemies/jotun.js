@@ -13,6 +13,17 @@ export function preload()
 export var grupoEnemigos
 export var grupoDispEnemigo
 
+export function update()
+{
+	for(var i = grupoEnemigos.getLength(); i >= 0; i--)
+	{
+		if(grupoEnemigos.getChildren()[i].vida <= 0)
+		{
+			grupoEnemigos.getChildren()[i].destroy;
+		}
+	}
+}
+
 export function create(obj)
 {
 	grupoEnemigos = scene.physics.add.staticGroup();
@@ -35,6 +46,7 @@ export function generarEnemigo(obj)
     e.dano = 1
 	e.detectionbox = scene.add.rectangle(e.x, e.y, 290, 290);
 	scene.physics.add.existing(e.detectionbox, false);
+	e.vida = 6;
 
 	e.detectionbox.tiempoDisparo = 0;
 
