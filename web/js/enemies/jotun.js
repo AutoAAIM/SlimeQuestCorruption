@@ -1,4 +1,5 @@
 import * as heroes from '../grupoHeroes.js';
+import * as dinero from '../dinero.js';
 
 var scene;
 
@@ -15,7 +16,7 @@ export var grupoDispEnemigo
 
 export function update()
 {
-	for(var i = grupoEnemigos.getLength(); i >= 0; i--)
+	for(var i = grupoEnemigos.getLength() - 1; i >= 0; i--)
 	{
 		if(grupoEnemigos.getChildren()[i].vida <= 0)
 		{
