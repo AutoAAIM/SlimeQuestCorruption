@@ -159,6 +159,7 @@ export function quitarVida(obj, e)
 
 		if(e.vida <= 0)
         {
+			e.detectionbox.destroy()
             e.destroy()
         }
 	}
