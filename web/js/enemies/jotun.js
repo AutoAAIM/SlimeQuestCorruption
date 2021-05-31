@@ -22,7 +22,7 @@ export function update()
 		{
 			grupoEnemigos.getChildren()[i].destroy;
 		}
-		console.log(grupoEnemigos.getChildren()[i].vida);
+		// console.log(grupoEnemigos.getChildren()[i].vida);
 	}
 }
 
@@ -46,6 +46,7 @@ export function generarEnemigo(obj)
 	e.setCircle(22);
 	e.play('slime', true);
     e.dano = 1
+    e.inmune = false;
 	e.detectionbox = scene.add.rectangle(e.x, e.y, 290, 290);
 	scene.physics.add.existing(e.detectionbox, false);
 	e.vida = 6;
@@ -115,7 +116,7 @@ export function quitarVida(obj, e)
 
 				e.inmune = true;
 
-				// e.setAlpha(value % 2)
+				e.setAlpha(value % 2)
 
 				if (value == 0) {
 					e.setAlpha(1)

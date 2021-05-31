@@ -65,6 +65,7 @@ export function generarBoss(obj)
 	boss.setAlpha(0);
 	boss.body.enable = false;
 	boss.vida = 30;
+	boss.inmune = false;
 
 	grupoDispBoss = scene.physics.add.group();
 
