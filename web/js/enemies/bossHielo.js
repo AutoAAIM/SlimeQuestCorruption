@@ -111,7 +111,7 @@ export function updateNieblaBoss()
 	});
 }
 
-export function quitarVida(e, obj) 
+export function quitarVida(obj, e)
 {
 	if (!e.inmune)
 	{
