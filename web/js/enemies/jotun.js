@@ -32,7 +32,7 @@ export function generarEnemigo(obj)
 	e.setScale(2);
 	e.setCircle(22);
 	e.play('slime', true);
-
+    e.dano = 1
 	e.detectionbox = scene.add.rectangle(e.x, e.y, 290, 290);
 	scene.physics.add.existing(e.detectionbox, false);
 
@@ -73,7 +73,44 @@ export function updateDispEnem()
 	});
 }
 
-export function quitarVida()
+export function quitarVida(obj, e) 
 {
-	// yasha.vida--;
+	if (!e.inmune) 
+	{
+		e.detectionbox.detectado = true;
+
+		if (obj.dano != null) 
+		{
+			e.vida -= obj.dano;
+		}
+		else
+		{
+			e.vida --;
+		}
+
+		e.inmune = true;
+
+		scene.tweens.addCounter({
+			from: 100,
+			to: 0,
+			duration: 1000,
+
+			onUpdate: function (tween) {
+				var value = Math.floor(tween.getValue());
+
+				e.inmune = true;
+
+				e.setAlpha(value % 2)
+
+				if (value == 0) {
+					e.setAlpha(1)
+					e.inmune = false;
+				}
+			}
+		});
+	}
+	if(obj.fragil)
+	{
+		obj.destroy()
+	}
 }

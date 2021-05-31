@@ -1,4 +1,6 @@
 import * as juego from '../mapas/snowyMountain.js';
+import * as utilidades from '../utilidades.js';
+import * as dinero from '../dinero.js';
 import * as heroes from '../grupoHeroes.js';
 
 var scene;
@@ -107,4 +109,46 @@ export function updateNieblaBoss()
 			d.destroy();
 		}
 	});
+}
+
+export function quitarVida(obj, e) 
+{
+	if (!e.inmune)
+	{
+		e.detectionbox.detectado = true;
+
+		if (obj.dano != null) 
+		{
+			e.vida -= obj.dano;
+		}
+		else
+		{
+			e.vida --;
+		}
+
+		e.inmune = true;
+
+		scene.tweens.addCounter({
+			from: 100,
+			to: 0,
+			duration: 1000,
+
+			onUpdate: function (tween) {
+				var value = Math.floor(tween.getValue());
+
+				e.inmune = true;
+
+				e.setAlpha(value % 2)
+
+				if (value == 0) {
+					e.setAlpha(1)
+					e.inmune = false;
+				}
+			}
+		});
+	}
+	if(obj.fragil)
+	{
+		obj.destroy()
+	}
 }

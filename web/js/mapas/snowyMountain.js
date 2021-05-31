@@ -167,6 +167,10 @@ export default class montelago extends Phaser.Scene {
 		this.physics.add.overlap(heroes.heroes, bossHielo.grupoDispBoss, heroes.herir, null, this);
 
 		this.physics.add.overlap(heroes.heroes, jotun.grupoDispEnemigo, heroes.herir, null, this);
+
+		this.physics.add.overlap(heroes.heroes, bossHielo.boss, heroes.herir, null, scene);
+
+		this.physics.add.overlap(heroes.heroes, jotun.grupoEnemigos, heroes.herir, null, this);
 	}
 
 	update()

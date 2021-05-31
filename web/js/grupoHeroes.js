@@ -1,7 +1,6 @@
 import * as boxTank from './personajes/boxTank.js';
 import * as yasha from './personajes/yasha.js';
 import * as glish from './personajes/glish.js';
-//import * as robin from './personajes/robin.js';
 import * as swampBoss from './enemies/SwampBoss.js';
 import * as keys from './keys.js';
 
@@ -21,7 +20,7 @@ export var heroes;
 var numHeroes;
 export var cabeza
 var caminoTemp = new Array();
-var fila// = new Array();
+var fila
 export var armasHeroicas = new Array();
 var move;
 var pausado = false;
@@ -74,7 +73,7 @@ export function create(spawn, allTiles, antorchas, conf)
 	}
 
 
-	//Hay que hacer una variable que copruebe si la cabeza esta en movimiento
+	//Hay que hacer una variable que compruebe si la cabeza esta en movimiento
 	move = false;
 	text = scene.add.text(10, 10, 'vida: ' + cabeza.vida, { font: '16px Courier', fill: '#7dfdff' }).setDepth(100).setScrollFactor(0);
 
@@ -233,7 +232,7 @@ export function herir(obj, e) {
         if(e.name == "mosquito"){
             aleatorio2 = Math.floor(Math.random() * (10-1+1)) + 1;
             if(aleatorio2 <= 3){
-            e.vida +=1;
+            	e.vida +=1;
             }
         }
 	}
