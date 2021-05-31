@@ -84,19 +84,20 @@ export function updateDispEnem()
 		if(d.tiempoVida <= 0)
 		{
 			d.destroy();
+		{
 		}
 	});
 }
 
 export function quitarVida(obj, e)
 {
+    console.log(e.vida+"y"+obj.dano);
     console.log(obj.vida+"H"+e.dano);
 	if (!e.inmune) 
 	{
 		e.detectionbox.detectado = true;
 
 		if (obj.dano != null) 
-		{
 			e.vida -= obj.dano;
 		}
 		else
