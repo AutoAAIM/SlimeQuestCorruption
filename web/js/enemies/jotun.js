@@ -85,7 +85,6 @@ export function updateDispEnem()
 		{
 			d.destroy();
 		}
-        
 	});
 }
 
@@ -97,7 +96,7 @@ export function quitarVida(obj, e)
 	{
 		e.detectionbox.detectado = true;
 
-		if (obj.dano != null) 
+		if (obj.dano != null){
 			e.vida -= obj.dano;
 		}
 		else
