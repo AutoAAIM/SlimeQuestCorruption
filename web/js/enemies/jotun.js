@@ -89,9 +89,9 @@ export function updateDispEnem()
 
 export function quitarVida(obj, e)
 {
+	console.log(e.vida+"y"+obj.dano);
 	if (!e.inmune) 
 	{
-		console.log(e.vida+"y"+obj.dano);
 		e.detectionbox.detectado = true;
 
 		if (obj.dano != null) 
