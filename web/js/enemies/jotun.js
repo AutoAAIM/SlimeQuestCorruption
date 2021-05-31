@@ -22,6 +22,7 @@ export function update()
 		{
 			grupoEnemigos.getChildren()[i].destroy;
 		}
+		console.log(grupoEnemigos.getChildren()[i].vida);
 	}
 }
 
