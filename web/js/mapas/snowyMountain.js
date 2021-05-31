@@ -7,6 +7,7 @@ import * as portal from '../portal.js';
 import * as bossHielo from '../enemies/bossHielo.js';
 import * as inventario from '../inventario.js';
 import * as keys from '../keys.js';
+import * as dinero from '../dinero.js';
 import * as sc from '../sceneConstructor.js';
 
 var scene;
@@ -64,6 +65,7 @@ export default class montelago extends Phaser.Scene {
 		portal.preload.call(this)
 		bossHielo.preload.call(this)
 		inventario.preload.call(this)
+		dinero.preload.call(this)
 	}
 
 	create()
@@ -168,9 +170,11 @@ export default class montelago extends Phaser.Scene {
 
 		this.physics.add.overlap(heroes.heroes, jotun.grupoDispEnemigo, heroes.herir, null, this);
 
-		this.physics.add.overlap(heroes.heroes, bossHielo.boss, heroes.herir, null, scene);
+		this.physics.add.overlap(heroes.heroes, bossHielo.boss, bossHielo.quitarVida, null, scene);
 
-		this.physics.add.overlap(heroes.heroes, jotun.grupoEnemigos, heroes.herir, null, this);
+		this.physics.add.overlap(heroes.heroes, jotun.grupoEnemigos, jotun.quitarVida, null, this);
+
+		dinero.create();
 	}
 
 	update()
