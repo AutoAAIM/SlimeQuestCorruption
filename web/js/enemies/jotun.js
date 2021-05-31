@@ -84,8 +84,8 @@ export function updateDispEnem()
 		if(d.tiempoVida <= 0)
 		{
 			d.destroy();
-		{
 		}
+        
 	});
 }
 
