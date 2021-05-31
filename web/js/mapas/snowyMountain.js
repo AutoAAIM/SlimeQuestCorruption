@@ -186,5 +186,7 @@ export default class montelago extends Phaser.Scene {
 		mago.magoTrue(antorchas);
 		jotun.updateDispEnem();
 		bossHielo.updateNieblaBoss();
+		bossHielo.update();
+		jotun.update();
 	}
 }
