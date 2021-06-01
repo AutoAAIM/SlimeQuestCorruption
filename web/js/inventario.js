@@ -15,12 +15,13 @@ export function preload()
 }
 
 export var grupoObjetos;
-export var grupoObjetos;
+export var grupoDrops;
 var huecos = new Array;
 
 export function create()
 {
 	grupoObjetos = scene.physics.add.staticGroup();
+	grupoDrops = scene.physics.add.group();
 
 	scene.anims.create({
 			key:'lie',
@@ -119,5 +120,14 @@ export function consumir(puntero, obj)
 
 export function tirarPan()
 {
+	var indice = grupoDrops.getLength();
 
+	var p = grupoObjetos.create(huecos[indice].x, huecos[indice].y, 'pan').setDepth(20).setScrollFactor(0);
+	p.curacion = 4;
+	p.name = "pan"
+
+	p.setInteractive();
+	p.on('pointerdown', function (puntero) {
+		var obj = p;
+		consumir(puntero, obj);	
 }
