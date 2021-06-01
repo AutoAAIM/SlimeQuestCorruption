@@ -123,7 +123,10 @@ export function consumir(puntero, obj)
 
 function cogerItem(pj, obj)
 {
-	
+	if(obj.name == "pan"){generarPan()}
+	else if(obj.name == "pastelraro"){generarTarta()}
+
+	obj.destroy();
 }
 
 export function tirarPan(obj)
