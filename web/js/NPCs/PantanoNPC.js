@@ -36,7 +36,7 @@ export function create(obj, config) {
 
     scene.dialogoText4 = scene.add.text(npc1.x-42,npc1.y-64, 'Es la hora de cenar', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102);
 
-    tiempoAdios == 60;
+    tiempoAdios = 30;
     npc1.trigger = scene.add.rectangle(npc1.x,npc1.y, 90, 90);
     scene.physics.add.existing(npc1.trigger, false);
     npc1.trigger.activado = false;
