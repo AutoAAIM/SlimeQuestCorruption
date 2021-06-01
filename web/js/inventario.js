@@ -118,16 +118,10 @@ export function consumir(puntero, obj)
 	}
 }
 
-export function tirarPan()
+export function tirarPan(obj)
 {
-	var indice = grupoDrops.getLength();
+	//var indice = grupoDrops.getLength();
 
-	var p = grupoObjetos.create(huecos[indice].x, huecos[indice].y, 'pan').setDepth(20).setScrollFactor(0);
-	p.curacion = 4;
+	var p = grupoDrops.create(obj.x, obj.y, 'pan').setDepth(20);
 	p.name = "pan"
-
-	p.setInteractive();
-	p.on('pointerdown', function (puntero) {
-		var obj = p;
-		consumir(puntero, obj);	
 }
