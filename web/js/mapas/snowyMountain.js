@@ -1,5 +1,6 @@
 import * as heroes from '../grupoHeroes.js';
 import * as yasha from '../personajes/yasha.js';
+import * as boxTank from '../personajes/boxTank.js';
 import * as jotun from '../enemies/jotun.js';
 import * as mago from '../NPCs/magoNPC.js';
 import * as oscuridad from '../luz.js';
@@ -236,7 +237,6 @@ export default class montelago extends Phaser.Scene {
 			});
 		}
 	}
-
 
 	update()
 	{
