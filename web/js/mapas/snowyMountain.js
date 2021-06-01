@@ -9,7 +9,7 @@ import * as inventario from '../inventario.js';
 import * as keys from '../keys.js';
 import * as dinero from '../dinero.js';
 import * as sc from '../sceneConstructor.js';
-import * as lab from './lab.js';
+// import * as lab from './lab.js';
 
 var scene;
 var contFuego;
