@@ -6,8 +6,7 @@ import * as mosquitos from '../enemies/mosquitos.js';
 import * as enemigos from '../enemies/enemigos.js';
 import * as inventario from '../inventario.js';
 
-var npc1, scene, interacturar, keyE, dialogo, dialogoText2, dialogoText, cuadroTexto, cuadroTexto2, tiempoAdios;
-export var pan;
+var npc1, scene, interacturar, keyE, dialogo, dialogoText2, dialogoText, cuadroTexto, cuadroTexto2, tiempoAdios, pan;
 
 export function preload() {
     this.load.spritesheet('npc1', 'assets/images/Glish.png', { frameWidth: 32, frameHeight: 32 });
