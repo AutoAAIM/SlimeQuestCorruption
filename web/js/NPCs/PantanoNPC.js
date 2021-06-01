@@ -33,7 +33,7 @@ export function create(obj, config) {
 
     scene.dialogoText4 = scene.add.text(npc1.x-42,npc1.y-64, 'Es la hora de cenar', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102);
 
-    tiempoAdios == 60;
+    tiempoAdios == 120;
     npc1.trigger = scene.add.rectangle(npc1.x,npc1.y, 90, 90);
     scene.physics.add.existing(npc1.trigger, false);
     npc1.trigger.activado = false;
@@ -65,7 +65,7 @@ function activarTrigger(player, npc){
 
     if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
         scene.dialogoText3.setAlpha(1);
-        pan = scene.physics.add.sprite(npc.x-200, npc.y, 'panes').setDepth(1);
+        pan = scene.physics.add.sprite(npc.x-50, npc.y, 'panes').setDepth(10);
         scene.physics.add.overlap(heroes.heroes, pan, recogerPan, null, scene);
     }
 
