@@ -267,6 +267,8 @@ export default class lab extends Phaser.Scene {
 		scene.physics.add.overlap(heroes.armasHeroicas, scyther.scytherGroup, scyther.herir, null, scene);
 
 		dinero.create();
+
+		console.log('se han hecho cambios')
 	}
 
 	createHuellas(obj,layer)
