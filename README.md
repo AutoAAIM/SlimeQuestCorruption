@@ -1,3 +1,0 @@
-# SlimeQuestCorruption
-el proyecto final
-
