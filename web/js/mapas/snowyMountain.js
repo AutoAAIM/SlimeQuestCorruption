@@ -181,7 +181,6 @@ export default class montelago extends Phaser.Scene {
 	{
 		if (!pj.inmovil)
 		{
-
 			pj.inmovil = true;
 			pj.inmune = true;
 			boxTank.player.emitter.stop();
