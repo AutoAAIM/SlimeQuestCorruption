@@ -315,7 +315,7 @@ export function update()
 			s.detectionbox.destroy();
 			s.setTint(0xaaaaaa)
 			s.body.enable = false;
-			dinero.generarPlort(s, 1);
+			dinero.generarPlort(s, 5);
 			console.log('holiwi');
 			inventario.tirarPan(s)
 		}
