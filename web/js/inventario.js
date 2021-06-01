@@ -15,13 +15,11 @@ export function preload()
 }
 
 export var grupoObjetos;
-export var grupoDrops;
 var huecos = new Array;
 
 export function create()
 {
 	grupoObjetos = scene.physics.add.staticGroup();
-	grupoDrops = scene.physics.add.group();
 
 	scene.anims.create({
 			key:'lie',
@@ -31,8 +29,6 @@ export function create()
 		});
 
 	generarInventario();
-
-	scene.physics.add.overlap(heroes.heroes, grupoDrops, cogerItem, null, scene);
 }
 
 export function generarInventario()
