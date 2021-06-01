@@ -4,7 +4,6 @@ import * as heroes from '../grupoHeroes.js';
 import * as ranas from '../enemies/ranas.js';
 import * as mosquitos from '../enemies/mosquitos.js';
 import * as enemigos from '../enemies/enemigos.js';
-import * as inventario from '../inventario.js';
 
 var npc1, scene, interacturar, keyE, dialogo, dialogoText2, dialogoText, cuadroTexto, cuadroTexto2, tiempoAdios;
 export var pan;
@@ -32,11 +31,9 @@ export function create(obj, config) {
   
     scene.dialogoText3 = scene.add.text(npc1.x-32,npc1.y-32, 'Acercate a mi', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102);
 
-    pan = scene.physics.add.sprite(npc1.x-50, npc1.y, 'panes').setDepth(10).setAlpha(0);
-
     scene.dialogoText4 = scene.add.text(npc1.x-42,npc1.y-64, 'Es la hora de cenar', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102);
 
-    tiempoAdios = 30;
+    tiempoAdios == 60;
     npc1.trigger = scene.add.rectangle(npc1.x,npc1.y, 90, 90);
     scene.physics.add.existing(npc1.trigger, false);
     npc1.trigger.activado = false;
@@ -50,7 +47,6 @@ export function create(obj, config) {
 
     scene.physics.add.overlap(heroes.heroes, npc1.trigger, activarTrigger, null, scene);
     scene.physics.add.overlap(heroes.heroes, npc1, recogerPersonaje, null, scene);
-    scene.physics.add.overlap(heroes.heroes, pan, recogerPan, null, scene);
 
 }
 
@@ -69,7 +65,8 @@ function activarTrigger(player, npc){
 
     if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
         scene.dialogoText3.setAlpha(1);
-
+        pan = scene.physics.add.sprite(npc.x-200, npc.y, 'panes').setDepth(1);
+        scene.physics.add.overlap(heroes.heroes, pan, recogerPan, null, scene);
     }
 
 }
@@ -79,7 +76,6 @@ function recogerPersonaje(){
         scene.dialogoText4.setAlpha(1);
         scene.dialogoText3.setAlpha(0);
         if(tiempoAdios <= 0){
-            pan.setAlpha(1);
             scene.game.glishActivarCuracion = true;
             npc1.trigger.destroy();
             npc1.destroy();
@@ -93,10 +89,8 @@ function recogerPersonaje(){
 }
 
 function recogerPan(){
-    if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
-        pan.destroy();
-        inventario.generarPan();
-    }
+    pan.destroy();
+    generarPan();
 }
 
 export function update(){

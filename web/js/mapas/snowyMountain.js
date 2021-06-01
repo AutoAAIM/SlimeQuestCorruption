@@ -54,6 +54,7 @@ export default class montelago extends Phaser.Scene {
 
 	preload()
 	{
+		//this.load.atlas('atlas', 'assets/atlas/atlas.png', 'assets/atlas/sprites.json');
 		this.load.image('cuevaTiles', 'assets/mapa/terrain4.png');
 		this.load.image('snowTiles', 'assets/mapa/snow.png');
 		this.load.tilemapTiledJSON('CuevaMago', 'assets/mapa/mapa_CuevaMago.json');
@@ -110,6 +111,7 @@ export default class montelago extends Phaser.Scene {
 
 		inventario.create();
 
+
 		spawn = new Phaser.Math.Vector2(-980, 2250)
 
 		console.log(scene.config)
@@ -153,8 +155,6 @@ export default class montelago extends Phaser.Scene {
 		luz.setTileIndexCallback(darkTiles, oscuridad.encenderOscuridad, this.physics.add.overlap(heroes.heroes, luz));
 
 		objetos.setTileIndexCallback(snowTiles, yasha.derretir, this.physics.add.overlap(yasha.grupoFuego, objetos));
-
-		lago.setTileIndexCallback(freezeTiles, this.fallDeath, this.physics.add.overlap(heroes.heroes, lago));
 		
 		this.physics.add.collider(mago.mago, heroes.heroes);
 		this.physics.add.collider(jotun.grupoEnemigos, heroes.heroes);
@@ -176,68 +176,6 @@ export default class montelago extends Phaser.Scene {
 
 		dinero.create();
 	}
-
-	fallDeath(pj, layer)
-	{
-		if (!pj.inmovil)
-		{
-
-			pj.inmovil = true;
-			pj.inmune = true;
-			boxTank.player.emitter.stop();
-
-			pj.setVelocityX(0);
-			pj.setVelocityY(0);
-
-			scene.tweens.addCounter({
-				from: 100,
-				to: 0,
-				duration: 2000,
-				onUpdate: function (tween)
-				{
-					var value255 = Math.floor(tween.getValue()/100 * 255);
-					var value = Math.floor(tween.getValue());
-
-					pj.setTint(Phaser.Display.Color.GetColor(value255, value255, value255));
-
-					pj.angle = (100-value) * 5;
-
-					pj.setScale(value * 0.01);
-
-					if (value <= 0 && pj.heroe)
-					{
-						pj.x = playerSpawnPoint[spawnID].x;
-						pj.y = playerSpawnPoint[spawnID].y;
-						if (tween.getValue() <= 0)
-						{
-							pj.vida -= 2;
-						}
-
-						pj.angle = 0;
-
-						pj.setTint(0xffffff)
-
-						pj.setScale(1);
-
-						pj.inmovil = false;
-						pj.inmune = false;
-
-						heroes.reHacerFila()
-					}
-					else if(value == 0 && pj.detectionbox != null)
-					{
-						pj.detectionbox.destroy()
-						pj.destroy()
-					}
-					else if(value == 0)
-					{
-						pj.destroy()
-					}
-				}
-			});
-		}
-	}
-
 
 	update()
 	{

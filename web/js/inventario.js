@@ -15,13 +15,11 @@ export function preload()
 }
 
 export var grupoObjetos;
-export var grupoDrops;
 var huecos = new Array;
 
 export function create()
 {
 	grupoObjetos = scene.physics.add.staticGroup();
-	grupoDrops = scene.physics.add.group();
 
 	scene.anims.create({
 			key:'lie',
@@ -31,9 +29,6 @@ export function create()
 		});
 
 	generarInventario();
-
-	scene.physics.add.overlap(heroes.heroes, grupoDrops, cogerItem, null, scene);
-	//grupoDrops
 }
 
 export function generarInventario()
@@ -119,22 +114,4 @@ export function consumir(puntero, obj)
 		grupoObjetos.getChildren()[i].x = huecos[i].x
 		grupoObjetos.getChildren()[i].y = huecos[i].y
 	}
-}
-
-function cogerItem(pj, obj)
-{
-	if(obj.name == "pan"){generarPan()}
-	else if(obj.name == "pastelraro"){generarTarta()}
-
-	obj.destroy();
-}
-
-export function tirarPan(obj)
-{
-	//var indice = grupoDrops.getLength();
-
-	console.log('')
-
-	var p = grupoDrops.create(obj.x, obj.y, 'pan').setDepth(17);
-	p.name = "pan"
 }
