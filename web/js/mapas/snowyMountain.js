@@ -184,6 +184,7 @@ export default class montelago extends Phaser.Scene {
 	{
 		if (!pj.inmovil)
 		{
+			//console.log('Deberias estar muerto')
 
 			pj.inmovil = true;
 			pj.inmune = true;
@@ -206,6 +207,7 @@ export default class montelago extends Phaser.Scene {
 					pj.angle = (100-value) * 5;
 
 					pj.setScale(value * 0.01);
+					//console.log(tween.getValue())
 
 					if (value <= 0 && pj.heroe)
 					{
@@ -229,6 +231,7 @@ export default class montelago extends Phaser.Scene {
 					}
 					else if(value == 0 && pj.detectionbox != null)
 					{
+						//pj.detectionbox = null;
 						pj.detectionbox.destroy()
 						pj.destroy()
 					}
