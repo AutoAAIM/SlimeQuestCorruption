@@ -31,6 +31,9 @@ export function create()
 		});
 
 	generarInventario();
+
+	scene.physics.add.overlap(heroes.heroes, grupoDrops, tirarItem, null, scene);
+	//grupoDrops
 }
 
 export function generarInventario()
@@ -122,6 +125,6 @@ export function tirarPan(obj)
 {
 	//var indice = grupoDrops.getLength();
 
-	var p = grupoDrops.create(obj.x, obj.y, 'pan').setDepth(20);
+	var p = grupoDrops.create(obj.x, obj.y, 'pan').setDepth(17);
 	p.name = "pan"
 }

@@ -111,7 +111,6 @@ export default class montelago extends Phaser.Scene {
 
 		inventario.create();
 
-
 		spawn = new Phaser.Math.Vector2(-980, 2250)
 
 		console.log(scene.config)

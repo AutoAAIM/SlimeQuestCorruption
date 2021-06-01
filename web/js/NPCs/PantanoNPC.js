@@ -31,7 +31,7 @@ export function create(obj, config) {
   
     scene.dialogoText3 = scene.add.text(npc1.x-32,npc1.y-32, 'Acercate a mi', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102);
 
-    pan = scene.physics.add.sprite(npc.x-50, npc.y, 'panes').setDepth(10);
+    pan = scene.physics.add.sprite(npc1.x-50, npc1.y, 'panes').setDepth(10);
 
     scene.dialogoText4 = scene.add.text(npc1.x-42,npc1.y-64, 'Es la hora de cenar', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102);
 
