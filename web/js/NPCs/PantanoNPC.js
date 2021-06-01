@@ -22,6 +22,8 @@ export function create(obj, config) {
 
     npc1 = scene.physics.add.sprite(obj.x, obj.y, 'npc1');
     interacturar = scene.physics.add.sprite(obj.x, obj.y-32, 'buttonE');
+
+    pan = scene.physics.add.sprite(npc1.x-50, npc1.y, 'panes').setDepth(10).setAlpha(0);
   
     cuadroTexto = scene.add.rectangle(config.width / 2,config.height - 50, config.width, 100, 0xaaaaaa).setDepth(100).setScrollFactor(0);
 
@@ -30,8 +32,6 @@ export function create(obj, config) {
     dialogoText2 = scene.add.text(16,210, 'Por favor si quieres la habilidad de quitar el veneno \nayudame a cazar la cena. \nnecesito estos ingredientes\nranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos, {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102).setScrollFactor(0);
   
     scene.dialogoText3 = scene.add.text(npc1.x-32,npc1.y-32, 'Acercate a mi', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102);
-
-    pan = scene.physics.add.sprite(npc1.x-50, npc1.y, 'panes').setDepth(10).setAlpha(0);
 
     scene.dialogoText4 = scene.add.text(npc1.x-42,npc1.y-64, 'Es la hora de cenar', {fontSize: '12px', fill: '#68FF00', fontFamily: 'sans-serif'}).setDepth(102);
 
@@ -78,6 +78,7 @@ function recogerPersonaje(){
         scene.dialogoText4.setAlpha(1);
         scene.dialogoText3.setAlpha(0);
         if(tiempoAdios <= 0){
+
             pan.setAlpha(1);
             scene.game.glishActivarCuracion = true;
             npc1.trigger.destroy();
@@ -88,12 +89,14 @@ function recogerPersonaje(){
             scene.dialogoText3.destroy();
             scene.dialogoText4.destroy();
             interacturar.destroy();
+
         }else {tiempoAdios --;}
     }
 }
 
 function recogerPan(){
     if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
+        
         pan.destroy();
         inventario.generarPan();
     }
