@@ -15,11 +15,13 @@ export function preload()
 }
 
 export var grupoObjetos;
+export var grupoDrops;
 var huecos = new Array;
 
 export function create()
 {
 	grupoObjetos = scene.physics.add.staticGroup();
+	grupoDrops = scene.physics.add.group();
 
 	scene.anims.create({
 			key:'lie',
