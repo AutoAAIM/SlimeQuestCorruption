@@ -152,11 +152,11 @@ export default class montelago extends Phaser.Scene {
 		
 		lago.setTileIndexCallback(freezeTiles, yasha.freeze, this.physics.add.overlap(yasha.grupoFuego, lago));
 
-		lago.setTileIndexCallback(freezeTiles, this.freeze, this.physics.add.overlap(yasha.grupoFuego, lago));
+		lago.setTileIndexCallback(freezeTiles, this.fallDeath, this.physics.add.overlap(yasha.grupoFuego, lago));
 
 		luz.setTileIndexCallback(darkTiles, oscuridad.encenderOscuridad, this.physics.add.overlap(heroes.heroes, luz));
 
-		objetos.setTileIndexCallback(snowTiles, yasha.fallDeath, this.physics.add.overlap(heroes.heroes, objetos));
+		objetos.setTileIndexCallback(snowTiles, yasha.derretir, this.physics.add.overlap(heroes.heroes, objetos));
 		
 		this.physics.add.collider(mago.mago, heroes.heroes);
 		this.physics.add.collider(jotun.grupoEnemigos, heroes.heroes);
@@ -211,8 +211,8 @@ export default class montelago extends Phaser.Scene {
 
 					if (value <= 0 && pj.heroe)
 					{
-						pj.x = playerSpawnPoint[spawnID].x;
-						pj.y = playerSpawnPoint[spawnID].y;
+						pj.x = spawn.x;
+						pj.y = spawn.y;
 						if (tween.getValue() <= 0)
 						{
 							pj.vida -= 2;
