@@ -31,6 +31,8 @@ export function create()
 		});
 
 	generarInventario();
+
+	scene.physics.add.overlap(heroes.heroes, grupoDrops, cogerItem, null, scene);
 }
 
 export function generarInventario()
