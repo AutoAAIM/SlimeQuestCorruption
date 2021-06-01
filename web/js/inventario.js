@@ -135,6 +135,6 @@ export function tirarPan(obj)
 
 	console.log('panTirado en'+obj.x+' : '+obj.y);
 
-	var p = grupoDrops.create(obj.x, obj.y, 'pan').setDepth(17);
+	var p = grupoDrops.create(obj.x, obj.y, 'pan').setDepth(30);
 	p.name = "pan"
 }
