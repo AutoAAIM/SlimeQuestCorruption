@@ -32,7 +32,7 @@ export function create()
 
 	generarInventario();
 
-	scene.physics.add.overlap(heroes.heroes, grupoDrops, tirarItem, null, scene);
+	scene.physics.add.overlap(heroes.heroes, grupoDrops, cogerItem, null, scene);
 	//grupoDrops
 }
 
@@ -119,6 +119,11 @@ export function consumir(puntero, obj)
 		grupoObjetos.getChildren()[i].x = huecos[i].x
 		grupoObjetos.getChildren()[i].y = huecos[i].y
 	}
+}
+
+function cogerItem(pj, obj)
+{
+	
 }
 
 export function tirarPan(obj)
