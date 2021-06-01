@@ -60,13 +60,13 @@ function activarTrigger(player, npc){
         cuadroTexto.setAlpha(1);
         cuadroTexto2.setAlpha(1);
         dialogoText2.setAlpha(1);
-        pan = scene.physics.add.sprite(npc.x-200, npc.y, 'panes').setDepth(1);
-        scene.physics.add.overlap(heroes.heroes, pan, recogerPan, null, scene);
 
     }
 
     if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
         scene.dialogoText3.setAlpha(1);
+        pan = scene.physics.add.sprite(npc.x-200, npc.y, 'panes').setDepth(1);
+        scene.physics.add.overlap(heroes.heroes, pan, recogerPan, null, scene);
     }
 
 }
@@ -74,6 +74,7 @@ function activarTrigger(player, npc){
 function recogerPersonaje(){
     if(ranas.contadorRana == 0 && mosquitos.contadorMosquitos == 0){
         scene.dialogoText4.setAlpha(1);
+        scene.dialogoText3.setAlpha(0);
         if(tiempoAdios <= 0){
             scene.game.glishActivarCuracion = true;
             npc1.trigger.destroy();
@@ -103,6 +104,7 @@ export function update(){
     cuadroTexto2.setAlpha(0);
     dialogoText2.setAlpha(0);
     scene.dialogoText3.setAlpha(0);
+    scene.dialogoText4.setAlpha(0);
   }
   dialogoText2.text = 'Por favor si quieres la habilidad de quitar el veneno \nayudame a cazar la cena. \nnecesito estos ingredientes\nranas: ' + ranas.contadorRana + '\n mosquitos:'+ mosquitos.contadorMosquitos;
 
