@@ -79,7 +79,7 @@ function recogerPersonaje(){
         scene.dialogoText4.setAlpha(1);
         scene.dialogoText3.setAlpha(0);
         if(tiempoAdios <= 0){
-            pan.setAlpha(1)
+            pan.setAlpha(1);
             scene.game.glishActivarCuracion = true;
             npc1.trigger.destroy();
             npc1.destroy();
