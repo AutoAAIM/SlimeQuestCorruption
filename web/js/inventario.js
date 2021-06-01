@@ -133,6 +133,8 @@ export function tirarPan(obj)
 {
 	//var indice = grupoDrops.getLength();
 
+	console.log('')
+
 	var p = grupoDrops.create(obj.x, obj.y, 'pan').setDepth(17);
 	p.name = "pan"
 }
