@@ -177,7 +177,7 @@ export default class montelago extends Phaser.Scene {
 		dinero.create();
 	}
 
-	fallDeath(pj, layer)
+	fallDeath(layerpj, layer)
 	{
 		if (!pj.inmovil)
 		{

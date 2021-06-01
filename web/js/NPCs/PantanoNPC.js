@@ -87,6 +87,7 @@ function recogerPersonaje(){
             cuadroTexto.destroy();
             cuadroTexto2.destroy();
             scene.dialogoText3.destroy();
+            scene.dialogoText4.destroy();
             interacturar.destroy();
         }else {tiempoAdios --;}
     }
