@@ -324,8 +324,6 @@ export function derretir(fuego, obj)
 
 export function freeze(objeto, lago)
 {
-	console.log(lago)
-	console.log(objeto)
     if (lago.properties != undefined && lago.properties.ice && objeto.hielo == true)
     {
         lago.setAlpha(0);
