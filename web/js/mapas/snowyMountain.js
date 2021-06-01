@@ -208,8 +208,8 @@ export default class montelago extends Phaser.Scene {
 
 					if (value <= 0 && pj.heroe)
 					{
-						pj.x = spawn[spawnID].x;
-						pj.y = spawn[spawnID].y;
+						pj.x = 200;
+						pj.y = 200;
 						if (tween.getValue() <= 0)
 						{
 							pj.vida -= 2;
