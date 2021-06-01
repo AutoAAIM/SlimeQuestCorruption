@@ -45,5 +45,4 @@ export function incrementarPlorts (cantidad)
 	scene.game.usuario.dinero += cantidad;
 	dinero = scene.game.usuario.dinero
 	inventario.update();
-	//console.log('guarra');
 }
