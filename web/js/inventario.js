@@ -15,6 +15,7 @@ export function preload()
 }
 
 export var grupoObjetos;
+export var grupoObjetos;
 var huecos = new Array;
 
 export function create()
@@ -114,4 +115,9 @@ export function consumir(puntero, obj)
 		grupoObjetos.getChildren()[i].x = huecos[i].x
 		grupoObjetos.getChildren()[i].y = huecos[i].y
 	}
+}
+
+export function tirarPan()
+{
+
 }
