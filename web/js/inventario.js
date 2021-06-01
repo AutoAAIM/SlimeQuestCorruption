@@ -115,3 +115,23 @@ export function consumir(puntero, obj)
 		grupoObjetos.getChildren()[i].y = huecos[i].y
 	}
 }
+
+function cogerItem(pj, obj)
+{
+	if(obj.name == "pan"){generarPan()}
+	else if(obj.name == "pastelraro"){generarTarta()}
+
+	obj.destroy();
+}
+// esto lo llamo con un overlap entre el grupo de items 'grupoDrops' y el grupo de heroes 'heroes.heroes'
+
+export function tirarPan(obj)
+{
+	//var indice = grupoDrops.getLength();
+
+	console.log('panTirado en'+obj.x+' : '+obj.y);
+
+	var p = grupoDrops.create(obj.x, obj.y, 'pan').setDepth(30);
+	p.name = "pan"
+}
+//esto lo llamo al matar al tentaculo

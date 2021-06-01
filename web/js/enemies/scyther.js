@@ -2,6 +2,7 @@ import * as utilidades from '../utilidades.js';
 import * as boxTank from '../personajes/boxTank.js';
 import * as heroes from '../grupoHeroes.js';
 import * as dinero from '../dinero.js';
+import * as inventario from '../inventario.js'
 
 export var scytherSegmentsGroup = new Array
 
@@ -315,6 +316,7 @@ export function update()
 			s.setTint(0xaaaaaa)
 			s.body.enable = false;
 			dinero.generarPlort(s, 5);
+			inventario.tirarPan(s)//Esto tira el pan
 		}
 
 
