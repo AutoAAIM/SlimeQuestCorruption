@@ -112,8 +112,6 @@ export default class montelago extends Phaser.Scene {
 
 		spawn = new Phaser.Math.Vector2(-980, 2250)
 
-		console.log(scene.config)
-
 		heroes.create(spawn, allTiles, antorchas, sc.config);
 		jotun.create();
 		oscuridad.create(scene, allTiles);
@@ -154,7 +152,7 @@ export default class montelago extends Phaser.Scene {
 
 		objetos.setTileIndexCallback(snowTiles, yasha.derretir, this.physics.add.overlap(yasha.grupoFuego, objetos));
 
-		// lago.setTileIndexCallback(freezeTiles, this.fallDeath, this.physics.add.overlap(heroes.heroes, lago));
+		lago.setTileIndexCallback(freezeTiles, this.fallDeath, this.physics.add.overlap(heroes.heroes, lago));
 		
 		this.physics.add.collider(mago.mago, heroes.heroes);
 		this.physics.add.collider(jotun.grupoEnemigos, heroes.heroes);
@@ -177,8 +175,9 @@ export default class montelago extends Phaser.Scene {
 		dinero.create();
 	}
 
-	/*fallDeath(pj, layer)
+	fallDeath(pj, layer)
 	{
+		console.log(pj+y+layer);
 		if (!pj.inmovil)
 		{
 
@@ -236,7 +235,7 @@ export default class montelago extends Phaser.Scene {
 				}
 			});
 		}
-	}*/
+	}
 
 
 	update()
