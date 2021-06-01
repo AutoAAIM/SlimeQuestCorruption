@@ -295,7 +295,7 @@ export function update()
 		if(s.detectionbox.detectado && !s.transformado)
 		{
 			s.transformado = true;
-			//console.log('hola')
+			console.log('hola')
 		}
 
 		if(s.transformado == true && !s.inmovil && s.vida > 0)
@@ -316,7 +316,6 @@ export function update()
 			s.setTint(0xaaaaaa)
 			s.body.enable = false;
 			dinero.generarPlort(s, 5);
-			console.log('holiwi');
 			inventario.tirarPan(s)
 		}
 
@@ -329,7 +328,7 @@ export function update()
 }
 
 export function herir(obj, e) {
-	//console.log(e)
+	console.log(e)
 	if (!e.inmune && !e.escondido) {
 		//console.log(obj)
 		e.detectionbox.detectado = true;
